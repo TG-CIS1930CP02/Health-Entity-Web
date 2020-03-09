@@ -8,6 +8,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { LoginComponent } from './shared/login/login.component';
 import { PathNotFoundComponent } from './shared/path-not-found/path-not-found.component';
 import { HomePractitionerComponent } from './practitioner/home-practitioner/home-practitioner.component';
+import { HomePatientComponent } from './patient/home-patient/home-patient.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HomePractitionerComponent } from './practitioner/home-practitioner/home
     FooterComponent,
     LoginComponent,
     PathNotFoundComponent,
-    HomePractitionerComponent
+    HomePractitionerComponent,
+    HomePatientComponent
   ],
   imports: [
     BrowserModule,
