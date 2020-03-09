@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+html,
+body,
+body *,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+p {
+  font-family: "poppins", arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+img {
+  display: inline-block;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.mb15 {
+  margin-bottom: 15px !important;
+}
+
+.mb50 {
+  margin-bottom: 50px !important;
+}
+
+.mr20 {
+  margin-right: 20px !important;
+}
+
+.mt10 {
+  margin-top: 10px !important;
+}
+
+.pr10 {
+  padding-right: 10px !important;
+}
+
+.pb10 {
+  padding-bottom: 10px !important;
+}
+
+.pb45 {
+  padding-bottom: 45px !important;
+}
+
+.pt10 {
+  padding-top: 10px !important;
+}
+
+.pt45 {
+  padding-top: 45px !important;
+}
+
+.wbBA {
+  word-break: break-all;
+}
+
+footer {
+  width: 100%;
+  background: #f7f7f7;
+}
+
+.footer_container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 35px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.footer_bottom {
+  background: #dbdbdb;
+}
+
+.footer_left {
+  width: 320px;
+  border-right: 1px solid rgba(147, 147, 147, 0.7);
+}
+
+.footer_right {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: calc(100% - 320px);
+  padding-top: 92px;
+  padding-left: 70px;
+}
+
+.footer_logo {
+  height: 30px;
+  width: 30px;
+}
+
+.footer_miniBox {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  padding-right: 20px;
+  margin-bottom: 15px;
+}
+
+.footer_miniBox:nth-last-of-type(2) {
+  margin-bottom: 20px;
+}
+
+.footer_list {
+  width: 32%;
+  margin-right: 0.5%;
+}
+
+.footer_list_link {
+  color: #4a4a4a;
+}
+
+.footer_list:last-of-type {
+  margin-right: 0;
+}
+
+.footer_list_item {
+  margin-bottom: 15px;
+  font-size: 1.07143rem;
+}
+
+.footer_social {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.title {
+  width: 100%;
+  font-size: 1.42857rem;
+  font-family: "poppinsSemibold", Arial, Helvetica, sans-serif;
+  color: #00a0d9;
+}
+
+.text--r {
+  width: 100%;
+  font-size: 1.07143rem;
+}
+
+.text--xs {
+  width: 100%;
+  font-size: 0.71429rem;
+}
+
+.xlBlack {
+  color: #4a4a4a !important;
+}
+
+.icon {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  object-position: center;
+  background-size: contain !important;
+  transition: all 0.3s ease;
+}
+
+.icon--call-answer {
+  background: url("../../../assets/icons/phone.svg") no-repeat center;
+  width: 16px;
+  height: 16px;
+}
+
+.icon--location {
+  background: url("../../../assets/icons/location.svg") no-repeat center;
+  width: 17px;
+  height: 23px;
+}
+
+.icon--message {
+  background: url("../../../assets/icons/mail.svg") no-repeat center;
+  width: 20px;
+  height: 13px;
+}
+
+.icon--mailFooter {
+  background: url("../../../assets/icons/form.svg") no-repeat center;
+  width: 20px;
+  height: 20px;
+}
+
+.icon--facebook-logo {
+  background: url("../../../assets//icons/facebook.svg") no-repeat center;
+  width: 12px;
+  height: 22px;
+}
+
+.icon--youtube-logo {
+  background: url("../../../assets//icons/youtube.svg") no-repeat center;
+  width: 29px;
+  height: 23px;
+  margin: 0 15px;
+}
+
+.children-rights {
+  font-family: "schoolbell", Arial, Helvetica, sans-serif;
+  color: #00cc9f !important;
+  font-size: 1.14286rem;
+}
+
+.blue {
+  color: #1d62ad !important;
+}
