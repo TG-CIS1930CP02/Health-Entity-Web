@@ -1,0 +1,155 @@
+html,
+body,
+body *,
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+p {
+  font-family: "poppins", arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 300;
+}
+
+.header_top {
+  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+  color: #fff;
+}
+
+.header_container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 35px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.header_bottom .header_container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.header_bottom {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #fff;
+}
+
+.header_numbers {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.header_numbers .text {
+  width: auto;
+  letter-spacing: 1px;
+}
+
+.header_links {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.header_links_item {
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 0.85714rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.header_links_item:last-of-type {
+  margin-right: 0;
+}
+
+.icon--phone {
+  background: url("../../../assets/icons/phone1.svg") no-repeat center;
+  width: 13px;
+  height: 13px;
+  margin-right: 10px;
+}
+
+.icon--doctors {
+  background: url("../../../assets/icons/doctor.svg") no-repeat center;
+  width: 18px;
+  height: 18px;
+}
+
+.white {
+  color: #fff !important;
+}
+
+.d-flex {
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+.mr10 {
+  margin-right: 10px !important;
+}
