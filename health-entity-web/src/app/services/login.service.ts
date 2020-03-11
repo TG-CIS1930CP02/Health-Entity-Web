@@ -8,7 +8,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 export class LoginService {
   constructor(private http: HttpClient) {}
 
-  tryLogin(username: string, password: string) {
+  login(username: string, password: string) {
     const formHeaders = new HttpHeaders();
     formHeaders.append('Content-Type', 'application/x-www-form-urlencoded');
     const formParams = new HttpParams()
