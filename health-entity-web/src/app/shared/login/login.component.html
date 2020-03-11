@@ -16,7 +16,7 @@
         <div>
           <label for="txtPassword">Contraseña: </label><br>
           <input type="password" id="txtPassword" required #txtPassword="ngModel" name="password"
-            [(ngModel)]="password">
+            [(ngModel)]="password" placeholder="Contraseña">
         </div>
         <div [hidden]="txtPassword.valid || !txtPassword.touched" class="errorCampo">
           Este campo es obligatorio
