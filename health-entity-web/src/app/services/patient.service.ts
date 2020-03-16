@@ -1,20 +1,15 @@
 import { Injectable } from '@angular/core';
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpHeaders,
-  HttpParams
-} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
-  constructor(private http: HttpClient) {}
+export class PatientService {
+  constructor(private http: HttpClient) { }
 
-  urlBase = 'http://localhost:8080/users';
+  urlBase = 'http:/localhost:8080/patients'
 
   private handleError(error: HttpErrorResponse): Observable<any> {
     console.log(error);
@@ -53,6 +48,7 @@ export class UserService {
       .delete<T>(url, { withCredentials: true })
       .pipe(catchError(this.handleError));
   }
+
   findByEmailPassword(email: string, password: string) {
     const params = new HttpParams()
       .set('email', email)
