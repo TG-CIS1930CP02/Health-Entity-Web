@@ -16,4 +16,35 @@
       </div>
     </div>
   </div>
+  <div class="header_bottom">
+    <div class="header_container">
+      <section class="logo">
+        <a href="#" class="logo_link">
+          <img src="../../../assets/logo.jpg" alt="" />
+        </a>
+      </section>
+      <nav class="nav">
+        <ul class="nav_list">
+          <li class="nav_item">
+            <a class="nav_item_link">Pacientes</a>
+          </li>
+          <li class="nav_item">
+            <a class="nav_item_link">Centros y servicios</a>
+          </li>
+          <li class="nav_item">
+            <a class="nav_item_link">publicaciones y eventos</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="userBox">
+        <a href="#" [style.visibility]="isLogin ? 'visible' : 'hidden'">
+          <p class="userBox_name text text--m xlBlack ttU ls1">
+            Hola,
+          </p>
+        </a>
+        <a href="#" class="btn btn--border btn--arrowR lPurple"
+          [style.visibility]="isLogin ? 'hidden' : 'visible'">Ingresar</a>
+      </div>
+    </div>
+  </div>
 </header>

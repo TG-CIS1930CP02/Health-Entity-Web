@@ -23,6 +23,11 @@ p {
   margin: 0;
 }
 
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -36,12 +41,40 @@ a:focus {
   outline: none;
 }
 
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 header {
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 300;
+}
+
+.text--m {
+  width: 100%;
+  font-size: 0.85714rem;
+}
+
+.ttU {
+  text-transform: uppercase;
+}
+
+.lPurple {
+  color: #5E62AA !important;
+}
+
+.xlBlack {
+  color: #4a4a4a !important;
+}
+
+.ls1 {
+  letter-spacing: 1px;
 }
 
 .header_top {
@@ -65,6 +98,12 @@ header {
   padding-right: 80px;
 }
 
+.header_bottom {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #fff;
+}
+
 .header_bottom .header_container {
   display: -ms-flexbox;
   display: flex;
@@ -78,10 +117,8 @@ header {
   flex-wrap: wrap;
 }
 
-.header_bottom {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background: #fff;
+.header_bottom .btn {
+  padding: 11px 20px;
 }
 
 .header_numbers {
@@ -126,6 +163,175 @@ header {
 
 .header_links_item:last-of-type {
   margin-right: 0;
+}
+
+.logo {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 125px;
+  height: auto;
+  padding-left: 0;
+  line-height: 0;
+}
+
+.logo_link {
+  display: inline-block;
+}
+
+.nav {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 660px;
+  min-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav_list {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  min-height: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.nav_item {
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+  position: relative;
+}
+
+.nav_list > .nav_item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 100%;
+  width: 240px;
+}
+
+.nav_list > .nav_item:first-of-type {
+  width: 160px;
+}
+
+.nav_item_link {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  min-height: 100%;
+  font-size: 0.85714rem;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  letter-spacing: 0.33px;
+}
+
+.nav_list .nav_item_link {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.nav_list .nav_item_link::after {
+  content: "";
+  display: block;
+  width: 7px;
+  height: 4px;
+  margin-left: 14px;
+  background: url("../../../assets/icons/down-arrow.svg") no-repeat center;
+  background-size: contain;
+  transition: all 0.3s ease;
+}
+
+.nav_list .nav_item_link.active::after {
+  transform: rotate(180deg);
+}
+
+.userBox {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  vertical-align: middle;
+  padding: 14px 40px;
+  border: 1px solid transparent;
+  outline: none;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn--border {
+  border: 1px solid #5E62AA;
+  color: #8B388A;
+  background: transparent;
+}
+
+.btn--arrowR::after {
+  content: "›";
+  display: inline-block;
+  margin-left: 8px;
 }
 
 .icon--phone {
