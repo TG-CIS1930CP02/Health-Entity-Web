@@ -4,8 +4,8 @@ import { PathNotFoundComponent } from './shared/path-not-found/path-not-found.co
 import { LoginComponent } from './patient/login/login.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/patientLogin' },
-  { path: 'patientLogin', component:  LoginComponent},
+  { path: '', pathMatch: 'full', redirectTo: '/inicio' },
+  { path: 'login-patient', component:  LoginComponent},
   { path: '**', component: PathNotFoundComponent }
 ];
 
