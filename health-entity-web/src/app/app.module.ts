@@ -11,18 +11,20 @@ import { PathNotFoundComponent } from './shared/path-not-found/path-not-found.co
 import { HomePractitionerComponent } from './practitioner/home-practitioner/home-practitioner.component';
 import { HomePatientComponent } from './patient/home-patient/home-patient.component';
 import { HomeComponent } from './shared/home/home.component';
-import { LoginComponent } from './patient/login/login.component';
+import { LoginPatientComponent } from './patient/login-patient/login-patient.component';
+import { LoginPractitionerComponent } from './practitioner/login-practitioner/login-practitioner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent,
+    LoginPatientComponent,
     PathNotFoundComponent,
     HomePractitionerComponent,
     HomePatientComponent,
-    HomeComponent
+    HomeComponent,
+    LoginPractitionerComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
