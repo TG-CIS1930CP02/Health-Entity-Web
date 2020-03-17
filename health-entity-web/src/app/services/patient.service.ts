@@ -6,10 +6,11 @@ import { catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
+
 export class PatientService {
   constructor(private http: HttpClient) { }
 
-  urlBase = 'http:/localhost:8080/patients'
+  urlBase = 'http:/localhost:8080/patients';
 
   private handleError(error: HttpErrorResponse): Observable<any> {
     console.log(error);
