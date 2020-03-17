@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 
-export class PatientService {
+export class PractitionerService {
   constructor(private http: HttpClient) { }
 
   urlBase = 'http:/localhost:8080/patients';
