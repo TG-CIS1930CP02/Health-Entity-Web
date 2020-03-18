@@ -19,7 +19,7 @@ h2,
 h1,
 p {
   font-family: "poppins", arial, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   padding: 0;
   margin: 0;
@@ -153,6 +153,7 @@ footer {
   flex-wrap: nowrap;
   padding-right: 20px;
   margin-bottom: 15px;
+  font-family: "poppins", arial, sans-serif;
 }
 
 .footer_miniBox:nth-last-of-type(2) {
@@ -174,7 +175,7 @@ footer {
 
 .footer_list_item {
   margin-bottom: 15px;
-  font-size: 1.07143rem;
+  font-size: 15px;
 }
 
 .footer_social {
@@ -192,14 +193,14 @@ footer {
 
 .title {
   width: 100%;
-  font-size: 1.42857rem;
+  font-size: 18px;
   font-family: "poppinsSemibold", Arial, Helvetica, sans-serif;
   color: #00a0d9;
 }
 
 .text--r {
   width: 100%;
-  font-size: 1.07143rem;
+  font-size: 13px;
 }
 
 .text--xs {
