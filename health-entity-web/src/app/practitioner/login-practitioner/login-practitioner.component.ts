@@ -28,7 +28,7 @@ export class LoginPractitionerComponent implements OnInit {
         this.practitionerService.findByEmailPassword(this.email, this.password)
           .subscribe(result => {
             this.practitioner = result;
-
+            this.router.navigate(['practitioner/home']); // TODO agregar id del usuario
           },
           error => {
             console.error(error);

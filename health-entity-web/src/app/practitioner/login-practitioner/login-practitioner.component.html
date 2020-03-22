@@ -1,33 +1,68 @@
 <div id="loginbox" class="center">
-  <h2>Bienvenido Profesional de la Salud</h2>
   <div id="formbox" class="center">
+    <h2 class="title">Ingreso Profesional de la Salud</h2>
     <form (ngSubmit)="login()" #loginForm="ngForm">
-      <div class="box">
+      <div class="form_box">
         <div>
-          <label for="txtEmail">Email: </label><br>
-          <input type="text" pattern="\w+@\w+(\.\w+)*" id="txtEmail" required #txtEmail="ngModel" name="email"
-            [(ngModel)]="email" placeholder="Ingrese su correo">
+          <label for="txtEmail">Email: </label><br />
+          <input
+            class="form_input"
+            type="text"
+            pattern="\w+@\w+(\.\w+)*"
+            id="txtEmail"
+            required
+            #txtEmail="ngModel"
+            name="email"
+            [(ngModel)]="email"
+            placeholder="Ingrese su correo"
+          />
         </div>
         <div [hidden]="txtEmail.valid || !txtEmail.touched" class="errorCampo">
           Email invalido
         </div>
       </div>
-      <div class="box">
+      <div class="form_box">
         <div>
-          <label for="txtPassword">Contraseña: </label><br>
-          <input type="password" id="txtPassword" required #txtPassword="ngModel" name="password"
-            [(ngModel)]="password" placeholder="Contraseña">
+          <label for="txtPassword">Contraseña: </label><br />
+          <input
+            class="form_input"
+            type="password"
+            id="txtPassword"
+            required
+            #txtPassword="ngModel"
+            name="password"
+            [(ngModel)]="password"
+            placeholder="Ingrese su contraseña"
+          />
         </div>
-        <div [hidden]="txtPassword.valid || !txtPassword.touched" class="errorCampo">
+        <div
+          [hidden]="txtPassword.valid || !txtPassword.touched"
+          class="errorCampo"
+        >
           Este campo es obligatorio
         </div>
       </div>
-      <div [hidden]=!incorrectLogin class="errorCampo">
-        Email o contraseña incorrectos
+      <div class="form_box">
+        <input
+          type="checkbox"
+          name="fingertip"
+          class="form_checkbox"
+          id="fingertip"
+        />
+        <label for="fingertip" class="form_label form_label--checkbox">
+          Huella válida
+        </label>
       </div>
-      <button type="submit" class="btn btn-default" [disabled]="!loginForm.form.valid">
-        Iniciar sesión
-      </button>
+      <a href="#" class="help">¿Necesitas ayuda para ingresar?</a>
+      <div class="form_box">
+        <button
+          type="submit"
+          class="btn--gradient"
+          [disabled]="!loginForm.form.valid"
+        >
+          Iniciar sesión
+        </button>
+      </div>
     </form>
   </div>
 </div>
