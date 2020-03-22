@@ -28,7 +28,7 @@ export class LoginPatientComponent implements OnInit {
         this.patientService.findByEmailPassword(this.email, this.password)
           .subscribe(result => {
             this.patient = result;
-
+            this.router.navigate(['patient/home']); // TODO agregar id del usuario
           },
           error => {
             console.error(error);
@@ -39,5 +39,4 @@ export class LoginPatientComponent implements OnInit {
         console.error(error);
       });
     }
-
 }
