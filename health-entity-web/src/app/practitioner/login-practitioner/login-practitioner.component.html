@@ -5,57 +5,31 @@
       <div class="form_box">
         <div>
           <label for="txtEmail">Email: </label><br />
-          <input
-            class="form_input"
-            type="text"
-            pattern="\w+@\w+(\.\w+)*"
-            id="txtEmail"
-            required
-            #txtEmail="ngModel"
-            name="email"
-            [(ngModel)]="email"
-            placeholder="Ingrese su correo"
-          />
+          <input class="form_input" type="text" pattern="\w+@\w+(\.\w+)*" id="txtEmail" required #txtEmail="ngModel"
+            name="email" [(ngModel)]="email" placeholder="Ingrese su correo" />
         </div>
+        <!--- TODO should i put this? -->
         <div [hidden]="txtEmail.valid || !txtEmail.touched"></div>
       </div>
       <div class="form_box">
         <div>
           <label for="txtPassword">Contraseña: </label><br />
-          <input
-            class="form_input"
-            type="password"
-            id="txtPassword"
-            required
-            #txtPassword="ngModel"
-            name="password"
-            [(ngModel)]="password"
-            placeholder="Ingrese su contraseña"
-          />
+          <input class="form_input" type="password" id="txtPassword" required #txtPassword="ngModel" name="password"
+            [(ngModel)]="password" placeholder="Ingrese su contraseña" />
         </div>
+        <!--- TODO should i put this? -->
         <div [hidden]="txtPassword.valid || !txtPassword.touched"></div>
       </div>
       <div class="form_box">
-        <input
-          type="checkbox"
-          name="fingertip"
-          class="form_checkbox"
-          id="fingertip"
-        />
+        <input type="checkbox" name="fingertip" class="form_checkbox" id="fingertip" />
         <label for="fingertip" class="form_label form_label--checkbox">
           Huella válida
         </label>
       </div>
       <a href="#" class="help">¿Necesitas ayuda para ingresar?</a>
-      <div class="form_box">
-        <button
-          type="submit"
-          class="btn--gradient"
-          [disabled]="!loginForm.form.valid"
-        >
-          Iniciar sesión
-        </button>
-      </div>
+      <button type="submit" class="btn--gradient" [disabled]="!loginForm.form.valid">
+        Iniciar sesión
+      </button>
     </form>
   </div>
   <section class="modal" *ngIf="incorrectLogin">

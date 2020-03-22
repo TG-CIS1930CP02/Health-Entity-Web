@@ -110,6 +110,7 @@ input {
   color: #fff;
   background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
   transition: all 0.3s ease;
+  width: 110%;
 }
 .btn--gradient:hover {
   background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
