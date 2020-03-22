@@ -39,4 +39,8 @@ export class LoginPractitionerComponent implements OnInit {
         console.error(error);
       });
   }
+
+  close() {
+    this.incorrectLogin = false;
+  }
 }

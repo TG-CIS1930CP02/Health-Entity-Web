@@ -39,4 +39,8 @@ export class LoginPatientComponent implements OnInit {
         console.error(error);
       });
     }
+
+  close() {
+    this.incorrectLogin = false;
+  }
 }

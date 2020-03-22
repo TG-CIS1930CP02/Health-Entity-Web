@@ -17,6 +17,7 @@
             placeholder="Ingrese su correo"
           />
         </div>
+        <!--- TODO should i put this? -->
         <div [hidden]="txtEmail.valid || !txtEmail.touched"></div>
       </div>
       <div class="form_box">
@@ -33,12 +34,8 @@
             placeholder="Ingrese su contraseña"
           />
         </div>
-        <div
-          [hidden]="txtPassword.valid || !txtPassword.touched"
-          class="errorCampo"
-        >
-          Este campo es obligatorio
-        </div>
+        <!--- TODO should i put this? -->
+        <div [hidden]="txtPassword.valid || !txtPassword.touched"></div>
       </div>
       <a href="#" class="help">¿Necesitas ayuda para ingresar?</a>
       <div class="form_box">
@@ -52,4 +49,17 @@
       </div>
     </form>
   </div>
+  <section class="modal" *ngIf="incorrectLogin">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="close()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Usuario y/o contraseña incorrectos.
+        </p>
+      </div>
+    </div>
+  </section>
 </div>
