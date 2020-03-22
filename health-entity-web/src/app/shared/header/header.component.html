@@ -4,12 +4,12 @@
       <div class="header_numbers">
         <span class="icon icon--phone"></span>
         <p class="text--m white">
-          +571 000-0000 - +571 000-0000 | Bogotá.
+          +571 000-0000 - +571 000-0000
         </p>
       </div>
       <div class="header_links">
-        <a href="#" class="header_links_item d-flex">
-          <span class="icon icon--doctors mr10"></span>Médicos</a>
+        <a href="/login-practitioner" class="header_links_item d-flex">
+          <span class="icon icon--doctors mr10"></span>Profesional de la salud</a>
         <a href="#" class="header_links_item">Directorio Telefónico</a>
         <a href="#" target="_blank" class="header_links_item">Pagos Online</a>
         <a href="#" class="header_links_item">Convenios</a>
@@ -37,15 +37,8 @@
         </ul>
       </nav>
       <div class="userBox">
-        <a href="#" [style.visibility]="isLogin ? 'visible' : 'hidden'">
-          <p class="userBox_name text text--m xlBlack ttU ls1">
-            Hola,
-          </p>
-        </a>
         <a href="/login-patient" class="btn btn--border btn--arrowR lPurple"
           [style.visibility]="isLogin ? 'hidden' : 'visible'">Login paciente</a>
-        <a href="/login-practitioner" class="btn btn--border btn--arrowR lPurple"
-          [style.visibility]="isLogin ? 'hidden' : 'visible'">Login doctor</a>
       </div>
     </div>
   </div>
