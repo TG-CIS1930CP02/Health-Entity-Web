@@ -1,0 +1,36 @@
+<div id="registration" class="center">
+  <div id="formbox" class="center">
+    <h2 class="title">Registro Profesional de la Salud</h2>
+    <form (ngSubmit)="register()" #registrationForm="ngForm">
+      <div class="form_box">
+        <div>
+          <label for="idType">Tipo de identificación: </label><br />
+          <select id="idType" class="form-control" type="text" name="idType" required [(ngModel)]="practitioner.idType" #txtType="ngModel">
+            <option value="CC">Cédula de Ciudadanía</option>
+            <option value="CE">Cédula de Extranjería</option>
+            <option value="RC">Registro Civil</option>
+            <option value="TI">Tarjeta de Identidad</option>
+          </select>
+        </div>
+        <!--- TODO should i put this? -->
+        <div [hidden]="txtType.valid || !txtType.touched"></div>
+      </div>
+      <button type="submit" class="btn--gradient" [disabled]="!registrationForm.form.valid">
+        Registrar
+      </button>
+    </form>
+  </div>
+  <section class="modal" *ngIf="incorrectRegister">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="close()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Profesional de la salud no existe.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
