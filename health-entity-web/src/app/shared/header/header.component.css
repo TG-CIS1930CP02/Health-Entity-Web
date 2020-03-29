@@ -1,28 +1,3 @@
-html,
-body,
-body *,
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body,
-html,
-h6,
-h5,
-h4,
-h3,
-h2,
-h1,
-p {
-  font-family: "poppins", arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 0;
-  margin: 0;
-}
-
 img {
   display: inline-block;
   max-width: 100%;
