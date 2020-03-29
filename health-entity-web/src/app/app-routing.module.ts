@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { PathNotFoundComponent } from './shared/path-not-found/path-not-found.component';
 import { LoginPatientComponent } from './patient/login-patient/login-patient.component';
 import { LoginPractitionerComponent } from './practitioner/login-practitioner/login-practitioner.component';
+import { SignupPractitionerComponent } from './practitioner/signup-practitioner/signup-practitioner.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/inicio' },
   { path: 'login-patient', component:  LoginPatientComponent},
   { path: 'login-practitioner', component: LoginPractitionerComponent},
+  { path: 'admin/signup-practitioner', component: SignupPractitionerComponent},
   { path: '**', component: PathNotFoundComponent }
 ];
 
