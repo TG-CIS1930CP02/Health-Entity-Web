@@ -1,7 +1,7 @@
-<div id="signupbox" class="center">
+<div id="box" class="center">
   <div id="formbox" class="center">
     <h2 class="title">Registro Profesional de la Salud</h2>
-    <form (ngSubmit)="signup()" #signupForm="ngForm">
+    <form (ngSubmit)="search()" #searchForm="ngForm">
       <div class="form_box">
         <div>
           <label for="idType">Tipo de identificación: </label><br />
@@ -10,7 +10,7 @@
             class='form-control form_select'
             name="idType"
             required
-            [(ngModel)]="practitioner.idType"
+            [(ngModel)]="practitioner.id.type"
             #txtType="ngModel"
           >
           <option disabled hidden>Seleccione un tipo</option>
@@ -28,7 +28,7 @@
             required
             #idNumber="ngModel"
             name="email"
-            [(ngModel)]="practitioner.id"
+            [(ngModel)]="practitioner.id.number"
             placeholder="Ingrese su número de identificación"
           />
         </div>
@@ -38,13 +38,14 @@
       <button
         type="submit"
         class="btn--gradient"
-        [disabled]="!signupForm.form.valid"
+        [disabled]="!searchForm.form.valid"
+        *ngIf="!notFound"
       >
         Buscar
       </button>
     </form>
   </div>
-  <section class="modal" *ngIf="incorrectSignup">
+  <section class="modal" *ngIf="notFound">
     <div class="modal_container">
       <div class="modal_header">
         <h2 class="title">Aviso</h2>
@@ -56,5 +57,12 @@
         </p>
       </div>
     </div>
+  </section>
+  <section>
+    <form (ngSubmit)="signup()" #signupForm="ngForm">
+      <div id="formbox" class="center">
+
+      </div>
+    </form>
   </section>
 </div>

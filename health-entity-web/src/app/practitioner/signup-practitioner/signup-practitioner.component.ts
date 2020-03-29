@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
 })
 
 export class SignupPractitionerComponent implements OnInit {
-  practitioner: Practitioner = new Practitioner(undefined, undefined);
+  practitioner: Practitioner = new Practitioner(undefined, undefined, undefined, undefined, undefined, undefined, undefined);
   incorrectSignup = false;
+  notFound = false;
   selectedType = 'Selecciona un tipo';
   options = [
     {
@@ -47,12 +48,12 @@ export class SignupPractitionerComponent implements OnInit {
       },
       error => {
         console.error(error);
-        this.incorrectSignup = true;
+        this.notFound = true;
       }
     );
   }
 
   close() {
-    this.incorrectSignup = false;
+    this.notFound = false;
   }
 }

@@ -7,5 +7,12 @@ export class Practitioner {
   public birthDate: Date;
   public gender: string;
 
-  constructor() {}
+  constructor(
+    id: Identification,
+    active: boolean,
+    name: string,
+    address: string,
+    qualification: Qualification,
+    birthDate: Date,
+    gender: string) {}
 }
