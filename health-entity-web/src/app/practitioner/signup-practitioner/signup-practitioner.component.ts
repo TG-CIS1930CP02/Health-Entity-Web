@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Practitioner } from 'app/models/practitioner';
 import { PractitionerService } from 'app/services/practitioner.service';
 import { Router } from '@angular/router';
+import { Qualification } from 'app/models/qualification';
 
 @Component({
   selector: 'app-signup-practitioner',
@@ -10,10 +11,12 @@ import { Router } from '@angular/router';
 })
 
 export class SignupPractitionerComponent implements OnInit {
-  practitioner: Practitioner = new Practitioner(undefined, undefined, undefined, undefined, undefined, undefined, undefined);
+  practitioner: Practitioner = new Practitioner();
   incorrectSignup = false;
-  notFound = false;
-  selectedType = 'Selecciona un tipo';
+  found = 'pending';
+  idType = 'Selecciona un tipo';
+  id: number;
+
   options = [
     {
       name: 'Cédula de Ciudadanía',
@@ -40,20 +43,21 @@ export class SignupPractitionerComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  signup() {
-    this.practitionerService.createPractitioner(this.practitioner).subscribe(
+  search() {
+    this.practitionerService.findByIdentification(this.idType, this.id).subscribe(
       result => {
         console.log(result);
-        // TODO show correct register
+        this.practitioner = result;
+        this.found = 'found';
       },
       error => {
         console.error(error);
-        this.notFound = true;
+        this.found = 'not_found';
       }
     );
   }
 
   close() {
-    this.notFound = false;
+    this.found = 'pending';
   }
 }
