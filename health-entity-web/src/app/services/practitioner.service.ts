@@ -58,6 +58,13 @@ export class PractitionerService {
     return this.get<null>(`${this.urlBase}/find-by-email-and-password`, params);
   }
 
+  findByIdentification(type: string, id: number) {
+    const params = new HttpParams()
+      .set('type', type)
+      .set('id', id.toString());
+    return this.get<Practitioner>(`${this.urlBase}/find-by-identification)`, params);
+  }
+
   createPractitioner(practitioner: Practitioner) {
     return this.post<Practitioner>(this.urlBase, practitioner);
   }
