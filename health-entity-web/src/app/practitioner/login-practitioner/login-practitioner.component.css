@@ -1,24 +1,12 @@
-body,
-html,
-h6,
-h5,
-h4,
-h3,
-h2,
-h1,
-p {
-  font-family: "poppins", arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 0;
-  margin: 0;
-}
 a {
   text-decoration: none;
   cursor: pointer;
 }
 a:hover {
   text-decoration: none;
+}
+input {
+  width: 100%;
 }
 #loginbox {
   height: 450px;
@@ -54,22 +42,9 @@ a:hover {
   border: 1px solid #e1e3e6;
   font-family: "poppinsLight", Arial, Helvetica, sans-serif;
   font-size: 0.85714rem;
-  color: #b5b5b5;
   letter-spacing: 1px;
   resize: none;
   margin-bottom: 15px !important;
-}
-.form_input::-webkit-input-placeholder {
-  color: #b5b5b5;
-}
-.form_input:-moz-placeholder {
-  color: #b5b5b5;
-}
-.form_input::-moz-placeholder {
-  color: #b5b5b5;
-}
-.form_input:-ms-input-placeholder {
-  color: #b5b5b5;
 }
 .form_checkbox {
   display: none;
@@ -90,7 +65,6 @@ a:hover {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-size: 12px;
-  color: #b5b5b5 !important;
 }
 .form_label--checkbox::before {
   content: "✔";
@@ -121,14 +95,6 @@ a:hover {
   font-family: "poppinsMedium", Arial, Helvetica, sans-serif;
   margin-bottom: 15px !important;
   cursor: help;
-}
-input {
-  width: 100%;
-}
-.form_box button {
-  position: absolute;
-  bottom: 10px;
-  width: 90%;
 }
 .btn--gradient {
   display: -ms-inline-flexbox;

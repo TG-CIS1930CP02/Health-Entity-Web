@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css");
+
+body,
+html,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+p {
+  font-family: "poppins", arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+}
