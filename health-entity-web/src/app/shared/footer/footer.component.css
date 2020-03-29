@@ -117,6 +117,7 @@ footer {
 .footer_left {
   width: 320px;
   border-right: 1px solid rgba(147, 147, 147, 0.7);
+  font-family: "poppins", arial, sans-serif;
 }
 
 .footer_right {
@@ -153,7 +154,6 @@ footer {
   flex-wrap: nowrap;
   padding-right: 20px;
   margin-bottom: 15px;
-  font-family: "poppins", arial, sans-serif;
 }
 
 .footer_miniBox:nth-last-of-type(2) {
@@ -163,6 +163,7 @@ footer {
 .footer_list {
   width: 32%;
   margin-right: 0.5%;
+  font-family: "poppins", arial, sans-serif;
 }
 
 .footer_list_link {
