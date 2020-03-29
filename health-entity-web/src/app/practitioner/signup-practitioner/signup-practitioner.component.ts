@@ -10,17 +10,36 @@ import { Router } from '@angular/router';
 })
 
 export class SignupPractitionerComponent implements OnInit {
-  practitioner: Practitioner = new Practitioner (
-    undefined,
-    undefined,
-  );
-  incorrectRegister = false;
+  practitioner: Practitioner = new Practitioner(undefined, undefined);
+  incorrectSignup = false;
+  selectedType = 'Selecciona un tipo';
+  options = [
+    {
+      name: 'Cédula de Ciudadanía',
+      value: 'CC'
+    },
+    {
+      name: 'Cédula de Extranjería',
+      value: 'CE'
+    },
+    {
+      name: 'Registro Civil',
+      value: 'RC'
+    },
+    {
+      name: 'Tarjeta de Identidad',
+      value: 'TI'
+    }
+  ];
 
-  constructor(private practitionerService: PractitionerService, private router: Router) { }
+  constructor(
+    private practitionerService: PractitionerService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
-  register() {
+  signup() {
     this.practitionerService.createPractitioner(this.practitioner).subscribe(
       result => {
         console.log(result);
@@ -28,12 +47,12 @@ export class SignupPractitionerComponent implements OnInit {
       },
       error => {
         console.error(error);
-        this.incorrectRegister = true;
+        this.incorrectSignup = true;
       }
     );
   }
 
   close() {
-    this.incorrectRegister = false;
+    this.incorrectSignup = false;
   }
 }

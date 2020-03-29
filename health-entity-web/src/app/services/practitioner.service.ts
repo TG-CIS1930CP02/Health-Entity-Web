@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Practitioner } from '../models/practitioner';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { catchError } from 'rxjs/operators';
 export class PractitionerService {
   constructor(private http: HttpClient) { }
 
-  urlBase = 'http:/localhost:8080/patients';
+  urlBase = 'http:/localhost:8080/practitioner';
 
   private handleError(error: HttpErrorResponse): Observable<any> {
     console.log(error);
@@ -55,5 +56,9 @@ export class PractitionerService {
       .set('email', email)
       .set('password', password);
     return this.get<null>(`${this.urlBase}/find-by-email-and-password`, params);
+  }
+
+  createPractitioner(practitioner: Practitioner) {
+    return this.post<Practitioner>(this.urlBase, practitioner);
   }
 }
