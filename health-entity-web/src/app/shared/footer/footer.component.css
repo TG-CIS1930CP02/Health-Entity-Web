@@ -1,30 +1,3 @@
-@charset "UTF-8";
-
-html,
-body,
-body *,
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body,
-html,
-h6,
-h5,
-h4,
-h3,
-h2,
-h1,
-p {
-  font-family: "poppins", arial, sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  padding: 0;
-  margin: 0;
-}
-
 a {
   text-decoration: none;
   cursor: pointer;
@@ -95,15 +68,10 @@ footer {
 }
 
 .footer_container {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: start;
   justify-content: flex-start;
-  -ms-flex-align: start;
   align-items: flex-start;
-  -ms-flex-line-pack: start;
   align-content: flex-start;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   min-height: 35px;
   padding-left: 80px;
@@ -117,18 +85,14 @@ footer {
 .footer_left {
   width: 320px;
   border-right: 1px solid rgba(147, 147, 147, 0.7);
+  font-family: "poppins", arial, sans-serif;
 }
 
 .footer_right {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: start;
   justify-content: flex-start;
-  -ms-flex-align: start;
   align-items: flex-start;
-  -ms-flex-line-pack: start;
   align-content: flex-start;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: calc(100% - 320px);
   padding-top: 92px;
@@ -141,19 +105,12 @@ footer {
 }
 
 .footer_miniBox {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: start;
   justify-content: flex-start;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   padding-right: 20px;
-  margin-bottom: 15px;
-  font-family: "poppins", arial, sans-serif;
 }
 
 .footer_miniBox:nth-last-of-type(2) {
@@ -163,6 +120,7 @@ footer {
 .footer_list {
   width: 32%;
   margin-right: 0.5%;
+  font-family: "poppins", arial, sans-serif;
 }
 
 .footer_list_link {
@@ -179,15 +137,10 @@ footer {
 }
 
 .footer_social {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: start;
   justify-content: flex-start;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 
@@ -213,15 +166,11 @@ footer {
 }
 
 .icon {
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 40px;
   height: 40px;
