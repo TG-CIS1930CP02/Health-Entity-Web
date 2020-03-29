@@ -1,33 +1,42 @@
 <div id="loginbox" class="center">
-  <h2>Bienvenido Paciente</h2>
+  <h2 class="title">Bienvenido Paciente</h2>
   <div id="formbox" class="center">
     <form (ngSubmit)="login()" #loginForm="ngForm">
-      <div class="box">
+      <div class="form_box">
         <div>
-          <label for="txtEmail">Email: </label><br>
-          <input type="text" pattern="\w+@\w+(\.\w+)*" id="txtEmail" required #txtEmail="ngModel" name="email"
-            [(ngModel)]="email" placeholder="Ingrese su correo">
+          <label for="txtEmail">Email: </label><br />
+          <input class="form_input" type="text" pattern="\w+@\w+(\.\w+)*" id="txtEmail" required #txtEmail="ngModel"
+            name="email" [(ngModel)]="email" placeholder="Ingrese su correo" />
         </div>
-        <div [hidden]="txtEmail.valid || !txtEmail.touched" class="errorCampo">
-          Email invalido
-        </div>
+        <!--- TODO should i put this? -->
+        <div [hidden]="txtEmail.valid || !txtEmail.touched"></div>
       </div>
-      <div class="box">
+      <div class="form_box">
         <div>
-          <label for="txtPassword">Contraseña: </label><br>
-          <input type="password" id="txtPassword" required #txtPassword="ngModel" name="password"
-            [(ngModel)]="password" placeholder="Contraseña">
+          <label for="txtPassword">Contraseña: </label><br />
+          <input class="form_input" type="password" id="txtPassword" required #txtPassword="ngModel" name="password"
+            [(ngModel)]="password" placeholder="Ingrese su contraseña" />
         </div>
-        <div [hidden]="txtPassword.valid || !txtPassword.touched" class="errorCampo">
-          Este campo es obligatorio
-        </div>
+        <!--- TODO should i put this? -->
+        <div [hidden]="txtPassword.valid || !txtPassword.touched"></div>
       </div>
-      <div [hidden]=!incorrectLogin class="errorCampo">
-        Email o contraseña incorrectos
-      </div>
-      <button type="submit" class="btn btn-default" [disabled]="!loginForm.form.valid">
+      <a href="#" class="help">¿Necesitas ayuda para ingresar?</a>
+      <button type="submit" class="btn--gradient" [disabled]="!loginForm.form.valid">
         Iniciar sesión
       </button>
     </form>
   </div>
+  <section class="modal" *ngIf="incorrectLogin">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="close()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Usuario y/o contraseña incorrectos.
+        </p>
+      </div>
+    </div>
+  </section>
 </div>
