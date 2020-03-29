@@ -50,15 +50,10 @@ input {
   margin-bottom: 15px !important;
 }
 .btn--gradient {
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   vertical-align: middle;
   padding: 14px 40px;
@@ -72,21 +67,16 @@ input {
   color: #fff;
   background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
   transition: all 0.3s ease;
-  width: 110%;
+  width: 100%;
 }
 .btn--gradient:hover {
   background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
 }
 .modal {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
@@ -109,15 +99,10 @@ input {
   letter-spacing: 1px;
 }
 .modal_container {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: start;
   align-content: flex-start;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
   max-width: 500px;
@@ -129,15 +114,10 @@ input {
   background: #fff;
 }
 .modal_header {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
   padding-left: 30px;
@@ -155,15 +135,10 @@ input {
   right: 15px;
 }
 .icon--close {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 40px;
   height: 40px;
@@ -183,15 +158,10 @@ input {
   cursor: pointer;
 }
 .modal_content {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 15px;
 }

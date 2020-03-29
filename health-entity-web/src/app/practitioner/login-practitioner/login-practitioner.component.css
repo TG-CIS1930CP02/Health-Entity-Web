@@ -28,9 +28,9 @@ input {
   width: 100%;
   font-size: 30px;
   text-align: center;
-  color: #5E62AA !important;
+  color: #5e62aa !important;
   text-transform: uppercase;
-  margin-bottom: 3  0px !important;
+  margin-bottom: 3 0px !important;
 }
 .form_box {
   width: 100%;
@@ -54,29 +54,19 @@ input {
   color: #fff;
 }
 .form_label--checkbox {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: start;
   justify-content: flex-start;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   font-size: 12px;
 }
 .form_label--checkbox::before {
   content: "✔";
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 26px;
   height: 26px;
@@ -91,21 +81,16 @@ input {
 .help {
   display: inline-block;
   font-size: 12px;
-  color: #5E62AA !important;
+  color: #5e62aa !important;
   font-family: "poppinsMedium", Arial, Helvetica, sans-serif;
   margin-bottom: 15px !important;
   cursor: help;
 }
 .btn--gradient {
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   vertical-align: middle;
   padding: 14px 40px;
@@ -117,23 +102,18 @@ input {
   cursor: pointer;
   border: none;
   color: #fff;
-  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+  background: linear-gradient(60deg, #8b388a 55%, #5e62aa);
   transition: all 0.3s ease;
-  width: 110%;
+  width: 100%;
 }
 .btn--gradient:hover {
-  background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
+  background: linear-gradient(168.27deg, #8b388a 35.62%, #5e62aa 100%);
 }
 .modal {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
@@ -156,15 +136,10 @@ input {
   letter-spacing: 1px;
 }
 .modal_container {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: start;
   align-content: flex-start;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
   max-width: 500px;
@@ -176,20 +151,15 @@ input {
   background: #fff;
 }
 .modal_header {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
-  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+  background: linear-gradient(60deg, #8b388a 55%, #5e62aa);
   position: relative;
 }
 .modal_close {
@@ -202,15 +172,10 @@ input {
   right: 15px;
 }
 .icon--close {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 40px;
   height: 40px;
@@ -230,15 +195,10 @@ input {
   cursor: pointer;
 }
 .modal_content {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 15px;
 }
