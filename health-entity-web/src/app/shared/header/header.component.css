@@ -332,38 +332,6 @@ header {
   margin-left: 8px;
 }
 
-.icon {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  object-position: center;
-  background-size: contain !important;
-  transition: all 0.3s ease;
-}
-
-.icon--phone {
-  background: url("../../../assets/icons/phone1.svg") no-repeat center;
-  width: 13px;
-  height: 13px;
-  margin-right: 10px;
-}
-
-.icon--doctors {
-  background: url("../../../assets/icons/doctor.svg") no-repeat center;
-  width: 18px;
-  height: 18px;
-}
-
 .white {
   color: #fff !important;
 }
