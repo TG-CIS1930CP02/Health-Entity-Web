@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Practitioner } from 'app/models/practitioner';
 import { PractitionerService } from 'app/services/practitioner.service';
-import { Router } from '@angular/router';
-import { Qualification } from 'app/models/qualification';
+import { Identification } from 'app/models/identification';
 
 @Component({
   selector: 'app-signup-practitioner',
@@ -11,9 +10,8 @@ import { Qualification } from 'app/models/qualification';
 })
 
 export class SignupPractitionerComponent implements OnInit {
-  practitioner: Practitioner = new Practitioner();
-  incorrectSignup = false;
-  found = 'pending';
+  practitionerFound: Practitioner = new Practitioner();
+  found = 'found';
   idType = 'Selecciona un tipo';
   id: number;
 
@@ -36,10 +34,7 @@ export class SignupPractitionerComponent implements OnInit {
     }
   ];
 
-  constructor(
-    private practitionerService: PractitionerService,
-    private router: Router
-  ) {}
+  constructor(private practitionerService: PractitionerService) {}
 
   ngOnInit(): void {}
 
@@ -47,7 +42,7 @@ export class SignupPractitionerComponent implements OnInit {
     this.practitionerService.findByIdentification(this.idType, this.id).subscribe(
       result => {
         console.log(result);
-        this.practitioner = result;
+        this.practitionerFound = result;
         this.found = 'found';
       },
       error => {
