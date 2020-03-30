@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpErrorResponse, HttpParams, HttpHeaders, HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Administrator } from '../models/administrator';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,8 @@ import { catchError } from 'rxjs/operators';
 export class AdministratorService {
   constructor(private http: HttpClient) { }
 
-  urlBase = 'http:/localhost:8080/administrator';
+  urlBaseRas = 'http:/localhost:8080/administrator';
+  urlBaseEntity = 'http:/localhost:8080/administrator';
 
   private handleError(error: HttpErrorResponse): Observable<any> {
     console.log(error);
@@ -49,10 +51,10 @@ export class AdministratorService {
       .pipe(catchError(this.handleError));
   }
 
-  findByEmailPassword(email: string, password: string) {
+  findByIdentification(type: string, id: number) {
     const params = new HttpParams()
-      .set('email', email)
-      .set('password', password);
-    return this.get<null>(`${this.urlBase}/find-by-email-and-password`, params);
+      .set('type', type)
+      .set('id', id.toString());
+    return this.get<Administrator>(`${this.urlBaseRas}/find-by-identification)`, params);
   }
 }
