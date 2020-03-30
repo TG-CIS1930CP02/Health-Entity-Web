@@ -13,19 +13,28 @@ export class LoginPatientComponent implements OnInit {
 
   constructor(private loginService: LoginService, private router: Router, private patientService: PatientService) { }
 
-  patient: Patient = null;
-  email: string = null;
-  password: string = null;
+  patient: Patient = new Patient();
+
+  idType: string;
+  id: number;
+  password: string;
 
   incorrectLogin = false;
+
+  options = [
+    { name: 'Cédula de Ciudadanía', value: 'CC' },
+    { name: 'Cédula de Extranjería', value: 'CE' },
+    { name: 'Registro Civil', value: 'RC' },
+    { name: 'Tarjeta de Identidad', value: 'TI' }
+  ];
 
   ngOnInit(): void { }
 
   login() {
-    this.loginService.login(this.email, this.password)
+    this.loginService.login(this.idType, this.id, this.password)
       .subscribe(data => {
         this.incorrectLogin = false;
-        this.patientService.findByEmailPassword(this.email, this.password)
+        this.patientService.findByIdentification(this.idType, this.id)
           .subscribe(result => {
             this.patient = result;
             this.router.navigate(['patient/home']); // TODO agregar id del usuario
