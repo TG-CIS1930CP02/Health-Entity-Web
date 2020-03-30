@@ -52,13 +52,6 @@ export class PractitionerService {
       .pipe(catchError(this.handleError));
   }
 
-  findByEmailPassword(email: string, password: string) {
-    const params = new HttpParams()
-      .set('email', email)
-      .set('password', password);
-    return this.get<null>(`${this.urlBaseRas}/find-by-email-and-password`, params);
-  }
-
   findByIdentification(type: string, id: number) {
     const params = new HttpParams()
       .set('type', type)

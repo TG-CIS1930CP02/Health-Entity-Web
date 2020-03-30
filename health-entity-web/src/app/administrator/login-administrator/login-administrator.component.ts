@@ -15,19 +15,27 @@ export class LoginAdministratorComponent implements OnInit {
 
   administrator: Administrator = new Administrator();
 
-  email: string;
+  idType = 'Selecciona un tipo';
+  id: number;
   password: string;
 
   incorrectLogin = false;
+
+  options = [
+    { name: 'Cédula de Ciudadanía', value: 'CC' },
+    { name: 'Cédula de Extranjería', value: 'CE' },
+    { name: 'Registro Civil', value: 'RC' },
+    { name: 'Tarjeta de Identidad', value: 'TI' }
+  ];
 
   ngOnInit(): void { }
 
   login() {
     console.log('jm');
-    this.loginService.login(this.email, this.password)
+    this.loginService.login(this.idType, this.id, this.password)
       .subscribe(data => {
         this.incorrectLogin = false;
-        this.administratorService.findByEmailPassword(this.email, this.password)
+        this.administratorService.findByIdentification(this.idType, this.id)
           .subscribe(result => {
             this.administrator = result;
             this.router.navigate(['administrator/home']);

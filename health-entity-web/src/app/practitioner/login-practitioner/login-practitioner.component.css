@@ -1,24 +1,18 @@
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-a:hover {
-  text-decoration: none;
+input {
+  width: 100%;
 }
 input {
   width: 100%;
 }
 #loginbox {
-  height: 450px;
   position: relative;
-  margin-top: 90px;
+  margin: 90px auto 20px auto;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 #formbox {
   font-family: "poppins", arial, sans-serif;
   width: 80%;
+  overflow: hidden;
 }
 .center {
   margin: auto;
@@ -35,16 +29,23 @@ input {
 .form_box {
   width: 100%;
   margin-bottom: 10px;
+  margin-top: 10px;
+}
+.form_select {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #e1e3e6;
+  font-family: "poppinsLight", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 .form_input {
   width: 100%;
   padding: 15px 20px;
   border: 1px solid #e1e3e6;
   font-family: "poppinsLight", Arial, Helvetica, sans-serif;
-  font-size: 0.85714rem;
+  font-size: 14px;
   letter-spacing: 1px;
-  resize: none;
-  margin-bottom: 15px !important;
 }
 .form_checkbox {
   display: none;
@@ -210,4 +211,5 @@ input {
   text-align: center;
   margin-top: 20px !important;
   margin-bottom: 30px !important;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
 }

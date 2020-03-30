@@ -1,36 +1,15 @@
-body,
-html,
-h6,
-h5,
-h4,
-h3,
-h2,
-h1,
-p {
-  font-family: "poppins", arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  padding: 0;
-  margin: 0;
-}
-a {
-  text-decoration: none;
-  cursor: pointer;
-}
-a:hover {
-  text-decoration: none;
+input {
+  width: 100%;
 }
 #loginbox {
-  height: 450px;
   position: relative;
-  margin-top: 90px;
+  margin: 90px auto 20px auto;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 #formbox {
   font-family: "poppins", arial, sans-serif;
   width: 80%;
+  overflow: hidden;
 }
 .center {
   margin: auto;
@@ -47,29 +26,23 @@ a:hover {
 .form_box {
   width: 100%;
   margin-bottom: 10px;
+  margin-top: 10px;
+}
+.form_select {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #e1e3e6;
+  font-family: "poppinsLight", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
 }
 .form_input {
   width: 100%;
   padding: 15px 20px;
   border: 1px solid #e1e3e6;
   font-family: "poppinsLight", Arial, Helvetica, sans-serif;
-  font-size: 0.85714rem;
-  color: #b5b5b5;
+  font-size: 14px;
   letter-spacing: 1px;
-  resize: none;
-  margin-bottom: 15px !important;
-}
-.form_input::-webkit-input-placeholder {
-  color: #b5b5b5;
-}
-.form_input:-moz-placeholder {
-  color: #b5b5b5;
-}
-.form_input::-moz-placeholder {
-  color: #b5b5b5;
-}
-.form_input:-ms-input-placeholder {
-  color: #b5b5b5;
 }
 .help {
   display: inline-block;
@@ -78,9 +51,6 @@ a:hover {
   font-family: "poppinsMedium", Arial, Helvetica, sans-serif;
   margin-bottom: 15px !important;
   cursor: help;
-}
-input {
-  width: 100%;
 }
 .form_box button {
   position: absolute;
