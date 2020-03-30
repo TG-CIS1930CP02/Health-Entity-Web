@@ -3,6 +3,7 @@ import { LoginService } from '../../services/login.service';
 import { Router } from '@angular/router';
 import { Practitioner } from '../../models/practitioner';
 import { PractitionerService } from '../../services/practitioner.service';
+import { OptionsList } from '../../models/options-lists';
 
 @Component({
   selector: 'app-login-practitioner',
@@ -31,12 +32,7 @@ export class LoginPractitionerComponent implements OnInit {
 
   incorrectLogin = false;
 
-  options = [
-    { name: 'Cédula de Ciudadanía', value: 'CC' },
-    { name: 'Cédula de Extranjería', value: 'CE' },
-    { name: 'Registro Civil', value: 'RC' },
-    { name: 'Tarjeta de Identidad', value: 'TI' }
-  ];
+  options = OptionsList.identificationTypes;
 
   ngOnInit(): void { }
 

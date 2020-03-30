@@ -3,6 +3,7 @@ import { AdministratorService } from '../../services/administrator.service';
 import { LoginService } from 'app/services/login.service';
 import { Router } from '@angular/router';
 import { Administrator } from 'app/models/administrator';
+import { OptionsList } from '../../models/options-lists';
 
 @Component({
   selector: 'app-login-administrator',
@@ -21,12 +22,7 @@ export class LoginAdministratorComponent implements OnInit {
 
   incorrectLogin = false;
 
-  options = [
-    { name: 'Cédula de Ciudadanía', value: 'CC' },
-    { name: 'Cédula de Extranjería', value: 'CE' },
-    { name: 'Registro Civil', value: 'RC' },
-    { name: 'Tarjeta de Identidad', value: 'TI' }
-  ];
+  options = OptionsList.identificationTypes;
 
   ngOnInit(): void { }
 

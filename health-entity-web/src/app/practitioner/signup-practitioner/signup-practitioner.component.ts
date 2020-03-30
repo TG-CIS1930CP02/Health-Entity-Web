@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Practitioner } from 'app/models/practitioner';
 import { PractitionerService } from 'app/services/practitioner.service';
-import { Identification } from 'app/models/identification';
-import { ContactPoint } from 'app/models/contactPoint';
-import { Address } from '../../models/address';
+import { OptionsList } from '../../models/options-lists';
 
 @Component({
   selector: 'app-signup-practitioner',
@@ -27,12 +25,7 @@ export class SignupPractitionerComponent implements OnInit {
   idType = 'Selecciona un tipo';
   id: number;
 
-  options = [
-    { name: 'Cédula de Ciudadanía', value: 'CC' },
-    { name: 'Cédula de Extranjería', value: 'CE' },
-    { name: 'Registro Civil', value: 'RC' },
-    { name: 'Tarjeta de Identidad', value: 'TI' }
-  ];
+  options = OptionsList.identificationTypes;
 
   constructor(private practitionerService: PractitionerService) {}
 
