@@ -5,12 +5,14 @@ import { PathNotFoundComponent } from './shared/path-not-found/path-not-found.co
 import { LoginPatientComponent } from './patient/login-patient/login-patient.component';
 import { LoginPractitionerComponent } from './practitioner/login-practitioner/login-practitioner.component';
 import { SignupPractitionerComponent } from './practitioner/signup-practitioner/signup-practitioner.component';
+import { LoginAdministratorComponent } from './administrator/login-administrator/login-administrator.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
   { path: 'home', component: HomeComponent},
   { path: 'login-patient', component:  LoginPatientComponent},
   { path: 'login-practitioner', component: LoginPractitionerComponent},
+  { path: 'login-administrator', component: LoginAdministratorComponent},
   { path: 'admin/signup-practitioner', component: SignupPractitionerComponent},
   { path: '**', component: PathNotFoundComponent }
 ];
