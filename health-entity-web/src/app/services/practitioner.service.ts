@@ -11,7 +11,8 @@ import { Practitioner } from '../models/practitioner';
 export class PractitionerService {
   constructor(private http: HttpClient) { }
 
-  urlBase = 'http:/localhost:8080/practitioner';
+  urlBaseRas = 'http:/localhost:8080/practitioner';
+  urlBaseEntity = 'http:/localhost:8080/practitioner';
 
   private handleError(error: HttpErrorResponse): Observable<any> {
     console.log(error);
@@ -55,17 +56,21 @@ export class PractitionerService {
     const params = new HttpParams()
       .set('email', email)
       .set('password', password);
-    return this.get<null>(`${this.urlBase}/find-by-email-and-password`, params);
+    return this.get<null>(`${this.urlBaseRas}/find-by-email-and-password`, params);
   }
 
   findByIdentification(type: string, id: number) {
     const params = new HttpParams()
       .set('type', type)
       .set('id', id.toString());
-    return this.get<Practitioner>(`${this.urlBase}/find-by-identification)`, params);
+    return this.get<Practitioner>(`${this.urlBaseRas}/find-by-identification)`, params);
   }
 
   createPractitioner(practitioner: Practitioner) {
-    return this.post<Practitioner>(this.urlBase, practitioner);
+    return this.post<Practitioner>(this.urlBaseEntity, practitioner);
+  }
+
+  updatePractitioner(practitioner: Practitioner) {
+    return this.put<Practitioner>(`${this.urlBaseEntity}/${practitioner.identifier})`, practitioner);
   }
 }

@@ -1,6 +1,7 @@
 export class ContactPoint {
-  public value: string;
+  public system: string;
+  public value: number;
   public use: string;
 
-  constructor(value: string, use: string) {}
+  constructor(system: string, value: number, use: string) {}
 }
