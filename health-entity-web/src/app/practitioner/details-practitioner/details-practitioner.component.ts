@@ -1,7 +1,9 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Qualification } from '../../models/qualification';
-import { ContactPoint } from '../../models/contactPoint';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Practitioner } from '../../models/practitioner';
+import { PractitionerService } from '../../services/practitioner.service';
+import { Router } from '@angular/router';
+import { ContactPoint } from '../../models/contactPoint';
+import { Address } from 'app/models/address';
 
 @Component({
   selector: 'app-details-practitioner',
@@ -11,41 +13,62 @@ import { Practitioner } from '../../models/practitioner';
 
 export class DetailsPractitionerComponent implements OnInit {
   @Input()
-  practitioner: Practitioner;
+  practitioner: Practitioner = new Practitioner();
 
-  use = this.practitioner.telecom.use;
-  phone = this.practitioner.telecom.value;
-  address: string;
-  qualifications: Qualification[] =[
-    {name: 'aaa', startDate: new Date(), reportingEntity: 'bbb'},
-    {name: 'aaa', startDate: new Date(), reportingEntity: 'bbb'}
-  ];
+  telecoms: ContactPoint[] = [new ContactPoint(undefined, undefined, undefined)];
+  addresses: Address[] = [new Address(undefined, undefined, undefined, undefined, undefined)];
 
-  options = [
-    {
-      name: 'Casa',
-      value: 'home'
-    },
-    {
-      name: 'Oficina',
-      value: 'work'
-    },
-    {
-      name: 'Temporal',
-      value: 'temp'
-    },
-    {
-      name: 'Anterior',
-      value: 'old'
-    },
-    {
-      name: 'Celular',
-      value: 'mobile'
-    }];
+  incorrectSignup = false;
+  successSignup = false;
 
-  constructor() { }
+  systems = [
+    { name: 'Teléfono', value: 'phone' },
+    { name: 'Fax', value: 'fax' },
+    { name: 'Email', value: 'email' },
+    { name: 'SMS', value: 'sms' },
+    { name: 'Otro', value: 'other' }];
 
-  ngOnInit(): void {}
+  uses = [
+    { name: 'Casa', value: 'home' },
+    { name: 'Oficina', value: 'work' },
+    { name: 'Temporal', value: 'temp' },
+    { name: 'Anterior', value: 'old' },
+    { name: 'Celular', value: 'mobile' }];
 
-  signup() {}
+  constructor(
+    private practitionerService: PractitionerService,
+    private router: Router) { }
+
+  ngOnInit(): void {
+    if (this.practitioner.telecoms[0].use !== '') {
+      this.telecoms = this.practitioner.telecoms;
+    }
+    this.addresses = this.practitioner.addresses;
+  }
+
+  signup() {
+    this.practitioner.active = true;
+    this.practitioner.telecoms = this.telecoms;
+    this.practitioner.addresses = this.addresses;
+
+    this.practitionerService.createPractitioner(this.practitioner).subscribe(
+      result => {
+        console.log(result);
+        this.successSignup = true;
+      },
+      error => {
+        console.error(error);
+        this.incorrectSignup = true;
+      }
+    );
+  }
+
+  closeError() {
+    this.incorrectSignup = false;
+  }
+
+  closeSuccess() {
+    this.successSignup = false;
+    this.router.navigate(['/practitioner/home']);
+  }
 }

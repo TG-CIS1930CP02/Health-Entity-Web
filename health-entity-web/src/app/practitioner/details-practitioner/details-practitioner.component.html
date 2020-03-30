@@ -4,24 +4,31 @@
   <p>Genero: {{practitioner.gender}}</p>
   <form (ngSubmit)="signup()" #signupForm="ngForm">
     <div class="form_box">
-      <label for="telecom">Telefono: </label><br />
-      <div class="inline">
-        <select id="telecomUse" class='form-control form_select' name="telecomUse" required [(ngModel)]="use"
-          #telecomUse="ngModel">
-          <option disabled hidden>Selecciona un tipo</option>
-          <option *ngFor="let o of options" [value]="o.value">{{o.name}}</option>
-        </select>
+      <label for="telecom">Puntos de contacto: </label><br />
+      <div *ngFor="let t of telecoms; let i = index">
+        <div class="inline">
+          <select id="telecomSyst" class='form-control form_select' name="telecomSyst" required [(ngModel)]="telecoms[i].system"
+            #telecomSyst="ngModel">
+            <option disabled hidden>Selecciona un tipo</option>
+            <option *ngFor="let s of systems" [value]="s.value">{{s.name}}</option>
+          </select>
+        </div>
+        <div class="inline">
+          <select id="telecomUse" class='form-control form_select' name="telecomUse" required [(ngModel)]="telecoms[i].use"
+            #telecomUse="ngModel">
+            <option disabled hidden>Selecciona un tipo</option>
+            <option *ngFor="let u of uses" [value]="u.value">{{u.name}}</option>
+          </select>
+        </div>
+        <div class="inline">
+          <input class="form_input" type="text" id="txtTelecom" required #txtTelecom="ngModel" name="telecom"
+            [(ngModel)]="telecoms[i].value" placeholder="Ingrese su número" />
+        </div>
       </div>
-      <div class="inline">
-        <input class="form_input" type="text" id="txtTelecom" required #txtTelecom="ngModel" name="telecom"
-          [(ngModel)]="phone" placeholder="Ingrese su número" />
-      </div>
-      <!--- TODO should i put this? -->
-      <div [hidden]="txtTelecom.valid || !txtTelecom.touched"></div>
     </div>
     <div class="form_box">
       <div>
-        <label for="address">Dirección: </label><br />
+        <label for="address">Direcciones: </label><br />
         <input class="form_input" type="text" id="txtAddress" required #txtAddress="ngModel" name="address"
           [(ngModel)]="address" placeholder="Ingrese su dirección" />
       </div>
@@ -38,7 +45,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let q of qualifications">
+        <tr *ngFor="let q of practitioner.qualifications">
           <td>{{q.name}}</td>
           <td>{{q.startDate}}</td>
           <td>{{q.reportingEntity}}</td>
@@ -51,4 +58,30 @@
       </button>
     </div>
   </form>
+  <section class="modal" *ngIf="incorrectSignup">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="closeError()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Ha ocurrido un error, intente nuevamente.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="modal" *ngIf="successSignup">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="closeSuccess()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Registro exitoso.
+        </p>
+      </div>
+    </div>
+  </section>
 </div>

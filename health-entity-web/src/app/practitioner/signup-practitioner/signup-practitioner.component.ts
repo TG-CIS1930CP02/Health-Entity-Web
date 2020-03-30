@@ -36,7 +36,16 @@ export class SignupPractitionerComponent implements OnInit {
 
   constructor(private practitionerService: PractitionerService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.practitionerFound.name = 'hola';
+    this.practitionerFound.birthDate = new Date();
+    this.practitionerFound.addresses[0].line = '1234567';
+    this.practitionerFound.gender = 'M';
+    this.practitionerFound.identifier.type = 'CC';
+    this.practitionerFound.identifier.number = 1234;
+    this.practitionerFound.telecoms[0].use = 'home';
+    this.practitionerFound.telecoms[0].value = 1234;
+  }
 
   search() {
     this.practitionerService.findByIdentification(this.idType, this.id).subscribe(
