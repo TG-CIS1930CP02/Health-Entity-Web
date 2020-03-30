@@ -13,7 +13,17 @@ export class LoginPractitionerComponent implements OnInit {
 
   constructor(private loginService: LoginService, private router: Router, private practitionerService: PractitionerService) { }
 
-  practitioner: Practitioner = new Practitioner();
+  practitioner: Practitioner = new Practitioner(
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined
+  );
 
   idType = 'Selecciona un tipo';
   id: number;

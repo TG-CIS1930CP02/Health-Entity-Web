@@ -13,10 +13,20 @@ import { Address } from 'app/models/address';
 
 export class DetailsPractitionerComponent implements OnInit {
   @Input()
-  practitioner: Practitioner = new Practitioner();
+  practitioner: Practitioner = new Practitioner(
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined
+  );
 
-  telecoms: ContactPoint[] = [new ContactPoint(undefined, undefined, undefined)];
-  addresses: Address[] = [new Address(undefined, undefined, undefined, undefined, undefined)];
+  telecoms: ContactPoint[] = [];
+  addresses: Address[] = [];
 
   incorrectSignup = false;
   successSignup = false;
@@ -40,9 +50,8 @@ export class DetailsPractitionerComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    if (this.practitioner.telecoms[0].use !== '') {
-      this.telecoms = this.practitioner.telecoms;
-    }
+    this.telecoms = this.practitioner.telecoms;
+    this.telecoms.push(new ContactPoint('Selecciona un sistema', 'Selecciona un tipo', null));
     this.addresses = this.practitioner.addresses;
   }
 
