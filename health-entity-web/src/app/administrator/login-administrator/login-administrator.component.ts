@@ -15,7 +15,7 @@ export class LoginAdministratorComponent implements OnInit {
 
   administrator: Administrator = new Administrator();
 
-  idType: string;
+  idType = 'Selecciona un tipo';
   id: number;
   password: string;
 

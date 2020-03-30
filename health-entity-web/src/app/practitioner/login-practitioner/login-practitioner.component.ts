@@ -15,7 +15,7 @@ export class LoginPractitionerComponent implements OnInit {
 
   practitioner: Practitioner = new Practitioner();
 
-  idType: string;
+  idType = 'Selecciona un tipo';
   id: number;
   password: string;
 
