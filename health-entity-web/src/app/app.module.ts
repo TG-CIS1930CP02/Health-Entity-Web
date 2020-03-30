@@ -13,6 +13,7 @@ import { HomePatientComponent } from './patient/home-patient/home-patient.compon
 import { HomeComponent } from './shared/home/home.component';
 import { LoginPatientComponent } from './patient/login-patient/login-patient.component';
 import { LoginPractitionerComponent } from './practitioner/login-practitioner/login-practitioner.component';
+import { LoginAdministratorComponent } from './administrator/login-administrator/login-administrator.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginPractitionerComponent } from './practitioner/login-practitioner/lo
     HomePractitionerComponent,
     HomePatientComponent,
     HomeComponent,
-    LoginPractitionerComponent
+    LoginPractitionerComponent,
+    LoginAdministratorComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
