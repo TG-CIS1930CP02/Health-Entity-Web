@@ -1,0 +1,45 @@
+<div id="box" class="center">
+  <div id="formbox" class="center">
+    <h2 class="title">Registro Profesional de la Salud</h2>
+    <form (ngSubmit)="search()" #searchForm="ngForm">
+      <div class="form_box inline">
+        <div>
+          <label for="idType">Tipo de identificación: </label><br />
+          <select id="idType" class='form-control form_select' name="idType" required [(ngModel)]="idType"
+            #txtType="ngModel" [disabled]="found=='found'">
+            <option disabled hidden>Selecciona un tipo</option>
+            <option *ngFor="let o of options" [value]="o.value">{{o.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="form_box inline">
+        <div>
+          <label for="idNumber">Número de identificación: </label><br />
+          <input class="form_input" type="text" id="idNumber" required #idNumber="ngModel" name="email" [(ngModel)]="id"
+            placeholder="Ingrese su número de identificación" [disabled]="found=='found'"/>
+        </div>
+        <!--- TODO should i put this? -->
+        <div [hidden]="idNumber.valid || !idNumber.touched"></div>
+      </div>
+      <div class="btn">
+        <button type="submit" class="btn--gradient" [disabled]="!searchForm.form.valid" *ngIf="found=='pending'">
+          Buscar
+        </button>
+      </div>
+    </form>
+  </div>
+  <section class="modal" *ngIf="found=='not_found'">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="close()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Profesional de la salud no existe.
+        </p>
+      </div>
+    </div>
+  </section>
+  <app-details-practitioner *ngIf="found=='found'" [practitioner]=practitionerFound></app-details-practitioner>
+</div>

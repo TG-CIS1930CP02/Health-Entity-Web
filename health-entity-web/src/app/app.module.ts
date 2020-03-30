@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -14,6 +13,8 @@ import { HomeComponent } from './shared/home/home.component';
 import { LoginPatientComponent } from './patient/login-patient/login-patient.component';
 import { LoginPractitionerComponent } from './practitioner/login-practitioner/login-practitioner.component';
 import { LoginAdministratorComponent } from './administrator/login-administrator/login-administrator.component';
+import { SignupPractitionerComponent } from './practitioner/signup-practitioner/signup-practitioner.component';
+import { DetailsPractitionerComponent } from './practitioner/details-practitioner/details-practitioner.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,9 @@ import { LoginAdministratorComponent } from './administrator/login-administrator
     HomePatientComponent,
     HomeComponent,
     LoginPractitionerComponent,
-    LoginAdministratorComponent
+    LoginAdministratorComponent,
+    SignupPractitionerComponent,
+    DetailsPractitionerComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpClientModule

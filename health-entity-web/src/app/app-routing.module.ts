@@ -4,6 +4,7 @@ import { HomeComponent } from './shared/home/home.component';
 import { PathNotFoundComponent } from './shared/path-not-found/path-not-found.component';
 import { LoginPatientComponent } from './patient/login-patient/login-patient.component';
 import { LoginPractitionerComponent } from './practitioner/login-practitioner/login-practitioner.component';
+import { SignupPractitionerComponent } from './practitioner/signup-practitioner/signup-practitioner.component';
 import { LoginAdministratorComponent } from './administrator/login-administrator/login-administrator.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'login-patient', component:  LoginPatientComponent},
   { path: 'login-practitioner', component: LoginPractitionerComponent},
   { path: 'login-administrator', component: LoginAdministratorComponent},
+  { path: 'admin/signup-practitioner', component: SignupPractitionerComponent},
   { path: '**', component: PathNotFoundComponent }
 ];
 

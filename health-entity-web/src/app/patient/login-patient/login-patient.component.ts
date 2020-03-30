@@ -3,6 +3,7 @@ import { LoginService } from 'app/services/login.service';
 import { Router } from '@angular/router';
 import { PatientService } from 'app/services/patient.service';
 import { Patient } from 'app/models/patient';
+import { OptionsList } from '../../models/options-lists';
 
 @Component({
   selector: 'app-login-patient',
@@ -21,12 +22,7 @@ export class LoginPatientComponent implements OnInit {
 
   incorrectLogin = false;
 
-  options = [
-    { name: 'Cédula de Ciudadanía', value: 'CC' },
-    { name: 'Cédula de Extranjería', value: 'CE' },
-    { name: 'Registro Civil', value: 'RC' },
-    { name: 'Tarjeta de Identidad', value: 'TI' }
-  ];
+  options = OptionsList.identificationTypes;
 
   ngOnInit(): void { }
 

@@ -1,38 +1,38 @@
 input {
   width: 100%;
 }
-input {
-  width: 100%;
-}
-#loginbox {
+#box {
   position: relative;
   margin: 90px auto 20px auto;
   max-width: 1200px;
 }
 #formbox {
   font-family: "poppins", arial, sans-serif;
-  width: 80%;
+  width: 100%;
   overflow: hidden;
 }
 .center {
   margin: auto;
-  width: 30%;
+  width: 50%;
 }
 .title {
   width: 100%;
   font-size: 30px;
   text-align: center;
-  color: #5e62aa !important;
+  color: #5E62AA !important;
   text-transform: uppercase;
-  margin-bottom: 3 0px !important;
+  margin-bottom: 3  0px !important;
 }
 .form_box {
-  width: 100%;
+  width: 50%;
   margin-bottom: 10px;
   margin-top: 10px;
 }
+.inline {
+  float:left;
+}
 .form_select {
-  width: 100%;
+  width: 95%;
   padding: 15px 20px;
   border: 1px solid #e1e3e6;
   font-family: "poppinsLight", Arial, Helvetica, sans-serif;
@@ -40,75 +40,39 @@ input {
   letter-spacing: 1px;
 }
 .form_input {
-  width: 100%;
-  padding: 15px 20px;
+  width: 99%;
+  padding: 6px 12px;
   border: 1px solid #e1e3e6;
   font-family: "poppinsLight", Arial, Helvetica, sans-serif;
   font-size: 14px;
   letter-spacing: 1px;
+  resize: none;
 }
-.form_checkbox {
-  display: none;
-}
-.form_checkbox:checked ~ label.form_label::before {
-  background: #e1e3e6;
-  color: #fff;
-}
-.form_label--checkbox {
+.btn {
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  font-size: 12px;
-}
-.form_label--checkbox::before {
-  content: "✔";
-  display: flex;
   justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  width: 26px;
-  height: 26px;
-  margin-right: 8px;
-  border: 1px solid #e1e3e6;
-  background: #fff;
-  font-size: 0.92857rem;
-  color: transparent;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-.help {
-  display: inline-block;
-  font-size: 12px;
-  color: #5e62aa !important;
-  font-family: "poppinsMedium", Arial, Helvetica, sans-serif;
-  margin-bottom: 15px !important;
-  cursor: help;
 }
 .btn--gradient {
   display: inline-flex;
   justify-content: center;
-  align-items: center;
-  align-content: center;
   flex-wrap: nowrap;
   vertical-align: middle;
   padding: 14px 40px;
   outline: none;
   font-family: "poppins", Arial, Helvetica, sans-serif;
   font-size: 16px;
-  text-align: center;
   letter-spacing: 1px;
   cursor: pointer;
   border: none;
   color: #fff;
-  background: linear-gradient(60deg, #8b388a 55%, #5e62aa);
+  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
   transition: all 0.3s ease;
-  width: 100%;
+  width: 50%;
 }
 .btn--gradient:hover {
-  background: linear-gradient(168.27deg, #8b388a 35.62%, #5e62aa 100%);
+  background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
 }
 .modal {
   display: flex;
@@ -160,7 +124,7 @@ input {
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
-  background: linear-gradient(60deg, #8b388a 55%, #5e62aa);
+  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
   position: relative;
 }
 .modal_close {
@@ -211,5 +175,4 @@ input {
   text-align: center;
   margin-top: 20px !important;
   margin-bottom: 30px !important;
-  font-family: "poppins", Arial, Helvetica, sans-serif;
 }
