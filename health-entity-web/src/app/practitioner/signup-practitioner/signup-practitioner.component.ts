@@ -21,7 +21,7 @@ export class SignupPractitionerComponent implements OnInit {
     undefined,
     undefined
   );
-  found = 'found';
+  found = 'pending';
   idType = 'Selecciona un tipo';
   id: number;
 

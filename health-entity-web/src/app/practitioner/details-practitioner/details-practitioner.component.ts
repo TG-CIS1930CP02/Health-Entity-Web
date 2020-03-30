@@ -4,6 +4,7 @@ import { PractitionerService } from '../../services/practitioner.service';
 import { Router } from '@angular/router';
 import { ContactPoint } from '../../models/contactPoint';
 import { Address } from 'app/models/address';
+import { OptionsList } from '../../models/options-lists';
 
 @Component({
   selector: 'app-details-practitioner',
@@ -27,23 +28,14 @@ export class DetailsPractitionerComponent implements OnInit {
 
   telecoms: ContactPoint[] = [];
   addresses: Address[] = [];
+  cities = OptionsList.cities;
 
   incorrectSignup = false;
   successSignup = false;
 
-  systems = [
-    { name: 'Teléfono', value: 'phone' },
-    { name: 'Fax', value: 'fax' },
-    { name: 'Email', value: 'email' },
-    { name: 'SMS', value: 'sms' },
-    { name: 'Otro', value: 'other' }];
-
-  uses = [
-    { name: 'Casa', value: 'home' },
-    { name: 'Oficina', value: 'work' },
-    { name: 'Temporal', value: 'temp' },
-    { name: 'Anterior', value: 'old' },
-    { name: 'Celular', value: 'mobile' }];
+  systems = OptionsList.contactPointSystems;
+  uses = OptionsList.contactPointUses;
+  addressUses = OptionsList.addressUses;
 
   constructor(
     private practitionerService: PractitionerService,
@@ -51,11 +43,11 @@ export class DetailsPractitionerComponent implements OnInit {
 
   ngOnInit(): void {
     this.telecoms = this.practitioner.telecoms;
-    this.telecoms.push(new ContactPoint('Selecciona un sistema', 'Selecciona un tipo', null));
     this.addresses = this.practitioner.addresses;
   }
 
   signup() {
+    // TODO validate value in telecoms
     this.practitioner.active = true;
     this.practitioner.telecoms = this.telecoms;
     this.practitioner.addresses = this.addresses;
@@ -79,5 +71,25 @@ export class DetailsPractitionerComponent implements OnInit {
   closeSuccess() {
     this.successSignup = false;
     this.router.navigate(['/practitioner/home']);
+  }
+
+  addContactPoint() {
+    this.telecoms.push(new ContactPoint('Selecciona un sistema', 'Selecciona un tipo', null));
+  }
+
+  deleteContactPoint() {
+    this.telecoms.splice(- 1, 1);
+  }
+
+  addAddress() {
+    this.addresses.push(new Address('Selecciona una ciudad', 'Selecciona un tipo', '', '', 'Colombia'));
+  }
+
+  deleteAddress() {
+    this.addresses.splice(- 1, 1);
+  }
+
+  trackByIndex(index: number, obj: any): any {
+    return index;
   }
 }

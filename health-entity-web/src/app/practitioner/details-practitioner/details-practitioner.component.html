@@ -4,36 +4,61 @@
   <p>Genero: {{practitioner.gender}}</p>
   <form (ngSubmit)="signup()" #signupForm="ngForm">
     <div class="form_box">
-      <label for="telecom">Puntos de contacto: </label><br />
-      <div *ngFor="let t of telecoms; let i = index">
-        <div class="inline">
-          <select id="telecomSyst" class='form-control form_select' name="telecomSyst" required [(ngModel)]="telecoms[i].system"
-            #telecomSyst="ngModel">
-            <option disabled hidden>Selecciona un tipo</option>
+      <label for="telecom">Datos de contacto: </label><br />
+      <div *ngFor="let t of telecoms;let index = index;trackBy:trackByIndex;">
+        <div class="inline33">
+          <select id="telecomSyst" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
+            [(ngModel)]="telecoms[index].system" #telecomSyst="ngModel">
+            <option disabled hidden>Selecciona un sistema</option>
             <option *ngFor="let s of systems" [value]="s.value">{{s.name}}</option>
           </select>
         </div>
-        <div class="inline">
-          <select id="telecomUse" class='form-control form_select' name="telecomUse" required [(ngModel)]="telecoms[i].use"
-            #telecomUse="ngModel">
+        <div class="inline33">
+          <select id="telecomUse" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
+            [(ngModel)]="telecoms[index].use" #telecomUse="ngModel">
             <option disabled hidden>Selecciona un tipo</option>
             <option *ngFor="let u of uses" [value]="u.value">{{u.name}}</option>
           </select>
         </div>
-        <div class="inline">
-          <input class="form_input" type="text" id="txtTelecom" required #txtTelecom="ngModel" name="telecom"
-            [(ngModel)]="telecoms[i].value" placeholder="Ingrese su número" />
+        <div class="inline33">
+          <input class="form_input" type="text" id="txtTelecom" required #txtTelecom="ngModel"
+            [ngModelOptions]="{standalone: true}" [(ngModel)]="telecoms[index].value" placeholder="Ingrese su número" />
         </div>
+      </div>
+      <div>
+        <i (click)='addContactPoint()' class="fa fa-plus-square fa-2x"></i>
+        <i (click)='deleteContactPoint()' class="fa fa-minus-square fa-2x"></i>
       </div>
     </div>
     <div class="form_box">
       <div>
         <label for="address">Direcciones: </label><br />
-        <input class="form_input" type="text" id="txtAddress" required #txtAddress="ngModel" name="address"
-          [(ngModel)]="address" placeholder="Ingrese su dirección" />
+        <div class="addressBox" *ngFor="let a of addresses;let index = index;trackBy:trackByIndex;">
+          <div class="inline50">
+            <select id="addressCity" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
+              [(ngModel)]="addresses[index].city" #addressCity="ngModel">
+              <option disabled hidden>Selecciona una ciudad</option>
+              <option *ngFor="let c of cities" [value]="c">{{c}}</option>
+            </select>
+          </div>
+          <div class="inline50">
+            <select id="addressUse" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
+              [(ngModel)]="addresses[index].use" #addressUse="ngModel">
+              <option disabled hidden>Selecciona un tipo</option>
+              <option *ngFor="let u of addressUses" [value]="u.value">{{u.name}}</option>
+            </select>
+          </div>
+          <input class="form_input" type="text" id="txtDescription" required #txtDescription="ngModel"
+          [ngModelOptions]="{standalone: true}" [(ngModel)]="addresses[index].text"
+            placeholder="Ingrese la descripción de la dirección" />
+          <input class="form_input" type="text" id="txtAddress" required #txtAddress="ngModel" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="addresses[index].line" placeholder="Ingrese su dirección" />
+        </div>
+        <div>
+          <i (click)='addAddress()' class="fa fa-plus-square fa-2x"></i>
+          <i (click)='deleteAddress()' class="fa fa-minus-square fa-2x"></i>
+        </div>
       </div>
-      <!--- TODO should i put this? -->
-      <div [hidden]="txtAddress.valid || !txtAddress.touched"></div>
     </div>
     <br>
     <table class="table">
