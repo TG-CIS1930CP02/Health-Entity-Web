@@ -13,22 +13,31 @@ export class LoginPractitionerComponent implements OnInit {
 
   constructor(private loginService: LoginService, private router: Router, private practitionerService: PractitionerService) { }
 
-  practitioner: Practitioner = null;
-  email: string = null;
-  password: string = null;
+  practitioner: Practitioner = new Practitioner();
+
+  idType: string;
+  id: number;
+  password: string;
 
   incorrectLogin = false;
+
+  options = [
+    { name: 'Cédula de Ciudadanía', value: 'CC' },
+    { name: 'Cédula de Extranjería', value: 'CE' },
+    { name: 'Registro Civil', value: 'RC' },
+    { name: 'Tarjeta de Identidad', value: 'TI' }
+  ];
 
   ngOnInit(): void { }
 
   login() {
-    this.loginService.login(this.email, this.password)
+    this.loginService.login(this.idType, this.id, this.password)
       .subscribe(data => {
         this.incorrectLogin = false;
-        this.practitionerService.findByEmailPassword(this.email, this.password)
+        this.practitionerService.findByIdentification(this.idType, this.id)
           .subscribe(result => {
             this.practitioner = result;
-            this.router.navigate(['practitioner/home']); // TODO agregar id del usuario
+            this.router.navigate(['practitioner/home']);
           },
           error => {
             console.error(error);
