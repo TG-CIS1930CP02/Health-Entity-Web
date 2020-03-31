@@ -14,7 +14,16 @@ export class LoginPatientComponent implements OnInit {
 
   constructor(private loginService: LoginService, private router: Router, private patientService: PatientService) { }
 
-  patient: Patient = new Patient();
+  patient: Patient = new Patient(
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined
+  );
 
   idType: string;
   id: number;
