@@ -48,6 +48,9 @@ input {
   letter-spacing: 1px;
   resize: none;
 }
+.table {
+  margin-bottom: 20px;
+}
 .thead-color {
   color: #8B388A;
 }
