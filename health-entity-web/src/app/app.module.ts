@@ -16,6 +16,7 @@ import { LoginAdministratorComponent } from './administrator/login-administrator
 import { SignupPractitionerComponent } from './practitioner/signup-practitioner/signup-practitioner.component';
 import { DetailsPractitionerComponent } from './practitioner/details-practitioner/details-practitioner.component';
 import { SignupPatientComponent } from './patient/signup-patient/signup-patient.component';
+import { DetailsPatientComponent } from './patient/details-patient/details-patient.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SignupPatientComponent } from './patient/signup-patient/signup-patient.
     LoginAdministratorComponent,
     SignupPractitionerComponent,
     DetailsPractitionerComponent,
-    SignupPatientComponent
+    SignupPatientComponent,
+    DetailsPatientComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
