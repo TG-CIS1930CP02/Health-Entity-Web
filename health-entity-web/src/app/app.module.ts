@@ -4,19 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { PathNotFoundComponent } from './shared/path-not-found/path-not-found.component';
-import { HomePractitionerComponent } from './practitioner/home-practitioner/home-practitioner.component';
-import { HomePatientComponent } from './patient/home-patient/home-patient.component';
-import { HomeComponent } from './shared/home/home.component';
-import { LoginPatientComponent } from './patient/login-patient/login-patient.component';
-import { LoginPractitionerComponent } from './practitioner/login-practitioner/login-practitioner.component';
-import { LoginAdministratorComponent } from './administrator/login-administrator/login-administrator.component';
-import { SignupPractitionerComponent } from './practitioner/signup-practitioner/signup-practitioner.component';
-import { DetailsPractitionerComponent } from './practitioner/details-practitioner/details-practitioner.component';
-import { SignupPatientComponent } from './patient/signup-patient/signup-patient.component';
-import { DetailsPatientComponent } from './patient/details-patient/details-patient.component';
+import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { PathNotFoundComponent } from './components/shared/path-not-found/path-not-found.component';
+import { HomePractitionerComponent } from './components/practitioner/home-practitioner/home-practitioner.component';
+import { HomePatientComponent } from './components/patient/home-patient/home-patient.component';
+import { HomeComponent } from './components/shared/home/home.component';
+import { LoginPatientComponent } from './components/patient/login-patient/login-patient.component';
+import { LoginPractitionerComponent } from './components/practitioner/login-practitioner/login-practitioner.component';
+import { LoginAdministratorComponent } from './components/administrator/login-administrator/login-administrator.component';
+import { SignupPractitionerComponent } from './components/practitioner/signup-practitioner/signup-practitioner.component';
+import { DetailsPractitionerComponent } from './components/practitioner/details-practitioner/details-practitioner.component';
+import { SignupPatientComponent } from './components/patient/signup-patient/signup-patient.component';
+import { DetailsPatientComponent } from './components/patient/details-patient/details-patient.component';
 
 @NgModule({
   declarations: [

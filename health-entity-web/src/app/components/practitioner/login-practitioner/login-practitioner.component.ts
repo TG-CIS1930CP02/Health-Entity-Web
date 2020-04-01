@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../../services/login.service';
+import { LoginService } from '../../../services/login.service';
 import { Router } from '@angular/router';
-import { Practitioner } from '../../models/practitioner';
-import { PractitionerService } from '../../services/practitioner.service';
-import { OptionsList } from '../../models/options-lists';
+import { Practitioner } from '../../../models/practitioner';
+import { PractitionerService } from '../../../services/practitioner.service';
+import { OptionsList } from '../../../models/options-lists';
 
 @Component({
   selector: 'app-login-practitioner',

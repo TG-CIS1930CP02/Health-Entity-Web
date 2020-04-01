@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { AdministratorService } from '../../services/administrator.service';
+import { AdministratorService } from '../../../services/administrator.service';
 import { LoginService } from 'app/services/login.service';
 import { Router } from '@angular/router';
 import { Administrator } from 'app/models/administrator';
-import { OptionsList } from '../../models/options-lists';
+import { OptionsList } from '../../../models/options-lists';
 
 @Component({
   selector: 'app-login-administrator',

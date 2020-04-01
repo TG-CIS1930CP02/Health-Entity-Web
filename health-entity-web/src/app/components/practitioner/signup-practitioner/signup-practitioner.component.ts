@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Practitioner } from 'app/models/practitioner';
 import { PractitionerService } from 'app/services/practitioner.service';
-import { OptionsList } from '../../models/options-lists';
+import { OptionsList } from '../../../models/options-lists';
 
 @Component({
   selector: 'app-signup-practitioner',

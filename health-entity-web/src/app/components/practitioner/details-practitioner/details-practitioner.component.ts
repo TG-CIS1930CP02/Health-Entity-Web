@@ -1,10 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Practitioner } from '../../models/practitioner';
-import { PractitionerService } from '../../services/practitioner.service';
+import { Practitioner } from '../../../models/practitioner';
+import { PractitionerService } from '../../../services/practitioner.service';
 import { Router } from '@angular/router';
-import { ContactPoint } from '../../models/contactPoint';
+import { ContactPoint } from '../../../models/contactPoint';
 import { Address } from 'app/models/address';
-import { OptionsList } from '../../models/options-lists';
+import { OptionsList } from '../../../models/options-lists';
 
 @Component({
   selector: 'app-details-practitioner',
