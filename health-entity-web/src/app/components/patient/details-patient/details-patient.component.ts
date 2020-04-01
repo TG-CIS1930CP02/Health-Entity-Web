@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Patient } from '../../models/patient';
-import { ContactPoint } from '../../models/contactPoint';
-import { OptionsList } from '../../models/options-lists';
-import { PatientService } from '../../services/patient.service';
+import { Patient } from '../../../models/patient';
+import { ContactPoint } from '../../../models/contactPoint';
+import { OptionsList } from '../../../models/options-lists';
+import { PatientService } from '../../../services/patient.service';
 import { Address } from 'app/models/address';
 
 @Component({

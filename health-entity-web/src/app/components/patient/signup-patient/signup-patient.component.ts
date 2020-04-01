@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Patient } from '../../models/patient';
-import { OptionsList } from '../../models/options-lists';
-import { PatientService } from '../../services/patient.service';
+import { Patient } from '../../../models/patient';
+import { OptionsList } from '../../../models/options-lists';
+import { PatientService } from '../../../services/patient.service';
 
 @Component({
   selector: 'app-signup-patient',

@@ -3,7 +3,7 @@ import { LoginService } from 'app/services/login.service';
 import { Router } from '@angular/router';
 import { PatientService } from 'app/services/patient.service';
 import { Patient } from 'app/models/patient';
-import { OptionsList } from '../../models/options-lists';
+import { OptionsList } from '../../../models/options-lists';
 
 @Component({
   selector: 'app-login-patient',
