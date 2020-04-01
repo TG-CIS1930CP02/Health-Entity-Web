@@ -1,0 +1,96 @@
+<div id="formbox" class="center">
+  <p>Nombre: {{patient.name}}</p>
+  <p>Fecha de nacimiento: {{patient.birthDate}}</p>
+  <p>Genero: {{patient.gender}}</p>
+  <form (ngSubmit)="signup()" #signupForm="ngForm">
+    <div class="form_box">
+      <label for="telecom">Datos de contacto: </label><br />
+      <div *ngFor="let t of telecoms;let index = index;trackBy:trackByIndex;">
+        <div class="inline33">
+          <select id="telecomSyst" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
+            [(ngModel)]="telecoms[index].system" #telecomSyst="ngModel">
+            <option disabled hidden>Selecciona un sistema</option>
+            <option *ngFor="let s of systems" [value]="s.value">{{s.name}}</option>
+          </select>
+        </div>
+        <div class="inline33">
+          <select id="telecomUse" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
+            [(ngModel)]="telecoms[index].use" #telecomUse="ngModel">
+            <option disabled hidden>Selecciona un tipo</option>
+            <option *ngFor="let u of uses" [value]="u.value">{{u.name}}</option>
+          </select>
+        </div>
+        <div class="inline33">
+          <input class="form_input" type="text" id="txtTelecom" required #txtTelecom="ngModel"
+            [ngModelOptions]="{standalone: true}" [(ngModel)]="telecoms[index].value" placeholder="Ingrese su número" />
+        </div>
+      </div>
+      <div>
+        <i (click)='addContactPoint()' class="fa fa-plus-square fa-2x"></i>
+        <i (click)='deleteContactPoint()' class="fa fa-minus-square fa-2x"></i>
+      </div>
+    </div>
+    <div class="form_box">
+      <div>
+        <label for="address">Direcciones: </label><br />
+        <div class="addressBox" *ngFor="let a of addresses;let index = index;trackBy:trackByIndex;">
+          <div class="inline50">
+            <select id="addressCity" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
+              [(ngModel)]="addresses[index].city" #addressCity="ngModel">
+              <option disabled hidden>Selecciona una ciudad</option>
+              <option *ngFor="let c of cities" [value]="c">{{c}}</option>
+            </select>
+          </div>
+          <div class="inline50">
+            <select id="addressUse" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
+              [(ngModel)]="addresses[index].use" #addressUse="ngModel">
+              <option disabled hidden>Selecciona un tipo</option>
+              <option *ngFor="let u of addressUses" [value]="u.value">{{u.name}}</option>
+            </select>
+          </div>
+          <input class="form_input" type="text" id="txtDescription" required #txtDescription="ngModel"
+          [ngModelOptions]="{standalone: true}" [(ngModel)]="addresses[index].text"
+            placeholder="Ingrese la descripción de la dirección" />
+          <input class="form_input" type="text" id="txtAddress" required #txtAddress="ngModel" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="addresses[index].line" placeholder="Ingrese su dirección" />
+        </div>
+        <div>
+          <i (click)='addAddress()' class="fa fa-plus-square fa-2x"></i>
+          <i (click)='deleteAddress()' class="fa fa-minus-square fa-2x"></i>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="btn">
+      <button type="submit" class="btn--gradient" [disabled]="!signupForm.form.valid">
+        Registrar
+      </button>
+    </div>
+  </form>
+  <section class="modal" *ngIf="incorrectSignup">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="closeError()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Ha ocurrido un error, intente nuevamente.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="modal" *ngIf="successSignup">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="closeSuccess()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Registro exitoso.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>

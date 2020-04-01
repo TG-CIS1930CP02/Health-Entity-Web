@@ -58,4 +58,8 @@ export class PatientService {
       .set('id', id.toString());
     return this.get<Patient>(`${this.urlBaseRas}/find-by-identification)`, params);
   }
+
+  createPatient(patient: Patient) {
+    return this.post<Patient>(this.urlBaseEntity, patient);
+  }
 }

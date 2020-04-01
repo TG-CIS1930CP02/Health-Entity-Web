@@ -4,8 +4,9 @@ import { HomeComponent } from './shared/home/home.component';
 import { PathNotFoundComponent } from './shared/path-not-found/path-not-found.component';
 import { LoginPatientComponent } from './patient/login-patient/login-patient.component';
 import { LoginPractitionerComponent } from './practitioner/login-practitioner/login-practitioner.component';
-import { SignupPractitionerComponent } from './practitioner/signup-practitioner/signup-practitioner.component';
 import { LoginAdministratorComponent } from './administrator/login-administrator/login-administrator.component';
+import { SignupPractitionerComponent } from './practitioner/signup-practitioner/signup-practitioner.component';
+import { SignupPatientComponent } from './patient/signup-patient/signup-patient.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'login-practitioner', component: LoginPractitionerComponent},
   { path: 'login-administrator', component: LoginAdministratorComponent},
   { path: 'admin/signup-practitioner', component: SignupPractitionerComponent},
+  { path: 'admin/signup-patient', component: SignupPatientComponent},
   { path: '**', component: PathNotFoundComponent }
 ];
 
