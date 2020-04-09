@@ -1,6 +1,6 @@
 <div id="box" class="center">
   <div id="formbox" class="center">
-    <h2 class="title">Registro Profesional de la Salud</h2>
+    <h2 class="title">{{title}}</h2>
     <form (ngSubmit)="search()" #searchForm="ngForm">
       <div class="form_box inline">
         <div>
@@ -41,5 +41,5 @@
       </div>
     </div>
   </section>
-  <app-details-practitioner *ngIf="found=='found'" [practitioner]=practitionerFound></app-details-practitioner>
+  <app-details-practitioner *ngIf="found=='found'" [practitioner]=practitionerFound [hasQualifications]="isPractitioner"></app-details-practitioner>
 </div>

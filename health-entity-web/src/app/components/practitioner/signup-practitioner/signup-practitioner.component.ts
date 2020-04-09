@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Practitioner } from 'app/models/practitioner';
 import { PractitionerService } from 'app/services/practitioner.service';
 import { OptionsList } from '../../../models/options-lists';
@@ -10,6 +10,11 @@ import { OptionsList } from '../../../models/options-lists';
 })
 
 export class SignupPractitionerComponent implements OnInit {
+  @Input()
+  isPractitioner: boolean;
+  @Input()
+  title = 'Registro profesional de la salud';
+
   practitionerFound: Practitioner = new Practitioner(
     undefined,
     undefined,
