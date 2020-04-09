@@ -18,6 +18,7 @@ import { DetailsPractitionerComponent } from './components/practitioner/details-
 import { SignupPatientComponent } from './components/patient/signup-patient/signup-patient.component';
 import { DetailsPatientComponent } from './components/patient/details-patient/details-patient.component';
 import { SignupAdministrativeAssistantComponent } from './components/administrative-assistant/signup-administrative-assistant/signup-administrative-assistant.component';
+import { HomeAdministratorComponent } from './components/administrator/home-administrator/home-administrator.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SignupAdministrativeAssistantComponent } from './components/administrat
     DetailsPractitionerComponent,
     SignupPatientComponent,
     DetailsPatientComponent,
-    SignupAdministrativeAssistantComponent
+    SignupAdministrativeAssistantComponent,
+    HomeAdministratorComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
