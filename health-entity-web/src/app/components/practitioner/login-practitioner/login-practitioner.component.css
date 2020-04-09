@@ -184,7 +184,7 @@ input {
   object-position: center;
   background-size: contain !important;
   transition: all 0.3s ease;
-  background: url("../../../assets/icons/close.png") no-repeat center;
+  background: url(".../../../../assets/icons/close.png") no-repeat center;
   background-size: contain;
 }
 .modal .icon--close {

@@ -181,37 +181,37 @@ footer {
 }
 
 .icon--call-answer {
-  background: url("../../../assets/icons/phone.svg") no-repeat center;
+  background: url("../../../../assets/icons/phone.svg") no-repeat center;
   width: 16px;
   height: 16px;
 }
 
 .icon--location {
-  background: url("../../../assets/icons/location.svg") no-repeat center;
+  background: url("../../../../assets/icons/location.svg") no-repeat center;
   width: 17px;
   height: 23px;
 }
 
 .icon--message {
-  background: url("../../../assets/icons/mail.svg") no-repeat center;
+  background: url("../../../../assets/icons/mail.svg") no-repeat center;
   width: 20px;
   height: 13px;
 }
 
 .icon--mailFooter {
-  background: url("../../../assets/icons/form.svg") no-repeat center;
+  background: url("../../../../assets/icons/form.svg") no-repeat center;
   width: 20px;
   height: 20px;
 }
 
 .icon--facebook-logo {
-  background: url("../../../assets//icons/facebook.svg") no-repeat center;
+  background: url("../../../../assets//icons/facebook.svg") no-repeat center;
   width: 12px;
   height: 22px;
 }
 
 .icon--youtube-logo {
-  background: url("../../../assets//icons/youtube.svg") no-repeat center;
+  background: url("../../../../assets//icons/youtube.svg") no-repeat center;
   width: 29px;
   height: 23px;
   margin: 0 15px;
