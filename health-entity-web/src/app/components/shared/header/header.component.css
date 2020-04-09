@@ -206,7 +206,7 @@ header {
   width: 7px;
   height: 4px;
   margin-left: 14px;
-  background: url("../../../assets/icons/down-arrow.svg") no-repeat center;
+  background: url("../../../../assets/icons/down-arrow.svg") no-repeat center;
   background-size: contain;
   transition: all 0.3s ease;
 }
