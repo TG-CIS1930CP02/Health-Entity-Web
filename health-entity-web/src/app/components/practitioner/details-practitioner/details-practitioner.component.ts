@@ -14,6 +14,9 @@ import { OptionsList } from '../../../models/options-lists';
 
 export class DetailsPractitionerComponent implements OnInit {
   @Input()
+  hasQualifications: boolean;
+
+  @Input()
   practitioner: Practitioner = new Practitioner(
     undefined,
     undefined,

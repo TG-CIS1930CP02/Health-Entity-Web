@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup-administrative-assistant.component.css']
 })
 export class SignupAdministrativeAssistantComponent implements OnInit {
-
+  titleAdminAssistant = 'Registro auxiliar administrativo';
   constructor() { }
 
   ngOnInit(): void {
