@@ -4,7 +4,7 @@ p {
 input {
   width: 100%;
 }
-#formbox {
+#detailsbox {
   font-family: "poppins", arial, sans-serif;
   width: 100%;
   overflow: hidden;
@@ -14,73 +14,17 @@ input {
   margin: auto;
   width: 100%;
 }
-.form_box {
-  width: 100%;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-.inline50 {
-  float:left;
-  width: 50%;
-}
-.inline33 {
-  float:left;
-  width: 33%;
-}
-.addressBox {
-  margin-bottom: 10px;
-}
-.form_select {
-  width: 99%;
-  padding: 15px 20px;
-  border: 1px solid #e1e3e6;
-  font-family: "poppinsLight", Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-.form_input {
-  width: 99%;
-  padding: 6px 12px;
-  border: 1px solid #e1e3e6;
-  margin: 2px;
-  font-family: "poppinsLight", Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-  resize: none;
-}
 .table {
   margin-bottom: 20px;
 }
 .thead-color {
   color: #8B388A;
 }
-.btn {
+.box {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
-.btn--gradient {
-  display: inline-flex;
-  justify-content: center;
-  flex-wrap: nowrap;
-  vertical-align: middle;
-  padding: 14px 40px;
-  outline: none;
-  font-family: "poppins", Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  border: none;
-  color: #fff;
-  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
-  transition: all 0.3s ease;
-  width: 50%;
-}
-.btn--gradient:hover {
-  background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
-}
-.fa {
-  color: #8B388A !important;
-  margin-right: 5px;
+.label {
+  font-weight: bold;
 }
