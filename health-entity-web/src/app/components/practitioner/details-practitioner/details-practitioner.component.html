@@ -1,10 +1,10 @@
 <div id="formbox" class="center">
-  <p>Nombre: {{practitioner.name}}</p>
-  <p>Fecha de nacimiento: {{practitioner.birthDate}}</p>
-  <p>Genero: {{practitioner.gender}}</p>
+  <p class="label">Nombre:</p> <p>{{practitioner.name}}</p>
+  <p class="label">Fecha de nacimiento: </p> <p>{{practitioner.birthDate}}</p>
+  <p class="label">Genero: </p> <p>{{practitioner.gender}}</p>
   <form (ngSubmit)="signup()" #signupForm="ngForm">
     <div class="form_box">
-      <label for="telecom">Datos de contacto: </label><br />
+      <label class="label" for="telecom">Datos de contacto: </label><br />
       <div *ngFor="let t of telecoms;let index = index;trackBy:trackByIndex;">
         <div class="inline33">
           <select id="telecomSyst" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
@@ -32,7 +32,7 @@
     </div>
     <div class="form_box">
       <div>
-        <label for="address">Direcciones: </label><br />
+        <label class="label" for="address">Direcciones: </label><br />
         <div class="addressBox" *ngFor="let a of addresses;let index = index;trackBy:trackByIndex;">
           <div class="inline50">
             <select id="addressCity" class='form-control form_select' [ngModelOptions]="{standalone: true}" required

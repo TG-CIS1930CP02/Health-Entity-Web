@@ -48,6 +48,9 @@ input {
   letter-spacing: 1px;
   resize: none;
 }
+.label {
+  font-weight: bold;
+}
 .table {
   margin-bottom: 20px;
 }
