@@ -20,6 +20,7 @@ import { DetailsPatientComponent } from './components/patient/details-patient/de
 import { SignupAdministrativeAssistantComponent } from './components/administrative-assistant/signup-administrative-assistant/signup-administrative-assistant.component';
 import { HomeAdministratorComponent } from './components/administrator/home-administrator/home-administrator.component';
 import { DetailsFormPatientComponent } from './components/patient/details-form-patient/details-form-patient.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,11 @@ import { DetailsFormPatientComponent } from './components/patient/details-form-p
     DetailsFormPatientComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, FormsModule, HttpClientModule
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
