@@ -205,13 +205,13 @@ footer {
 }
 
 .icon--facebook-logo {
-  background: url("../../../../assets//icons/facebook.svg") no-repeat center;
+  background: url("../../../../assets/icons/facebook.svg") no-repeat center;
   width: 12px;
   height: 22px;
 }
 
 .icon--youtube-logo {
-  background: url("../../../../assets//icons/youtube.svg") no-repeat center;
+  background: url("../../../../assets/icons/youtube.svg") no-repeat center;
   width: 29px;
   height: 23px;
   margin: 0 15px;
