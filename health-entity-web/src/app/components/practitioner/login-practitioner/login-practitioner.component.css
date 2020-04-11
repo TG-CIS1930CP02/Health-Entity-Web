@@ -51,7 +51,7 @@ input {
   display: none;
 }
 .form_checkbox:checked ~ label.form_label::before {
-  background: #e1e3e6;
+  background: #5e62aa;
   color: #fff;
 }
 .form_label--checkbox {
