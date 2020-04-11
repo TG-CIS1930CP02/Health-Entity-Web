@@ -28,14 +28,13 @@ export class LoginAdministratorComponent implements OnInit {
   ngOnInit(): void { }
 
   login() {
-    console.log('jm');
     this.loginService.login(this.idType, this.id, this.password)
       .subscribe(data => {
         this.incorrectLogin = false;
         this.administratorService.findByIdentification(this.idType, this.id)
           .subscribe(result => {
             this.administrator = result;
-            this.router.navigate(['administrator/home']);
+            this.router.navigate(['admin/home']);
           },
           error => {
             console.error(error);

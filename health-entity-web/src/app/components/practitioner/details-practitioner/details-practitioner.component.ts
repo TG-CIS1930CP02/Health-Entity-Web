@@ -35,6 +35,8 @@ export class DetailsPractitionerComponent implements OnInit {
 
   incorrectSignup = false;
   successSignup = false;
+  enterFingerprint = false;
+  checked = false;
 
   systems = OptionsList.contactPointSystems;
   uses = OptionsList.contactPointUses;
@@ -49,8 +51,21 @@ export class DetailsPractitionerComponent implements OnInit {
     this.addresses = this.practitioner.addresses;
   }
 
+  validate() {
+    this.enterFingerprint = true;
+    // TODO validate values in telecoms and addresses
+  }
+
   signup() {
-    // TODO validate value in telecoms
+    if (!this.checked) {
+      this.enterFingerprint = false;
+      this.incorrectSignup = true;
+      return;
+    }
+
+    this.checked = false;
+    this.enterFingerprint = false;
+
     this.practitioner.active = true;
     this.practitioner.telecoms = this.telecoms;
     this.practitioner.addresses = this.addresses;
@@ -59,6 +74,7 @@ export class DetailsPractitionerComponent implements OnInit {
       result => {
         console.log(result);
         this.successSignup = true;
+        this.router.navigate(['admin/home']);
       },
       error => {
         console.error(error);
@@ -78,6 +94,10 @@ export class DetailsPractitionerComponent implements OnInit {
 
   addContactPoint() {
     this.telecoms.push(new ContactPoint('Selecciona un sistema', 'Selecciona un tipo', null));
+  }
+
+  closeFingerPrint() {
+    this.enterFingerprint = false;
   }
 
   deleteContactPoint() {

@@ -1,8 +1,11 @@
 <div id="formbox" class="center">
-  <p class="label">Nombre:</p> <p>{{patient.name}}</p>
-  <p class="label">Fecha de nacimiento: </p> <p>{{patient.birthDate}}</p>
-  <p class="label">Genero: </p> <p>{{patient.gender}}</p>
-  <form (ngSubmit)="signup()" #signupForm="ngForm">
+  <p class="label">Nombre:</p>
+  <p>{{patient.name}}</p>
+  <p class="label">Fecha de nacimiento: </p>
+  <p>{{patient.birthDate}}</p>
+  <p class="label">Genero: </p>
+  <p>{{patient.gender}}</p>
+  <form (ngSubmit)="validate()" #detailsForm="ngForm">
     <div class="form_box">
       <label class="label" for="telecom">Datos de contacto: </label><br />
       <div *ngFor="let t of telecoms;let index = index;trackBy:trackByIndex;">
@@ -49,10 +52,11 @@
             </select>
           </div>
           <input class="form_input" type="text" id="txtDescription" required #txtDescription="ngModel"
-          [ngModelOptions]="{standalone: true}" [(ngModel)]="addresses[index].text"
+            [ngModelOptions]="{standalone: true}" [(ngModel)]="addresses[index].text"
             placeholder="Ingrese la descripción de la dirección" />
-          <input class="form_input" type="text" id="txtAddress" required #txtAddress="ngModel" [ngModelOptions]="{standalone: true}"
-            [(ngModel)]="addresses[index].line" placeholder="Ingrese su dirección" />
+          <input class="form_input" type="text" id="txtAddress" required #txtAddress="ngModel"
+            [ngModelOptions]="{standalone: true}" [(ngModel)]="addresses[index].line"
+            placeholder="Ingrese su dirección" />
         </div>
         <div>
           <i (click)='addAddress()' class="fa fa-plus-square fa-2x"></i>
@@ -62,15 +66,15 @@
     </div>
     <br>
     <div class="btn">
-      <button type="submit" class="btn--gradient" [disabled]="!signupForm.form.valid">
-        Registrar
+      <button type="submit" class="btn--gradient" [disabled]="!detailsForm.form.valid">
+        Continuar
       </button>
     </div>
   </form>
   <section class="modal" *ngIf="incorrectSignup">
     <div class="modal_container">
       <div class="modal_header">
-        <h2 class="title">Aviso</h2>
+        <h2 class="title">Error</h2>
         <span class="icon--close modal_close" (click)="closeError()"></span>
       </div>
       <div class="modal_content">
@@ -91,6 +95,29 @@
           Registro exitoso.
         </p>
       </div>
+    </div>
+  </section>
+  <section class="modal" *ngIf="enterFingerprint">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Ingresar huella</h2>
+        <span class="icon--close modal_close" (click)="closeFingerPrint()"></span>
+      </div>
+      <form (ngSubmit)="signup()" #signupForm="ngForm">
+        <div class="modal_content" id="fingerprint">
+          <img src="../../../../assets/fingerprint.png" alt="" class="banner_item_bg" />
+          <div class="form_box">
+            <mat-checkbox class="form_checkbox" [(ngModel)]="checked" name="fingerprint" id="fingerprint">
+              Huella válida
+            </mat-checkbox>
+          </div>
+          <div class="btn">
+            <button type="submit" class="btn--gradient" [disabled]="!signupForm.form.valid">
+              Registrar
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   </section>
 </div>
