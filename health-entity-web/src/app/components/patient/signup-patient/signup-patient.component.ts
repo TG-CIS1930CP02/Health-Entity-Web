@@ -19,7 +19,7 @@ export class SignupPatientComponent implements OnInit {
     undefined,
     undefined
   );
-  found = 'pending';
+  found = 'found';
   idType = 'Selecciona un tipo';
   id: number;
 
