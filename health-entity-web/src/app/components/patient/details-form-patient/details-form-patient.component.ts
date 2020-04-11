@@ -31,6 +31,7 @@ export class DetailsFormPatientComponent implements OnInit {
   incorrectSignup = false;
   successSignup = false;
   enterFingerprint = false;
+  checked = false;
 
   systems = OptionsList.contactPointSystems;
   uses = OptionsList.contactPointUses;
@@ -46,8 +47,21 @@ export class DetailsFormPatientComponent implements OnInit {
     this.addresses = this.patient.addresses;
   }
 
+  validate() {
+    this.enterFingerprint = true;
+    // TODO validate values in telecoms and addresses
+  }
+
   signup() {
+    if (!this.checked) {
+      this.enterFingerprint = false;
+      this.incorrectSignup = true;
+      return;
+    }
+
+    this.checked = false;
     this.enterFingerprint = false;
+
     this.patient.active = true;
     this.patient.telecoms = this.telecoms;
     this.patient.addresses = this.addresses;
@@ -56,17 +70,12 @@ export class DetailsFormPatientComponent implements OnInit {
       result => {
         console.log(result);
         this.successSignup = true;
+        this.router.navigate(['admin-assistant/home']);
       },
       error => {
         console.error(error);
         this.incorrectSignup = true;
       });
-  }
-
-  validate() {
-    this.enterFingerprint = true;
-
-    // TODO validate values in telecoms and addresses
   }
 
   closeError() {
@@ -80,7 +89,6 @@ export class DetailsFormPatientComponent implements OnInit {
 
   closeFingerPrint() {
     this.enterFingerprint = false;
-    // TODO: call signup service
   }
 
   addContactPoint() {

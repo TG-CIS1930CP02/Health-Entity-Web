@@ -107,10 +107,9 @@
         <div class="modal_content" id="fingerprint">
           <img src="../../../../assets/fingerprint.png" alt="" class="banner_item_bg" />
           <div class="form_box">
-            <input type="checkbox" name="fingerprint" class="form_checkbox" id="fingerprint" />
-            <label for="fingerprint" class="form_label form_label--checkbox">
+            <mat-checkbox class="form_checkbox" [(ngModel)]="checked" name="fingerprint" id="fingerprint">
               Huella válida
-            </label>
+            </mat-checkbox>
           </div>
           <div class="btn">
             <button type="submit" class="btn--gradient" [disabled]="!signupForm.form.valid">
