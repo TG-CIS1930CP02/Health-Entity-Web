@@ -24,8 +24,9 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
               "node_modules/font-awesome/css/font-awesome.css",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -89,7 +90,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -120,6 +121,12 @@
           }
         }
       }
-    }},
-  "defaultProject": "health-entity-web"
+    }
+  },
+  "defaultProject": "health-entity-web",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

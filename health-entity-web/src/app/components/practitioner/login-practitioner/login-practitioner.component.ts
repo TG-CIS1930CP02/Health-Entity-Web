@@ -31,6 +31,7 @@ export class LoginPractitionerComponent implements OnInit {
   password: string;
 
   incorrectLogin = false;
+  checked = false;
 
   options = OptionsList.identificationTypes;
 
