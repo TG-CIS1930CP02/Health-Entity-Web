@@ -31,10 +31,9 @@
         <div [hidden]="txtPassword.valid || !txtPassword.touched"></div>
       </div>
       <div class="form_box">
-        <input type="checkbox" name="fingerprint" class="form_checkbox" id="fingerprint" />
-        <label for="fingerprint" class="form_label form_label--checkbox">
+        <mat-checkbox class="form_checkbox" [(ngModel)]="checked" name="fingerprint" id="fingerprint">
           Huella válida
-        </label>
+        </mat-checkbox>
       </div>
       <a href="#" class="help">¿Necesitas ayuda para ingresar?</a>
       <!-- TODO fix button, if fields are not properly filled, the modal doesn't popup -->

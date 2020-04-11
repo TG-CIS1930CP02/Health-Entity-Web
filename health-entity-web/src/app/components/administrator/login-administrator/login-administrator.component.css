@@ -45,36 +45,7 @@ input {
   letter-spacing: 1px;
 }
 .form_checkbox {
-  display: none;
-}
-.form_checkbox:checked ~ label.form_label::before {
-  background: #5e62aa;
-  color: #fff;
-}
-.form_label--checkbox {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  font-size: 12px;
-}
-.form_label--checkbox::before {
-  content: "✔";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  flex-wrap: wrap;
-  width: 26px;
-  height: 26px;
-  margin-right: 8px;
-  border: 1px solid #e1e3e6;
-  background: #fff;
-  font-size: 0.92857rem;
-  color: transparent;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  margin: 0 10px;
 }
 .help {
   display: inline-block;
