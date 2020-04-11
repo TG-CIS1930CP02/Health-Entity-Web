@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
@@ -22,6 +23,7 @@ import { DetailsPatientComponent } from './components/patient/details-patient/de
 import { SignupAdministrativeAssistantComponent } from './components/administrative-assistant/signup-administrative-assistant/signup-administrative-assistant.component';
 import { HomeAdministratorComponent } from './components/administrator/home-administrator/home-administrator.component';
 import { DetailsFormPatientComponent } from './components/patient/details-form-patient/details-form-patient.component';
+import { HomeAdministrativeAssistantComponent } from './components/administrative-assistant/home-administrative-assistant/home-administrative-assistant.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { DetailsFormPatientComponent } from './components/patient/details-form-p
     DetailsPatientComponent,
     SignupAdministrativeAssistantComponent,
     HomeAdministratorComponent,
-    DetailsFormPatientComponent
+    DetailsFormPatientComponent,
+    HomeAdministrativeAssistantComponent
   ],
   imports: [
     BrowserModule,

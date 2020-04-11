@@ -3,7 +3,7 @@ input {
 }
 #box {
   position: relative;
-  margin: 155px auto 80px auto;
+  margin: 15px auto 80px auto;
   max-width: 1200px;
 }
 #formbox {
@@ -12,7 +12,6 @@ input {
   overflow: hidden;
 }
 .center {
-  margin: auto;
   width: 50%;
 }
 .title {
