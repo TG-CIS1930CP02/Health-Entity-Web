@@ -31,10 +31,9 @@
         <div [hidden]="txtPassword.valid || !txtPassword.touched"></div>
       </div>
       <div class="form_box">
-        <input type="checkbox" name="fingertip" class="form_checkbox" id="fingertip" />
-        <label for="fingertip" class="form_label form_label--checkbox">
+        <mat-checkbox class="form_checkbox" [(ngModel)]="checked" name="fingerprint" id="fingerprint">
           Huella válida
-        </label>
+        </mat-checkbox>
       </div>
       <a href="#" class="help">¿Necesitas ayuda para ingresar?</a>
       <button type="submit" class="btn--gradient" [disabled]="!loginForm.form.valid">

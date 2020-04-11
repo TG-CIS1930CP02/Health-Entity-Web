@@ -21,6 +21,7 @@ export class LoginAdministratorComponent implements OnInit {
   password: string;
 
   incorrectLogin = false;
+  checked = false;
 
   options = OptionsList.identificationTypes;
 
