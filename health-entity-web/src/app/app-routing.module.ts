@@ -10,6 +10,7 @@ import { SignupPractitionerComponent } from './components/practitioner/signup-pr
 import { SignupAdministrativeAssistantComponent } from './components/administrative-assistant/signup-administrative-assistant/signup-administrative-assistant.component';
 import { HomeAdministratorComponent } from './components/administrator/home-administrator/home-administrator.component';
 import { HomePractitionerComponent } from './components/practitioner/home-practitioner/home-practitioner.component';
+import { HomeAdministrativeAssistantComponent } from './components/administrative-assistant/home-administrative-assistant/home-administrative-assistant.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'admin/signup-administrative-assistant', component: SignupAdministrativeAssistantComponent},
   { path: 'admin/home', component: HomeAdministratorComponent},
   { path: 'practitioner/home', component: HomePractitionerComponent},
+  { path: 'admin-assistant/home', component: HomeAdministrativeAssistantComponent},
   { path: '**', component: PathNotFoundComponent }
 ];
 
