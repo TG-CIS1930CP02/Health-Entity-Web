@@ -5,7 +5,6 @@ import { PathNotFoundComponent } from './components/shared/path-not-found/path-n
 import { LoginPatientComponent } from './components/patient/login-patient/login-patient.component';
 import { LoginPractitionerComponent } from './components/practitioner/login-practitioner/login-practitioner.component';
 import { LoginAdministratorComponent } from './components/administrator/login-administrator/login-administrator.component';
-import { SignupPatientComponent } from './components/patient/signup-patient/signup-patient.component';
 import { SignupPractitionerComponent } from './components/practitioner/signup-practitioner/signup-practitioner.component';
 import { SignupAdministrativeAssistantComponent } from './components/administrative-assistant/signup-administrative-assistant/signup-administrative-assistant.component';
 import { HomeAdministratorComponent } from './components/administrator/home-administrator/home-administrator.component';
@@ -18,7 +17,6 @@ const routes: Routes = [
   { path: 'login-patient', component:  LoginPatientComponent},
   { path: 'login-practitioner', component: LoginPractitionerComponent},
   { path: 'login-administrator', component: LoginAdministratorComponent},
-  { path: 'admin/signup-patient', component: SignupPatientComponent},
   { path: 'admin/signup-practitioner', component: SignupPractitionerComponent},
   { path: 'admin/signup-administrative-assistant', component: SignupAdministrativeAssistantComponent},
   { path: 'admin/home', component: HomeAdministratorComponent},
