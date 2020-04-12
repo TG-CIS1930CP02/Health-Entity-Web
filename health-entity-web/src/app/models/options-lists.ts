@@ -30,6 +30,69 @@ export class OptionsList {
     { name: 'Otro', value: 'other' }
   ];
 
+  public static clinicalStatus = [
+    { name: 'Activo', value: 'active' },
+    { name: 'Inactivo', value: 'inactive' },
+    { name: 'Resuelto', value: 'resolved' }
+  ];
+
+  public static verificationStatus = [
+    { name: 'No confirmado', value: 'unconfirmed' },
+    { name: 'Confirmado', value: 'confirmed' },
+    { name: 'Refutado', value: 'refuted' },
+    { name: 'Ingresado por error', value: 'entered-in-error' }
+  ];
+
+  public static AllergyIntoleranceType = [
+    { name: 'Alergia', value: 'allergy' },
+    { name: 'Intolerancia', value: 'intolerance' }
+  ];
+
+  public static AllergyIntoleranceCategory = [
+    { name: 'Comida', value: 'food' },
+    { name: 'Medicación', value: 'medication' },
+    { name: 'Ambiente', value: 'environment' },
+    { name: 'Biologico', value: 'biologic' }
+  ];
+
+  public static AllergyIntoleranceCriticality = [
+    { name: 'Bajo riesgo', value: 'low' },
+    { name: 'Alto riesgo', value: 'high' },
+    { name: 'No se puede evaluar', value: 'unable-to-assess' }
+  ];
+
+  public static AllergyIntoleranceCode = [
+    { name: 'Hemoglobina okaloosa', value: '102002 ' },
+    { name: 'Carrera de ornitina', value: '120006 ' },
+    { name: 'Sulfato ferroso Fe ^ 59 ^', value: '125001 ' },
+    { name: 'Galactosil-N-acetilglucosaminilgalactosilglucosilceramida alfa-galactosiltransferasa', value: '126000 ' },
+    { name: 'Hemoglobina Hopkins-II', value: '130002 ' },
+    { name: 'Manosiltransferasa de dolilfosfato', value: '131003 ' },
+    { name: 'Sal de ferrocianuro', value: '159002 ' },
+    { name: 'Fosfoenolpiruvato-proteína fosfotransferasa', value: '164003 ' },
+    { name: 'Uridil difosfato galactosa', value: '178002 ' },
+    { name: 'Antígeno HLA-Cw9', value: '186002 ' }
+  ];
+
+  public static AllergyIntoleranceSeverity = [
+    { name: 'Leve', value: 'mild' },
+    { name: 'Moderada', value: 'moderate' },
+    { name: 'Grave', value: 'severe' },
+  ];
+
+  public static ExposureRouteCodes = [
+    { name: 'Topical route', value: '6064005 ' },
+    { name: 'Auricular use', value: '10547007 ' },
+    { name: 'Intra-articular route', value: '12130007 ' },
+    { name: 'Oral use', value: '26643006 ' },
+    { name: 'SC use', value: '34206005 ' },
+    { name: 'Rectal use', value: '37161004 ' },
+    { name: 'Intraluminal use', value: '37737002 ' },
+    { name: 'Sublingual use', value: '37839007 ' },
+    { name: 'Intraperitoneal use', value: '38239002 ' },
+    { name: 'Transdermal use', value: '45890007 ' }
+  ];
+
   public static cities: string[] = [
     'Abejorral',
     'Ábrego',
