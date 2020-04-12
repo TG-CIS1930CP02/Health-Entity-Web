@@ -4,7 +4,7 @@ import { Address } from './address';
 
 export class Patient {
   constructor(
-    public id: number,
+    public id: string,
     public identifier: Identification,
     public active: boolean,
     public name: string,

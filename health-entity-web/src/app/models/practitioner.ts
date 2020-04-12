@@ -5,7 +5,7 @@ import { Address } from './address';
 
 export class Practitioner {
   constructor(
-    public id: number,
+    public id: string,
     public identifier: Identification,
     public active: boolean,
     public name: string,
