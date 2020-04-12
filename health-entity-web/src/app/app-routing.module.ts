@@ -11,6 +11,7 @@ import { HomeAdministratorComponent } from './components/administrator/home-admi
 import { HomePractitionerComponent } from './components/practitioner/home-practitioner/home-practitioner.component';
 import { HomeAdministrativeAssistantComponent } from './components/administrative-assistant/home-administrative-assistant/home-administrative-assistant.component';
 import { HomePatientComponent } from './components/patient/home-patient/home-patient.component';
+import { CreateAllergyIntoleranceComponent } from './components/allergy-intolerance/create-allergy-intolerance/create-allergy-intolerance.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'practitioner/home', component: HomePractitionerComponent},
   { path: 'admin-assistant/home', component: HomeAdministrativeAssistantComponent},
   { path: 'patient/home', component: HomePatientComponent},
+  { path: 'practitioner/enter-resource/allergy', component: CreateAllergyIntoleranceComponent},
   { path: '**', component: PathNotFoundComponent }
 ];
 
