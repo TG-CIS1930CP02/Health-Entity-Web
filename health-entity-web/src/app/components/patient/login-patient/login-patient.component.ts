@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { PatientService } from 'app/services/patient.service';
 import { Patient } from 'app/models/patient';
 import { OptionsList } from '../../../models/options-lists';
+import { RoleEnum } from 'app/models/role-enum';
+import { AuthenticationModeEnum } from 'app/models/authentication-mode-enum';
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'app-login-patient',
@@ -30,6 +33,7 @@ export class LoginPatientComponent implements OnInit {
   password: string;
 
   incorrectLogin = false;
+  invalidAuthorities = false;
 
   options = OptionsList.identificationTypes;
 
@@ -37,16 +41,13 @@ export class LoginPatientComponent implements OnInit {
 
   login() {
     this.loginService.login(this.idType, this.id, this.password)
-      .subscribe(data => {
-        this.incorrectLogin = false;
-        this.patientService.findByIdentification(this.idType, this.id)
-          .subscribe(result => {
-            this.patient = result;
-            this.router.navigate(['patient/home']); // TODO agregar id del usuario
-          },
-          error => {
-            console.error(error);
-        });
+      .subscribe(result => {
+        if(this.validateAuthorities(result.token, RoleEnum.PATIENT, AuthenticationModeEnum.PASSWORD_AUTHENTICATED_USER)){
+          this.incorrectLogin = false;
+          localStorage.setItem('token', result.token);
+        }
+        else
+          this.invalidAuthorities = true;
       },
       error => {
         this.incorrectLogin = true;
@@ -56,5 +57,17 @@ export class LoginPatientComponent implements OnInit {
 
   close() {
     this.incorrectLogin = false;
+    this.invalidAuthorities = false;
+  }
+
+  validateAuthorities(token: string, role: RoleEnum, authenticationMode: AuthenticationModeEnum): boolean{
+    const parts = token.split('.');
+    const payload = parts[1];
+    const decodedPayload = atob(payload);
+    const payloadObject = JSON.parse(decodedPayload);
+    if (payloadObject.authorities.includes(role) && payloadObject.authorities.includes(authenticationMode) && 
+    payloadObject.authorities.includes(environment.healthEntityAuthority))
+      return true;
+    return false;
   }
 }

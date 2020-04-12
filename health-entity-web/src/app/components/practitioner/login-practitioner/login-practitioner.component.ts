@@ -4,6 +4,9 @@ import { Router } from '@angular/router';
 import { Practitioner } from '../../../models/practitioner';
 import { PractitionerService } from '../../../services/practitioner.service';
 import { OptionsList } from '../../../models/options-lists';
+import { AuthenticationModeEnum } from 'app/models/authentication-mode-enum';
+import { RoleEnum } from 'app/models/role-enum';
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'app-login-practitioner',
@@ -31,6 +34,7 @@ export class LoginPractitionerComponent implements OnInit {
   password: string;
 
   incorrectLogin = false;
+  invalidAuthorities = false;
   checked = false;
 
   options = OptionsList.identificationTypes;
@@ -39,16 +43,18 @@ export class LoginPractitionerComponent implements OnInit {
 
   login() {
     this.loginService.login(this.idType, this.id, this.password)
-      .subscribe(data => {
-        this.incorrectLogin = false;
-        this.practitionerService.findByIdentification(this.idType, this.id)
-          .subscribe(result => {
-            this.practitioner = result;
+      .subscribe(result => {
+        const role = this.getRole(result.token, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION);
+        if (role == null)
+          this.invalidAuthorities = true;
+        else{
+          this.incorrectLogin = false;
+          localStorage.setItem('token', result.token);
+          if (role === RoleEnum.DOCTOR)
             this.router.navigate(['practitioner/home']);
-          },
-          error => {
-            console.error(error);
-        });
+          else if (role === RoleEnum.NURSE)
+            this.router.navigate(['practitioner/home']);
+        }
       },
       error => {
         this.incorrectLogin = true;
@@ -58,5 +64,19 @@ export class LoginPractitionerComponent implements OnInit {
 
   close() {
     this.incorrectLogin = false;
+  }
+
+  getRole(token: string, authenticationMode: AuthenticationModeEnum): RoleEnum{
+    const parts = token.split('.');
+    const payload = parts[1];
+    const decodedPayload = atob(payload);
+    const payloadObject = JSON.parse(decodedPayload);
+    if (payloadObject.authorities.includes(authenticationMode) && payloadObject.authorities.includes(environment.healthEntityAuthority)){
+      if (payloadObject.authorities.includes(RoleEnum.DOCTOR))
+        return RoleEnum.DOCTOR;
+      if (payloadObject.authorities.includes(RoleEnum.NURSE))
+        return RoleEnum.NURSE;
+    }
+    return null;
   }
 }

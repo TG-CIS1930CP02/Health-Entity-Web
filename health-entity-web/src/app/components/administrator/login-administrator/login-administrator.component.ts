@@ -4,6 +4,9 @@ import { LoginService } from 'app/services/login.service';
 import { Router } from '@angular/router';
 import { Administrator } from 'app/models/administrator';
 import { OptionsList } from '../../../models/options-lists';
+import { RoleEnum } from 'app/models/role-enum';
+import { AuthenticationModeEnum } from 'app/models/authentication-mode-enum';
+import { environment } from 'environments/environment';
 
 @Component({
   selector: 'app-login-administrator',
@@ -21,6 +24,7 @@ export class LoginAdministratorComponent implements OnInit {
   password: string;
 
   incorrectLogin = false;
+  invalidAuthorities = false;
   checked = false;
 
   options = OptionsList.identificationTypes;
@@ -28,17 +32,19 @@ export class LoginAdministratorComponent implements OnInit {
   ngOnInit(): void { }
 
   login() {
-    this.loginService.login(this.idType, this.id, this.password)
-      .subscribe(data => {
-        this.incorrectLogin = false;
-        this.administratorService.findByIdentification(this.idType, this.id)
-          .subscribe(result => {
-            this.administrator = result;
+    this.loginService.loginFingerprint(this.idType, this.id, this.password, 'fingerprint_test')
+      .subscribe(result => {
+        const role = this.getRole(result.token, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION);
+        if (role == null)
+          this.invalidAuthorities = true;
+        else{
+          this.incorrectLogin = false;
+          localStorage.setItem('token', result.token);
+          if (role === RoleEnum.ADMINISTRATOR)
             this.router.navigate(['admin/home']);
-          },
-          error => {
-            console.error(error);
-        });
+          else if (role === RoleEnum.ADMINISTRATIVE_ASSISTANT)
+            this.router.navigate(['admin/home-administrative-assistant']);
+        }
       },
       error => {
         this.incorrectLogin = true;
@@ -48,5 +54,21 @@ export class LoginAdministratorComponent implements OnInit {
 
   close() {
     this.incorrectLogin = false;
+    this.invalidAuthorities = false;
   }
+
+  getRole(token: string, authenticationMode: AuthenticationModeEnum): RoleEnum{
+    const parts = token.split('.');
+    const payload = parts[1];
+    const decodedPayload = atob(payload);
+    const payloadObject = JSON.parse(decodedPayload);
+    if (payloadObject.authorities.includes(authenticationMode) && payloadObject.authorities.includes(environment.healthEntityAuthority)){
+      if (payloadObject.authorities.includes(RoleEnum.ADMINISTRATOR))
+        return RoleEnum.ADMINISTRATOR;
+      if (payloadObject.authorities.includes(RoleEnum.ADMINISTRATIVE_ASSISTANT))
+        return RoleEnum.ADMINISTRATIVE_ASSISTANT;
+    }
+    return null;
+  }
+
 }

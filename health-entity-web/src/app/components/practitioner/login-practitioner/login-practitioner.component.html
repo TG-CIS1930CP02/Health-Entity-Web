@@ -54,4 +54,17 @@
       </div>
     </div>
   </section>
+  <section class="modal" *ngIf="invalidAuthorities">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="close()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Estimado usuario, usted no cuenta con los permisos necesarios para acceder como profesional de la salud en esta IPS.
+        </p>
+      </div>
+    </div>
+  </section>
 </div>
