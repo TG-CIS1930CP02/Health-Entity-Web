@@ -7,15 +7,15 @@
         </p>
       </div>
       <div class="header_links">
-        <a href="/login-practitioner" class="header_links_item d-flex">Profesional de la salud</a>
-        <a href="/login-administrator" class="header_links_item">Personal administrativo</a>
+        <a [routerLink]="['/login-practitioner']" class="header_links_item d-flex">Profesional de la salud</a>
+        <a [routerLink]="['/login-administrator']" class="header_links_item">Personal administrativo</a>
       </div>
     </div>
   </div>
   <div class="header_bottom">
     <div class="header_container">
       <section class="logo">
-        <a href="/home" class="logo_link">
+        <a [routerLink]="['/home']" class="logo_link">
           <img src="../../../../assets/images/logo.jpg" alt="" />
         </a>
       </section>
@@ -33,7 +33,7 @@
         </ul>
       </nav>
       <div class="userBox">
-        <a href="/login-patient" class="btn btn--border btn--arrowR lPurple"
+        <a [routerLink]="['/login-patient']" class="btn btn--border btn--arrowR lPurple"
           [style.visibility]="isLogin ? 'hidden' : 'visible'">Login paciente</a>
       </div>
     </div>

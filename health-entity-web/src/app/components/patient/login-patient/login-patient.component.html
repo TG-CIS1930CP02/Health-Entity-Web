@@ -30,7 +30,7 @@
         <!--- TODO should i put this? -->
         <div [hidden]="txtPassword.valid || !txtPassword.touched"></div>
       </div>
-      <a href="#" class="help">¿Necesitas ayuda para ingresar?</a>
+      <a [routerLink]="['./']" class="help">¿Necesitas ayuda para ingresar?</a>
       <button type="submit" class="btn--gradient" [disabled]="!loginForm.form.valid">
         Iniciar sesión
       </button>

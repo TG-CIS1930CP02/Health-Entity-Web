@@ -35,7 +35,7 @@
           Huella válida
         </mat-checkbox>
       </div>
-      <a href="#" class="help">¿Necesitas ayuda para ingresar?</a>
+      <a [routerLink]="['./']" class="help">¿Necesitas ayuda para ingresar?</a>
       <button type="submit" class="btn--gradient" [disabled]="!loginForm.form.valid">
         Iniciar sesión
       </button>
