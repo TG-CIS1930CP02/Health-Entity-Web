@@ -1,1 +1,21 @@
-<p>home-patient works!</p>
+<div class="banner">
+  <a [routerLink]="['/patient/medical-record']" class="banner_item">
+    <picture class="banner_item_mask">
+      <source media="(max-width: 767px)" srcset="../../../../assets/images/historia-clinica.jpg" />
+      <img src="../../../../assets/images/historia-clinica.jpg" alt="" class="banner_item_bg" />
+    </picture>
+    <div class="banner_miniBox">
+      <h2 class="banner_title">Mi historia clínica</h2>
+    </div>
+  </a>
+
+  <a [routerLink]="['/patient/transactions']" class="banner_item">
+    <picture class="banner_item_mask">
+      <source media="(max-width: 767px)" srcset="../../../../assets/images/transferencia.jpg" />
+      <img src="../../../../assets/images/transferencia.jpg" alt="" class="banner_item_bg" />
+    </picture>
+    <div class="banner_miniBox">
+      <h2 class="banner_title">Ver transacciones</h2>
+    </div>
+  </a>
+</div>
