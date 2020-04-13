@@ -25,6 +25,7 @@ import { HomeAdministratorComponent } from './components/administrator/home-admi
 import { DetailsFormPatientComponent } from './components/patient/details-form-patient/details-form-patient.component';
 import { HomeAdministrativeAssistantComponent } from './components/administrative-assistant/home-administrative-assistant/home-administrative-assistant.component';
 import { CreateAllergyIntoleranceComponent } from './components/allergy-intolerance/create-allergy-intolerance/create-allergy-intolerance.component';
+import { CreateReactionComponent } from './components/reaction/create-reaction/create-reaction.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { CreateAllergyIntoleranceComponent } from './components/allergy-intolera
     HomeAdministratorComponent,
     DetailsFormPatientComponent,
     HomeAdministrativeAssistantComponent,
-    CreateAllergyIntoleranceComponent
+    CreateAllergyIntoleranceComponent,
+    CreateReactionComponent
   ],
   imports: [
     BrowserModule,
