@@ -19,6 +19,12 @@ input {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+.box {
+  border-bottom: solid 2px rgba(147, 147, 147, 0.6);
+}
+mat-form-field {
+  width: 95%;
+}
 .inline50 {
   float:left;
   width: 50%;
@@ -32,24 +38,6 @@ input {
 }
 .label {
   font-weight: bold;
-}
-.form_select {
-  width: 99%;
-  padding: 15px 20px;
-  border: 1px solid #e1e3e6;
-  font-family: "poppinsLight", Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-.form_input {
-  width: 99%;
-  padding: 6px 12px;
-  border: 1px solid #e1e3e6;
-  margin: 2px;
-  font-family: "poppinsLight", Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-  resize: none;
 }
 .form_checkbox {
   margin: 0 10px;
