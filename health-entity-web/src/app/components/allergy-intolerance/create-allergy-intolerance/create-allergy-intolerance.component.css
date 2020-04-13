@@ -1,6 +1,7 @@
 label {
   font-weight: bold;
   margin-right: 5px;
+  display: block;
 }
 #box {
   position: relative;
@@ -23,24 +24,43 @@ label {
   text-transform: uppercase;
   margin-bottom: 3  0px !important;
 }
+table {
+  width: 100%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 .column {
+  width: 45%;
+}
+.column:nth-child(even) {
+  float: right;
+}
+.column:nth-child(odd) {
   float: left;
 }
-.column:nth-child(odd){
-  margin-right: 5px;
-}
 .form_box {
-  width: 50%;
   margin-bottom: 10px;
   margin-top: 10px;
 }
+mat-form-field {
+  width: 100%;
+}
 .radio-group {
   display: flex;
-  flex-direction: column;
-  margin: 15px 0;
+  margin: 16px 0 28px 0;
 }
-.radio-button {
-  margin: 5px;
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+.btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
 }
 .btn--gradient {
   cursor: pointer;
