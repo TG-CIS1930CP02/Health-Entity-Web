@@ -11,10 +11,14 @@ p {
   margin: auto;
   width: 100%;
 }
-.table {
+table {
+  width: 100%;
   margin-bottom: 20px;
 }
-.thead-color {
+th {
+  font-family: "poppinsSemiBold", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
   color: #8B388A;
 }
 .box {
