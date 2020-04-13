@@ -21,28 +21,15 @@ input {
   text-align: center;
   color: #5E62AA !important;
   text-transform: uppercase;
-  margin-bottom: 3  0px !important;
+  margin-bottom: 10px !important;
 }
 .form_box {
   width: 100%;
   margin-bottom: 10px;
   margin-top: 10px;
 }
-.form_select {
+mat-form-field {
   width: 100%;
-  padding: 15px 20px;
-  border: 1px solid #e1e3e6;
-  font-family: "poppinsLight", Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
-}
-.form_input {
-  width: 100%;
-  padding: 15px 20px;
-  border: 1px solid #e1e3e6;
-  font-family: "poppinsLight", Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
 }
 .help {
   display: inline-block;
@@ -52,21 +39,11 @@ input {
   margin-bottom: 15px !important;
   cursor: help;
 }
-.form_box button {
-  position: absolute;
-  bottom: 10px;
-  width: 90%;
-}
 .btn--gradient {
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   vertical-align: middle;
   padding: 14px 40px;
@@ -80,7 +57,7 @@ input {
   color: #fff;
   background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
   transition: all 0.3s ease;
-  width: 110%;
+  width: 100%;
 }
 .btn--gradient:hover {
   background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
@@ -88,13 +65,9 @@ input {
 .modal {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
