@@ -1,1 +1,32 @@
-<p>read-allergy-intolerance works!</p>
+<div id="box">
+  <div id="detailsBox" class="center">
+    <h2 class="title">Ver registro Alergias e Intolerancias</h2>
+    <div class="row">
+      <div class="column">
+        <p class="label">Tipo:</p>
+        <p>{{allergy.type}}</p>
+        <p class="label">Estado clínico:</p>
+        <p>{{allergy.clinicalStatus}}</p>
+        <p class="label">Estado de verificación: </p>
+        <p>{{allergy.verificationStatus}}</p>
+        <p class="label">Nivel de riesgo:</p>
+        <p>{{allergy.criticality}}</p>
+      </div>
+      <div class="column">
+        <p class="label">Código:</p>
+        <p>{{allergy.code}}</p>
+        <p class="label">Categorias: </p>
+        <ul>
+          <li *ngFor="let c of allergy.category">{{c}}</li>
+        </ul>
+        <p class="label">Fecha identificación:</p>
+        <p>{{allergy.onsetDateTime}}</p>
+        <p class="label">Fecha última reacción:</p>
+        <p>{{allergy.onsetDateTime}}</p>
+      </div>
+    </div>
+    <p class="label">Notas:</p>
+    <p>{{allergy.note}}</p>
+    <app-read-reaction></app-read-reaction>
+  </div>
+</div>

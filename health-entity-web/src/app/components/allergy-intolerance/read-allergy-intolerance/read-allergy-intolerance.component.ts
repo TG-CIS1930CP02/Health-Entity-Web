@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { AllergyIntolerance } from '../../../models/allergy-intolerance';
 
 @Component({
   selector: 'app-read-allergy-intolerance',
@@ -8,8 +9,25 @@ import { Component, OnInit } from '@angular/core';
 export class ReadAllergyIntoleranceComponent implements OnInit {
 
   constructor() { }
+  @Input()
+  allergy: AllergyIntolerance = new AllergyIntolerance(
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined
+  );
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
