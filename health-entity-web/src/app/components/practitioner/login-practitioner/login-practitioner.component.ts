@@ -32,6 +32,7 @@ export class LoginPractitionerComponent implements OnInit {
   idType = 'Selecciona un tipo';
   id: number;
   password: string;
+  hide = true;
 
   incorrectLogin = false;
   invalidAuthorities = false;
