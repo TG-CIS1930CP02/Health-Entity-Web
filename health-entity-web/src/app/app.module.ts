@@ -27,6 +27,7 @@ import { HomeAdministrativeAssistantComponent } from './components/administrativ
 import { CreateAllergyIntoleranceComponent } from './components/allergy-intolerance/create-allergy-intolerance/create-allergy-intolerance.component';
 import { CreateReactionComponent } from './components/reaction/create-reaction/create-reaction.component';
 import { ReadAllergyIntoleranceComponent } from './components/allergy-intolerance/read-allergy-intolerance/read-allergy-intolerance.component';
+import { ReadReactionComponent } from './components/reaction/read-reaction/read-reaction.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ReadAllergyIntoleranceComponent } from './components/allergy-intoleranc
     HomeAdministrativeAssistantComponent,
     CreateAllergyIntoleranceComponent,
     CreateReactionComponent,
-    ReadAllergyIntoleranceComponent
+    ReadAllergyIntoleranceComponent,
+    ReadReactionComponent
   ],
   imports: [
     BrowserModule,
