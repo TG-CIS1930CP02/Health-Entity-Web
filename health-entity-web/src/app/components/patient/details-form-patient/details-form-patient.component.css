@@ -19,9 +19,6 @@ input {
   margin-bottom: 10px;
   margin-top: 10px;
 }
-.box {
-  border-bottom: solid 2px rgba(147, 147, 147, 0.6);
-}
 mat-form-field {
   width: 95%;
 }
