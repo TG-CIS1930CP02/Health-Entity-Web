@@ -1,1 +1,176 @@
-<p>create-allergy-intolerance works!</p>
+<div id="box" class="center">
+  <div id="formbox" class="center">
+    <h2 class="title">Registro Alergias e Intolerancias</h2>
+    <form (ngSubmit)="record()" #recordForm="ngForm">
+      <div class="form_box column">
+        <label>Identificación del paciente: </label>
+        <table cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field>
+                <mat-label>Elige un tipo</mat-label>
+                <mat-select [(ngModel)]="idTypePatient" name="idTypePatient" required>
+                  <mat-option *ngFor="let i of idTypeOptions" [value]="i.value">
+                    {{i.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field>
+                <mat-label>Numéro de identificación</mat-label>
+                <input matInput [(ngModel)]="idPatient" name="idPatient" required>
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="form_box column">
+        <label>Identificación de la persona que realiza el registro: </label>
+        <table cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field>
+                <mat-label>Elige un tipo</mat-label>
+                <mat-select [(ngModel)]="idTypeRecorder" name="idTypeRecorder">
+                  <mat-option *ngFor="let i of idTypeOptions" [value]="i.value">
+                    {{i.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field>
+                <mat-label>Numéro de identificación</mat-label>
+                <input matInput [(ngModel)]="idRecorder" name="idRecorder">
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="form_box column">
+        <label>Identificación de la persona que brinda la información: </label>
+        <table cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field>
+                <mat-label>Elige un tipo</mat-label>
+                <mat-select [(ngModel)]="idTypeAsserter" name="idTypeAsserter">
+                  <mat-option *ngFor="let i of idTypeOptions" [value]="i.value">
+                    {{i.name}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </td>
+            <td>
+              <mat-form-field>
+                <mat-label>Numéro de identificación</mat-label>
+                <input matInput [(ngModel)]="idAsserter" name="idAsserter">
+              </mat-form-field>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="form_box column">
+        <label>Estado clínico: </label>
+        <mat-form-field>
+          <mat-label>Elige uno</mat-label>
+          <mat-select [(ngModel)]="clinicalStatus" name="clinicalStatus">
+            <mat-option>Ninguno</mat-option>
+            <mat-option *ngFor="let cs of clinicalStatusOptions" [value]="cs.value">
+              {{cs.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form_box column">
+        <label>Estado de verificación: </label>
+        <mat-form-field>
+          <mat-label>Elige uno</mat-label>
+          <mat-select [(ngModel)]="verificationStatus" name="verificationStatus">
+            <mat-option>Ninguno</mat-option>
+            <mat-option *ngFor="let vs of verificationStatusOptions" [value]="vs.value">
+              {{vs.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form_box column">
+        <label>Tipo: </label>
+        <mat-radio-group aria-label="Selecciona un tipo" class="radio-group" [(ngModel)]="type" name="allergyType">
+          <mat-radio-button class="radio-button" *ngFor="let a of allergyTypeOptions" [value]="a.value">
+            {{a.name}}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <div class="form_box column">
+        <label>Categoria: </label>
+        <mat-form-field>
+          <mat-label>Elige las que apliquen</mat-label>
+          <mat-select [(ngModel)]="category" name="category" multiple>
+            <mat-option *ngFor="let c of categoryOptions" [value]="c.value">
+              {{c.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form_box column">
+        <label>Nivel de riesgo: </label>
+        <mat-form-field>
+          <mat-label>Elige uno</mat-label>
+          <mat-select [(ngModel)]="criticality" name="criticality">
+            <mat-option>Ninguno</mat-option>
+            <mat-option *ngFor="let c of criticalityOptions" [value]="c.value">
+              {{c.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form_box column">
+        <label>Código: </label>
+        <mat-form-field>
+          <mat-label>Elige uno</mat-label>
+          <mat-select [(ngModel)]="code" name="code">
+            <mat-option>Ninguno</mat-option>
+            <mat-option *ngFor="let c of codeOptions" [value]="c.value">
+              {{c.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form_box column">
+        <label>Fecha en la que fue identificada: </label>
+        <mat-form-field>
+          <mat-label>Seleccionar fecha</mat-label>
+          <input matInput [matDatepicker]="picker_idDate">
+          <mat-datepicker-toggle matSuffix [for]="picker_idDate"></mat-datepicker-toggle>
+          <mat-datepicker #picker_idDate></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="form_box column">
+        <label>Fecha de última reacción: </label>
+        <mat-form-field>
+          <mat-label>Seleccionar fecha</mat-label>
+          <input matInput [matDatepicker]="picker_lastReaction">
+          <mat-datepicker-toggle matSuffix [for]="picker_lastReaction"></mat-datepicker-toggle>
+          <mat-datepicker #picker_lastReaction></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="form_box">
+        <mat-form-field>
+          <mat-label>Notas:</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+      </div>
+      <div class="form_box">
+        <app-create-reaction></app-create-reaction>
+      </div>
+      <div class="form_box">
+        <mat-checkbox class="form_checkbox" [(ngModel)]="firstTime" name="firstTime" id="firstTime">
+          Primera vez
+        </mat-checkbox>
+      </div>
+      <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!recordForm.form.valid">Registrar</button>
+    </form>
+  </div>
+</div>

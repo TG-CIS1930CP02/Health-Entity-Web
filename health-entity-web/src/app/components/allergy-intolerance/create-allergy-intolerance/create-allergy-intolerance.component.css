@@ -1,0 +1,59 @@
+label {
+  font-weight: bold;
+  margin-right: 5px;
+}
+#box {
+  position: relative;
+  margin: 15px auto 80px auto;
+  max-width: 1200px;
+}
+#formbox {
+  font-family: "poppins", arial, sans-serif;
+  width: 100%;
+  overflow: hidden;
+}
+.center {
+  width: 50%;
+}
+.title {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: #5E62AA !important;
+  text-transform: uppercase;
+  margin-bottom: 3  0px !important;
+}
+.column {
+  float: left;
+}
+.column:nth-child(odd){
+  margin-right: 5px;
+}
+.form_box {
+  width: 50%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+.radio-button {
+  margin: 5px;
+}
+.btn--gradient {
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+  transition: all 0.3s ease;
+  width: 50%;
+}
+.btn--gradient:hover {
+  background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
+}
+.btn--gradient:disabled {
+  cursor: not-allowed;
+  background: #dddddd;
+}
