@@ -22,7 +22,7 @@ label {
   text-align: center;
   color: #5E62AA !important;
   text-transform: uppercase;
-  margin-bottom: 3  0px !important;
+  margin-bottom: 10px !important;
 }
 table {
   width: 100%;
@@ -53,7 +53,7 @@ mat-form-field {
   margin: 16px 0 28px 0;
 }
 .mat-radio-button ~ .mat-radio-button {
-  margin-left: 16px;
+  margin-left: 30px;
 }
 .btn {
   width: 100%;

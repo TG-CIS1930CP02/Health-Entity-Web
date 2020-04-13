@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OptionsList } from '../../../models/options-lists';
+import { AllergyIntolerance } from '../../../models/allergy-intolerance';
+import { Identification } from '../../../models/identification';
 
 @Component({
   selector: 'app-create-allergy-intolerance',
@@ -9,21 +11,30 @@ import { OptionsList } from '../../../models/options-lists';
 export class CreateAllergyIntoleranceComponent implements OnInit {
 
   constructor() { }
+  patient: Identification = new Identification(undefined, undefined);
+  asserter: Identification = new Identification(undefined, undefined);
+  recorder: Identification = new Identification(undefined, undefined);
 
-  clinicalStatus: string;
-  verificationStatus: string;
-  type: string;
-  category: string;
-  criticality: string;
-  code: string;
-  idTypePatient: string;
-  idPatient: number;
-  idDate: Date;
+  allergy: AllergyIntolerance = new AllergyIntolerance(
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    this.patient,
+    undefined,
+    undefined,
+    this.recorder,
+    this.asserter,
+    undefined,
+    undefined,
+    undefined
+  );
+
+  category: string[] = [];
   firstTime: boolean;
-  idTypeRecorder: string;
-  idRecorder: number;
-  idTypeAsserter: string;
-  idAsserter: number;
 
   clinicalStatusOptions = OptionsList.clinicalStatus;
   verificationStatusOptions = OptionsList.verificationStatus;
@@ -35,6 +46,20 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  record() {}
+  record() {
+    // TODO validate all fields
+    this.allergy.category = this.category;
+    if (this.firstTime) {
+      this.allergy.recordedDate = new Date();
+    }
+    /* TODO sacar info de estos
+      this.allergy.recorder.id = this.idRecorder;
+      this.allergy.recorder.type = this.idTypeRecorder;
+      this.allergy.asserter.id = this.idAsserter;
+      this.allergy.asserter.type = this.idTypeAsserter;
+    */
+
+    // TODO create service to record
+  }
 
 }

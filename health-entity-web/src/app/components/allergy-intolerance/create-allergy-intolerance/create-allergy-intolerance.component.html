@@ -9,7 +9,7 @@
             <td>
               <mat-form-field>
                 <mat-label>Elige un tipo</mat-label>
-                <mat-select [(ngModel)]="idTypeAsserter" name="idTypeAsserter">
+                <mat-select [(ngModel)]="allergy.patient.type" name="idTypeAsserter">
                   <mat-option *ngFor="let i of idTypeOptions" [value]="i.value">
                     {{i.name}}
                   </mat-option>
@@ -19,7 +19,7 @@
             <td>
               <mat-form-field>
                 <mat-label>Numéro de identificación</mat-label>
-                <input matInput [(ngModel)]="idAsserter" name="idAsserter">
+                <input matInput [(ngModel)]="allergy.patient.id" name="idAsserter" type="number">
               </mat-form-field>
             </td>
           </tr>
@@ -29,7 +29,7 @@
         <div class="column">
           <div class="form_box">
             <label>Tipo: </label>
-            <mat-radio-group aria-label="Selecciona un tipo" class="radio-group" [(ngModel)]="type" name="allergyType">
+            <mat-radio-group aria-label="Selecciona un tipo" class="radio-group" [(ngModel)]="allergy.type" name="allergyType">
               <mat-radio-button class="radio-button" *ngFor="let a of allergyTypeOptions" [value]="a.value">
                 {{a.name}}
               </mat-radio-button>
@@ -39,7 +39,7 @@
             <label>Estado de verificación: </label>
             <mat-form-field>
               <mat-label>Elige uno</mat-label>
-              <mat-select [(ngModel)]="verificationStatus" name="verificationStatus">
+              <mat-select [(ngModel)]="allergy.verificationStatus" name="verificationStatus">
                 <mat-option>Ninguno</mat-option>
                 <mat-option *ngFor="let vs of verificationStatusOptions" [value]="vs.value">
                   {{vs.name}}
@@ -62,7 +62,7 @@
             <label>Nivel de riesgo: </label>
             <mat-form-field>
               <mat-label>Elige uno</mat-label>
-              <mat-select [(ngModel)]="criticality" name="criticality">
+              <mat-select [(ngModel)]="allergy.criticality" name="criticality">
                 <mat-option>Ninguno</mat-option>
                 <mat-option *ngFor="let c of criticalityOptions" [value]="c.value">
                   {{c.name}}
@@ -77,7 +77,7 @@
             <label>Estado clínico: </label>
             <mat-form-field>
               <mat-label>Elige uno</mat-label>
-              <mat-select [(ngModel)]="clinicalStatus" name="clinicalStatus">
+              <mat-select [(ngModel)]="allergy.clinicalStatus" name="clinicalStatus">
                 <mat-option>Ninguno</mat-option>
                 <mat-option *ngFor="let cs of clinicalStatusOptions" [value]="cs.value">
                   {{cs.name}}
@@ -89,7 +89,7 @@
             <label>Código: </label>
             <mat-form-field>
               <mat-label>Elige uno</mat-label>
-              <mat-select [(ngModel)]="code" name="code">
+              <mat-select [(ngModel)]="allergy.code" name="code">
                 <mat-option>Ninguno</mat-option>
                 <mat-option *ngFor="let c of codeOptions" [value]="c.value">
                   {{c.name}}
@@ -101,7 +101,7 @@
             <label>Fecha en la que fue identificada: </label>
             <mat-form-field>
               <mat-label>Seleccionar fecha</mat-label>
-              <input matInput [matDatepicker]="picker_idDate">
+              <input matInput [matDatepicker]="picker_idDate" [(ngModel)]="allergy.onsetDateTime" name="idDate">
               <mat-datepicker-toggle matSuffix [for]="picker_idDate"></mat-datepicker-toggle>
               <mat-datepicker #picker_idDate></mat-datepicker>
             </mat-form-field>
@@ -110,7 +110,7 @@
             <label>Fecha de última reacción: </label>
             <mat-form-field>
               <mat-label>Seleccionar fecha</mat-label>
-              <input matInput [matDatepicker]="picker_lastReaction">
+              <input matInput [matDatepicker]="picker_lastReaction" [(ngModel)]="allergy.lastOccurrence" name="lastReactionDate">
               <mat-datepicker-toggle matSuffix [for]="picker_lastReaction"></mat-datepicker-toggle>
               <mat-datepicker #picker_lastReaction></mat-datepicker>
             </mat-form-field>
@@ -122,7 +122,7 @@
         <label>Notas: </label>
         <mat-form-field>
           <mat-label>Notas adicionales</mat-label>
-          <textarea matInput></textarea>
+          <textarea matInput [(ngModel)]="allergy.note" name="note"></textarea>
         </mat-form-field>
       </div>
       <div class="form_box">
