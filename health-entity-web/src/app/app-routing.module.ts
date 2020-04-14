@@ -14,6 +14,7 @@ import { HomePatientComponent } from './components/patient/home-patient/home-pat
 import { CreateAllergyIntoleranceComponent } from './components/allergy-intolerance/create-allergy-intolerance/create-allergy-intolerance.component';
 import { ReadAllergyIntoleranceComponent } from './components/allergy-intolerance/read-allergy-intolerance/read-allergy-intolerance.component';
 import { SignupPatientComponent } from './components/patient/signup-patient/signup-patient.component';
+import { SearchPatientComponent } from './components/patient/search-patient/search-patient.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path: 'patient/home', component: HomePatientComponent },
   { path: 'practitioner/enter-resource/allergy', component: CreateAllergyIntoleranceComponent },
   { path: 'practitioner/view-resource/allergy', component: ReadAllergyIntoleranceComponent },
+  { path: 'practitioner/search-patient', component: SearchPatientComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
 

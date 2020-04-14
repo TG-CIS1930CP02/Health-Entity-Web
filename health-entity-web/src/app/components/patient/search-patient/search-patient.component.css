@@ -1,0 +1,184 @@
+input {
+  width: 100%;
+}
+#box {
+  position: relative;
+  margin: 155px auto 80px auto;
+  max-width: 1200px;
+}
+#formbox {
+  font-family: "poppins", arial, sans-serif;
+  width: 100%;
+  overflow: hidden;
+}
+.center {
+  margin: auto;
+  width: 50%;
+}
+.welcome {
+  width: 100%;
+  font-size: 34px;
+  text-align: center;
+  color: #8B388A !important;
+  text-transform: uppercase;
+  margin-bottom: 20px !important;
+}
+.title {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: #5E62AA !important;
+  text-transform: uppercase;
+  margin-bottom: 5px !important;
+}
+.form_box {
+  width: 50%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+mat-form-field {
+  width: 95%;
+}
+.inline {
+  float:left;
+}
+.btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  vertical-align: middle;
+  padding: 5px 40px;
+  outline: none;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  width: 50%;
+  margin: 5px;
+}
+.emergency {
+  background: red;
+}
+.emergency:hover {
+  background: #e50000;
+}
+.gradient {
+  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+}
+.gradient:hover {
+  background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  z-index: 3000;
+}
+.modal .title {
+  width: 100%;
+  font-size: 25px;
+  font-family: "poppinsSemibold", Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: white !important;
+  text-transform: uppercase;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  letter-spacing: 1px;
+}
+.modal_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  min-height: auto;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 30px rgba(74, 74, 74, 0.15);
+  background: #fff;
+}
+.modal_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+  position: relative;
+}
+.modal_close {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+}
+.icon--close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  object-position: center;
+  background-size: contain !important;
+  transition: all 0.3s ease;
+  background: url("../../../../assets/icons/close.png") no-repeat center;
+  background-size: contain;
+}
+.modal .icon--close {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  cursor: pointer;
+}
+.modal_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+.modal_content .text {
+  width: 100%;
+  font-size: 14px;
+  color: #4a4a4a !important;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+}

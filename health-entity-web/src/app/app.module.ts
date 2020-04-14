@@ -28,6 +28,7 @@ import { CreateAllergyIntoleranceComponent } from './components/allergy-intolera
 import { CreateReactionComponent } from './components/reaction/create-reaction/create-reaction.component';
 import { ReadAllergyIntoleranceComponent } from './components/allergy-intolerance/read-allergy-intolerance/read-allergy-intolerance.component';
 import { ReadReactionComponent } from './components/reaction/read-reaction/read-reaction.component';
+import { SearchPatientComponent } from './components/patient/search-patient/search-patient.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ReadReactionComponent } from './components/reaction/read-reaction/read-
     CreateAllergyIntoleranceComponent,
     CreateReactionComponent,
     ReadAllergyIntoleranceComponent,
-    ReadReactionComponent
+    ReadReactionComponent,
+    SearchPatientComponent
   ],
   imports: [
     BrowserModule,
