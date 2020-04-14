@@ -13,21 +13,23 @@ import { HomeAdministrativeAssistantComponent } from './components/administrativ
 import { HomePatientComponent } from './components/patient/home-patient/home-patient.component';
 import { CreateAllergyIntoleranceComponent } from './components/allergy-intolerance/create-allergy-intolerance/create-allergy-intolerance.component';
 import { ReadAllergyIntoleranceComponent } from './components/allergy-intolerance/read-allergy-intolerance/read-allergy-intolerance.component';
+import { SignupPatientComponent } from './components/patient/signup-patient/signup-patient.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
-  { path: 'home', component: HomeComponent},
-  { path: 'login-patient', component:  LoginPatientComponent},
-  { path: 'login-practitioner', component: LoginPractitionerComponent},
-  { path: 'login-administrator', component: LoginAdministratorComponent},
-  { path: 'admin/signup-practitioner', component: SignupPractitionerComponent},
-  { path: 'admin/signup-administrative-assistant', component: SignupAdministrativeAssistantComponent},
-  { path: 'admin/home', component: HomeAdministratorComponent},
-  { path: 'practitioner/home', component: HomePractitionerComponent},
-  { path: 'admin-assistant/home', component: HomeAdministrativeAssistantComponent},
-  { path: 'patient/home', component: HomePatientComponent},
-  { path: 'practitioner/enter-resource/allergy', component: CreateAllergyIntoleranceComponent},
-  { path: 'practitioner/view-resource/allergy', component: ReadAllergyIntoleranceComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'login-patient', component:  LoginPatientComponent },
+  { path: 'login-practitioner', component: LoginPractitionerComponent },
+  { path: 'login-administrator', component: LoginAdministratorComponent },
+  { path: 'admin/signup-practitioner', component: SignupPractitionerComponent },
+  { path: 'admin/signup-administrative-assistant', component: SignupAdministrativeAssistantComponent },
+  { path: 'admin-assistant/signup-patient', component: SignupPatientComponent },
+  { path: 'admin/home', component: HomeAdministratorComponent },
+  { path: 'practitioner/home', component: HomePractitionerComponent },
+  { path: 'admin-assistant/home', component: HomeAdministrativeAssistantComponent },
+  { path: 'patient/home', component: HomePatientComponent },
+  { path: 'practitioner/enter-resource/allergy', component: CreateAllergyIntoleranceComponent },
+  { path: 'practitioner/view-resource/allergy', component: ReadAllergyIntoleranceComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
 
