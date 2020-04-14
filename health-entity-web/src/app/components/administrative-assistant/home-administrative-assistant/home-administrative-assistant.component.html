@@ -1,2 +1,11 @@
-<h1 class="welcome">Bienvenido</h1>
-<app-signup-patient></app-signup-patient>
+<div class="banner">
+  <a [routerLink]="['/admin-assistant/signup-patient']" class="banner_item">
+    <picture class="banner_item_mask">
+      <source media="(max-width: 767px)" srcset="../../../../assets/images/registro.jpg" />
+      <img src="../../../../assets/images/registro.jpg" alt="" class="banner_item_bg" />
+    </picture>
+    <div class="banner_miniBox">
+      <h2 class="banner_title">Registro paciente</h2>
+    </div>
+  </a>
+</div>
