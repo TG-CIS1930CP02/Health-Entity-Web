@@ -11,7 +11,7 @@ import { OptionsList } from '../../../models/options-lists';
 
 export class SignupPractitionerComponent implements OnInit {
   @Input()
-  isPractitioner: boolean;
+  isPractitioner = true;
   @Input()
   title = 'Registro profesional de la salud';
 

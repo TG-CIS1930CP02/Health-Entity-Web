@@ -29,6 +29,8 @@ export class DetailsPractitionerComponent implements OnInit {
     undefined
   );
 
+  displayedColumnsQualification = ['title', 'startDate', 'reportingEntity'];
+
   telecoms: ContactPoint[] = [];
   addresses: Address[] = [];
   cities = OptionsList.cities;

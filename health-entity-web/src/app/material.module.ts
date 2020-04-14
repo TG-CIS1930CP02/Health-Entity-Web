@@ -10,6 +10,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+
 @NgModule({
   exports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule
   ]
 })
 export class MaterialModule {}

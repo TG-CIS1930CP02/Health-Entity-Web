@@ -81,21 +81,21 @@
       </div>
     </div>
     <br>
-    <table class="table" *ngIf="hasQualifications">
-      <thead class="thead-color">
-        <tr>
-          <th scope="col">Titulo Profesional</th>
-          <th scope="col">Fecha desde que puede ejercer </th>
-          <th scope="col">Entidad Reportadora</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let q of practitioner.qualifications">
-          <td>{{q.name}}</td>
-          <td>{{q.startDate}}</td>
-          <td>{{q.reportingEntity}}</td>
-        </tr>
-      </tbody>
+    <table mat-table [dataSource]="practitioner.qualifications" *ngIf="hasQualifications">
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Título Profesional</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef>Fecha desde que puede ejercer</th>
+        <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+      </ng-container>
+      <ng-container matColumnDef="reportingEntity">
+        <th mat-header-cell *matHeaderCellDef>Entidad Reportadora</th>
+        <td mat-cell *matCellDef="let element"> {{element.reportingEntity}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsQualification"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsQualification;"></tr>
     </table>
     <div class="btn">
       <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!validateForm.form.valid">

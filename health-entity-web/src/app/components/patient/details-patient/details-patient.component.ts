@@ -24,6 +24,9 @@ export class DetailsPatientComponent implements OnInit {
     undefined
   );
 
+  displayedColumnsContact = ['type', 'system', 'value'];
+  displayedColumnsAddress = ['city', 'type', 'name', 'address'];
+
   telecoms: ContactPoint[] = [];
   addresses: Address[] = [];
   cities = OptionsList.cities;
