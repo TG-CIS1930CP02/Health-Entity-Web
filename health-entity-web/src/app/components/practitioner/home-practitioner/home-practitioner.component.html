@@ -1,41 +1,11 @@
-<div id="box" class="center">
-  <h1 class="welcome">Bienvenido Doctor</h1>
-  <div id="formbox" class="center">
-    <h2 class="title">Busqueda Paciente</h2>
-    <form (ngSubmit)="search()" #searchForm="ngForm">
-      <div class="form_box inline">
-        <mat-form-field>
-          <mat-label>Elige un tipo de identificación</mat-label>
-          <mat-select [(ngModel)]="idType" name="idType" [disabled]="found=='found'" required>
-            <mat-option *ngFor="let i of options" [value]="i.value">
-              {{i.name}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="form_box inline">
-        <mat-form-field>
-          <mat-label>Número de identificación</mat-label>
-          <input matInput [(ngModel)]="id" name="idNumber" type="number" [disabled]="found=='found'" required>
-        </mat-form-field>
-      </div>
-      <div class="btn">
-        <button mat-flat-button type="submit" class="button gradient" [disabled]="!searchForm.form.valid" *ngIf="found=='pending'">
-          Buscar
-        </button>
-      </div>
-    </form>
-  </div>
-  <app-details-patient *ngIf="found=='found'" [patient]=patientFound></app-details-patient>
-  <div class="btn">
-    <button mat-flat-button type="submit" class="button gradient" *ngIf="found=='found'">
-      Agregar registro
-    </button>
-    <button mat-flat-button type="submit" class="button gradient" *ngIf="found=='found'">
-      Ver historia clínica
-    </button>
-    <button mat-flat-button type="submit" class="button emergency" *ngIf="found=='not_found'">
-      EMERGENCIA
-    </button>
-  </div>
+<div class="banner">
+  <a [routerLink]="['/practitioner/search-patient']" class="banner_item">
+    <picture class="banner_item_mask">
+      <source media="(max-width: 767px)" srcset="../../../../assets/images/buscando.jpg" />
+      <img src="../../../../assets/images/buscando.jpg" alt="" class="banner_item_bg" />
+    </picture>
+    <div class="banner_miniBox">
+      <h2 class="banner_title">Registro paciente</h2>
+    </div>
+  </a>
 </div>
