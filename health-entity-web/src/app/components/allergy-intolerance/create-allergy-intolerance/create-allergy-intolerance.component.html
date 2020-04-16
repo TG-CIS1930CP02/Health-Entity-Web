@@ -29,7 +29,8 @@
         <div class="column">
           <div class="form_box">
             <label>Tipo: </label>
-            <mat-radio-group aria-label="Selecciona un tipo" class="radio-group" [(ngModel)]="allergy.type" name="allergyType">
+            <mat-radio-group aria-label="Selecciona un tipo" class="radio-group" [(ngModel)]="allergy.type"
+              name="allergyType">
               <mat-radio-button class="radio-button" *ngFor="let a of allergyTypeOptions" [value]="a.value">
                 {{a.name}}
               </mat-radio-button>
@@ -110,13 +111,14 @@
             <label>Fecha de última reacción: </label>
             <mat-form-field>
               <mat-label>Seleccionar fecha</mat-label>
-              <input matInput [matDatepicker]="picker_lastReaction" [(ngModel)]="allergy.lastOccurrence" name="lastReactionDate">
+              <input matInput [matDatepicker]="picker_lastReaction" [(ngModel)]="allergy.lastOccurrence"
+                name="lastReactionDate">
               <mat-datepicker-toggle matSuffix [for]="picker_lastReaction"></mat-datepicker-toggle>
               <mat-datepicker #picker_lastReaction></mat-datepicker>
             </mat-form-field>
           </div>
         </div>
-        </div>
+      </div>
 
       <div class="form_box">
         <label>Notas: </label>
@@ -125,8 +127,9 @@
           <textarea matInput [(ngModel)]="allergy.note" name="note"></textarea>
         </mat-form-field>
       </div>
+
       <div class="form_box">
-        <app-create-reaction></app-create-reaction>
+        <label class="label" for="address">Reacciones: </label>
       </div>
       <div class="form_box">
         <mat-checkbox class="form_checkbox" [(ngModel)]="firstTime" name="firstTime" id="firstTime">
@@ -134,7 +137,8 @@
         </mat-checkbox>
       </div>
       <div class="btn">
-        <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!recordForm.form.valid">Registrar</button>
+        <button mat-flat-button type="submit" class="btn--gradient"
+          [disabled]="!recordForm.form.valid">Registrar</button>
       </div>
     </form>
   </div>

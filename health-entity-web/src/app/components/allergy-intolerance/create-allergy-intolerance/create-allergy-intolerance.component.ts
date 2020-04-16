@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OptionsList } from '../../../models/options-lists';
 import { AllergyIntolerance } from '../../../models/allergy-intolerance';
 import { Identification } from '../../../models/identification';
+import { Reaction } from '../../../models/reaction';
 
 @Component({
   selector: 'app-create-allergy-intolerance',
@@ -35,6 +36,7 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
 
   category: string[] = [];
   firstTime: boolean;
+  reactions: Reaction[] = [];
 
   clinicalStatusOptions = OptionsList.clinicalStatus;
   verificationStatusOptions = OptionsList.verificationStatus;

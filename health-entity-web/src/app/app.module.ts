@@ -25,9 +25,7 @@ import { HomeAdministratorComponent } from './components/administrator/home-admi
 import { DetailsFormPatientComponent } from './components/patient/details-form-patient/details-form-patient.component';
 import { HomeAdministrativeAssistantComponent } from './components/administrative-assistant/home-administrative-assistant/home-administrative-assistant.component';
 import { CreateAllergyIntoleranceComponent } from './components/allergy-intolerance/create-allergy-intolerance/create-allergy-intolerance.component';
-import { CreateReactionComponent } from './components/reaction/create-reaction/create-reaction.component';
 import { ReadAllergyIntoleranceComponent } from './components/allergy-intolerance/read-allergy-intolerance/read-allergy-intolerance.component';
-import { ReadReactionComponent } from './components/reaction/read-reaction/read-reaction.component';
 import { SearchPatientComponent } from './components/patient/search-patient/search-patient.component';
 
 @NgModule({
@@ -51,9 +49,7 @@ import { SearchPatientComponent } from './components/patient/search-patient/sear
     DetailsFormPatientComponent,
     HomeAdministrativeAssistantComponent,
     CreateAllergyIntoleranceComponent,
-    CreateReactionComponent,
     ReadAllergyIntoleranceComponent,
-    ReadReactionComponent,
     SearchPatientComponent
   ],
   imports: [
