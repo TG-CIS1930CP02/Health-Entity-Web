@@ -7,7 +7,7 @@
   <p>{{patient.gender}}</p>
   <form (ngSubmit)="validate()" #detailsForm="ngForm">
     <div class="form_box">
-      <label class="label" for="telecom">Datos de contacto: </label><br />
+      <label class="label" for="telecom">Datos de contacto: </label>
       <div *ngFor="let t of telecoms;let index = index;trackBy:trackByIndex;">
         <div class="inline33">
           <mat-form-field>
@@ -43,7 +43,7 @@
     </div>
     <div class="form_box">
       <div>
-        <label class="label" for="address">Direcciones: </label><br />
+        <label class="label" for="address">Direcciones: </label>
         <div class="addressBox" *ngFor="let a of addresses;let index = index;trackBy:trackByIndex;">
           <div class="inline50">
             <mat-form-field>
@@ -80,7 +80,6 @@
         </div>
       </div>
     </div>
-    <br>
     <div class="btn">
       <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!detailsForm.form.valid">
         Continuar
