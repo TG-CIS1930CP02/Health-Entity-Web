@@ -46,7 +46,7 @@ table {
   margin-top: 10px;
 }
 mat-form-field {
-  width: 100%;
+  width: 98%;
 }
 .radio-group {
   display: flex;
@@ -54,6 +54,10 @@ mat-form-field {
 }
 .mat-radio-button ~ .mat-radio-button {
   margin-left: 30px;
+}
+.inline50 {
+  float:left;
+  width: 50%;
 }
 .btn {
   width: 100%;

@@ -15,6 +15,7 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
   patient: Identification = new Identification(undefined, undefined);
   asserter: Identification = new Identification(undefined, undefined);
   recorder: Identification = new Identification(undefined, undefined);
+  reaction: Reaction = new Reaction(undefined, undefined, undefined, undefined, undefined);
 
   allergy: AllergyIntolerance = new AllergyIntolerance(
     undefined,
@@ -31,20 +32,22 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
     this.asserter,
     undefined,
     undefined,
-    undefined
+    this.reaction
   );
 
   category: string[] = [];
   firstTime: boolean;
-  reactions: Reaction[] = [];
 
   clinicalStatusOptions = OptionsList.clinicalStatus;
   verificationStatusOptions = OptionsList.verificationStatus;
   allergyTypeOptions = OptionsList.AllergyIntoleranceType;
   categoryOptions = OptionsList.AllergyIntoleranceCategory;
   criticalityOptions = OptionsList.AllergyIntoleranceCriticality;
-  codeOptions = OptionsList.AllergyIntoleranceCode;
+  codeOptions = OptionsList.AllergyIntoleranceCodes;
   idTypeOptions = OptionsList.identificationTypes;
+  manifestationOptions = OptionsList.ManifestationsCodes;
+  severityOptions = OptionsList.AllergyIntoleranceSeverity;
+  exposureOptions = OptionsList.ExposureRouteCodes;
 
   ngOnInit(): void { }
 
@@ -64,4 +67,7 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
     // TODO create service to record
   }
 
+  trackByIndex(index: number, obj: any): any {
+    return index;
+  }
 }

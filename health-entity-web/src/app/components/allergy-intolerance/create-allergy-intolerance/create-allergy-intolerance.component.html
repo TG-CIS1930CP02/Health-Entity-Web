@@ -129,7 +129,57 @@
       </div>
 
       <div class="form_box">
-        <label class="label" for="address">Reacciones: </label>
+      <label class="label" for="reaction">Reacción: </label>
+        <div class="inline50">
+          <mat-form-field>
+            <mat-label>Elige una sustancia</mat-label>
+            <mat-select [(ngModel)]="allergy.reaction.substance" [ngModelOptions]="{standalone: true}">
+              <mat-option>Ninguna</mat-option>
+              <mat-option *ngFor="let c of codeOptions" [value]="c.value">
+                {{c.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="inline50">
+          <mat-form-field>
+            <mat-label>Elige por lo menos una manifestación</mat-label>
+            <mat-select [(ngModel)]="allergy.reaction.manifestation" [ngModelOptions]="{standalone: true}" multiple required>
+              <mat-option>Ninguna</mat-option>
+              <mat-option *ngFor="let m of manifestationOptions" [value]="m.value">
+                {{m.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="inline50">
+          <mat-form-field>
+            <mat-label>Severidad</mat-label>
+            <mat-select [(ngModel)]="allergy.reaction.severity" [ngModelOptions]="{standalone: true}">
+              <mat-option>Ninguna</mat-option>
+              <mat-option *ngFor="let s of severityOptions" [value]="s.value">
+                {{s.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="inline50">
+          <mat-form-field>
+            <mat-label>¿Cómo se expuso a la sustancia?:</mat-label>
+            <mat-select [(ngModel)]="allergy.reaction.exposureRoute" [ngModelOptions]="{standalone: true}">
+              <mat-option>Ninguna</mat-option>
+              <mat-option *ngFor="let e of exposureOptions" [value]="e.value">
+                {{e.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Descripción del evento</mat-label>
+            <textarea matInput [(ngModel)]="allergy.reaction.description" [ngModelOptions]="{standalone: true}"></textarea>
+          </mat-form-field>
+        </div>
       </div>
       <div class="form_box">
         <mat-checkbox class="form_checkbox" [(ngModel)]="firstTime" name="firstTime" id="firstTime">

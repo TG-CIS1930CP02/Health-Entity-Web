@@ -61,17 +61,17 @@ export class OptionsList {
     { name: 'No se puede evaluar', value: 'unable-to-assess' }
   ];
 
-  public static AllergyIntoleranceCode = [
-    { name: 'Hemoglobina okaloosa', value: '102002 ' },
-    { name: 'Carrera de ornitina', value: '120006 ' },
-    { name: 'Sulfato ferroso Fe ^ 59 ^', value: '125001 ' },
-    { name: 'Galactosil-N-acetilglucosaminilgalactosilglucosilceramida alfa-galactosiltransferasa', value: '126000 ' },
-    { name: 'Hemoglobina Hopkins-II', value: '130002 ' },
-    { name: 'Manosiltransferasa de dolilfosfato', value: '131003 ' },
-    { name: 'Sal de ferrocianuro', value: '159002 ' },
-    { name: 'Fosfoenolpiruvato-proteína fosfotransferasa', value: '164003 ' },
-    { name: 'Uridil difosfato galactosa', value: '178002 ' },
-    { name: 'Antígeno HLA-Cw9', value: '186002 ' }
+  public static AllergyIntoleranceCodes = [
+    { name: 'Hemoglobina okaloosa', value: '102002' },
+    { name: 'Carrera de ornitina', value: '120006' },
+    { name: 'Sulfato ferroso Fe ^ 59 ^', value: '125001' },
+    { name: 'Galactosil-N-acetilglucosaminilgalactosilglucosilceramida alfa-galactosiltransferasa', value: '126000' },
+    { name: 'Hemoglobina Hopkins-II', value: '130002' },
+    { name: 'Manosiltransferasa de dolilfosfato', value: '131003' },
+    { name: 'Sal de ferrocianuro', value: '159002' },
+    { name: 'Fosfoenolpiruvato-proteína fosfotransferasa', value: '164003' },
+    { name: 'Uridil difosfato galactosa', value: '178002' },
+    { name: 'Antígeno HLA-Cw9', value: '186002' }
   ];
 
   public static AllergyIntoleranceSeverity = [
@@ -81,16 +81,29 @@ export class OptionsList {
   ];
 
   public static ExposureRouteCodes = [
-    { name: 'Topical route', value: '6064005 ' },
-    { name: 'Auricular use', value: '10547007 ' },
-    { name: 'Intra-articular route', value: '12130007 ' },
-    { name: 'Oral use', value: '26643006 ' },
-    { name: 'SC use', value: '34206005 ' },
-    { name: 'Rectal use', value: '37161004 ' },
-    { name: 'Intraluminal use', value: '37737002 ' },
-    { name: 'Sublingual use', value: '37839007 ' },
-    { name: 'Intraperitoneal use', value: '38239002 ' },
-    { name: 'Transdermal use', value: '45890007 ' }
+    { name: 'Ruta tópica', value: '6064005' },
+    { name: 'Uso auricular', value: '10547007' },
+    { name: 'Ruta intraarticular', value: '12130007' },
+    { name: 'Uso oral', value: '26643006' },
+    { name: 'Uso de SC', value: '34206005' },
+    { name: 'Uso rectal', value: '37161004' },
+    { name: 'Uso intraluminal', value: '37737002' },
+    { name: 'Uso sublingual', value: '37839007' },
+    { name: 'Uso intraperitoneal', value: '38239002' },
+    { name: 'Uso transdérmico', value: '45890007' }
+  ];
+
+  public static ManifestationsCodes = [
+    { name: 'Trastorno de ansiedad de la infancia O adolescencia', value: '109006' },
+    { name: 'Hemorragia coroidea', value: '122003' },
+    { name: 'Aborto espontáneo con laceración del cuello uterino.', value: '127009' },
+    { name: 'Homoiotermia', value: '129007' },
+    { name: 'Disminución del crecimiento del cabello.', value: '134006' },
+    { name: 'Faringitis crónica', value: '140004' },
+    { name: 'Visión periférica normal', value: '144008' },
+    { name: 'Cuerpo extraño superficial del escroto sin herida abierta importante pero con infección', value: '147001' },
+    { name: 'Continencia de vejiga anormal', value: '150003' },
+    { name: 'Meningitis por gonococo', value: '151004' }
   ];
 
   public static cities: string[] = [
