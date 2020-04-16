@@ -93,7 +93,7 @@ export class OptionsList {
     { name: 'Uso transdérmico', value: '45890007' }
   ];
 
-  public static ManifestationsCodes = [
+  public static ClinicalFindingsCodes = [
     { name: 'Trastorno de ansiedad de la infancia O adolescencia', value: '109006' },
     { name: 'Hemorragia coroidea', value: '122003' },
     { name: 'Aborto espontáneo con laceración del cuello uterino.', value: '127009' },
@@ -104,6 +104,76 @@ export class OptionsList {
     { name: 'Cuerpo extraño superficial del escroto sin herida abierta importante pero con infección', value: '147001' },
     { name: 'Continencia de vejiga anormal', value: '150003' },
     { name: 'Meningitis por gonococo', value: '151004' }
+  ];
+
+  public static diagnosticStatusCodes = [
+    { name: 'Registrado', value: 'registered' },
+    { name: 'Parcial', value: 'partial' },
+    { name: 'Preliminar', value: '  preliminary' },
+    { name: 'Final', value: 'final' },
+    { name: 'Modificado', value: 'amended' },
+    { name: 'Corregido', value: '  corrected' },
+    { name: 'Adjunto', value: '  appended' },
+    { name: 'Cancelado', value: 'cancelled' },
+    { name: 'Ingresado por error', value: 'entered-in-error' },
+    { name: 'Desconocido', value: 'unknown' }
+  ];
+
+  public static diagnosticCategoryCodes = [
+    { name: 'Audiología', value: 'AU' },
+    { name: 'Gases en sangre', value: 'BG' },
+    { name: 'Banco de Sangre', value: 'BLB' },
+    { name: 'Citogenética', value: 'CG' },
+    { name: 'Química', value: 'CH' },
+    { name: 'Citopatología', value: 'CP' },
+    { name: 'Análisis de gato', value: 'CT' },
+    { name: 'Cateterización cardiaca', value: 'CTH' },
+    { name: 'Ultrasonido cardiaco', value: 'CUS' },
+    { name: 'Electrocardíaco (p. Ej., EKG, EEC, Holter)', value: 'EC' },
+    { name: 'Electroneuro (EEG, EMG, EP, PSG)', value: 'EN' },
+    { name: 'Genética', value: 'GE' },
+    { name: 'Hematología', value: 'HM' },
+    { name: 'Monitoreo de UCI a pie de cama', value: 'ICU' },
+    { name: 'Inmunología', value: 'IMM' },
+    { name: 'Laboratorio', value: 'LAB' },
+    { name: 'Microbiología', value: 'MB' },
+    { name: 'Micobacteriología', value: 'MCB' },
+    { name: 'Micología', value: 'MYC' },
+    { name: 'Resonancia magnética nuclear', value: 'NMR' },
+    { name: 'Exploración de medicina nuclear', value: 'NMS' },
+    { name: 'Medidas de servicio de enfermería', value: 'NRS' },
+    { name: 'Laboratorio exterior', value: 'OSL' },
+    { name: 'Terapia ocupacional', value: 'OT' },
+    { name: 'Otro', value: 'OTH' },
+    { name: 'Ultrasonido OB', value: 'OUS' },
+    { name: 'Función pulmonar', value: 'PF' },
+    { name: 'Farmacia', value: 'PHR' },
+    { name: 'Médico (Hx. Dx, nota de admisión, etc.)', value: 'PHY' },
+    { name: 'Terapia física', value: 'PT' },
+    { name: 'Radiología', value: 'RAD' },
+    { name: 'Cuidado respiratorio (terapia)', value: 'RC' },
+    { name: 'Terapia de radiación', value: 'RT' },
+    { name: 'Ultrasonido Radiológico', value: 'RUS' },
+    { name: 'Radiografía', value: 'RX' },
+    { name: 'Patología Quirúrgica', value: 'SP' },
+    { name: 'Serología', value: 'SR' },
+    { name: 'Toxicología', value: 'TX' },
+    { name: 'Virología', value: 'VR' },
+    { name: 'Ultrasonido vascular', value: 'VUS' },
+    { name: 'Cineradiografía', value: 'XRC' }
+  ];
+
+  public static diagnosticCodes = [
+    { name: 'Aciclovir [Susceptibilidad]', value: '1-8 ' },
+    { name: 'Amdinocillin [Susceptibilidad] por título bactericida en suero', value: '10-9 ' },
+    { name: 'Cefoperazona [Susceptibilidad] por concentración inhibitoria mínima (MIC)', value: '100-8 ' },
+    { name: 'DBG Ab [Presencia] en suero o plasma de la unidad de producto de sangre', value: '1000-9 ' },
+    { name: 'Duración de la onda R en AVR principal', value: '10000-8 ' },
+    { name: 'Duración de la onda R en la derivación I', value: '10001-6 ' },
+    { name: 'Duración de la onda R en la derivación II', value: '10002-4 ' },
+    { name: 'Duración de la onda R en la derivación III', value: '10003-2 ' },
+    { name: 'Duración de la onda R en la derivación V1', value: '10004-0 ' },
+    { name: 'Duración de la onda R en plomo V2', value: '10005-7 ' },
   ];
 
   public static cities: string[] = [

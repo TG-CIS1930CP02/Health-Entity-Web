@@ -45,7 +45,7 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
   criticalityOptions = OptionsList.AllergyIntoleranceCriticality;
   codeOptions = OptionsList.AllergyIntoleranceCodes;
   idTypeOptions = OptionsList.identificationTypes;
-  manifestationOptions = OptionsList.ManifestationsCodes;
+  manifestationOptions = OptionsList.ClinicalFindingsCodes;
   severityOptions = OptionsList.AllergyIntoleranceSeverity;
   exposureOptions = OptionsList.ExposureRouteCodes;
 
