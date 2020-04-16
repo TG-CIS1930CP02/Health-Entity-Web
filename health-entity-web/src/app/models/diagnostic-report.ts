@@ -13,7 +13,7 @@ export class DiagnosticReport {
     public performer: Identification[],
     public resultsInterpreter: Identification[],
     public result: Observation[],
-    public media: string[],
+    public media: string[], // TODO add to components
     public conclusion: string,
     public conclusionCode: string[]
   ) {}
