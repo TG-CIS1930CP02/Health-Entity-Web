@@ -52,7 +52,7 @@
             <label>Categoria: </label>
             <mat-form-field>
               <mat-label>Elige las que apliquen</mat-label>
-              <mat-select [(ngModel)]="category" name="category" multiple>
+              <mat-select [(ngModel)]="allergy.category" name="category" multiple>
                 <mat-option *ngFor="let c of categoryOptions" [value]="c.value">
                   {{c.name}}
                 </mat-option>

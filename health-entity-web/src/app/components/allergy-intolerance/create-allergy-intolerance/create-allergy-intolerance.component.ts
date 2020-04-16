@@ -35,7 +35,6 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
     this.reaction
   );
 
-  category: string[] = [];
   firstTime: boolean;
 
   clinicalStatusOptions = OptionsList.clinicalStatus;
@@ -53,7 +52,6 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
 
   record() {
     // TODO validate all fields
-    this.allergy.category = this.category;
     if (this.firstTime) {
       this.allergy.recordedDate = new Date();
     }
