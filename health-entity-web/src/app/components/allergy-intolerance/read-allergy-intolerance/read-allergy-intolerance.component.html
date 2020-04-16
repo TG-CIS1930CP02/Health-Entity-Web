@@ -3,30 +3,50 @@
     <h2 class="title">Ver registro Alergias e Intolerancias</h2>
     <div class="row">
       <div class="column">
-        <p class="label">Tipo:</p>
+        <label>Tipo:</label>
         <p>{{allergy.type}}</p>
-        <p class="label">Estado clínico:</p>
+        <label>Estado clínico:</label>
         <p>{{allergy.clinicalStatus}}</p>
-        <p class="label">Estado de verificación: </p>
+        <label>Estado de verificación: </label>
         <p>{{allergy.verificationStatus}}</p>
-        <p class="label">Nivel de riesgo:</p>
+        <label>Nivel de riesgo:</label>
         <p>{{allergy.criticality}}</p>
       </div>
       <div class="column">
-        <p class="label">Código:</p>
+        <label>Código:</label>
         <p>{{allergy.code}}</p>
-        <p class="label">Categorias: </p>
+        <label>Categorias: </label>
         <ul>
           <li *ngFor="let c of allergy.category">{{c}}</li>
         </ul>
-        <p class="label">Fecha identificación:</p>
+        <label>Fecha identificación:</label>
         <p>{{allergy.onsetDateTime}}</p>
-        <p class="label">Fecha última reacción:</p>
+        <label>Fecha última reacción:</label>
         <p>{{allergy.onsetDateTime}}</p>
       </div>
     </div>
-    <p class="label">Notas:</p>
+
+    <label>Notas:</label>
     <p>{{allergy.note}}</p>
-    <!-- read reaction -->
+
+    <div class="row">
+      <label>Reacción:</label>
+      <div class="column">
+        <label>Sustancia:</label>
+        <p>{{allergy.reaction.substance}}</p>
+        <label>Manifestaciones:</label>
+        <ul>
+          <li *ngFor="let m of allergy.reaction.manifestation">{{m}}</li>
+        </ul>
+      </div>
+      <div class="column">
+        <label>Severidad: </label>
+        <p>{{allergy.reaction.severity}}</p>
+        <label>Razón de exposición:</label>
+        <p>{{allergy.reaction.exposureRoute}}</p>
+        <label>Descripción del evento:</label>
+        <p>{{allergy.reaction.description}}</p>
+      </div>
+    </div>
   </div>
 </div>
