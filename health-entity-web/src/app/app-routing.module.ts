@@ -33,6 +33,7 @@ const routes: Routes = [
   { path: 'practitioner/record-resource/allergy', component: CreateAllergyIntoleranceComponent },
   { path: 'practitioner/view-resource/allergy', component: ReadAllergyIntoleranceComponent },
   { path: 'practitioner/record-resource/diagnostic', component: CreateDiagnosticReportComponent },
+  { path: 'practitioner/view-resource/diagnostic', component: CreateDiagnosticReportComponent },
   { path: 'practitioner/search-patient', component: SearchPatientComponent },
   { path: '**', component: PathNotFoundComponent }
 ];

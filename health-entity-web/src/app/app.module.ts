@@ -29,6 +29,7 @@ import { ReadAllergyIntoleranceComponent } from './components/allergy-intoleranc
 import { SearchPatientComponent } from './components/patient/search-patient/search-patient.component';
 import { CreateDiagnosticReportComponent } from './components/diagnostic-report/create-diagnostic-report/create-diagnostic-report.component';
 import { CreateObservationComponent } from './components/observation/create-observation/create-observation.component';
+import { ReadDiagnosticReportComponent } from './components/diagnostic-report/read-diagnostic-report/read-diagnostic-report.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { CreateObservationComponent } from './components/observation/create-obse
     ReadAllergyIntoleranceComponent,
     SearchPatientComponent,
     CreateDiagnosticReportComponent,
-    CreateObservationComponent
+    CreateObservationComponent,
+    ReadDiagnosticReportComponent
   ],
   imports: [
     BrowserModule,
