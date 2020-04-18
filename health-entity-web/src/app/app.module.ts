@@ -31,6 +31,8 @@ import { CreateDiagnosticReportComponent } from './components/diagnostic-report/
 import { CreateObservationComponent } from './components/observation/create-observation/create-observation.component';
 import { ReadDiagnosticReportComponent } from './components/diagnostic-report/read-diagnostic-report/read-diagnostic-report.component';
 import { ReadObservationComponent } from './components/observation/read-observation/read-observation.component';
+import { CreateConditionComponent } from './components/condition/create-condition/create-condition.component';
+import { ReadConditionComponent } from './components/condition/read-condition/read-condition.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { ReadObservationComponent } from './components/observation/read-observat
     CreateDiagnosticReportComponent,
     CreateObservationComponent,
     ReadDiagnosticReportComponent,
-    ReadObservationComponent
+    ReadObservationComponent,
+    CreateConditionComponent,
+    ReadConditionComponent
   ],
   imports: [
     BrowserModule,
