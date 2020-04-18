@@ -38,7 +38,7 @@ export class LoginPractitionerComponent implements OnInit {
   invalidAuthorities = false;
   checked = false;
 
-  options = OptionsList.identificationTypes;
+  options = OptionsList.IdentificationTypes;
 
   ngOnInit(): void { }
 

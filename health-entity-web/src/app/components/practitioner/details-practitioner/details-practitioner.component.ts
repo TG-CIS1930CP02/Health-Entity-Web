@@ -42,7 +42,7 @@ export class DetailsPractitionerComponent implements OnInit {
 
   systems = OptionsList.contactPointSystems;
   uses = OptionsList.contactPointUses;
-  addressUses = OptionsList.addressUses;
+  AddressUses = OptionsList.AddressUses;
 
   constructor(
     private practitionerService: PractitionerService,

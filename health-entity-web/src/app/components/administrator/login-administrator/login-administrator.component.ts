@@ -28,7 +28,7 @@ export class LoginAdministratorComponent implements OnInit {
   invalidAuthorities = false;
   checked = false;
 
-  options = OptionsList.identificationTypes;
+  options = OptionsList.IdentificationTypes;
 
   ngOnInit(): void { }
 

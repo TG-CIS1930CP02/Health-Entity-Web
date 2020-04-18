@@ -36,7 +36,7 @@ export class DetailsPatientComponent implements OnInit {
 
   systems = OptionsList.contactPointSystems;
   uses = OptionsList.contactPointUses;
-  addressUses = OptionsList.addressUses;
+  AddressUses = OptionsList.AddressUses;
 
   constructor(
     private patientService: PatientService,

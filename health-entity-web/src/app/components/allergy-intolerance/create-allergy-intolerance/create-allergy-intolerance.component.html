@@ -19,7 +19,7 @@
               <mat-label>Elige uno</mat-label>
               <mat-select [(ngModel)]="allergy.verificationStatus" name="verificationStatus">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let vs of verificationStatusOptions" [value]="vs.value">
+                <mat-option *ngFor="let vs of AllergyVerificationStatusOptions" [value]="vs.value">
                   {{vs.name}}
                 </mat-option>
               </mat-select>
@@ -55,9 +55,9 @@
             <label>Estado clínico: </label>
             <mat-form-field>
               <mat-label>Elige uno</mat-label>
-              <mat-select [(ngModel)]="allergy.clinicalStatus" name="clinicalStatus">
+              <mat-select [(ngModel)]="allergy.clinicalStatus" name="AllergyClinicalStatus">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let cs of clinicalStatusOptions" [value]="cs.value">
+                <mat-option *ngFor="let cs of AllergyClinicalStatusOptions" [value]="cs.value">
                   {{cs.name}}
                 </mat-option>
               </mat-select>

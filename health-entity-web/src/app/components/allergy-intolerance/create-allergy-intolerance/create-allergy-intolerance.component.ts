@@ -35,13 +35,13 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
 
   firstTime: boolean;
 
-  clinicalStatusOptions = OptionsList.clinicalStatus;
-  verificationStatusOptions = OptionsList.verificationStatus;
+  AllergyClinicalStatusOptions = OptionsList.AllergyClinicalStatus;
+  verificationStatusOptions = OptionsList.AllergyVerificationStatus;
   allergyTypeOptions = OptionsList.AllergyIntoleranceType;
   categoryOptions = OptionsList.AllergyIntoleranceCategory;
   criticalityOptions = OptionsList.AllergyIntoleranceCriticality;
   codeOptions = OptionsList.AllergyIntoleranceCodes;
-  idTypeOptions = OptionsList.identificationTypes;
+  idTypeOptions = OptionsList.IdentificationTypes;
   manifestationOptions = OptionsList.ClinicalFindingsCodes;
   severityOptions = OptionsList.AllergyIntoleranceSeverity;
   exposureOptions = OptionsList.ExposureRouteCodes;

@@ -23,7 +23,7 @@ export class SearchPatientComponent implements OnInit {
   idType = 'Selecciona un tipo';
   id: number;
 
-  options = OptionsList.identificationTypes;
+  options = OptionsList.IdentificationTypes;
 
   constructor(private patientService: PatientService) { }
 

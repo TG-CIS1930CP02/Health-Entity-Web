@@ -1,12 +1,12 @@
 export class OptionsList {
-  public static identificationTypes = [
+  public static IdentificationTypes = [
     { name: 'Cédula de Ciudadanía', value: 'CC' },
     { name: 'Cédula de Extranjería', value: 'CE' },
     { name: 'Registro Civil', value: 'RC' },
     { name: 'Tarjeta de Identidad', value: 'TI' }
   ];
 
-  public static addressUses = [
+  public static AddressUses = [
     { name: 'Casa', value: 'home' },
     { name: 'Oficina', value: 'work' },
     { name: 'Temporal', value: 'temp' },
@@ -30,7 +30,7 @@ export class OptionsList {
     { name: 'Otro', value: 'other' }
   ];
 
-  public static clinicalStatus = [
+  public static AllergyClinicalStatus = [
     { name: 'Activo', value: 'active' },
     { name: 'Inactivo', value: 'inactive' },
     { name: 'Resuelto', value: 'resolved' }
@@ -109,11 +109,11 @@ export class OptionsList {
   public static diagnosticStatusCodes = [
     { name: 'Registrado', value: 'registered' },
     { name: 'Parcial', value: 'partial' },
-    { name: 'Preliminar', value: '  preliminary' },
+    { name: 'Preliminar', value: 'preliminary' },
     { name: 'Final', value: 'final' },
     { name: 'Modificado', value: 'amended' },
-    { name: 'Corregido', value: '  corrected' },
-    { name: 'Adjunto', value: '  appended' },
+    { name: 'Corregido', value: 'corrected' },
+    { name: 'Adjunto', value: 'appended' },
     { name: 'Cancelado', value: 'cancelled' },
     { name: 'Ingresado por error', value: 'entered-in-error' },
     { name: 'Desconocido', value: 'unknown' }
@@ -174,6 +174,15 @@ export class OptionsList {
     { name: 'Duración de la onda R en la derivación III', value: '10003-2 ' },
     { name: 'Duración de la onda R en la derivación V1', value: '10004-0 ' },
     { name: 'Duración de la onda R en plomo V2', value: '10005-7 ' },
+  ];
+
+  public static ConditionClinicalStatus = [
+    { name: 'Activo', value: 'active' },
+    { name: 'Reaparición', value: 'recurrence' },
+    { name: 'Recaída', value: 'relapse' },
+    { name: 'Inactivo', value: 'inactive' },
+    { name: 'Remisión', value: 'remission' },
+    { name: 'Resuelto', value: 'resolved' },
   ];
 
   public static cities: string[] = [

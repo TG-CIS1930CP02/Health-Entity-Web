@@ -16,6 +16,8 @@ import { ReadAllergyIntoleranceComponent } from './components/allergy-intoleranc
 import { SignupPatientComponent } from './components/patient/signup-patient/signup-patient.component';
 import { SearchPatientComponent } from './components/patient/search-patient/search-patient.component';
 import { CreateDiagnosticReportComponent } from './components/diagnostic-report/create-diagnostic-report/create-diagnostic-report.component';
+import { CreateConditionComponent } from './components/condition/create-condition/create-condition.component';
+import { ReadConditionComponent } from './components/condition/read-condition/read-condition.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -34,6 +36,8 @@ const routes: Routes = [
   { path: 'practitioner/view-resource/allergy', component: ReadAllergyIntoleranceComponent },
   { path: 'practitioner/record-resource/diagnostic', component: CreateDiagnosticReportComponent },
   { path: 'practitioner/view-resource/diagnostic', component: CreateDiagnosticReportComponent },
+  { path: 'practitioner/record-resource/condition', component: CreateConditionComponent },
+  { path: 'practitioner/view-resource/condition', component: ReadConditionComponent },
   { path: 'practitioner/search-patient', component: SearchPatientComponent },
   { path: '**', component: PathNotFoundComponent }
 ];

@@ -59,7 +59,7 @@
             <mat-form-field>
               <mat-label>Selecciona un tipo</mat-label>
               <mat-select [(ngModel)]="addresses[index].use" [ngModelOptions]="{standalone: true}" required>
-                <mat-option *ngFor="let u of addressUses" [value]="u.value">
+                <mat-option *ngFor="let u of AddressUses" [value]="u.value">
                   {{u.name}}
                 </mat-option>
               </mat-select>
