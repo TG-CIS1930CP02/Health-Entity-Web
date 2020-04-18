@@ -36,7 +36,7 @@ export class OptionsList {
     { name: 'Resuelto', value: 'resolved' }
   ];
 
-  public static verificationStatus = [
+  public static AllergyVerificationStatus = [
     { name: 'No confirmado', value: 'unconfirmed' },
     { name: 'Confirmado', value: 'confirmed' },
     { name: 'Refutado', value: 'refuted' },
@@ -164,16 +164,16 @@ export class OptionsList {
   ];
 
   public static diagnosticCodes = [
-    { name: 'Aciclovir [Susceptibilidad]', value: '1-8 ' },
-    { name: 'Amdinocillin [Susceptibilidad] por título bactericida en suero', value: '10-9 ' },
-    { name: 'Cefoperazona [Susceptibilidad] por concentración inhibitoria mínima (MIC)', value: '100-8 ' },
-    { name: 'DBG Ab [Presencia] en suero o plasma de la unidad de producto de sangre', value: '1000-9 ' },
-    { name: 'Duración de la onda R en AVR principal', value: '10000-8 ' },
-    { name: 'Duración de la onda R en la derivación I', value: '10001-6 ' },
-    { name: 'Duración de la onda R en la derivación II', value: '10002-4 ' },
-    { name: 'Duración de la onda R en la derivación III', value: '10003-2 ' },
-    { name: 'Duración de la onda R en la derivación V1', value: '10004-0 ' },
-    { name: 'Duración de la onda R en plomo V2', value: '10005-7 ' },
+    { name: 'Aciclovir [Susceptibilidad]', value: '1-8' },
+    { name: 'Amdinocillin [Susceptibilidad] por título bactericida en suero', value: '10-9' },
+    { name: 'Cefoperazona [Susceptibilidad] por concentración inhibitoria mínima (MIC)', value: '100-8' },
+    { name: 'DBG Ab [Presencia] en suero o plasma de la unidad de producto de sangre', value: '1000-9' },
+    { name: 'Duración de la onda R en AVR principal', value: '10000-8' },
+    { name: 'Duración de la onda R en la derivación I', value: '10001-6' },
+    { name: 'Duración de la onda R en la derivación II', value: '10002-4' },
+    { name: 'Duración de la onda R en la derivación III', value: '10003-2' },
+    { name: 'Duración de la onda R en la derivación V1', value: '10004-0' },
+    { name: 'Duración de la onda R en plomo V2', value: '10005-7' }
   ];
 
   public static ConditionClinicalStatus = [
@@ -182,7 +182,46 @@ export class OptionsList {
     { name: 'Recaída', value: 'relapse' },
     { name: 'Inactivo', value: 'inactive' },
     { name: 'Remisión', value: 'remission' },
-    { name: 'Resuelto', value: 'resolved' },
+    { name: 'Resuelto', value: 'resolved' }
+  ];
+
+  public static ConditionVerificationStatus = [
+    { name: 'No confirmado', value: 'unconfirmed' },
+    { name: 'Provisional', value: 'provisional' },
+    { name: 'Diferencial', value: 'differential' },
+    { name: 'Confirmado', value: 'confirmed' },
+    { name: 'Refutado', value: 'refuted' },
+    { name: 'Ingresado por error', value: 'entered-in-error' }
+  ];
+
+  public static BodyStructure = [
+    { name: 'Región carpiana posterior', value: '106004' },
+    { name: 'Parte fetal de la placenta', value: '107008' },
+    { name: 'Vena emisaria condilar', value: '108003' },
+    { name: 'Capa visceral de la cápsula de Bowman', value: '110001' },
+    { name: 'Glándula paratiroidea', value: '111002' },
+    { name: 'Tejido subcutáneo de la superficie medial del dedo índice.', value: '116007' },
+    { name: 'Proceso coronoide de la mandíbula.', value: '124002' },
+    { name: 'Par central de microtúbulos, cilio o flagelo, no bacteriano', value: '149003' },
+    { name: 'Arteria circunfleja profunda del ilion', value: '155008' },
+    { name: 'Parte supraclavicular del plexo braquial.', value: '167005' },
+    { name: 'División anterior de la arteria renal', value: '202009' },
+    { name: 'Comisura izquierda de la válvula aórtica', value: '205006' },
+    { name: 'Músculo glúteo mayor', value: '206007' },
+    { name: 'Superficie articular, falanges, del cuarto hueso metacarpiano', value: '221001' },
+    { name: 'Canal de Hering', value: '227002' },
+    { name: 'Ligamento hepatocólico', value: '233006' },
+    { name: 'Arteria labial superior', value: '235004' },
+    { name: 'Núcleo vestibular lateral', value: '246001' },
+    { name: 'Mesotímpano', value: '247005' },
+    { name: 'Región pectoral', value: '251007' },
+    { name: 'Célula de Kupffer', value: '256002' },
+    { name: 'Nervio torácico', value: '263002' },
+    { name: 'Lóbulo inferior derecho del pulmón', value: '266005' },
+    { name: 'Proceso articular superior de la vértebra lumbar', value: '272005' },
+    { name: 'Miocardio lateral', value: '273000' },
+    { name: 'Ganglio central axilar', value: '283001' },
+    { name: 'Tendón flexor y vaina tendinosa del cuarto dedo del pie', value: '284007' },
   ];
 
   public static cities: string[] = [
