@@ -163,7 +163,7 @@ export class OptionsList {
     { name: 'Cineradiografía', value: 'XRC' }
   ];
 
-  public static diagnosticCodes = [
+  public static LOINCCodes = [
     { name: 'Aciclovir [Susceptibilidad]', value: '1-8' },
     { name: 'Amdinocillin [Susceptibilidad] por título bactericida en suero', value: '10-9' },
     { name: 'Cefoperazona [Susceptibilidad] por concentración inhibitoria mínima (MIC)', value: '100-8' },
@@ -221,7 +221,88 @@ export class OptionsList {
     { name: 'Proceso articular superior de la vértebra lumbar', value: '272005' },
     { name: 'Miocardio lateral', value: '273000' },
     { name: 'Ganglio central axilar', value: '283001' },
-    { name: 'Tendón flexor y vaina tendinosa del cuarto dedo del pie', value: '284007' },
+    { name: 'Tendón flexor y vaina tendinosa del cuarto dedo del pie', value: '284007' }
+  ];
+
+  public static ObservationStatus = [
+    { name: 'Registrado', value: 'registered' },
+    { name: 'Preliminar', value: 'preliminary' },
+    { name: 'Final', value: 'final' },
+    { name: 'Modificado', value: 'amended' },
+    { name: 'Corregido', value: 'corrected' },
+    { name: 'Cancelado', value: 'cancelled' },
+    { name: 'Ingresado por error', value: 'entered-in-error' },
+    { name: 'Desconocido', value: 'unknown' }
+  ];
+
+  public static ObservationCategory = [
+    { name: 'Historia social', value: 'social-history' },
+    { name: 'Signos vitales', value: 'vital-signs' },
+    { name: 'Imagen', value: 'imaging' },
+    { name: 'Laboratorio', value: 'laboratory' },
+    { name: 'Procedimiento', value: 'procedure' },
+    { name: 'Encuesta', value: 'survey' },
+    { name: 'Examen', value: 'exam' },
+    { name: 'Terapia', value: 'therapy' },
+    { name: 'Actividad', value: 'activity' }
+  ];
+
+  public static ObservationInterpretationCodes = [
+    { name: 'Portador', value: 'CAR' },
+    { name: 'Mejor', value: 'B' },
+    { name: 'Cambio significativo hacia abajo', value: 'D' },
+    { name: 'Cambio significativo hasta', value: 'U' },
+    { name: 'Peor', value: 'W' },
+    { name: 'Fuera de escala bajo', value: '<' },
+    { name: 'Fuera de escala alto', value: '>' },
+    { name: 'Evidencia insuficiente', value: 'IE' },
+    { name: 'Anormal', value: 'A' },
+    { name: 'Crítica anormal', value: 'AA' },
+    { name: 'Alto crítico', value: 'HH' },
+    { name: 'Bajo crítico', value: 'LL' },
+    { name: 'Alto', value: 'H' },
+    { name: 'Significativamente alto', value: 'HU' },
+    { name: 'Bajo', value: 'L' },
+    { name: 'Significativamente bajo', value: 'LU' },
+    { name: 'Normal', value: 'N' },
+    { name: 'Intermedio', value: 'I' },
+    { name: 'Sin punto de corte definido por CLSI', value: 'NCL' },
+    { name: 'No susceptible', value: 'NS' },
+    { name: 'Resistente', value: 'R' },
+    { name: 'Sinergia - resistente', value: 'SYN-R' },
+    { name: 'Susceptible', value: 'S' },
+    { name: 'Susceptible a dosis dependientes', value: 'SDD' },
+    { name: 'Sinergia - susceptible', value: 'SYN-S' },
+    { name: 'umbral exterior', value: 'EX' },
+    { name: 'por encima del umbral alto', value: 'HX' },
+    { name: 'por debajo del umbral bajo', value: 'LX' },
+    { name: 'Indeterminado', value: 'IND' },
+    { name: 'Equívoco', value: 'E' },
+    { name: 'Negativo', value: 'NEG' },
+    { name: 'No detectado', value: 'ND' },
+    { name: 'Positivo', value: 'POS' },
+    { name: 'Detectado', value: 'DET' },
+    { name: 'Esperado', value: 'EXP' },
+    { name: 'Inesperado', value: 'UNE' },
+    { name: 'No reactivo', value: 'NR' },
+    { name: 'Reactivo', value: 'RR' },
+    { name: 'Débilmente reactivo', value: 'WR' }
+  ];
+
+  public static ObservationMethod = [
+    { name: 'Técnica competitiva de ensayo de unión a proteínas', value: '58207001' },
+    { name: 'Medida total', value: '115341008' },
+    { name: 'Técnica de adquisición', value: '246363001' },
+    { name: 'Técnica de llenado de la vejiga', value: '246502009' },
+    { name: 'Técnica de movimiento del catéter', value: '246503004' },
+    { name: 'Técnica de lectura cercana', value: '246504005' },
+    { name: 'Técnica de detección de fotones', value: '246505006' },
+    { name: 'Técnica de provocación', value: '246506007' },
+    { name: 'Técnica de estimulación', value: '246507003' },
+    { name: 'Destello', value: '255459008' },
+    { name: 'Técnica de tetania simple', value: '255463001' },
+    { name: 'Técnica de relación mandibular retruida', value: '255583002' },
+    { name: 'Solución salina infundida rectalmente', value: '256233002' }
   ];
 
   public static cities: string[] = [

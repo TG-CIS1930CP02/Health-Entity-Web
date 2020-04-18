@@ -29,7 +29,7 @@ export class CreateDiagnosticReportComponent implements OnInit {
 
   statusOptions = OptionsList.diagnosticStatusCodes;
   categoryOptions = OptionsList.diagnosticCategoryCodes;
-  codeOptions = OptionsList.diagnosticCodes;
+  codeOptions = OptionsList.LOINCCodes;
   conclusionOptions = OptionsList.ClinicalFindingsCodes;
 
   ngOnInit(): void { }
