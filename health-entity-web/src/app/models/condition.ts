@@ -3,7 +3,7 @@ import { Identification } from './identification';
 export class Condition {
   constructor(
     public identifier: number,
-    public clinicStatus: string,
+    public clinicalStatus: string,
     public verificationStatus: string,
     public severity: string,
     public code: string,
@@ -13,5 +13,7 @@ export class Condition {
     public recorder: Identification,
     public recordedDate: Date,
     public note: string,
-  ) {}
+  ) {
+    this.bodySite = [];
+  }
 }

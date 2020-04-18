@@ -24,7 +24,6 @@ export class ReadAllergyIntoleranceComponent implements OnInit {
     undefined,
     undefined,
     undefined,
-    undefined,
     undefined
   );
 

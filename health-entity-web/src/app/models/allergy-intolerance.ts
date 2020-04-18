@@ -17,5 +17,7 @@ export class AllergyIntolerance {
     public lastOccurrence: Date,
     public note: string,
     public reaction: Reaction
-  ) {}
+  ) {
+    this.category = [];
+  }
 }

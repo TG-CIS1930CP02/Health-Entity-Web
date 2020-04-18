@@ -5,5 +5,7 @@ export class Reaction {
     public description: string,
     public severity: string,
     public exposureRoute: string
-  ) {}
+  ) {
+    this.manifestation = [];
+  }
 }

@@ -10,10 +10,14 @@ export class DiagnosticReport {
     public subject: Identification,
     public effectiveDateTime: Date,
     public issued: Date,
-    public performer: Identification[],
-    public resultsInterpreter: Identification[],
+    public performer: Identification,
+    public resultsInterpreter: Identification,
     public result: Observation[],
     public conclusion: string,
     public conclusionCode: string[]
-  ) {}
+  ) {
+    this.category = [];
+    this.result = [];
+    this.conclusionCode = [];
+  }
 }

@@ -24,7 +24,6 @@ export class CreateDiagnosticReportComponent implements OnInit {
     undefined,
     undefined,
     undefined,
-    undefined,
     undefined
   );
 
