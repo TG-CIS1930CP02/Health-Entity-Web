@@ -23,7 +23,6 @@ export class ReadDiagnosticReportComponent implements OnInit {
     undefined,
     undefined,
     undefined,
-    undefined,
     undefined
   );
 

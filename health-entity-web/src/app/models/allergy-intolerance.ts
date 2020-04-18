@@ -14,7 +14,6 @@ export class AllergyIntolerance {
     public onsetDateTime: Date,
     public recordedDate: Date,
     public recorder: Identification,
-    public asserter: Identification,
     public lastOccurrence: Date,
     public note: string,
     public reaction: Reaction

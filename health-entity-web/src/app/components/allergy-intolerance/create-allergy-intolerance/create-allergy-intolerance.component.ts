@@ -13,7 +13,6 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
 
   constructor() { }
   patient: Identification = new Identification(undefined, undefined);
-  asserter: Identification = new Identification(undefined, undefined);
   recorder: Identification = new Identification(undefined, undefined);
   reaction: Reaction = new Reaction(undefined, undefined, undefined, undefined, undefined);
 
@@ -29,7 +28,6 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
     undefined,
     undefined,
     this.recorder,
-    this.asserter,
     undefined,
     undefined,
     this.reaction
@@ -56,10 +54,7 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
       this.allergy.recordedDate = new Date();
     }
     /* TODO sacar info de estos
-      this.allergy.recorder.id = this.idRecorder;
-      this.allergy.recorder.type = this.idTypeRecorder;
-      this.allergy.asserter.id = this.idAsserter;
-      this.allergy.asserter.type = this.idTypeAsserter;
+      recorder y patient
     */
 
     // TODO create service to record

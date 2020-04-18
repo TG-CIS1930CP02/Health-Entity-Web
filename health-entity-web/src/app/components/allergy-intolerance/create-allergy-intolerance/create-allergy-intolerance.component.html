@@ -2,29 +2,6 @@
   <div id="formbox" class="center">
     <h2 class="title">Registro Alergias e Intolerancias</h2>
     <form (ngSubmit)="record()" #recordForm="ngForm">
-      <div class="form_box">
-        <label>Identificación de la persona que brinda la información: </label>
-        <table cellspacing="0">
-          <tr>
-            <td>
-              <mat-form-field>
-                <mat-label>Elige un tipo</mat-label>
-                <mat-select [(ngModel)]="allergy.patient.type" name="idTypeAsserter">
-                  <mat-option *ngFor="let i of idTypeOptions" [value]="i.value">
-                    {{i.name}}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </td>
-            <td>
-              <mat-form-field>
-                <mat-label>Número de identificación</mat-label>
-                <input matInput [(ngModel)]="allergy.patient.id" name="idAsserter" type="number">
-              </mat-form-field>
-            </td>
-          </tr>
-        </table>
-      </div>
       <div class="row">
         <div class="column">
           <div class="form_box">
