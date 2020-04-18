@@ -30,6 +30,7 @@ import { SearchPatientComponent } from './components/patient/search-patient/sear
 import { CreateDiagnosticReportComponent } from './components/diagnostic-report/create-diagnostic-report/create-diagnostic-report.component';
 import { CreateObservationComponent } from './components/observation/create-observation/create-observation.component';
 import { ReadDiagnosticReportComponent } from './components/diagnostic-report/read-diagnostic-report/read-diagnostic-report.component';
+import { ReadObservationComponent } from './components/observation/read-observation/read-observation.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { ReadDiagnosticReportComponent } from './components/diagnostic-report/re
     SearchPatientComponent,
     CreateDiagnosticReportComponent,
     CreateObservationComponent,
-    ReadDiagnosticReportComponent
+    ReadDiagnosticReportComponent,
+    ReadObservationComponent
   ],
   imports: [
     BrowserModule,
