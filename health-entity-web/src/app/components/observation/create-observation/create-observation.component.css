@@ -1,0 +1,83 @@
+label {
+  font-weight: bold;
+  margin-right: 5px;
+  display: block;
+}
+#box {
+  position: relative;
+  margin: 15px auto 80px auto;
+  max-width: 1200px;
+}
+#formbox {
+  font-family: "poppins", arial, sans-serif;
+  width: 100%;
+  overflow: hidden;
+}
+.center {
+  width: 50%;
+}
+.title {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: #5E62AA !important;
+  text-transform: uppercase;
+  margin-bottom: 10px !important;
+}
+table {
+  width: 100%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  width: 49%;
+}
+.column:nth-child(even) {
+  float: right;
+}
+.column:nth-child(odd) {
+  float: left;
+}
+.form_box {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+mat-form-field {
+  width: 98%;
+}
+.radio-group {
+  display: flex;
+  margin: 16px 0 28px 0;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 30px;
+}
+.inline50 {
+  float:left;
+  width: 50%;
+}
+.btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+.btn--gradient {
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+  transition: all 0.3s ease;
+  width: 50%;
+}
+.btn--gradient:hover {
+  background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
+}
+.btn--gradient:disabled {
+  cursor: not-allowed;
+  background: #dddddd;
+}

@@ -249,9 +249,9 @@ export class OptionsList {
 
   public static ObservationInterpretationCodes = [
     { name: 'Portador', value: 'CAR' },
-    { name: 'Mejor', value: 'B' },
-    { name: 'Cambio significativo hacia abajo', value: 'D' },
-    { name: 'Cambio significativo hasta', value: 'U' },
+    { name: 'Mejora', value: 'B' },
+    { name: 'Cambio significativo positivo', value: 'D' },
+    { name: 'Cambio significativo negativo', value: 'U' },
     { name: 'Peor', value: 'W' },
     { name: 'Fuera de escala bajo', value: '<' },
     { name: 'Fuera de escala alto', value: '>' },
