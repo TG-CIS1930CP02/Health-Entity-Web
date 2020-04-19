@@ -18,6 +18,9 @@ import { SearchPatientComponent } from './components/patient/search-patient/sear
 import { CreateDiagnosticReportComponent } from './components/diagnostic-report/create-diagnostic-report/create-diagnostic-report.component';
 import { CreateConditionComponent } from './components/condition/create-condition/create-condition.component';
 import { ReadConditionComponent } from './components/condition/read-condition/read-condition.component';
+import { CreateObservationComponent } from './components/observation/create-observation/create-observation.component';
+import { ReadObservationComponent } from './components/observation/read-observation/read-observation.component';
+import { ReadDiagnosticReportComponent } from './components/diagnostic-report/read-diagnostic-report/read-diagnostic-report.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -35,9 +38,11 @@ const routes: Routes = [
   { path: 'practitioner/record-resource/allergy', component: CreateAllergyIntoleranceComponent },
   { path: 'practitioner/view-resource/allergy', component: ReadAllergyIntoleranceComponent },
   { path: 'practitioner/record-resource/diagnostic', component: CreateDiagnosticReportComponent },
-  { path: 'practitioner/view-resource/diagnostic', component: CreateDiagnosticReportComponent },
+  { path: 'practitioner/view-resource/diagnostic', component: ReadDiagnosticReportComponent },
   { path: 'practitioner/record-resource/condition', component: CreateConditionComponent },
   { path: 'practitioner/view-resource/condition', component: ReadConditionComponent },
+  { path: 'practitioner/record-resource/observation', component: CreateObservationComponent },
+  { path: 'practitioner/view-resource/observation', component: ReadObservationComponent },
   { path: 'practitioner/search-patient', component: SearchPatientComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
