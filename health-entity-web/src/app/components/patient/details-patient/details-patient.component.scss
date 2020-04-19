@@ -1,3 +1,5 @@
+@import "~_variables.scss";
+
 p {
   margin-bottom: 7px;
 }
@@ -19,7 +21,7 @@ th {
   font-family: "poppinsSemiBold", Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 14px;
-  color: #8B388A;
+  color: $primary;
 }
 .box {
   width: 100%;

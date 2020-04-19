@@ -1,4 +1,4 @@
-@import "custom-theme.scss";
+@import "~_variables.scss";
 
 label {
   font-weight: bold;
@@ -23,7 +23,7 @@ p {
   width: 100%;
   font-size: 30px;
   text-align: center;
-  color: map-get($accent, Main) !important;
+  color: $accent !important;
   text-transform: uppercase;
   margin-bottom: 10px !important;
 }

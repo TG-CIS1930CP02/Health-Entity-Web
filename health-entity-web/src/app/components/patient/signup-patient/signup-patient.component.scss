@@ -1,4 +1,4 @@
-@import "custom-theme.scss";
+@import "~_variables.scss";
 
 input {
   width: 100%;
@@ -20,7 +20,7 @@ input {
   width: 100%;
   font-size: 30px;
   text-align: center;
-  color: map-get($accent, Main) !important;
+  color: $accent !important;
   text-transform: uppercase;
   margin-bottom: 3  0px !important;
 }
@@ -54,12 +54,12 @@ mat-form-field {
   cursor: pointer;
   border: none;
   color: #fff;
-  background: linear-gradient(60deg, #8B388A 55%, map-get($accent, Main));
+  background: linear-gradient(60deg, $primary 55%, $accent);
   transition: all 0.3s ease;
   width: 50%;
 }
 .btn--gradient:hover {
-  background: linear-gradient(168.27deg, #8B388A 35.62%, map-get($accent, Main) 100%);
+  background: linear-gradient(168.27deg, $primary 35.62%, $accent 100%);
 }
 .modal {
   display: flex;
@@ -111,7 +111,7 @@ mat-form-field {
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
-  background: linear-gradient(60deg, #8B388A 55%, map-get($accent, Main));
+  background: linear-gradient(60deg, $primary 55%, $accent);
   position: relative;
 }
 .modal_close {
