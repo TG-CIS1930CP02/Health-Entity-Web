@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Observation } from '../../../models/observation';
 
 @Component({
   selector: 'app-read-observation',
@@ -8,8 +9,25 @@ import { Component, OnInit } from '@angular/core';
 export class ReadObservationComponent implements OnInit {
 
   constructor() { }
+  @Input()
+  observation: Observation = new Observation(
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined
+  );
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
