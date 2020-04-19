@@ -33,7 +33,7 @@ table {
   clear: both;
 }
 .column {
-  width: 45%;
+  width: 49%;
 }
 .column:nth-child(even) {
   float: right;
