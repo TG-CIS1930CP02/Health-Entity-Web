@@ -6,7 +6,7 @@ import { PatientService } from '../../../services/patient.service';
 @Component({
   selector: 'app-signup-patient',
   templateUrl: './signup-patient.component.html',
-  styleUrls: ['./signup-patient.component.css']
+  styleUrls: ['./signup-patient.component.scss']
 })
 export class SignupPatientComponent implements OnInit {
   patientFound: Patient = new Patient(

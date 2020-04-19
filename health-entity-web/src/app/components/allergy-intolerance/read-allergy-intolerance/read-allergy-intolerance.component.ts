@@ -4,7 +4,7 @@ import { AllergyIntolerance } from '../../../models/allergy-intolerance';
 @Component({
   selector: 'app-read-allergy-intolerance',
   templateUrl: './read-allergy-intolerance.component.html',
-  styleUrls: ['./read-allergy-intolerance.component.css']
+  styleUrls: ['./read-allergy-intolerance.component.scss']
 })
 export class ReadAllergyIntoleranceComponent implements OnInit {
 

@@ -9,7 +9,7 @@ import { Address } from 'app/models/address';
 @Component({
   selector: 'app-details-patient',
   templateUrl: './details-patient.component.html',
-  styleUrls: ['./details-patient.component.css']
+  styleUrls: ['./details-patient.component.scss']
 })
 export class DetailsPatientComponent implements OnInit {
   @Input()

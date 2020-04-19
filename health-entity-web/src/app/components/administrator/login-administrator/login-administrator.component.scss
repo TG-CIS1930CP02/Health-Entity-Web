@@ -1,3 +1,5 @@
+@import "custom-theme.scss";
+
 input {
   width: 100%;
 }
@@ -19,7 +21,7 @@ input {
   width: 100%;
   font-size: 30px;
   text-align: center;
-  color: #5E62AA !important;
+  color: map-get($accent, Main) !important;
   text-transform: uppercase;
   margin-bottom: 10px !important;
 }
@@ -37,7 +39,7 @@ mat-form-field {
 .help {
   display: inline-block;
   font-size: 12px;
-  color: #5e62aa !important;
+  color: map-get($accent, Main) !important;
   font-family: "poppinsMedium", Arial, Helvetica, sans-serif;
   margin-bottom: 15px !important;
   cursor: help;
@@ -58,12 +60,12 @@ mat-form-field {
   cursor: pointer;
   border: none;
   color: #fff;
-  background: linear-gradient(60deg, #8b388a 55%, #5e62aa);
+  background: linear-gradient(60deg, #8b388a 55%, map-get($accent, Main));
   transition: all 0.3s ease;
   width: 100%;
 }
 .btn--gradient:hover {
-  background: linear-gradient(168.27deg, #8b388a 35.62%, #5e62aa 100%);
+  background: linear-gradient(168.27deg, #8b388a 35.62%, map-get($accent, Main) 100%);
 }
 .modal {
   display: flex;
@@ -115,7 +117,7 @@ mat-form-field {
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
-  background: linear-gradient(60deg, #8b388a 55%, #5e62aa);
+  background: linear-gradient(60deg, #8b388a 55%, map-get($accent, Main));
   position: relative;
 }
 .modal_close {

@@ -1,3 +1,5 @@
+@import "custom-theme.scss";
+
 img {
   display: inline-block;
   max-width: 100%;
@@ -42,7 +44,7 @@ header {
 }
 
 .lPurple {
-  color: #5E62AA !important;
+  color: map-get($accent, Main) !important;
 }
 
 .xlBlack {
@@ -54,7 +56,7 @@ header {
 }
 
 .header_top {
-  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+  background: linear-gradient(60deg, #8B388A 55%, map-get($accent, Main));
   color: #fff;
 }
 
@@ -241,7 +243,7 @@ header {
 }
 
 .btn--border {
-  border: 1px solid #5E62AA;
+  border: 1px solid map-get($accent, Main);
   color: #8B388A;
   background: transparent;
 }

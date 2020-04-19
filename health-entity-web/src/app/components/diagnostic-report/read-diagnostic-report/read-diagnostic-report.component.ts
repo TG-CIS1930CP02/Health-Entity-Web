@@ -4,7 +4,7 @@ import { DiagnosticReport } from '../../../models/diagnostic-report';
 @Component({
   selector: 'app-read-diagnostic-report',
   templateUrl: './read-diagnostic-report.component.html',
-  styleUrls: ['./read-diagnostic-report.component.css']
+  styleUrls: ['./read-diagnostic-report.component.scss']
 })
 export class ReadDiagnosticReportComponent implements OnInit {
 

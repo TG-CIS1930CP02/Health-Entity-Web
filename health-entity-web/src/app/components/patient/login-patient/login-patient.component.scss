@@ -1,18 +1,29 @@
-p {
-  margin-bottom: 7px;
-}
+@import "custom-theme.scss";
+
 input {
   width: 100%;
 }
+#loginbox {
+  position: relative;
+  margin: 90px auto 20px auto;
+  max-width: 1200px;
+}
 #formbox {
   font-family: "poppins", arial, sans-serif;
-  width: 100%;
+  width: 80%;
   overflow: hidden;
-  border-top: 2px solid rgba(147, 147, 147, 0.7);
 }
 .center {
   margin: auto;
+  width: 30%;
+}
+.title {
   width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: map-get($accent, Main) !important;
+  text-transform: uppercase;
+  margin-bottom: 10px !important;
 }
 .form_box {
   width: 100%;
@@ -20,66 +31,41 @@ input {
   margin-top: 10px;
 }
 mat-form-field {
-  width: 98%;
-}
-.inline50 {
-  float:left;
-  width: 50%;
-}
-.inline33 {
-  float:left;
-  width: 33%;
-}
-.addressBox {
-  margin-bottom: 10px;
-}
-.label {
-  font-weight: bold;
-}
-table {
   width: 100%;
-  margin-bottom: 20px;
 }
-th {
-  font-family: "poppinsSemiBold", Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  font-size: 14px;
-  color: #8B388A;
-}
-.btn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.help {
+  display: inline-block;
+  font-size: 12px;
+  color: map-get($accent, Main) !important;
+  font-family: "poppinsMedium", Arial, Helvetica, sans-serif;
+  margin-bottom: 15px !important;
+  cursor: help;
 }
 .btn--gradient {
   display: inline-flex;
   justify-content: center;
+  align-items: center;
+  align-content: center;
   flex-wrap: nowrap;
   vertical-align: middle;
   padding: 5px 40px;
   outline: none;
   font-family: "poppins", Arial, Helvetica, sans-serif;
   font-size: 16px;
+  text-align: center;
   letter-spacing: 1px;
   cursor: pointer;
   border: none;
   color: #fff;
-  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+  background: linear-gradient(60deg, #8B388A 55%, map-get($accent, Main));
   transition: all 0.3s ease;
-  width: 50%;
+  width: 100%;
 }
 .btn--gradient:hover {
-  background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
-}
-.fa {
-  color: #8B388A !important;
-  margin-right: 5px;
-}
-.form_checkbox {
-  margin: 0 10px;
+  background: linear-gradient(168.27deg, #8B388A 35.62%, map-get($accent, Main) 100%);
 }
 .modal {
+  display: -ms-flexbox;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,10 +92,15 @@ th {
   letter-spacing: 1px;
 }
 .modal_container {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-line-pack: start;
   align-content: flex-start;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
   max-width: 500px;
@@ -121,15 +112,20 @@ th {
   background: #fff;
 }
 .modal_header {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-line-pack: center;
   align-content: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
-  background: linear-gradient(60deg, #8b388a 55%, #5e62aa);
+  background: linear-gradient(60deg, #8B388A 55%, map-get($accent, Main));
   position: relative;
 }
 .modal_close {
@@ -142,10 +138,15 @@ th {
   right: 15px;
 }
 .icon--close {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-line-pack: center;
   align-content: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 40px;
   height: 40px;
@@ -165,10 +166,15 @@ th {
   cursor: pointer;
 }
 .modal_content {
+  display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: center;
   justify-content: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-line-pack: center;
   align-content: center;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 15px;
 }
@@ -180,8 +186,4 @@ th {
   text-align: center;
   margin-top: 20px !important;
   margin-bottom: 30px !important;
-  font-family: "poppins", Arial, Helvetica, sans-serif;
-}
-#fingerprint img{
-  height: 100px;
 }

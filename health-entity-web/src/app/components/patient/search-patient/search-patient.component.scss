@@ -1,9 +1,11 @@
+@import "custom-theme.scss";
+
 input {
   width: 100%;
 }
 #box {
   position: relative;
-  margin: 160px auto 80px auto;
+  margin: 155px auto 80px auto;
   max-width: 1200px;
 }
 #formbox {
@@ -12,15 +14,24 @@ input {
   overflow: hidden;
 }
 .center {
+  margin: auto;
   width: 50%;
+}
+.welcome {
+  width: 100%;
+  font-size: 34px;
+  text-align: center;
+  color: #8B388A !important;
+  text-transform: uppercase;
+  margin-bottom: 20px !important;
 }
 .title {
   width: 100%;
   font-size: 30px;
   text-align: center;
-  color: #5E62AA !important;
+  color: map-get($accent, Main) !important;
   text-transform: uppercase;
-  margin-bottom: 3  0px !important;
+  margin-bottom: 5px !important;
 }
 .form_box {
   width: 50%;
@@ -39,7 +50,10 @@ mat-form-field {
   align-items: center;
   justify-content: center;
 }
-.btn--gradient {
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   display: inline-flex;
   justify-content: center;
   flex-wrap: nowrap;
@@ -52,12 +66,21 @@ mat-form-field {
   cursor: pointer;
   border: none;
   color: #fff;
-  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
   transition: all 0.3s ease;
   width: 50%;
+  margin: 5px;
 }
-.btn--gradient:hover {
-  background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
+.emergency {
+  background: red;
+}
+.emergency:hover {
+  background: #e50000;
+}
+.gradient {
+  background: linear-gradient(60deg, #8B388A 55%, map-get($accent, Main));
+}
+.gradient:hover {
+  background: linear-gradient(168.27deg, #8B388A 35.62%, map-get($accent, Main) 100%);
 }
 .modal {
   display: flex;
@@ -109,7 +132,7 @@ mat-form-field {
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
-  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+  background: linear-gradient(60deg, #8B388A 55%, map-get($accent, Main));
   position: relative;
 }
 .modal_close {

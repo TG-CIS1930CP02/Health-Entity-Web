@@ -7,7 +7,7 @@ import { Reaction } from '../../../models/reaction';
 @Component({
   selector: 'app-create-allergy-intolerance',
   templateUrl: './create-allergy-intolerance.component.html',
-  styleUrls: ['./create-allergy-intolerance.component.css']
+  styleUrls: ['./create-allergy-intolerance.component.scss']
 })
 export class CreateAllergyIntoleranceComponent implements OnInit {
 

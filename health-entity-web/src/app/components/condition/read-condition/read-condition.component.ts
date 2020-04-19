@@ -4,7 +4,7 @@ import { Condition } from 'app/models/condition';
 @Component({
   selector: 'app-read-condition',
   templateUrl: './read-condition.component.html',
-  styleUrls: ['./read-condition.component.css']
+  styleUrls: ['./read-condition.component.scss']
 })
 export class ReadConditionComponent implements OnInit {
 

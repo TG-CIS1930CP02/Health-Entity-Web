@@ -5,7 +5,7 @@ import { OptionsList } from '../../../models/options-lists';
 @Component({
   selector: 'app-create-diagnostic-report',
   templateUrl: './create-diagnostic-report.component.html',
-  styleUrls: ['./create-diagnostic-report.component.css']
+  styleUrls: ['./create-diagnostic-report.component.scss']
 })
 export class CreateDiagnosticReportComponent implements OnInit {
 

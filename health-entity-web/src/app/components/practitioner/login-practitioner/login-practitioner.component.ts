@@ -11,7 +11,7 @@ import { environment } from 'environments/environment';
 @Component({
   selector: 'app-login-practitioner',
   templateUrl: './login-practitioner.component.html',
-  styleUrls: ['./login-practitioner.component.css']
+  styleUrls: ['./login-practitioner.component.scss']
 })
 export class LoginPractitionerComponent implements OnInit {
 

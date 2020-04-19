@@ -5,7 +5,7 @@ import { OptionsList } from '../../../models/options-lists';
 @Component({
   selector: 'app-create-observation',
   templateUrl: './create-observation.component.html',
-  styleUrls: ['./create-observation.component.css']
+  styleUrls: ['./create-observation.component.scss']
 })
 export class CreateObservationComponent implements OnInit {
 

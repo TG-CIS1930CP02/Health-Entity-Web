@@ -5,7 +5,7 @@ import { OptionsList } from '../../../models/options-lists';
 @Component({
   selector: 'app-create-condition',
   templateUrl: './create-condition.component.html',
-  styleUrls: ['./create-condition.component.css']
+  styleUrls: ['./create-condition.component.scss']
 })
 export class CreateConditionComponent implements OnInit {
 

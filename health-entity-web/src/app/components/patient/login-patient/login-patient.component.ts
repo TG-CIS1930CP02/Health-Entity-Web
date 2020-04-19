@@ -11,7 +11,7 @@ import { environment } from 'environments/environment';
 @Component({
   selector: 'app-login-patient',
   templateUrl: './login-patient.component.html',
-  styleUrls: ['./login-patient.component.css']
+  styleUrls: ['./login-patient.component.scss']
 })
 export class LoginPatientComponent implements OnInit {
 

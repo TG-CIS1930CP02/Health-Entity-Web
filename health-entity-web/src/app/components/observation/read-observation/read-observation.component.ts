@@ -4,7 +4,7 @@ import { Observation } from '../../../models/observation';
 @Component({
   selector: 'app-read-observation',
   templateUrl: './read-observation.component.html',
-  styleUrls: ['./read-observation.component.css']
+  styleUrls: ['./read-observation.component.scss']
 })
 export class ReadObservationComponent implements OnInit {
 

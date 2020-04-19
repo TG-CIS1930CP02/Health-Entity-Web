@@ -9,7 +9,7 @@ import { OptionsList } from '../../../models/options-lists';
 @Component({
   selector: 'app-details-practitioner',
   templateUrl: './details-practitioner.component.html',
-  styleUrls: ['./details-practitioner.component.css']
+  styleUrls: ['./details-practitioner.component.scss']
 })
 
 export class DetailsPractitionerComponent implements OnInit {

@@ -6,7 +6,7 @@ import { PatientService } from 'app/services/patient.service';
 @Component({
   selector: 'app-search-patient',
   templateUrl: './search-patient.component.html',
-  styleUrls: ['./search-patient.component.css']
+  styleUrls: ['./search-patient.component.scss']
 })
 export class SearchPatientComponent implements OnInit {
   patientFound: Patient = new Patient(

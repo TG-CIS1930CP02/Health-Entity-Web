@@ -6,7 +6,7 @@ import { OptionsList } from '../../../models/options-lists';
 @Component({
   selector: 'app-signup-practitioner',
   templateUrl: './signup-practitioner.component.html',
-  styleUrls: ['./signup-practitioner.component.css']
+  styleUrls: ['./signup-practitioner.component.scss']
 })
 
 export class SignupPractitionerComponent implements OnInit {

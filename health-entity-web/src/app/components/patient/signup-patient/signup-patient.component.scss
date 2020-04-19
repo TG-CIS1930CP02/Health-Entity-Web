@@ -1,69 +1,67 @@
+@import "custom-theme.scss";
+
 input {
   width: 100%;
 }
-#loginbox {
+#box {
   position: relative;
-  margin: 90px auto 20px auto;
+  margin: 160px auto 80px auto;
   max-width: 1200px;
 }
 #formbox {
   font-family: "poppins", arial, sans-serif;
-  width: 80%;
+  width: 100%;
   overflow: hidden;
 }
 .center {
-  margin: auto;
-  width: 30%;
+  width: 50%;
 }
 .title {
   width: 100%;
   font-size: 30px;
   text-align: center;
-  color: #5E62AA !important;
+  color: map-get($accent, Main) !important;
   text-transform: uppercase;
-  margin-bottom: 10px !important;
+  margin-bottom: 3  0px !important;
 }
 .form_box {
-  width: 100%;
+  width: 50%;
   margin-bottom: 10px;
   margin-top: 10px;
 }
 mat-form-field {
-  width: 100%;
+  width: 98%;
 }
-.help {
-  display: inline-block;
-  font-size: 12px;
-  color: #5E62AA !important;
-  font-family: "poppinsMedium", Arial, Helvetica, sans-serif;
-  margin-bottom: 15px !important;
-  cursor: help;
+.inline {
+  float:left;
+}
+.btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .btn--gradient {
   display: inline-flex;
   justify-content: center;
-  align-items: center;
-  align-content: center;
   flex-wrap: nowrap;
   vertical-align: middle;
   padding: 5px 40px;
   outline: none;
   font-family: "poppins", Arial, Helvetica, sans-serif;
   font-size: 16px;
-  text-align: center;
   letter-spacing: 1px;
   cursor: pointer;
   border: none;
   color: #fff;
-  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+  background: linear-gradient(60deg, #8B388A 55%, map-get($accent, Main));
   transition: all 0.3s ease;
-  width: 100%;
+  width: 50%;
 }
 .btn--gradient:hover {
-  background: linear-gradient(168.27deg, #8B388A 35.62%, #5E62AA 100%);
+  background: linear-gradient(168.27deg, #8B388A 35.62%, map-get($accent, Main) 100%);
 }
 .modal {
-  display: -ms-flexbox;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,15 +88,10 @@ mat-form-field {
   letter-spacing: 1px;
 }
 .modal_container {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: start;
   align-content: flex-start;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
   max-width: 500px;
@@ -110,20 +103,15 @@ mat-form-field {
   background: #fff;
 }
 .modal_header {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 100%;
   padding-left: 30px;
   padding-right: 30px;
-  background: linear-gradient(60deg, #8B388A 55%, #5E62AA);
+  background: linear-gradient(60deg, #8B388A 55%, map-get($accent, Main));
   position: relative;
 }
 .modal_close {
@@ -136,15 +124,10 @@ mat-form-field {
   right: 15px;
 }
 .icon--close {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   width: 40px;
   height: 40px;
@@ -164,15 +147,10 @@ mat-form-field {
   cursor: pointer;
 }
 .modal_content {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
   justify-content: center;
-  -ms-flex-align: center;
   align-items: center;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 15px;
 }
