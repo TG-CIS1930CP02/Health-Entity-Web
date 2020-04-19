@@ -61,6 +61,30 @@
 
         <div class="column">
           <div class="form_box">
+            <label>Método utilizado: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="observation.method" name="method">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let m of methodOptions" [value]="m.value">
+                  {{m.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Parte del cuerpo afectada: </label>
+            <mat-form-field>
+              <mat-label>Elige una</mat-label>
+              <mat-select [(ngModel)]="observation.bodySite" name="bodySite">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let b of bodyOptions" [value]="b.value">
+                  {{b.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
             <label>Valor: </label>
             <mat-form-field>
               <mat-label>Valor del resultado</mat-label>
@@ -82,30 +106,6 @@
                 <mat-option>Ninguno</mat-option>
                 <mat-option *ngFor="let i of interpretationOptions" [value]="i.value">
                   {{i.name}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="form_box">
-            <label>Parte del cuerpo afectada: </label>
-            <mat-form-field>
-              <mat-label>Elige una</mat-label>
-              <mat-select [(ngModel)]="observation.bodySite" name="bodySite">
-                <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let b of bodyOptions" [value]="b.value">
-                  {{b.name}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="form_box">
-            <label>Método utilizado: </label>
-            <mat-form-field>
-              <mat-label>Elige uno</mat-label>
-              <mat-select [(ngModel)]="observation.method" name="method">
-                <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let m of methodOptions" [value]="m.value">
-                  {{m.name}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
