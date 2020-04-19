@@ -1,6 +1,6 @@
 <div id="box">
   <div id="detailsBox" class="center">
-    <h2 class="title">Ver registro Alergias e Intolerancias</h2>
+    <h2 class="title">Ver registro de informe diagnóstico</h2>
     <div class="row">
       <div class="column">
         <label>Solicitud:</label>
@@ -26,8 +26,6 @@
     <app-read-observation></app-read-observation>
     <label>Conclusión:</label>
     <p>{{diagnostic.conclusion}}</p>
-    <label>Código:</label>
-    <p>{{diagnostic.conclusionCode}}</p>
     <label>Códigos de conclusión: </label>
     <ul>
       <li *ngFor="let c of diagnostic.conclusionCode">{{c}}</li>
