@@ -8,12 +8,12 @@ import { PersonService } from 'app/services/person.service';
 @Component({
   selector: 'app-signup-practitioner',
   templateUrl: './signup-practitioner.component.html',
-  styleUrls: ['./signup-practitioner.component.css']
+  styleUrls: ['./signup-practitioner.component.scss']
 })
 
 export class SignupPractitionerComponent implements OnInit {
   @Input()
-  isPractitioner: boolean;
+  isPractitioner = true;
   @Input()
   title = 'Registro profesional de la salud';
 
@@ -43,7 +43,7 @@ export class SignupPractitionerComponent implements OnInit {
   idType = 'Selecciona un tipo';
   id: number;
 
-  options = OptionsList.identificationTypes;
+  options = OptionsList.IdentificationTypes;
 
   constructor(private personService: PersonService) {}
 

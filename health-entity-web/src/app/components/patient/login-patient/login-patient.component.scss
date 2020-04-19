@@ -1,0 +1,189 @@
+@import "~_variables.scss";
+
+input {
+  width: 100%;
+}
+#loginbox {
+  position: relative;
+  margin: 90px auto 20px auto;
+  max-width: 1200px;
+}
+#formbox {
+  font-family: "poppins", arial, sans-serif;
+  width: 80%;
+  overflow: hidden;
+}
+.center {
+  margin: auto;
+  width: 30%;
+}
+.title {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: $accent !important;
+  text-transform: uppercase;
+  margin-bottom: 10px !important;
+}
+.form_box {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+mat-form-field {
+  width: 100%;
+}
+.help {
+  display: inline-block;
+  font-size: 12px;
+  color: $accent !important;
+  font-family: "poppinsMedium", Arial, Helvetica, sans-serif;
+  margin-bottom: 15px !important;
+  cursor: help;
+}
+.btn--gradient {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  vertical-align: middle;
+  padding: 5px 40px;
+  outline: none;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  background: linear-gradient(60deg, $primary 55%, $accent);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+.btn--gradient:hover {
+  background: linear-gradient(168.27deg, $primary 35.62%, $accent 100%);
+}
+.modal {
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  z-index: 3000;
+}
+.modal .title {
+  width: 100%;
+  font-size: 25px;
+  font-family: "poppinsSemibold", Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: white !important;
+  text-transform: uppercase;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  letter-spacing: 1px;
+}
+.modal_container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: start;
+  align-content: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  min-height: auto;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 30px rgba(74, 74, 74, 0.15);
+  background: #fff;
+}
+.modal_header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: linear-gradient(60deg, $primary 55%, $accent);
+  position: relative;
+}
+.modal_close {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+}
+.icon--close {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  object-position: center;
+  background-size: contain !important;
+  transition: all 0.3s ease;
+  background: url("../../../../assets/icons/close.png") no-repeat center;
+  background-size: contain;
+}
+.modal .icon--close {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  cursor: pointer;
+}
+.modal_content {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+.modal_content .text {
+  width: 100%;
+  font-size: 14px;
+  color: #4a4a4a !important;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+}

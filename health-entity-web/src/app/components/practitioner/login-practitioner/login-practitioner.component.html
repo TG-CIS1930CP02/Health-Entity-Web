@@ -1,42 +1,41 @@
 <div id="loginbox" class="center">
+  <h2 class="title">Ingreso Profesional de la Salud</h2>
   <div id="formbox" class="center">
-    <h2 class="title">Ingreso Profesional de la Salud</h2>
     <form (ngSubmit)="login()" #loginForm="ngForm">
       <div class="form_box">
-        <div>
-          <label for="idType">Tipo de identificación: </label><br />
-          <select id="idType" class='form-control form_select' name="idType" required [(ngModel)]="idType"
-            #txtType="ngModel">
-            <option disabled hidden>Selecciona un tipo</option>
-            <option *ngFor="let o of options" [value]="o.value">{{o.name}}</option>
-          </select>
-        </div>
+        <mat-form-field>
+          <mat-label>Elige un tipo de identificación</mat-label>
+          <mat-select [(ngModel)]="idType" name="idType" required>
+            <mat-option *ngFor="let i of options" [value]="i.value">
+              {{i.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
       <div class="form_box">
-        <div>
-          <label for="idNumber">Número de identificación: </label><br />
-          <input class="form_input" type="text" id="idNumber" required #idNumber="ngModel" name="idNumber" [(ngModel)]="id"
-            placeholder="Ingrese su número de identificación"/>
-        </div>
-        <!--- TODO should i put this? -->
-        <div [hidden]="idNumber.valid || !idNumber.touched"></div>
+        <mat-form-field>
+          <mat-label>Número de identificación</mat-label>
+          <input matInput [(ngModel)]="id" name="idNumber" type="number" required>
+        </mat-form-field>
       </div>
+
       <div class="form_box">
-        <div>
-          <label for="txtPassword">Contraseña: </label><br />
-          <input class="form_input" type="password" id="txtPassword" required #txtPassword="ngModel" name="password"
-            [(ngModel)]="password" placeholder="Ingrese su contraseña" />
-        </div>
-        <!--- TODO should i put this? -->
-        <div [hidden]="txtPassword.valid || !txtPassword.touched"></div>
+        <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input matInput [(ngModel)]="password" name="password" [type]="hide ? 'password' : 'text'" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
       </div>
       <div class="form_box">
         <mat-checkbox class="form_checkbox" [(ngModel)]="checked" name="fingerprint" id="fingerprint">
           Huella válida
         </mat-checkbox>
       </div>
-      <a href="#" class="help">¿Necesitas ayuda para ingresar?</a>
-      <button type="submit" class="btn--gradient" [disabled]="!loginForm.form.valid">
+      <a [routerLink]="['./']" class="help">¿Necesitas ayuda para ingresar?</a>
+      <!-- TODO fix button, if fields are not properly filled, the modal doesn't popup -->
+      <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!loginForm.form.valid">
         Iniciar sesión
       </button>
     </form>
@@ -62,7 +61,7 @@
       </div>
       <div class="modal_content">
         <p class="text">
-          Estimado usuario, usted no cuenta con los permisos necesarios para acceder como profesional de la salud en esta IPS.
+          Estimado usuario, usted no cuenta con los permisos necesarios para acceder como personal administrativo en esta IPS.
         </p>
       </div>
     </div>

@@ -10,7 +10,7 @@ import { AuthorizationService } from 'app/services/authorization.service';
 @Component({
   selector: 'app-details-patient',
   templateUrl: './details-patient.component.html',
-  styleUrls: ['./details-patient.component.css']
+  styleUrls: ['./details-patient.component.scss']
 })
 export class DetailsPatientComponent implements OnInit {
   @Input()
@@ -25,6 +25,9 @@ export class DetailsPatientComponent implements OnInit {
     undefined
   );
 
+  displayedColumnsContact = ['type', 'system', 'value'];
+  displayedColumnsAddress = ['city', 'type', 'name', 'address'];
+
   telecoms: ContactPoint[] = [];
   addresses: Address[] = [];
   cities = OptionsList.cities;
@@ -34,7 +37,7 @@ export class DetailsPatientComponent implements OnInit {
 
   systems = OptionsList.contactPointSystems;
   uses = OptionsList.contactPointUses;
-  addressUses = OptionsList.addressUses;
+  AddressUses = OptionsList.AddressUses;
 
   constructor(
     private patientService: PatientService,

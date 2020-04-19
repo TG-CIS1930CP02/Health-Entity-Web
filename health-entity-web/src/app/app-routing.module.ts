@@ -10,18 +10,40 @@ import { SignupAdministrativeAssistantComponent } from './components/administrat
 import { HomeAdministratorComponent } from './components/administrator/home-administrator/home-administrator.component';
 import { HomePractitionerComponent } from './components/practitioner/home-practitioner/home-practitioner.component';
 import { HomeAdministrativeAssistantComponent } from './components/administrative-assistant/home-administrative-assistant/home-administrative-assistant.component';
+import { HomePatientComponent } from './components/patient/home-patient/home-patient.component';
+import { CreateAllergyIntoleranceComponent } from './components/allergy-intolerance/create-allergy-intolerance/create-allergy-intolerance.component';
+import { ReadAllergyIntoleranceComponent } from './components/allergy-intolerance/read-allergy-intolerance/read-allergy-intolerance.component';
+import { SignupPatientComponent } from './components/patient/signup-patient/signup-patient.component';
+import { SearchPatientComponent } from './components/patient/search-patient/search-patient.component';
+import { CreateDiagnosticReportComponent } from './components/diagnostic-report/create-diagnostic-report/create-diagnostic-report.component';
+import { CreateConditionComponent } from './components/condition/create-condition/create-condition.component';
+import { ReadConditionComponent } from './components/condition/read-condition/read-condition.component';
+import { CreateObservationComponent } from './components/observation/create-observation/create-observation.component';
+import { ReadObservationComponent } from './components/observation/read-observation/read-observation.component';
+import { ReadDiagnosticReportComponent } from './components/diagnostic-report/read-diagnostic-report/read-diagnostic-report.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
-  { path: 'home', component: HomeComponent},
-  { path: 'login-patient', component:  LoginPatientComponent},
-  { path: 'login-practitioner', component: LoginPractitionerComponent},
-  { path: 'login-administrator', component: LoginAdministratorComponent},
-  { path: 'admin/signup-practitioner', component: SignupPractitionerComponent},
-  { path: 'admin/signup-administrative-assistant', component: SignupAdministrativeAssistantComponent},
-  { path: 'admin/home', component: HomeAdministratorComponent},
-  { path: 'practitioner/home', component: HomePractitionerComponent},
-  { path: 'admin-assistant/home', component: HomeAdministrativeAssistantComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'login-patient', component:  LoginPatientComponent },
+  { path: 'login-practitioner', component: LoginPractitionerComponent },
+  { path: 'login-administrator', component: LoginAdministratorComponent },
+  { path: 'admin/signup-practitioner', component: SignupPractitionerComponent },
+  { path: 'admin/signup-administrative-assistant', component: SignupAdministrativeAssistantComponent },
+  { path: 'admin-assistant/signup-patient', component: SignupPatientComponent },
+  { path: 'admin/home', component: HomeAdministratorComponent },
+  { path: 'practitioner/home', component: HomePractitionerComponent },
+  { path: 'admin-assistant/home', component: HomeAdministrativeAssistantComponent },
+  { path: 'patient/home', component: HomePatientComponent },
+  { path: 'practitioner/record-resource/allergy', component: CreateAllergyIntoleranceComponent },
+  { path: 'practitioner/view-resource/allergy', component: ReadAllergyIntoleranceComponent },
+  { path: 'practitioner/record-resource/diagnostic', component: CreateDiagnosticReportComponent },
+  { path: 'practitioner/view-resource/diagnostic', component: ReadDiagnosticReportComponent },
+  { path: 'practitioner/record-resource/condition', component: CreateConditionComponent },
+  { path: 'practitioner/view-resource/condition', component: ReadConditionComponent },
+  { path: 'practitioner/record-resource/observation', component: CreateObservationComponent },
+  { path: 'practitioner/view-resource/observation', component: ReadObservationComponent },
+  { path: 'practitioner/search-patient', component: SearchPatientComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
 

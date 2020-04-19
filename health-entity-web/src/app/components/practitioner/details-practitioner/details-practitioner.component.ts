@@ -10,7 +10,7 @@ import { AuthorizationService } from 'app/services/authorization.service';
 @Component({
   selector: 'app-details-practitioner',
   templateUrl: './details-practitioner.component.html',
-  styleUrls: ['./details-practitioner.component.css']
+  styleUrls: ['./details-practitioner.component.scss']
 })
 
 export class DetailsPractitionerComponent implements OnInit {
@@ -30,6 +30,8 @@ export class DetailsPractitionerComponent implements OnInit {
     undefined
   );
 
+  displayedColumnsQualification = ['title', 'startDate', 'reportingEntity'];
+
   telecoms: ContactPoint[] = [];
   addresses: Address[] = [];
   cities = OptionsList.cities;
@@ -42,7 +44,7 @@ export class DetailsPractitionerComponent implements OnInit {
 
   systems = OptionsList.contactPointSystems;
   uses = OptionsList.contactPointUses;
-  addressUses = OptionsList.addressUses;
+  AddressUses = OptionsList.AddressUses;
 
   constructor(
     private practitionerService: PractitionerService,

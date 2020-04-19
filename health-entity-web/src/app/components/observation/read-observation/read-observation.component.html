@@ -1,0 +1,39 @@
+<div id="box">
+  <div id="detailsBox" class="center">
+    <h2 class="title">Ver registro de observación</h2>
+    <label>Solicitud:</label>
+    <p>{{observation.basedOn}}</p>
+    <div class="row">
+      <div class="column">
+        <label>Código:</label>
+        <p>{{observation.code}}</p>
+        <label>Estado:</label>
+        <p>{{observation.status}}</p>
+        <label>Categorias: </label>
+        <ul>
+          <li *ngFor="let c of observation.category">{{c}}</li>
+        </ul>
+        <label>Fecha clínicamente relevante:</label>
+        <p>{{observation.effectiveDateTime}}</p>
+        <label>Fecha de la versión:</label>
+        <p>{{observation.issued}}</p>
+      </div>
+
+      <div class="column">
+        <label>Método utilizado:</label>
+        <p>{{observation.method}}</p>
+        <label>Parte del cuerpo afectada:</label>
+        <p>{{observation.bodySite}}</p>
+        <label>Valor:</label>
+        <p>{{observation.value}}</p>
+        <label>Rango de referencia:</label>
+        <p>{{observation.referenceRange}}</p>
+        <label>Interpretación: </label>
+        <ul>
+          <li *ngFor="let c of observation.interpretation">{{c}}</li>
+        </ul>
+      </div>
+    </div><label>Notas adicionales:</label>
+    <p>{{observation.note}}</p>
+  </div>
+</div>

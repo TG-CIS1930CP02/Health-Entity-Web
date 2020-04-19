@@ -11,7 +11,7 @@ import { environment } from 'environments/environment';
 @Component({
   selector: 'app-login-patient',
   templateUrl: './login-patient.component.html',
-  styleUrls: ['./login-patient.component.css']
+  styleUrls: ['./login-patient.component.scss']
 })
 export class LoginPatientComponent implements OnInit {
 
@@ -31,11 +31,12 @@ export class LoginPatientComponent implements OnInit {
   idType: string;
   id: number;
   password: string;
+  hide = true;
 
   incorrectLogin = false;
   invalidAuthorities = false;
 
-  options = OptionsList.identificationTypes;
+  options = OptionsList.IdentificationTypes;
 
   ngOnInit(): void { }
 
@@ -65,7 +66,7 @@ export class LoginPatientComponent implements OnInit {
     const payload = parts[1];
     const decodedPayload = atob(payload);
     const payloadObject = JSON.parse(decodedPayload);
-    if (payloadObject.authorities.includes(role) && payloadObject.authorities.includes(authenticationMode) && 
+    if (payloadObject.authorities.includes(role) && payloadObject.authorities.includes(authenticationMode) &&
     payloadObject.authorities.includes(environment.healthEntityAuthority))
       return true;
     return false;

@@ -11,7 +11,7 @@ import { environment } from 'environments/environment';
 @Component({
   selector: 'app-login-administrator',
   templateUrl: './login-administrator.component.html',
-  styleUrls: ['./login-administrator.component.css']
+  styleUrls: ['./login-administrator.component.scss']
 })
 export class LoginAdministratorComponent implements OnInit {
 
@@ -22,12 +22,13 @@ export class LoginAdministratorComponent implements OnInit {
   idType = 'Selecciona un tipo';
   id: number;
   password: string;
+  hide = true;
 
   incorrectLogin = false;
   invalidAuthorities = false;
   checked = false;
 
-  options = OptionsList.identificationTypes;
+  options = OptionsList.IdentificationTypes;
 
   ngOnInit(): void { }
 

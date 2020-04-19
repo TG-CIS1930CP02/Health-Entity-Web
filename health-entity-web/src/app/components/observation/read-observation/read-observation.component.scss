@@ -1,0 +1,50 @@
+@import "~_variables.scss";
+
+label {
+  font-weight: bold;
+  margin-right: 5px;
+  display: block;
+}
+p {
+  margin-bottom: 7px;
+}
+#box {
+  position: relative;
+  margin: 15px auto 80px auto;
+  max-width: 1200px;
+}
+#detailsbox {
+  font-family: "poppins", arial, sans-serif;
+  width: 100%;
+  overflow: hidden;
+  border-top: 2px solid rgba(147, 147, 147, 0.7);
+}
+.title {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: $accent !important;
+  text-transform: uppercase;
+  margin-bottom: 10px !important;
+}
+.center {
+  margin: auto;
+  width: 60%;
+}
+.label {
+  font-weight: bold;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  width: 49%;
+}
+.column:nth-child(even) {
+  float: right;
+}
+.column:nth-child(odd) {
+  float: left;
+}

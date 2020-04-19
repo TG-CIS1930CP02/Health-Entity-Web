@@ -1,12 +1,12 @@
 export class OptionsList {
-  public static identificationTypes = [
+  public static IdentificationTypes = [
     { name: 'Cédula de Ciudadanía', value: 'CC' },
     { name: 'Cédula de Extranjería', value: 'CE' },
     { name: 'Registro Civil', value: 'RC' },
     { name: 'Tarjeta de Identidad', value: 'TI' }
   ];
 
-  public static addressUses = [
+  public static AddressUses = [
     { name: 'Casa', value: 'home' },
     { name: 'Oficina', value: 'work' },
     { name: 'Temporal', value: 'temp' },
@@ -28,6 +28,281 @@ export class OptionsList {
     { name: 'Email', value: 'email' },
     { name: 'SMS', value: 'sms' },
     { name: 'Otro', value: 'other' }
+  ];
+
+  public static AllergyClinicalStatus = [
+    { name: 'Activo', value: 'active' },
+    { name: 'Inactivo', value: 'inactive' },
+    { name: 'Resuelto', value: 'resolved' }
+  ];
+
+  public static AllergyVerificationStatus = [
+    { name: 'No confirmado', value: 'unconfirmed' },
+    { name: 'Confirmado', value: 'confirmed' },
+    { name: 'Refutado', value: 'refuted' },
+    { name: 'Ingresado por error', value: 'entered-in-error' }
+  ];
+
+  public static AllergyIntoleranceType = [
+    { name: 'Alergia', value: 'allergy' },
+    { name: 'Intolerancia', value: 'intolerance' }
+  ];
+
+  public static AllergyIntoleranceCategory = [
+    { name: 'Comida', value: 'food' },
+    { name: 'Medicación', value: 'medication' },
+    { name: 'Ambiente', value: 'environment' },
+    { name: 'Biologico', value: 'biologic' }
+  ];
+
+  public static AllergyIntoleranceCriticality = [
+    { name: 'Bajo riesgo', value: 'low' },
+    { name: 'Alto riesgo', value: 'high' },
+    { name: 'No se puede evaluar', value: 'unable-to-assess' }
+  ];
+
+  public static AllergyIntoleranceCodes = [
+    { name: 'Hemoglobina okaloosa', value: '102002' },
+    { name: 'Carrera de ornitina', value: '120006' },
+    { name: 'Sulfato ferroso Fe ^ 59 ^', value: '125001' },
+    { name: 'Galactosil-N-acetilglucosaminilgalactosilglucosilceramida alfa-galactosiltransferasa', value: '126000' },
+    { name: 'Hemoglobina Hopkins-II', value: '130002' },
+    { name: 'Manosiltransferasa de dolilfosfato', value: '131003' },
+    { name: 'Sal de ferrocianuro', value: '159002' },
+    { name: 'Fosfoenolpiruvato-proteína fosfotransferasa', value: '164003' },
+    { name: 'Uridil difosfato galactosa', value: '178002' },
+    { name: 'Antígeno HLA-Cw9', value: '186002' }
+  ];
+
+  public static AllergyIntoleranceSeverity = [
+    { name: 'Leve', value: 'mild' },
+    { name: 'Moderada', value: 'moderate' },
+    { name: 'Grave', value: 'severe' },
+  ];
+
+  public static ExposureRouteCodes = [
+    { name: 'Ruta tópica', value: '6064005' },
+    { name: 'Uso auricular', value: '10547007' },
+    { name: 'Ruta intraarticular', value: '12130007' },
+    { name: 'Uso oral', value: '26643006' },
+    { name: 'Uso de SC', value: '34206005' },
+    { name: 'Uso rectal', value: '37161004' },
+    { name: 'Uso intraluminal', value: '37737002' },
+    { name: 'Uso sublingual', value: '37839007' },
+    { name: 'Uso intraperitoneal', value: '38239002' },
+    { name: 'Uso transdérmico', value: '45890007' }
+  ];
+
+  public static ClinicalFindingsCodes = [
+    { name: 'Trastorno de ansiedad de la infancia O adolescencia', value: '109006' },
+    { name: 'Hemorragia coroidea', value: '122003' },
+    { name: 'Aborto espontáneo con laceración del cuello uterino.', value: '127009' },
+    { name: 'Homoiotermia', value: '129007' },
+    { name: 'Disminución del crecimiento del cabello.', value: '134006' },
+    { name: 'Faringitis crónica', value: '140004' },
+    { name: 'Visión periférica normal', value: '144008' },
+    { name: 'Cuerpo extraño superficial del escroto sin herida abierta importante pero con infección', value: '147001' },
+    { name: 'Continencia de vejiga anormal', value: '150003' },
+    { name: 'Meningitis por gonococo', value: '151004' }
+  ];
+
+  public static diagnosticStatusCodes = [
+    { name: 'Registrado', value: 'registered' },
+    { name: 'Parcial', value: 'partial' },
+    { name: 'Preliminar', value: 'preliminary' },
+    { name: 'Final', value: 'final' },
+    { name: 'Modificado', value: 'amended' },
+    { name: 'Corregido', value: 'corrected' },
+    { name: 'Adjunto', value: 'appended' },
+    { name: 'Cancelado', value: 'cancelled' },
+    { name: 'Ingresado por error', value: 'entered-in-error' },
+    { name: 'Desconocido', value: 'unknown' }
+  ];
+
+  public static diagnosticCategoryCodes = [
+    { name: 'Audiología', value: 'AU' },
+    { name: 'Gases en sangre', value: 'BG' },
+    { name: 'Banco de Sangre', value: 'BLB' },
+    { name: 'Citogenética', value: 'CG' },
+    { name: 'Química', value: 'CH' },
+    { name: 'Citopatología', value: 'CP' },
+    { name: 'Análisis de gato', value: 'CT' },
+    { name: 'Cateterización cardiaca', value: 'CTH' },
+    { name: 'Ultrasonido cardiaco', value: 'CUS' },
+    { name: 'Electrocardíaco (p. Ej., EKG, EEC, Holter)', value: 'EC' },
+    { name: 'Electroneuro (EEG, EMG, EP, PSG)', value: 'EN' },
+    { name: 'Genética', value: 'GE' },
+    { name: 'Hematología', value: 'HM' },
+    { name: 'Monitoreo de UCI a pie de cama', value: 'ICU' },
+    { name: 'Inmunología', value: 'IMM' },
+    { name: 'Laboratorio', value: 'LAB' },
+    { name: 'Microbiología', value: 'MB' },
+    { name: 'Micobacteriología', value: 'MCB' },
+    { name: 'Micología', value: 'MYC' },
+    { name: 'Resonancia magnética nuclear', value: 'NMR' },
+    { name: 'Exploración de medicina nuclear', value: 'NMS' },
+    { name: 'Medidas de servicio de enfermería', value: 'NRS' },
+    { name: 'Laboratorio exterior', value: 'OSL' },
+    { name: 'Terapia ocupacional', value: 'OT' },
+    { name: 'Otro', value: 'OTH' },
+    { name: 'Ultrasonido OB', value: 'OUS' },
+    { name: 'Función pulmonar', value: 'PF' },
+    { name: 'Farmacia', value: 'PHR' },
+    { name: 'Médico (Hx. Dx, nota de admisión, etc.)', value: 'PHY' },
+    { name: 'Terapia física', value: 'PT' },
+    { name: 'Radiología', value: 'RAD' },
+    { name: 'Cuidado respiratorio (terapia)', value: 'RC' },
+    { name: 'Terapia de radiación', value: 'RT' },
+    { name: 'Ultrasonido Radiológico', value: 'RUS' },
+    { name: 'Radiografía', value: 'RX' },
+    { name: 'Patología Quirúrgica', value: 'SP' },
+    { name: 'Serología', value: 'SR' },
+    { name: 'Toxicología', value: 'TX' },
+    { name: 'Virología', value: 'VR' },
+    { name: 'Ultrasonido vascular', value: 'VUS' },
+    { name: 'Cineradiografía', value: 'XRC' }
+  ];
+
+  public static LOINCCodes = [
+    { name: 'Aciclovir [Susceptibilidad]', value: '1-8' },
+    { name: 'Amdinocillin [Susceptibilidad] por título bactericida en suero', value: '10-9' },
+    { name: 'Cefoperazona [Susceptibilidad] por concentración inhibitoria mínima (MIC)', value: '100-8' },
+    { name: 'DBG Ab [Presencia] en suero o plasma de la unidad de producto de sangre', value: '1000-9' },
+    { name: 'Duración de la onda R en AVR principal', value: '10000-8' },
+    { name: 'Duración de la onda R en la derivación I', value: '10001-6' },
+    { name: 'Duración de la onda R en la derivación II', value: '10002-4' },
+    { name: 'Duración de la onda R en la derivación III', value: '10003-2' },
+    { name: 'Duración de la onda R en la derivación V1', value: '10004-0' },
+    { name: 'Duración de la onda R en plomo V2', value: '10005-7' }
+  ];
+
+  public static ConditionClinicalStatus = [
+    { name: 'Activo', value: 'active' },
+    { name: 'Reaparición', value: 'recurrence' },
+    { name: 'Recaída', value: 'relapse' },
+    { name: 'Inactivo', value: 'inactive' },
+    { name: 'Remisión', value: 'remission' },
+    { name: 'Resuelto', value: 'resolved' }
+  ];
+
+  public static ConditionVerificationStatus = [
+    { name: 'No confirmado', value: 'unconfirmed' },
+    { name: 'Provisional', value: 'provisional' },
+    { name: 'Diferencial', value: 'differential' },
+    { name: 'Confirmado', value: 'confirmed' },
+    { name: 'Refutado', value: 'refuted' },
+    { name: 'Ingresado por error', value: 'entered-in-error' }
+  ];
+
+  public static BodyStructure = [
+    { name: 'Región carpiana posterior', value: '106004' },
+    { name: 'Parte fetal de la placenta', value: '107008' },
+    { name: 'Vena emisaria condilar', value: '108003' },
+    { name: 'Capa visceral de la cápsula de Bowman', value: '110001' },
+    { name: 'Glándula paratiroidea', value: '111002' },
+    { name: 'Tejido subcutáneo de la superficie medial del dedo índice.', value: '116007' },
+    { name: 'Proceso coronoide de la mandíbula.', value: '124002' },
+    { name: 'Par central de microtúbulos, cilio o flagelo, no bacteriano', value: '149003' },
+    { name: 'Arteria circunfleja profunda del ilion', value: '155008' },
+    { name: 'Parte supraclavicular del plexo braquial.', value: '167005' },
+    { name: 'División anterior de la arteria renal', value: '202009' },
+    { name: 'Comisura izquierda de la válvula aórtica', value: '205006' },
+    { name: 'Músculo glúteo mayor', value: '206007' },
+    { name: 'Superficie articular, falanges, del cuarto hueso metacarpiano', value: '221001' },
+    { name: 'Canal de Hering', value: '227002' },
+    { name: 'Ligamento hepatocólico', value: '233006' },
+    { name: 'Arteria labial superior', value: '235004' },
+    { name: 'Núcleo vestibular lateral', value: '246001' },
+    { name: 'Mesotímpano', value: '247005' },
+    { name: 'Región pectoral', value: '251007' },
+    { name: 'Célula de Kupffer', value: '256002' },
+    { name: 'Nervio torácico', value: '263002' },
+    { name: 'Lóbulo inferior derecho del pulmón', value: '266005' },
+    { name: 'Proceso articular superior de la vértebra lumbar', value: '272005' },
+    { name: 'Miocardio lateral', value: '273000' },
+    { name: 'Ganglio central axilar', value: '283001' },
+    { name: 'Tendón flexor y vaina tendinosa del cuarto dedo del pie', value: '284007' }
+  ];
+
+  public static ObservationStatus = [
+    { name: 'Registrado', value: 'registered' },
+    { name: 'Preliminar', value: 'preliminary' },
+    { name: 'Final', value: 'final' },
+    { name: 'Modificado', value: 'amended' },
+    { name: 'Corregido', value: 'corrected' },
+    { name: 'Cancelado', value: 'cancelled' },
+    { name: 'Ingresado por error', value: 'entered-in-error' },
+    { name: 'Desconocido', value: 'unknown' }
+  ];
+
+  public static ObservationCategory = [
+    { name: 'Historia social', value: 'social-history' },
+    { name: 'Signos vitales', value: 'vital-signs' },
+    { name: 'Imagen', value: 'imaging' },
+    { name: 'Laboratorio', value: 'laboratory' },
+    { name: 'Procedimiento', value: 'procedure' },
+    { name: 'Encuesta', value: 'survey' },
+    { name: 'Examen', value: 'exam' },
+    { name: 'Terapia', value: 'therapy' },
+    { name: 'Actividad', value: 'activity' }
+  ];
+
+  public static ObservationInterpretationCodes = [
+    { name: 'Portador', value: 'CAR' },
+    { name: 'Mejora', value: 'B' },
+    { name: 'Cambio significativo positivo', value: 'D' },
+    { name: 'Cambio significativo negativo', value: 'U' },
+    { name: 'Peor', value: 'W' },
+    { name: 'Fuera de escala bajo', value: '<' },
+    { name: 'Fuera de escala alto', value: '>' },
+    { name: 'Evidencia insuficiente', value: 'IE' },
+    { name: 'Anormal', value: 'A' },
+    { name: 'Crítica anormal', value: 'AA' },
+    { name: 'Alto crítico', value: 'HH' },
+    { name: 'Bajo crítico', value: 'LL' },
+    { name: 'Alto', value: 'H' },
+    { name: 'Significativamente alto', value: 'HU' },
+    { name: 'Bajo', value: 'L' },
+    { name: 'Significativamente bajo', value: 'LU' },
+    { name: 'Normal', value: 'N' },
+    { name: 'Intermedio', value: 'I' },
+    { name: 'Sin punto de corte definido por CLSI', value: 'NCL' },
+    { name: 'No susceptible', value: 'NS' },
+    { name: 'Resistente', value: 'R' },
+    { name: 'Sinergia - resistente', value: 'SYN-R' },
+    { name: 'Susceptible', value: 'S' },
+    { name: 'Susceptible a dosis dependientes', value: 'SDD' },
+    { name: 'Sinergia - susceptible', value: 'SYN-S' },
+    { name: 'umbral exterior', value: 'EX' },
+    { name: 'por encima del umbral alto', value: 'HX' },
+    { name: 'por debajo del umbral bajo', value: 'LX' },
+    { name: 'Indeterminado', value: 'IND' },
+    { name: 'Equívoco', value: 'E' },
+    { name: 'Negativo', value: 'NEG' },
+    { name: 'No detectado', value: 'ND' },
+    { name: 'Positivo', value: 'POS' },
+    { name: 'Detectado', value: 'DET' },
+    { name: 'Esperado', value: 'EXP' },
+    { name: 'Inesperado', value: 'UNE' },
+    { name: 'No reactivo', value: 'NR' },
+    { name: 'Reactivo', value: 'RR' },
+    { name: 'Débilmente reactivo', value: 'WR' }
+  ];
+
+  public static ObservationMethod = [
+    { name: 'Técnica competitiva de ensayo de unión a proteínas', value: '58207001' },
+    { name: 'Medida total', value: '115341008' },
+    { name: 'Técnica de adquisición', value: '246363001' },
+    { name: 'Técnica de llenado de la vejiga', value: '246502009' },
+    { name: 'Técnica de movimiento del catéter', value: '246503004' },
+    { name: 'Técnica de lectura cercana', value: '246504005' },
+    { name: 'Técnica de detección de fotones', value: '246505006' },
+    { name: 'Técnica de provocación', value: '246506007' },
+    { name: 'Técnica de estimulación', value: '246507003' },
+    { name: 'Destello', value: '255459008' },
+    { name: 'Técnica de tetania simple', value: '255463001' },
+    { name: 'Técnica de relación mandibular retruida', value: '255583002' },
+    { name: 'Solución salina infundida rectalmente', value: '256233002' }
   ];
 
   public static cities: string[] = [

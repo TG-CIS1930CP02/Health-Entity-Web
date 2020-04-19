@@ -1,0 +1,93 @@
+<div id="box" class="center">
+  <div id="formbox" class="center">
+    <h2 class="title">Registro de Informe de diagnóstico</h2>
+    <form (ngSubmit)="record()" #recordForm="ngForm">
+      <div class="form_box">
+        <label>¿Qué fue solicitado? </label>
+        <mat-form-field>
+          <mat-label>Descripción:</mat-label>
+          <textarea matInput [(ngModel)]="diagnostic.basedOn" name="basedOn"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="form_box">
+            <label>Estado: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="diagnostic.status" name="status" required>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let s of statusOptions" [value]="s.value">
+                  {{s.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Categorias: </label>
+            <mat-form-field>
+              <mat-label>Elige las que apliquen</mat-label>
+              <mat-select [(ngModel)]="diagnostic.category" name="category" multiple>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let c of categoryOptions" [value]="c.value">
+                  {{c.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="form_box">
+            <label>Código: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="diagnostic.code" name="code" required>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let c of codeOptions" [value]="c.value">
+                  {{c.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Fecha clínicamente relevante: </label>
+            <mat-form-field>
+              <mat-label>Seleccionar fecha</mat-label>
+              <input matInput [matDatepicker]="picker_effectiveDateTime" [(ngModel)]="diagnostic.effectiveDateTime" name="effectiveDateTime">
+              <mat-datepicker-toggle matSuffix [for]="picker_effectiveDateTime"></mat-datepicker-toggle>
+              <mat-datepicker #picker_effectiveDateTime></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="form_box">
+        <label>Resultados: </label>
+        <app-create-observation></app-create-observation>
+      </div>
+      <div class="form_box">
+        <label>Conclusión: </label>
+        <mat-form-field>
+          <mat-label>Descripción:</mat-label>
+          <textarea matInput [(ngModel)]="diagnostic.conclusion" name="conclusion"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="form_box">
+        <label>Códigos de conclusión: </label>
+        <mat-form-field>
+          <mat-label>Elige las que apliquen</mat-label>
+          <mat-select [(ngModel)]="diagnostic.conclusionCode" name="conclusionCode" multiple>
+            <mat-option>Ninguno</mat-option>
+            <mat-option *ngFor="let c of conclusionOptions" [value]="c.value">
+              {{c.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="btn">
+        <button mat-flat-button type="submit" class="btn--gradient"
+          [disabled]="!recordForm.form.valid">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>

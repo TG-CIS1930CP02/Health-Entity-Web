@@ -7,25 +7,33 @@
   <p>{{practitioner.gender}}</p>
   <form (ngSubmit)="validate()" #validateForm="ngForm">
     <div class="form_box">
-      <label class="label" for="telecom">Datos de contacto: </label><br />
+      <label class="label" for="telecom">Datos de contacto: </label>
       <div *ngFor="let t of telecoms;let index = index;trackBy:trackByIndex;">
         <div class="inline33">
-          <select id="telecomSyst" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
-            [(ngModel)]="telecoms[index].system" #telecomSyst="ngModel">
-            <option disabled hidden>Selecciona un sistema</option>
-            <option *ngFor="let s of systems" [value]="s.value">{{s.name}}</option>
-          </select>
+          <mat-form-field>
+            <mat-label>Selecciona un sistema</mat-label>
+            <mat-select [(ngModel)]="telecoms[index].system" [ngModelOptions]="{standalone: true}" required>
+              <mat-option *ngFor="let s of systems" [value]="s.value">
+                {{s.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="inline33">
-          <select id="telecomUse" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
-            [(ngModel)]="telecoms[index].use" #telecomUse="ngModel">
-            <option disabled hidden>Selecciona un tipo</option>
-            <option *ngFor="let u of uses" [value]="u.value">{{u.name}}</option>
-          </select>
+          <mat-form-field>
+            <mat-label>Selecciona un tipo</mat-label>
+            <mat-select [(ngModel)]="telecoms[index].use" [ngModelOptions]="{standalone: true}" required>
+              <mat-option *ngFor="let u of uses" [value]="u.value">
+                {{u.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
         </div>
         <div class="inline33">
-          <input class="form_input" type="text" id="txtTelecom" required #txtTelecom="ngModel"
-            [ngModelOptions]="{standalone: true}" [(ngModel)]="telecoms[index].value" placeholder="Ingrese su número" />
+          <mat-form-field>
+            <mat-label>Ingrese contacto</mat-label>
+            <input matInput [(ngModel)]="telecoms[index].value" [ngModelOptions]="{standalone: true}" type="text" required>
+          </mat-form-field>
         </div>
       </div>
       <div>
@@ -35,28 +43,36 @@
     </div>
     <div class="form_box">
       <div>
-        <label class="label" for="address">Direcciones: </label><br />
+        <label class="label" for="address">Direcciones: </label>
         <div class="addressBox" *ngFor="let a of addresses;let index = index;trackBy:trackByIndex;">
           <div class="inline50">
-            <select id="addressCity" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
-              [(ngModel)]="addresses[index].city" #addressCity="ngModel">
-              <option disabled hidden>Selecciona una ciudad</option>
-              <option *ngFor="let c of cities" [value]="c">{{c}}</option>
-            </select>
+            <mat-form-field>
+              <mat-label>Selecciona una ciudad</mat-label>
+              <mat-select [(ngModel)]="addresses[index].city" [ngModelOptions]="{standalone: true}" required>
+                <mat-option *ngFor="let c of cities" [value]="c">
+                  {{c}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
           <div class="inline50">
-            <select id="addressUse" class='form-control form_select' [ngModelOptions]="{standalone: true}" required
-              [(ngModel)]="addresses[index].use" #addressUse="ngModel">
-              <option disabled hidden>Selecciona un tipo</option>
-              <option *ngFor="let u of addressUses" [value]="u.value">{{u.name}}</option>
-            </select>
+            <mat-form-field>
+              <mat-label>Selecciona un tipo</mat-label>
+              <mat-select [(ngModel)]="addresses[index].use" [ngModelOptions]="{standalone: true}" required>
+                <mat-option *ngFor="let u of AddressUses" [value]="u.value">
+                  {{u.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
-          <input class="form_input" type="text" id="txtDescription" required #txtDescription="ngModel"
-            [ngModelOptions]="{standalone: true}" [(ngModel)]="addresses[index].text"
-            placeholder="Ingrese la descripción de la dirección" />
-          <input class="form_input" type="text" id="txtAddress" required #txtAddress="ngModel"
-            [ngModelOptions]="{standalone: true}" [(ngModel)]="addresses[index].line"
-            placeholder="Ingrese su dirección" />
+          <mat-form-field>
+            <mat-label>Ingrese la descripción de la dirección</mat-label>
+            <input matInput [(ngModel)]="addresses[index].text" [ngModelOptions]="{standalone: true}" type="text" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Ingrese su dirección</mat-label>
+            <input matInput [(ngModel)]="addresses[index].line" [ngModelOptions]="{standalone: true}" type="text" required>
+          </mat-form-field>
         </div>
         <div>
           <i (click)='addAddress()' class="fa fa-plus-square fa-2x"></i>
@@ -64,25 +80,24 @@
         </div>
       </div>
     </div>
-    <br>
-    <table class="table" *ngIf="hasQualifications">
-      <thead class="thead-color">
-        <tr>
-          <th scope="col">Titulo Profesional</th>
-          <th scope="col">Fecha desde que puede ejercer </th>
-          <th scope="col">Entidad Reportadora</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let q of practitioner.qualifications">
-          <td>{{q.name}}</td>
-          <td>{{q.startDate}}</td>
-          <td>{{q.reportingEntity}}</td>
-        </tr>
-      </tbody>
+    <table mat-table [dataSource]="practitioner.qualifications" *ngIf="hasQualifications">
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Título Profesional</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef>Fecha desde que puede ejercer</th>
+        <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+      </ng-container>
+      <ng-container matColumnDef="reportingEntity">
+        <th mat-header-cell *matHeaderCellDef>Entidad Reportadora</th>
+        <td mat-cell *matCellDef="let element"> {{element.reportingEntity}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsQualification"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsQualification;"></tr>
     </table>
     <div class="btn">
-      <button type="submit" class="btn--gradient" [disabled]="!validateForm.form.valid">
+      <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!validateForm.form.valid">
         Registrar
       </button>
     </div>
@@ -141,7 +156,7 @@
             </mat-checkbox>
           </div>
           <div class="btn">
-            <button type="submit" class="btn--gradient" [disabled]="!signupForm.form.valid">
+            <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!signupForm.form.valid">
               Registrar
             </button>
           </div>

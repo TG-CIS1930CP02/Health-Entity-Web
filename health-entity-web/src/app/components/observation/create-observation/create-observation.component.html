@@ -1,0 +1,130 @@
+<div id="box" class="center">
+  <div id="formbox" class="center">
+    <h2 class="title">Registro observación clínica</h2>
+    <form (ngSubmit)="record()" #recordForm="ngForm">
+      <div class="form_box">
+        <label>¿Qué fue solicitado? </label>
+        <mat-form-field>
+          <mat-label>Descripción:</mat-label>
+          <textarea matInput [(ngModel)]="observation.basedOn" name="basedOn"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="form_box">
+            <label>Código: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="observation.code" name="code" required>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let c of codeOptions" [value]="c.value">
+                  {{c.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Estado: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="observation.status" name="status" required>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let s of statusOptions" [value]="s.value">
+                  {{s.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Categorias: </label>
+            <mat-form-field>
+              <mat-label>Elige las que apliquen</mat-label>
+              <mat-select [(ngModel)]="observation.category" name="category" multiple>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let c of categoryOptions" [value]="c.value">
+                  {{c.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Fecha clínicamente relevante: </label>
+            <mat-form-field>
+              <mat-label>Seleccionar fecha</mat-label>
+              <input matInput [matDatepicker]="picker_effectiveDateTime" [(ngModel)]="observation.effectiveDateTime"
+                name="effectiveDateTime">
+              <mat-datepicker-toggle matSuffix [for]="picker_effectiveDateTime"></mat-datepicker-toggle>
+              <mat-datepicker #picker_effectiveDateTime></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="form_box">
+            <label>Método utilizado: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="observation.method" name="method">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let m of methodOptions" [value]="m.value">
+                  {{m.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Parte del cuerpo afectada: </label>
+            <mat-form-field>
+              <mat-label>Elige una</mat-label>
+              <mat-select [(ngModel)]="observation.bodySite" name="bodySite">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let b of bodyOptions" [value]="b.value">
+                  {{b.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Valor: </label>
+            <mat-form-field>
+              <mat-label>Valor del resultado</mat-label>
+              <input matInput [(ngModel)]="observation.value" name="note">
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Rango de referencia: </label>
+            <mat-form-field>
+              <mat-label>Rango de referencia</mat-label>
+              <input matInput [(ngModel)]="observation.referenceRange" name="note">
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Interpretación: </label>
+            <mat-form-field>
+              <mat-label>Elige los que apliquen</mat-label>
+              <mat-select [(ngModel)]="observation.interpretation" name="interpretation" multiple>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let i of interpretationOptions" [value]="i.value">
+                  {{i.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="form_box">
+        <label>Notas: </label>
+        <mat-form-field>
+          <mat-label>Notas adicionales</mat-label>
+          <textarea matInput [(ngModel)]="observation.note" name="note"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="btn">
+        <button mat-flat-button type="submit" class="btn--gradient"
+          [disabled]="!recordForm.form.valid">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -24,6 +24,15 @@ import { SignupAdministrativeAssistantComponent } from './components/administrat
 import { HomeAdministratorComponent } from './components/administrator/home-administrator/home-administrator.component';
 import { DetailsFormPatientComponent } from './components/patient/details-form-patient/details-form-patient.component';
 import { HomeAdministrativeAssistantComponent } from './components/administrative-assistant/home-administrative-assistant/home-administrative-assistant.component';
+import { CreateAllergyIntoleranceComponent } from './components/allergy-intolerance/create-allergy-intolerance/create-allergy-intolerance.component';
+import { ReadAllergyIntoleranceComponent } from './components/allergy-intolerance/read-allergy-intolerance/read-allergy-intolerance.component';
+import { SearchPatientComponent } from './components/patient/search-patient/search-patient.component';
+import { CreateDiagnosticReportComponent } from './components/diagnostic-report/create-diagnostic-report/create-diagnostic-report.component';
+import { CreateObservationComponent } from './components/observation/create-observation/create-observation.component';
+import { ReadDiagnosticReportComponent } from './components/diagnostic-report/read-diagnostic-report/read-diagnostic-report.component';
+import { ReadObservationComponent } from './components/observation/read-observation/read-observation.component';
+import { CreateConditionComponent } from './components/condition/create-condition/create-condition.component';
+import { ReadConditionComponent } from './components/condition/read-condition/read-condition.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +53,16 @@ import { HomeAdministrativeAssistantComponent } from './components/administrativ
     SignupAdministrativeAssistantComponent,
     HomeAdministratorComponent,
     DetailsFormPatientComponent,
-    HomeAdministrativeAssistantComponent
+    HomeAdministrativeAssistantComponent,
+    CreateAllergyIntoleranceComponent,
+    ReadAllergyIntoleranceComponent,
+    SearchPatientComponent,
+    CreateDiagnosticReportComponent,
+    CreateObservationComponent,
+    ReadDiagnosticReportComponent,
+    ReadObservationComponent,
+    CreateConditionComponent,
+    ReadConditionComponent
   ],
   imports: [
     BrowserModule,

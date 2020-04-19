@@ -1,0 +1,172 @@
+<div id="box" class="center">
+  <div id="formbox" class="center">
+    <h2 class="title">Registro Alergias e Intolerancias</h2>
+    <form (ngSubmit)="record()" #recordForm="ngForm">
+      <div class="row">
+        <div class="column">
+          <div class="form_box">
+            <label>Tipo: </label>
+            <mat-radio-group aria-label="Selecciona un tipo" class="radio-group" [(ngModel)]="allergy.type"
+              name="allergyType">
+              <mat-radio-button class="radio-button" *ngFor="let a of allergyTypeOptions" [value]="a.value">
+                {{a.name}}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div class="form_box">
+            <label>Estado de verificación: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="allergy.verificationStatus" name="verificationStatus">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let vs of verificationStatusOptions" [value]="vs.value">
+                  {{vs.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Categoria: </label>
+            <mat-form-field>
+              <mat-label>Elige las que apliquen</mat-label>
+              <mat-select [(ngModel)]="allergy.category" name="category" multiple>
+                <mat-option *ngFor="let c of categoryOptions" [value]="c.value">
+                  {{c.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Nivel de riesgo: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="allergy.criticality" name="criticality">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let c of criticalityOptions" [value]="c.value">
+                  {{c.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="form_box">
+            <label>Estado clínico: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="allergy.clinicalStatus" name="AllergyClinicalStatus">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let cs of clinicalStatusOptions" [value]="cs.value">
+                  {{cs.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Código: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="allergy.code" name="code">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let c of codeOptions" [value]="c.value">
+                  {{c.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Fecha en la que fue identificada: </label>
+            <mat-form-field>
+              <mat-label>Seleccionar fecha</mat-label>
+              <input matInput [matDatepicker]="picker_idDate" [(ngModel)]="allergy.onsetDateTime" name="idDate">
+              <mat-datepicker-toggle matSuffix [for]="picker_idDate"></mat-datepicker-toggle>
+              <mat-datepicker #picker_idDate></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Fecha de última reacción: </label>
+            <mat-form-field>
+              <mat-label>Seleccionar fecha</mat-label>
+              <input matInput [matDatepicker]="picker_lastReaction" [(ngModel)]="allergy.lastOccurrence"
+                name="lastReactionDate">
+              <mat-datepicker-toggle matSuffix [for]="picker_lastReaction"></mat-datepicker-toggle>
+              <mat-datepicker #picker_lastReaction></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="form_box">
+        <label>Notas: </label>
+        <mat-form-field>
+          <mat-label>Notas adicionales</mat-label>
+          <textarea matInput [(ngModel)]="allergy.note" name="note"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="form_box">
+      <label class="label" for="reaction">Reacción: </label>
+        <div class="inline50">
+          <mat-form-field>
+            <mat-label>Elige una sustancia</mat-label>
+            <mat-select [(ngModel)]="allergy.reaction.substance" [ngModelOptions]="{standalone: true}">
+              <mat-option>Ninguna</mat-option>
+              <mat-option *ngFor="let c of codeOptions" [value]="c.value">
+                {{c.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="inline50">
+          <mat-form-field>
+            <mat-label>Elige por lo menos una manifestación</mat-label>
+            <mat-select [(ngModel)]="allergy.reaction.manifestation" [ngModelOptions]="{standalone: true}" multiple required>
+              <mat-option>Ninguna</mat-option>
+              <mat-option *ngFor="let m of manifestationOptions" [value]="m.value">
+                {{m.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="inline50">
+          <mat-form-field>
+            <mat-label>Severidad</mat-label>
+            <mat-select [(ngModel)]="allergy.reaction.severity" [ngModelOptions]="{standalone: true}">
+              <mat-option>Ninguna</mat-option>
+              <mat-option *ngFor="let s of severityOptions" [value]="s.value">
+                {{s.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="inline50">
+          <mat-form-field>
+            <mat-label>¿Cómo se expuso a la sustancia?:</mat-label>
+            <mat-select [(ngModel)]="allergy.reaction.exposureRoute" [ngModelOptions]="{standalone: true}">
+              <mat-option>Ninguna</mat-option>
+              <mat-option *ngFor="let e of exposureOptions" [value]="e.value">
+                {{e.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Descripción del evento</mat-label>
+            <textarea matInput [(ngModel)]="allergy.reaction.description" [ngModelOptions]="{standalone: true}"></textarea>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="form_box">
+        <mat-checkbox class="form_checkbox" [(ngModel)]="firstTime" name="firstTime" id="firstTime">
+          Primera vez
+        </mat-checkbox>
+      </div>
+      <div class="btn">
+        <button mat-flat-button type="submit" class="btn--gradient"
+          [disabled]="!recordForm.form.valid">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>

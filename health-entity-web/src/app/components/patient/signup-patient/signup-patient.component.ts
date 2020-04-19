@@ -9,7 +9,7 @@ import { Identification } from 'app/models/identification';
 @Component({
   selector: 'app-signup-patient',
   templateUrl: './signup-patient.component.html',
-  styleUrls: ['./signup-patient.component.css']
+  styleUrls: ['./signup-patient.component.scss']
 })
 export class SignupPatientComponent implements OnInit {
   personFound: Person = new Person(
@@ -37,7 +37,7 @@ export class SignupPatientComponent implements OnInit {
   idType = 'Selecciona un tipo';
   id: number;
 
-  options = OptionsList.identificationTypes;
+  options = OptionsList.IdentificationTypes;
 
   constructor(private personService: PersonService) { }
 
