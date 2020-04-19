@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   healthEntityId: 1,
   healthEntityAuthority: 'HEALTH_ENTITY_1',
-  healthEntityServerUrl: 'https://localhost:8080/',
+  healthEntityServerUrl: 'http://localhost:8080/',
   remoteAuthenticationServerUrl: 'https://localhost:8091/'
 };
 

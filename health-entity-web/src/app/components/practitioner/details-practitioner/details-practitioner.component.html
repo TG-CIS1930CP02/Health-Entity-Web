@@ -113,6 +113,19 @@
       </div>
     </div>
   </section>
+  <section class="modal" *ngIf="alreadyAuthorizedUser">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Error</h2>
+        <span class="icon--close modal_close" (click)="closeError()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          El profesional de la salud ya cuenta con esta autorización en la IPS.
+        </p>
+      </div>
+    </div>
+  </section>
   <section class="modal" *ngIf="enterFingerprint">
     <div class="modal_container">
       <div class="modal_header">

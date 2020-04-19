@@ -42,7 +42,7 @@ export class LoginPractitionerComponent implements OnInit {
   ngOnInit(): void { }
 
   login() {
-    this.loginService.login(this.idType, this.id, this.password)
+    this.loginService.loginFingerprint(this.idType, this.id, this.password, 'fingerprint_test')
       .subscribe(result => {
         const role = this.getRole(result.token, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION);
         if (role == null)

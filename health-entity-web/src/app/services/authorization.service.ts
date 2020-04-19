@@ -9,15 +9,13 @@ import { environment } from 'environments/environment';
   providedIn: 'root'
 })
 
-export class PatientService {
+export class AuthorizationService {
   constructor(private http: HttpClient) { }
 
-  urlBaseRas = 'http:/localhost:8080/patients';
-  urlBaseEntity = 'http:/localhost:8080/patients';
 
   private handleError(error: HttpErrorResponse): Observable<any> {
     console.log(error);
-    return throwError('An error has occurred');
+    return throwError(error);
   }
 
   private get<T>(url, parameters: HttpParams = null): Observable<T> {
@@ -27,7 +25,7 @@ export class PatientService {
       .pipe(catchError(this.handleError));
   }
 
-  private post<T>(url, data: T): Observable<T> {
+  private post<T>(url, data: any): Observable<T> {
     console.log('post:', url);
     return this.http
       .post<T>(url, data, {
@@ -54,14 +52,17 @@ export class PatientService {
       .pipe(catchError(this.handleError));
   }
 
-  findByIdentification(type: string, id: number) {
-    const params = new HttpParams()
-      .set('type', type)
-      .set('id', id.toString());
-    return this.get<Patient>(`${this.urlBaseRas}/find-by-identification)`, params);
+  authorizatePatient(type: string, id: number, fingerprint: string) {
+    return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_patient/${environment.healthEntityId}`, fingerprint);
+  }
+  authorizateDoctor(type: string, id: number, fingerprint: string) {
+    return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_doctor/${environment.healthEntityId}`, fingerprint);
+  }
+  authorizateAdministrativeNurse(type: string, id: number, fingerprint: string) {
+    return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_administrative_nurse/${environment.healthEntityId}`, fingerprint);
+  }
+  authorizateAdministrativeAssistant(type: string, id: number, fingerprint: string) {
+    return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_administrative_assistant/${environment.healthEntityId}`, fingerprint);
   }
 
-  createPatient(patient: Patient) {
-    return this.post<Patient>(`${environment.healthEntityServerUrl}patient`, patient);
-  }
 }

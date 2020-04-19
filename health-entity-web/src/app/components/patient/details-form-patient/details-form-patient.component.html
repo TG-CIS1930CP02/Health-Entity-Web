@@ -84,6 +84,19 @@
       </div>
     </div>
   </section>
+  <section class="modal" *ngIf="alreadyAuthorizedUser">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Error</h2>
+        <span class="icon--close modal_close" (click)="closeError()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          La IPS ya se encuentra autorizada para ver la historia clínica del paciente.
+        </p>
+      </div>
+    </div>
+  </section>
   <section class="modal" *ngIf="successSignup">
     <div class="modal_container">
       <div class="modal_header">

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Patient } from '../../../models/patient';
 import { OptionsList } from '../../../models/options-lists';
 import { PatientService } from '../../../services/patient.service';
+import { PersonService } from 'app/services/person.service';
+import { Person } from 'app/models/person';
+import { Identification } from 'app/models/identification';
 
 @Component({
   selector: 'app-signup-patient',
@@ -9,9 +12,20 @@ import { PatientService } from '../../../services/patient.service';
   styleUrls: ['./signup-patient.component.css']
 })
 export class SignupPatientComponent implements OnInit {
-  patientFound: Patient = new Patient(
+  personFound: Person = new Person(
     undefined,
     undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+    undefined,
+  );
+
+  newPatient: Patient = new Patient(
+    undefined,
+    new Identification(undefined, undefined),
     undefined,
     undefined,
     undefined,
@@ -25,15 +39,19 @@ export class SignupPatientComponent implements OnInit {
 
   options = OptionsList.identificationTypes;
 
-  constructor(private patientService: PatientService) { }
+  constructor(private personService: PersonService) { }
 
   ngOnInit(): void { }
 
   search() {
-    this.patientService.findByIdentification(this.idType, this.id).subscribe(
+    this.personService.findByIdentification(this.idType, this.id).subscribe(
       result => {
-        console.log(result);
-        this.patientFound = result;
+        this.personFound = result;
+        this.newPatient.name = this.personFound.name + ' ' + this.personFound.lastName;
+        this.newPatient.identifier.type = this.personFound.identificationType;
+        this.newPatient.identifier.id = this.personFound.identificationNumber;
+        this.newPatient.birthDate = this.personFound.birthDate;
+        this.newPatient.gender = this.personFound.gender;
         this.found = 'found';
       },
       error => {

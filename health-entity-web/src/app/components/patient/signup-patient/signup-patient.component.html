@@ -36,10 +36,10 @@
       </div>
       <div class="modal_content">
         <p class="text">
-          Paciente no existe.
+          No existen registros para el individuo buscado.
         </p>
       </div>
     </div>
   </section>
-  <app-details-form-patient *ngIf="found=='found'" [patient]=patientFound></app-details-form-patient>
+  <app-details-form-patient *ngIf="found=='found'" [patient]=newPatient></app-details-form-patient>
 </div>

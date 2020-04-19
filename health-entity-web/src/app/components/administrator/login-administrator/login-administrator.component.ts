@@ -43,7 +43,7 @@ export class LoginAdministratorComponent implements OnInit {
           if (role === RoleEnum.ADMINISTRATOR)
             this.router.navigate(['admin/home']);
           else if (role === RoleEnum.ADMINISTRATIVE_ASSISTANT)
-            this.router.navigate(['admin/home-administrative-assistant']);
+            this.router.navigate(['admin-assistant/home']);
         }
       },
       error => {

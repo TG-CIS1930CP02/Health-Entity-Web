@@ -5,6 +5,7 @@ import { ContactPoint } from '../../../models/contactPoint';
 import { OptionsList } from '../../../models/options-lists';
 import { PatientService } from '../../../services/patient.service';
 import { Address } from 'app/models/address';
+import { AuthorizationService } from 'app/services/authorization.service';
 
 @Component({
   selector: 'app-details-patient',
@@ -37,6 +38,7 @@ export class DetailsPatientComponent implements OnInit {
 
   constructor(
     private patientService: PatientService,
+    private authorizationService: AuthorizationService,
     private router: Router
   ) { }
 
@@ -47,19 +49,29 @@ export class DetailsPatientComponent implements OnInit {
 
   signup() {
     // TODO validate value in telecoms
+    debugger;
     this.patient.active = true;
     this.patient.telecoms = this.telecoms;
     this.patient.addresses = this.addresses;
 
-    this.patientService.createPatient(this.patient).subscribe(
-      result => {
-        console.log(result);
-        this.successSignup = true;
+    this.authorizationService.authorizatePatient(this.patient.identifier.type, this.patient.identifier.id, 'fingerprint_test').subscribe(
+      result =>{
+            this.patientService.createPatient(this.patient).subscribe(
+            result => {
+                console.log(result);
+                this.successSignup = true;
+              },
+              error => {
+                console.error(error);
+                this.incorrectSignup = true;
+              }
+            );
       },
       error => {
-        console.error(error);
-        this.incorrectSignup = true;
+          console.error(error);
+          this.incorrectSignup = true;
       }
+      
     );
   }
 

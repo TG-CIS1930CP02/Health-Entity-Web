@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpParams, HttpHeaders } from '@angular
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Practitioner } from '../models/practitioner';
+import { environment } from 'environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class PractitionerService {
     console.log('post:', url);
     return this.http
       .post<T>(url, data, {
-        withCredentials: true,
+        withCredentials: false,
         headers: new HttpHeaders({
           'Content-Type': 'application/json'
         })
@@ -60,7 +61,7 @@ export class PractitionerService {
   }
 
   createPractitioner(practitioner: Practitioner) {
-    return this.post<Practitioner>(this.urlBaseEntity, practitioner);
+    return this.post<Practitioner>(`${environment.healthEntityServerUrl}practitioner`, practitioner);
   }
 
   updatePractitioner(practitioner: Practitioner) {

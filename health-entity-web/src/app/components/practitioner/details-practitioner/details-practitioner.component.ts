@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ContactPoint } from '../../../models/contactPoint';
 import { Address } from 'app/models/address';
 import { OptionsList } from '../../../models/options-lists';
+import { AuthorizationService } from 'app/services/authorization.service';
 
 @Component({
   selector: 'app-details-practitioner',
@@ -34,6 +35,7 @@ export class DetailsPractitionerComponent implements OnInit {
   cities = OptionsList.cities;
 
   incorrectSignup = false;
+  alreadyAuthorizedUser = false;
   successSignup = false;
   enterFingerprint = false;
   checked = false;
@@ -44,6 +46,7 @@ export class DetailsPractitionerComponent implements OnInit {
 
   constructor(
     private practitionerService: PractitionerService,
+    private authorizationService: AuthorizationService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -70,21 +73,30 @@ export class DetailsPractitionerComponent implements OnInit {
     this.practitioner.telecoms = this.telecoms;
     this.practitioner.addresses = this.addresses;
 
-    this.practitionerService.createPractitioner(this.practitioner).subscribe(
-      result => {
-        console.log(result);
-        this.successSignup = true;
-        this.router.navigate(['admin/home']);
+    this.authorizationService.authorizateDoctor(this.practitioner.identifier.type, this.practitioner.identifier.id, 'fingerprint_test').subscribe(
+      result =>{
+            this.practitionerService.createPractitioner(this.practitioner).subscribe(
+            result => {
+                console.log(result);
+                this.successSignup = true;
+              },
+              error => {
+                console.error(error);
+                this.incorrectSignup = true;
+              }
+            );
       },
       error => {
-        console.error(error);
-        this.incorrectSignup = true;
+          console.error(error);
+          if (error.status == 409)
+            this.alreadyAuthorizedUser = true;
       }
     );
   }
 
   closeError() {
     this.incorrectSignup = false;
+    this.alreadyAuthorizedUser = false;
   }
 
   closeSuccess() {
