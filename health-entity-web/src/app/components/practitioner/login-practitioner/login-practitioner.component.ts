@@ -65,6 +65,7 @@ export class LoginPractitionerComponent implements OnInit {
 
   close() {
     this.incorrectLogin = false;
+    this.invalidAuthorities = false;
   }
 
   getRole(token: string, authenticationMode: AuthenticationModeEnum): RoleEnum{

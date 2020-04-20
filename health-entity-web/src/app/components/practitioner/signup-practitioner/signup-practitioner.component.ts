@@ -52,12 +52,14 @@ export class SignupPractitionerComponent implements OnInit {
   search() {
     this.personService.findByIdentification(this.idType, this.id).subscribe(
       result => {
+        debugger;
         this.personFound = result;
-        this.newPractitioner.name = this.personFound.name + ' ' + this.personFound.lastName;
+        this.newPractitioner.name = this.personFound.name + ' ' + this.personFound.lastname;
         this.newPractitioner.identifier.type = this.personFound.identificationType;
         this.newPractitioner.identifier.id = this.personFound.identificationNumber;
         this.newPractitioner.birthDate = this.personFound.birthDate;
         this.newPractitioner.gender = this.personFound.gender;
+        this.newPractitioner.qualifications = this.personFound.qualifications;
         this.found = 'found';
       },
       error => {

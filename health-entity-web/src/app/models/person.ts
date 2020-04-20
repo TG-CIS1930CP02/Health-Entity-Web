@@ -1,7 +1,9 @@
+import { Qualification } from './qualification';
+
 export class Person {
     constructor(
       public name: string,
-      public lastName: string,
+      public lastname: string,
       public identificationType: string,
       public identificationNumber: number,
       public birthDate: Date,
