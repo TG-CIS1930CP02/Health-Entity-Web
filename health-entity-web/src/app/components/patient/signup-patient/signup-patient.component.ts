@@ -47,7 +47,7 @@ export class SignupPatientComponent implements OnInit {
     this.personService.findByIdentification(this.idType, this.id).subscribe(
       result => {
         this.personFound = result;
-        this.newPatient.name = this.personFound.name + ' ' + this.personFound.lastName;
+        this.newPatient.name = this.personFound.name + ' ' + this.personFound.lastname;
         this.newPatient.identifier.type = this.personFound.identificationType;
         this.newPatient.identifier.id = this.personFound.identificationNumber;
         this.newPatient.birthDate = this.personFound.birthDate;
