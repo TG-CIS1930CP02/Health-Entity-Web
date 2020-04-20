@@ -33,6 +33,7 @@ import { ReadDiagnosticReportComponent } from './components/diagnostic-report/re
 import { ReadObservationComponent } from './components/observation/read-observation/read-observation.component';
 import { CreateConditionComponent } from './components/condition/create-condition/create-condition.component';
 import { ReadConditionComponent } from './components/condition/read-condition/read-condition.component';
+import { CreateProcedureComponent } from './components/procedure/create-procedure/create-procedure.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { ReadConditionComponent } from './components/condition/read-condition/re
     ReadDiagnosticReportComponent,
     ReadObservationComponent,
     CreateConditionComponent,
-    ReadConditionComponent
+    ReadConditionComponent,
+    CreateProcedureComponent
   ],
   imports: [
     BrowserModule,
