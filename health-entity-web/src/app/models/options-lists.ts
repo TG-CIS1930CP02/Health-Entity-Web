@@ -99,7 +99,7 @@ export class OptionsList {
   ];
 
   public static ClinicalFindingsCodes = [
-    { name: 'Trastorno de ansiedad de la infancia O adolescencia', value: '109006' },
+    { name: 'Trastorno de ansiedad de la infancia o adolescencia', value: '109006' },
     { name: 'Hemorragia coroidea', value: '122003' },
     { name: 'Aborto espontáneo con laceración del cuello uterino.', value: '127009' },
     { name: 'Homoiotermia', value: '129007' },
@@ -308,6 +308,76 @@ export class OptionsList {
     { name: 'Técnica de tetania simple', value: '255463001' },
     { name: 'Técnica de relación mandibular retruida', value: '255583002' },
     { name: 'Solución salina infundida rectalmente', value: '256233002' }
+  ];
+
+  public static ProcedureStatus = [
+    { name: 'Preparación', value: 'preparation' },
+    { name: 'En progreso', value: 'in-progress' },
+    { name: 'No hecho', value: 'not-done' },
+    { name: 'En espera', value: 'on-hold' },
+    { name: 'Detenido', value: 'stopped' },
+    { name: 'Terminado', value: 'completed' },
+    { name: 'Ingresado por error', value: 'entered-in-error' },
+    { name: 'Desconocido', value: 'unknown' }
+  ];
+
+  public static ProcedureStatusReason = [
+    { name: 'Nitrato contraindicado', value: '135809002 ' },
+    { name: 'Diurético contraindicado', value: '135811006 ' },
+    { name: 'Tratamiento hipolipemiante contraindicado', value: '135822005 ' },
+    { name: 'Bloqueador de canales de calcio contraindicado', value: '135823000 ' },
+    { name: 'Anticoncepción contraindicada', value: '169551000 ' },
+    { name: 'La terapia de reemplazo hormonal (TRH) está contraindicada', value: '170954008 ' },
+    { name: 'Sensibilidad C / I - inmunización', value: '171277005 ' },
+    { name: 'Vacuna contra la tos ferina contraindicada', value: '171284002 ' },
+    { name: 'Sensibilidad contraindicación al procedimiento', value: '183934000 ' },
+    { name: 'Contraindicación para la inmunización viva.', value: '183936003 ' },
+    { name: 'Contraindicación médica del procedimiento.', value: '266757004 ' },
+    { name: 'Vacuna contraindicada', value: '266758009 ' }
+  ];
+
+  public static ProcedureCategory = [
+    { name: 'Procedimiento o servicio de psiquiatría', value: '24642003 ' },
+    { name: 'Asesoramiento', value: '409063005 ' },
+    { name: 'Educación', value: '409073007 ' },
+    { name: 'Procedimiento quirúrgico', value: '387713003 ' },
+    { name: 'Procedimiento de diagnóstico', value: '103693007 ' },
+    { name: 'Manipulación quiropráctica', value: '46947000 ' },
+    { name: 'Procedimiento de servicio social', value: '410606002 ' }
+  ];
+
+  public static ProcedureCodes = [
+    { name: 'Escisión de lesión de rótula', value: '104001 ' },
+    { name: 'Colocar aparato de ortodoncia extraíble', value: '115006 ' },
+    { name: 'Lobectomía parcial toracoscópica de pulmón', value: '119000 ' },
+    { name: 'Inyección retrobulbar de agente terapéutico', value: '121005 ' },
+    { name: 'Examen con microscopio de mano de la piel.', value: '128004 ' },
+    { name: 'Implantación percutánea de electrodos neuroestimuladores en el componente neuromuscular', value: '133000 ' },
+    { name: 'Artrotomía de la articulación de la muñeca con exploración y biopsia.', value: '135007 ' },
+    { name: 'Escisión del tumor del área del hombro, profunda, intramuscular.', value: '142007 ' },
+    { name: 'Reparación de la no unión del metatarsiano con injerto óseo', value: '146005 ' },
+    { name: 'Cistouretroscopia con resección de ureterocele', value: '153001 ' },
+    { name: 'Extracción de cuerpo extraño de tendón y / o vaina de tendón', value: '160007 ' },
+    { name: 'Terapia de comportamiento', value: '166001 ' }
+  ];
+
+  public static ProcedureOutcome = [
+    { name: 'Exitoso', value: '385669000' },
+    { name: 'Fracasado', value: '385671000 ' },
+    { name: 'Parcialmente exitoso', value: '  385670004' }
+  ];
+
+  public static ProcedureFollowUp = [
+    { name: 'Cambio de vendaje', value: '18949003 ' },
+    { name: 'Retirada de sutura', value: '30549001 ' },
+    { name: 'Retirada del drenaje', value: '241031001 ' },
+    { name: 'Retirada de grapas', value: '35963001 ' },
+    { name: 'Remoción de ligadura', value: '225164002 ' },
+    { name: 'Prueba de ejercicio cardiopulmonar', value: '447346005 ' },
+    { name: 'Masaje de tejido cicatricial', value: '229506003 ' },
+    { name: 'Drenaje por succión', value: '274441001 ' },
+    { name: 'Revisión de medicamentos para la diabetes', value: '394725008 ' },
+    { name: 'Citopatología, revisión de muestra de lavado bronquioalveolar', value: '359825008 ' }
   ];
 
   public static cities: string[] = [
