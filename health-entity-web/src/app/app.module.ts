@@ -34,6 +34,7 @@ import { ReadObservationComponent } from './components/observation/read-observat
 import { CreateConditionComponent } from './components/condition/create-condition/create-condition.component';
 import { ReadConditionComponent } from './components/condition/read-condition/read-condition.component';
 import { CreateProcedureComponent } from './components/procedure/create-procedure/create-procedure.component';
+import { ReadProcedureComponent } from './components/procedure/read-procedure/read-procedure.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { CreateProcedureComponent } from './components/procedure/create-procedur
     ReadObservationComponent,
     CreateConditionComponent,
     ReadConditionComponent,
-    CreateProcedureComponent
+    CreateProcedureComponent,
+    ReadProcedureComponent
   ],
   imports: [
     BrowserModule,
