@@ -33,7 +33,8 @@ export class PractitionerService {
       .post<T>(url, data, {
         withCredentials: false,
         headers: new HttpHeaders({
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': localStorage.getItem('token')
         })
       })
       .pipe(catchError(this.handleError));

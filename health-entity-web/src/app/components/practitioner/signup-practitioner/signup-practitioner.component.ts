@@ -52,7 +52,6 @@ export class SignupPractitionerComponent implements OnInit {
   search() {
     this.personService.findByIdentification(this.idType, this.id).subscribe(
       result => {
-        debugger;
         this.personFound = result;
         this.newPractitioner.name = this.personFound.name + ' ' + this.personFound.lastname;
         this.newPractitioner.identifier.type = this.personFound.identificationType;
