@@ -1,4 +1,9 @@
 export class OptionsList {
+  public static Roles = [
+    { name: 'Médico/a', value: 'doctor' },
+    { name: 'Enfermero/a', value: 'nurse' }
+  ];
+
   public static IdentificationTypes = [
     { name: 'Cédula de Ciudadanía', value: 'CC' },
     { name: 'Cédula de Extranjería', value: 'CE' },

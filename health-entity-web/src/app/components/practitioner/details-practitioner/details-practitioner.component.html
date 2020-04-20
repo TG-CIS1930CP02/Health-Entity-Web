@@ -96,6 +96,15 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumnsQualification"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumnsQualification;"></tr>
     </table>
+    <div class="form_box" *ngIf="hasQualifications">
+      <label class="label">Tipo: </label>
+      <mat-radio-group aria-label="Selecciona un tipo" class="radio-group" [(ngModel)]="type"
+        name="type" required>
+        <mat-radio-button class="radio-button" *ngFor="let o of roleOptions" [value]="o.value">
+          {{o.name}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
     <div class="btn">
       <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!validateForm.form.valid">
         Registrar

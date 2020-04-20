@@ -48,6 +48,13 @@ th {
   font-size: 14px;
   color: $primary;
 }
+.radio-group {
+  display: flex;
+  margin: 16px 0 28px 0;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 30px;
+}
 .btn {
   width: 100%;
   display: flex;

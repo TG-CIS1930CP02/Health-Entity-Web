@@ -42,9 +42,12 @@ export class DetailsPractitionerComponent implements OnInit {
   enterFingerprint = false;
   checked = false;
 
+  type: string;
+
   systems = OptionsList.contactPointSystems;
   uses = OptionsList.contactPointUses;
   AddressUses = OptionsList.AddressUses;
+  roleOptions = OptionsList.Roles;
 
   constructor(
     private practitionerService: PractitionerService,
