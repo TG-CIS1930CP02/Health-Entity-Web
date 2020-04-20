@@ -21,6 +21,8 @@ import { ReadConditionComponent } from './components/condition/read-condition/re
 import { CreateObservationComponent } from './components/observation/create-observation/create-observation.component';
 import { ReadObservationComponent } from './components/observation/read-observation/read-observation.component';
 import { ReadDiagnosticReportComponent } from './components/diagnostic-report/read-diagnostic-report/read-diagnostic-report.component';
+import { CreateProcedureComponent } from './components/procedure/create-procedure/create-procedure.component';
+import { ReadProcedureComponent } from './components/procedure/read-procedure/read-procedure.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -43,6 +45,8 @@ const routes: Routes = [
   { path: 'practitioner/view-resource/condition', component: ReadConditionComponent },
   { path: 'practitioner/record-resource/observation', component: CreateObservationComponent },
   { path: 'practitioner/view-resource/observation', component: ReadObservationComponent },
+  { path: 'practitioner/record-resource/procedure', component: CreateProcedureComponent },
+  { path: 'practitioner/view-resource/procedure', component: ReadProcedureComponent },
   { path: 'practitioner/search-patient', component: SearchPatientComponent },
   { path: '**', component: PathNotFoundComponent }
 ];

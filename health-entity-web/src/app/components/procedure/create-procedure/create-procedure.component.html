@@ -1,0 +1,152 @@
+<div id="box" class="center">
+  <div id="formbox" class="center">
+    <h2 class="title">Registro de procedimiento clínico</h2>
+    <form (ngSubmit)="record()" #recordForm="ngForm">
+      <div class="form_box">
+        <label>¿Qué fue solicitado? </label>
+        <mat-form-field>
+          <mat-label>Descripción:</mat-label>
+          <textarea matInput [(ngModel)]="procedure.basedOn" name="basedOn"></textarea>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="form_box">
+            <label>Código: </label>
+            <mat-form-field>
+              <mat-label>Elige una</mat-label>
+              <mat-select [(ngModel)]="procedure.code" name="code">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let c of codeOptions" [value]="c.value">
+                  {{c.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Estado: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="procedure.status" name="status" required>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let c of statusOptions" [value]="c.value">
+                  {{c.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Razón del estado: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="procedure.statusReason" name="statusReason">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let s of statusReasonOptions" [value]="s.value">
+                  {{s.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Categoria: </label>
+            <mat-form-field>
+              <mat-label>Elige una</mat-label>
+              <mat-select [(ngModel)]="procedure.category" name="category">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let c of categoryOptions" [value]="c.value">
+                  {{c.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Motivo de realización: </label>
+            <mat-form-field>
+              <mat-label>Elige los que apliquen</mat-label>
+              <mat-select [(ngModel)]="procedure.reasonCode" name="reasonCode" multiple>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let m of clinicalFindingsOptions" [value]="m.value">
+                  {{m.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="form_box">
+            <label>Partes del cuerpo afectadas: </label>
+            <mat-form-field>
+              <mat-label>Elige las que apliquen</mat-label>
+              <mat-select [(ngModel)]="procedure.bodySite" name="bodySite" multiple>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let b of bodyOptions" [value]="b.value">
+                  {{b.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Resultado del procedimiento: </label>
+            <mat-form-field>
+              <mat-label>Elige uno</mat-label>
+              <mat-select [(ngModel)]="procedure.outcome" name="outcome">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let b of outcomeOptions" [value]="b.value">
+                  {{b.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Complicaciones: </label>
+            <mat-form-field>
+              <mat-label>Elige las que apliquen</mat-label>
+              <mat-select [(ngModel)]="procedure.complication" name="complication" multiple>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let i of clinicalFindingsOptions" [value]="i.value">
+                  {{i.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Detalles de complicación: </label>
+            <!-- TODO condition select-->
+            <mat-form-field>
+              <mat-label>Elige los que apliquen</mat-label>
+              <mat-select [(ngModel)]="procedure.complicationDetail" name="complicationDetail" multiple>
+                <mat-option>Esto no es</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="form_box">
+            <label>Instrucciones de seguimiento: </label>
+            <mat-form-field>
+              <mat-label>Elige las que apliquen</mat-label>
+              <mat-select [(ngModel)]="procedure.followUp" name="followUp" multiple>
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let i of followUpOptions" [value]="i.value">
+                  {{i.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="form_box">
+        <label>Notas: </label>
+        <mat-form-field>
+          <mat-label>Notas adicionales</mat-label>
+          <textarea matInput [(ngModel)]="procedure.note" name="note"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="btn">
+        <button mat-flat-button type="submit" class="btn--gradient"
+          [disabled]="!recordForm.form.valid">Registrar</button>
+      </div>
+    </form>
+  </div>
+</div>
