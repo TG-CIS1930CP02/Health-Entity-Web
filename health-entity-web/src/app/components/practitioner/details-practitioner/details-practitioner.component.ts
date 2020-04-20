@@ -77,8 +77,63 @@ export class DetailsPractitionerComponent implements OnInit {
     this.practitioner.active = true;
     this.practitioner.telecoms = this.telecoms;
     this.practitioner.addresses = this.addresses;
+    
+    if (this.hasQualifications){
+      if (this.type == 'doctor')
+        this.authorizateDoctor();
+      else if (this.type == 'nurse')
+        this.authorizateNurse();
+    }
+    else{
+      this.authorizateAdministrativeAssistant();
+    }
+  }
 
+  authorizateDoctor(){
     this.authorizationService.authorizateDoctor(this.practitioner.identifier.type, this.practitioner.identifier.id, 'fingerprint_test').subscribe(
+      result =>{
+            this.practitionerService.createPractitioner(this.practitioner).subscribe(
+            result => {
+                console.log(result);
+                this.successSignup = true;
+              },
+              error => {
+                console.error(error);
+                this.incorrectSignup = true;
+              }
+            );
+      },
+      error => {
+          console.error(error);
+          if (error.status == 409)
+            this.alreadyAuthorizedUser = true;
+      }
+    );
+  }
+  authorizateNurse(){
+    this.authorizationService.authorizateNurse(this.practitioner.identifier.type, this.practitioner.identifier.id, 'fingerprint_test').subscribe(
+      result =>{
+            this.practitionerService.createPractitioner(this.practitioner).subscribe(
+            result => {
+                console.log(result);
+                this.successSignup = true;
+              },
+              error => {
+                console.error(error);
+                this.incorrectSignup = true;
+              }
+            );
+      },
+      error => {
+          console.error(error);
+          if (error.status == 409)
+            this.alreadyAuthorizedUser = true;
+      }
+    );
+  }
+
+  authorizateAdministrativeAssistant(){
+    this.authorizationService.authorizateAdministrativeAssistant(this.practitioner.identifier.type, this.practitioner.identifier.id, 'fingerprint_test').subscribe(
       result =>{
             this.practitionerService.createPractitioner(this.practitioner).subscribe(
             result => {
