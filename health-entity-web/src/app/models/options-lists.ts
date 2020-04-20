@@ -94,7 +94,7 @@ export class OptionsList {
   ];
 
   public static ClinicalFindingsCodes = [
-    { name: 'Trastorno de ansiedad de la infancia O adolescencia', value: '109006' },
+    { name: 'Trastorno de ansiedad de la infancia o adolescencia', value: '109006' },
     { name: 'Hemorragia coroidea', value: '122003' },
     { name: 'Aborto espontáneo con laceración del cuello uterino.', value: '127009' },
     { name: 'Homoiotermia', value: '129007' },

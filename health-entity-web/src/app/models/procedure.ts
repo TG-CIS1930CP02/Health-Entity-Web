@@ -10,7 +10,7 @@ export class Procedure {
     public category: string,
     public code: string,
     public subject: Identification,
-    public performedDateTim: Date,
+    public performedDateTime: Date,
     public recorder: Identification,
     public performer: Identification,
     public reasonCode: string[],
