@@ -58,8 +58,8 @@ export class AuthorizationService {
   authorizateDoctor(type: string, id: number, fingerprint: string) {
     return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_doctor/${environment.healthEntityId}`, fingerprint);
   }
-  authorizateAdministrativeNurse(type: string, id: number, fingerprint: string) {
-    return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_administrative_nurse/${environment.healthEntityId}`, fingerprint);
+  authorizateNurse(type: string, id: number, fingerprint: string) {
+    return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_nurse/${environment.healthEntityId}`, fingerprint);
   }
   authorizateAdministrativeAssistant(type: string, id: number, fingerprint: string) {
     return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_administrative_assistant/${environment.healthEntityId}`, fingerprint);
