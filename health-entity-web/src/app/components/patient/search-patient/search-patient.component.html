@@ -1,5 +1,5 @@
 <div id="box" class="center">
-  <h2 class="title">Busqueda Paciente</h2>
+  <h2 class="title">Búsqueda Paciente</h2>
   <div id="formbox" class="center">
     <form (ngSubmit)="search()" #searchForm="ngForm">
       <div class="form_box inline">
@@ -33,8 +33,26 @@
     <button mat-flat-button type="submit" class="button gradient" *ngIf="found=='found'">
       Ver historia clínica
     </button>
-    <button mat-flat-button type="submit" class="button emergency" *ngIf="found=='not_found'">
-      EMERGENCIA
-    </button>
   </div>
 </div>
+<section class="modal" *ngIf="found=='not_found'">
+  <div class="modal_container">
+    <div class="modal_header">
+      <h2 class="title">Aviso</h2>
+      <span class="icon--close modal_close" (click)="close()"></span>
+    </div>
+    <div class="modal_content" id="emergency">
+      <p class="text">
+        La IPS no se encuentra autorizada para ver la historia clínica del paciente que se intenta buscar, ¿desea realizar una búsqueda de emergencia?
+      </p>
+      <div class="btn">
+        <button mat-flat-button (click)="emergencySearch()" class="button emergency" *ngIf="found=='not_found'">
+          REALIZAR BÚSQUEDA
+        </button>
+        <button mat-flat-button (click)="close()" class="button gradient" *ngIf="found=='not_found'">
+          CANCELAR
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

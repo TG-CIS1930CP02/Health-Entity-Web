@@ -42,4 +42,10 @@ export class SearchPatientComponent implements OnInit {
       }
     );
   }
+
+  emergencySearch() {}
+
+  close() {
+    this.found = 'pending';
+  }
 }
