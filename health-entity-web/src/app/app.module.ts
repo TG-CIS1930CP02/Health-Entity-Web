@@ -46,6 +46,7 @@ import { CreateConditionComponent } from './components/condition/create-conditio
 import { ReadConditionComponent } from './components/condition/read-condition/read-condition.component';
 import { CreateProcedureComponent } from './components/procedure/create-procedure/create-procedure.component';
 import { ReadProcedureComponent } from './components/procedure/read-procedure/read-procedure.component';
+import { ResourcesComponent } from './components/practitioner/resources/resources.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +78,8 @@ import { ReadProcedureComponent } from './components/procedure/read-procedure/re
     CreateConditionComponent,
     ReadConditionComponent,
     CreateProcedureComponent,
-    ReadProcedureComponent
+    ReadProcedureComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,

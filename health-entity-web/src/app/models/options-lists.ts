@@ -4,6 +4,25 @@ export class OptionsList {
     { name: 'Enfermero/a', value: 'nurse' }
   ];
 
+  public static Resources = [
+    { name: 'Alergias e intolerancias', value: 'allergy-intolerance' },
+    { name: 'Condición', value: 'condition' },
+    { name: 'Informe diagnóstico', value: 'diagnostic-report' },
+    { name: 'Observación', value: 'observation' },
+    { name: 'Procedimiento', value: 'procedure' }
+  ];
+
+  public static ResourceDescription: Map<string, string> = new Map([
+    ['allergy-intolerance', 'Riesgo de respuesta fisiológica nociva o indeseable que es única para un individuo y está asociada con la exposición a una sustancia.'],
+    ['condition', 'Una condición clínica, problema, diagnóstico u otro evento, situación, problema o concepto clínico que ha aumentado a un nivel de preocupación.'],
+    ['diagnostic-report',  `Los hallazgos e interpretación de las pruebas de diagnóstico realizadas en pacientes, grupos de pacientes, dispositivos y ubicaciones,
+       y / o muestras derivadas de estos. El informe incluye el contexto clínico, como la solicitud y la información del proveedor, y una combinación de resultados
+       atómicos, imágenes, interpretaciones textuales y codificadas, y una representación formateada de los informes de diagnóstico.`],
+    ['observation', 'Mediciones y afirmaciones simples hechas sobre un paciente, dispositivo u otro tema.'],
+    ['procedure', `Una acción que se realiza o se realizó en o para un paciente. Esto puede ser una intervención física como una operación, o menos invasiva, como
+     servicios a largo plazo, asesoramiento o hipnoterapia.`]
+  ]);
+
   public static IdentificationTypes = [
     { name: 'Cédula de Ciudadanía', value: 'CC' },
     { name: 'Cédula de Extranjería', value: 'CE' },

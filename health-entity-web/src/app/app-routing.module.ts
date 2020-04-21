@@ -11,18 +11,14 @@ import { HomeAdministratorComponent } from './components/administrator/home-admi
 import { HomePractitionerComponent } from './components/practitioner/home-practitioner/home-practitioner.component';
 import { HomeAdministrativeAssistantComponent } from './components/administrative-assistant/home-administrative-assistant/home-administrative-assistant.component';
 import { HomePatientComponent } from './components/patient/home-patient/home-patient.component';
-import { CreateAllergyIntoleranceComponent } from './components/allergy-intolerance/create-allergy-intolerance/create-allergy-intolerance.component';
-import { ReadAllergyIntoleranceComponent } from './components/allergy-intolerance/read-allergy-intolerance/read-allergy-intolerance.component';
 import { SignupPatientComponent } from './components/patient/signup-patient/signup-patient.component';
 import { SearchPatientComponent } from './components/patient/search-patient/search-patient.component';
-import { CreateDiagnosticReportComponent } from './components/diagnostic-report/create-diagnostic-report/create-diagnostic-report.component';
-import { CreateConditionComponent } from './components/condition/create-condition/create-condition.component';
+import { ReadAllergyIntoleranceComponent } from './components/allergy-intolerance/read-allergy-intolerance/read-allergy-intolerance.component';
 import { ReadConditionComponent } from './components/condition/read-condition/read-condition.component';
-import { CreateObservationComponent } from './components/observation/create-observation/create-observation.component';
-import { ReadObservationComponent } from './components/observation/read-observation/read-observation.component';
 import { ReadDiagnosticReportComponent } from './components/diagnostic-report/read-diagnostic-report/read-diagnostic-report.component';
-import { CreateProcedureComponent } from './components/procedure/create-procedure/create-procedure.component';
+import { ReadObservationComponent } from './components/observation/read-observation/read-observation.component';
 import { ReadProcedureComponent } from './components/procedure/read-procedure/read-procedure.component';
+import { ResourcesComponent } from './components/practitioner/resources/resources.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -37,16 +33,12 @@ const routes: Routes = [
   { path: 'practitioner/home', component: HomePractitionerComponent },
   { path: 'admin-assistant/home', component: HomeAdministrativeAssistantComponent },
   { path: 'patient/home', component: HomePatientComponent },
-  { path: 'practitioner/record-resource/allergy', component: CreateAllergyIntoleranceComponent },
   { path: 'practitioner/view-resource/allergy', component: ReadAllergyIntoleranceComponent },
-  { path: 'practitioner/record-resource/diagnostic', component: CreateDiagnosticReportComponent },
   { path: 'practitioner/view-resource/diagnostic', component: ReadDiagnosticReportComponent },
-  { path: 'practitioner/record-resource/condition', component: CreateConditionComponent },
   { path: 'practitioner/view-resource/condition', component: ReadConditionComponent },
-  { path: 'practitioner/record-resource/observation', component: CreateObservationComponent },
   { path: 'practitioner/view-resource/observation', component: ReadObservationComponent },
-  { path: 'practitioner/record-resource/procedure', component: CreateProcedureComponent },
   { path: 'practitioner/view-resource/procedure', component: ReadProcedureComponent },
+  { path: 'practitioner/resources', component: ResourcesComponent },
   { path: 'practitioner/search-patient', component: SearchPatientComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
