@@ -48,7 +48,7 @@ header {
 }
 
 .xlBlack {
-  color: #4a4a4a !important;
+  color: $text-color !important;
 }
 
 .ls1 {
@@ -57,7 +57,7 @@ header {
 
 .header_top {
   background: linear-gradient(60deg, $primary 55%, $accent);
-  color: #fff;
+  color: white;
 }
 
 .header_container {
@@ -74,7 +74,7 @@ header {
 .header_bottom {
   padding-top: 5px;
   padding-bottom: 15px;
-  background: #fff;
+  background: white;
 }
 
 .header_bottom .header_container {
@@ -112,7 +112,7 @@ header {
   margin-left: 30px;
   margin-right: 30px;
   font-size: 13px;
-  color: #fff;
+  color: white;
   letter-spacing: 1px;
 }
 
@@ -189,7 +189,7 @@ header {
   min-height: 100%;
   font-size: 13px;
   text-transform: uppercase;
-  color: #4a4a4a;
+  color: $text-color;
   letter-spacing: 0.33px;
 }
 
@@ -255,7 +255,7 @@ header {
 }
 
 .white {
-  color: #fff !important;
+  color: white !important;
 }
 
 .d-flex {

@@ -1,3 +1,5 @@
+@import "~_variables.scss";
+
 a {
   text-decoration: none;
   cursor: pointer;
@@ -64,7 +66,7 @@ ol {
 
 footer {
   width: 100%;
-  background: #f7f7f7;
+  background: $grey-light;
 }
 
 .footer_container {
@@ -79,7 +81,7 @@ footer {
 }
 
 .footer_bottom {
-  background: #dbdbdb;
+  background: $grey;
 }
 
 .footer_left {
@@ -124,7 +126,7 @@ footer {
 }
 
 .footer_list_link {
-  color: #4a4a4a;
+  color: $text-color;
 }
 
 .footer_list:last-of-type {
@@ -148,7 +150,6 @@ footer {
   width: 100%;
   font-size: 18px;
   font-family: "poppinsSemibold", Arial, Helvetica, sans-serif;
-  color: #00a0d9;
 }
 
 .text--r {
@@ -162,7 +163,7 @@ footer {
 }
 
 .xlBlack {
-  color: #4a4a4a !important;
+  color: $text-color !important;
 }
 
 .icon {
@@ -219,10 +220,10 @@ footer {
 
 .children-rights {
   font-family: "schoolbell", Arial, Helvetica, sans-serif;
-  color: #00cc9f !important;
+  color: $child-green !important;
   font-size: 1.14286rem;
 }
 
 .blue {
-  color: #1d62ad !important;
+  color: $child-blue !important;
 }

@@ -1,3 +1,5 @@
+@import "~_variables.scss";
+
 hr {
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
@@ -6,7 +8,7 @@ hr {
 }
 
 #error {
-  background: #24ce7b;
+  background: $primary-light;
 }
 
 .container {
@@ -68,6 +70,6 @@ hr.star-light:after {
   top: -0.8em;
   font-size: 2em;
   padding: 0 0.25em;
-  background-color: #24ce7b;
+  background-color: $primary-light;
   color: white;
 }

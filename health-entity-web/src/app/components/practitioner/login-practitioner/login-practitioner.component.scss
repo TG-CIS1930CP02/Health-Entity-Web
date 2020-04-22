@@ -59,7 +59,7 @@ mat-form-field {
   letter-spacing: 1px;
   cursor: pointer;
   border: none;
-  color: #fff;
+  color: white;
   background: linear-gradient(60deg, $primary 55%, $accent);
   transition: all 0.3s ease;
   width: 100%;
@@ -106,7 +106,7 @@ mat-form-field {
   text-align: center;
   position: relative;
   box-shadow: 0 0 30px rgba(74, 74, 74, 0.15);
-  background: #fff;
+  background: white;
 }
 .modal_header {
   display: flex;
@@ -163,7 +163,7 @@ mat-form-field {
 .modal_content .text {
   width: 100%;
   font-size: 14px;
-  color: #4a4a4a !important;
+  color: $text-color !important;
   letter-spacing: 1px;
   text-align: center;
   margin-top: 20px !important;

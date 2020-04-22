@@ -24,6 +24,13 @@ $scampi: (
   ),
 );
 
+$text-color: #4a4a4a;
+$disable: #dddddd;
+$grey-light: #f7f7f7;
+$grey: #dbdbdb;
+$child-green: #00cc9f;
+$child-blue: #1d62ad;
+
 // Copy the palettes from your selected theme (usually theme.scss).
 $health-entity-web-primary: mat-palette($plum, Main, Light, Dark);
 $health-entity-web-accent: mat-palette($scampi, Main, Light, Dark);
