@@ -1,34 +1,35 @@
 <div id="box">
-  <div id="detailsBox" class="center">
-    <h2 class="title">Ver registro de informe diagnóstico</h2>
-    <div class="row">
-      <div class="column">
-        <label>Solicitud:</label>
-        <p>{{diagnostic.basedOn}}</p>
-        <label>Estado:</label>
-        <p>{{diagnostic.status}}</p>
-      </div>
-      <div class="column">
-        <label>Código:</label>
-        <p>{{diagnostic.code}}</p>
-        <label>Categorias: </label>
-        <ul>
-          <li *ngFor="let c of diagnostic.category">{{c}}</li>
-        </ul>
-        <label>Fecha clínicamente relevante:</label>
-        <p>{{diagnostic.effectiveDateTime}}</p>
-        <label>Fecha de la versión:</label>
-        <p>{{diagnostic.issued}}</p>
-      </div>
-    </div>
+  <label>Solicitud:</label>
+  <p>{{diagnostic.basedOn}}</p>
 
-    <label>Resultados: </label>
-    <app-read-observation></app-read-observation>
-    <label>Conclusión:</label>
-    <p>{{diagnostic.conclusion}}</p>
-    <label>Códigos de conclusión: </label>
-    <ul>
-      <li *ngFor="let c of diagnostic.conclusionCode">{{c}}</li>
-    </ul>
+  <div class="row">
+    <div class="column">
+      <label>Código:</label>
+      <p>{{diagnostic.code}}</p>
+      <label>Estado:</label>
+      <p>{{diagnostic.status}}</p>
+    </div>
+    <div class="column">
+      <label>Categorias: </label>
+      <ul>
+        <li *ngFor="let c of diagnostic.category">{{c}}</li>
+      </ul>
+      <label>Fecha clínicamente relevante:</label>
+      <p>{{diagnostic.effectiveDateTime}}</p>
+      <label>Fecha de la versión:</label>
+      <p>{{diagnostic.issued}}</p>
+    </div>
   </div>
+
+  <label>Resultados: </label>
+  <ul>
+    <li *ngFor="let c of diagnostic.result">{{c}}</li>
+  </ul>
+
+  <label>Conclusión:</label>
+  <p>{{diagnostic.conclusion}}</p>
+  <label>Códigos de conclusión: </label>
+  <ul>
+    <li *ngFor="let c of diagnostic.conclusionCode">{{c}}</li>
+  </ul>
 </div>

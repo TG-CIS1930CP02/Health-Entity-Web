@@ -1,52 +1,49 @@
 <div id="box">
-  <div id="detailsBox" class="center">
-    <h2 class="title">Ver registro de Alergias e Intolerancias</h2>
-    <div class="row">
-      <div class="column">
-        <label>Tipo:</label>
-        <p>{{allergy.type}}</p>
-        <label>Estado clínico:</label>
-        <p>{{allergy.clinicalStatus}}</p>
-        <label>Estado de verificación: </label>
-        <p>{{allergy.verificationStatus}}</p>
-        <label>Nivel de riesgo:</label>
-        <p>{{allergy.criticality}}</p>
-      </div>
-      <div class="column">
-        <label>Código:</label>
-        <p>{{allergy.code}}</p>
-        <label>Categorias: </label>
-        <ul>
-          <li *ngFor="let c of allergy.category">{{c}}</li>
-        </ul>
-        <label>Fecha identificación:</label>
-        <p>{{allergy.recordedDate}}</p>
-        <label>Fecha última reacción:</label>
-        <p>{{allergy.onsetDateTime}}</p>
-      </div>
+  <div class="row">
+    <div class="column">
+      <label>Tipo:</label>
+      <p>{{allergy.type}}</p>
+      <label>Estado clínico:</label>
+      <p>{{allergy.clinicalStatus}}</p>
+      <label>Estado de verificación: </label>
+      <p>{{allergy.verificationStatus}}</p>
+      <label>Nivel de riesgo:</label>
+      <p>{{allergy.criticality}}</p>
     </div>
+    <div class="column">
+      <label>Código:</label>
+      <p>{{allergy.code}}</p>
+      <label>Categorias: </label>
+      <ul>
+        <li *ngFor="let c of allergy.category">{{c}}</li>
+      </ul>
+      <label>Fecha identificación:</label>
+      <p>{{allergy.recordedDate}}</p>
+      <label>Fecha última reacción:</label>
+      <p>{{allergy.onsetDateTime}}</p>
+    </div>
+  </div>
 
-    <label>Notas:</label>
-    <p>{{allergy.note}}</p>
+  <label>Notas:</label>
+  <p>{{allergy.note}}</p>
 
-    <div class="row">
-      <label>Reacción:</label>
-      <div class="column">
-        <label>Sustancia:</label>
-        <p>{{allergy.reaction.substance}}</p>
-        <label>Manifestaciones:</label>
-        <ul>
-          <li *ngFor="let m of allergy.reaction.manifestation">{{m}}</li>
-        </ul>
-      </div>
-      <div class="column">
-        <label>Severidad: </label>
-        <p>{{allergy.reaction.severity}}</p>
-        <label>Razón de exposición:</label>
-        <p>{{allergy.reaction.exposureRoute}}</p>
-        <label>Descripción del evento:</label>
-        <p>{{allergy.reaction.description}}</p>
-      </div>
+  <div class="row">
+    <label>Reacción:</label>
+    <div class="column">
+      <label>Sustancia:</label>
+      <p>{{allergy.reaction.substance}}</p>
+      <label>Manifestaciones:</label>
+      <ul>
+        <li *ngFor="let m of allergy.reaction.manifestation">{{m}}</li>
+      </ul>
+    </div>
+    <div class="column">
+      <label>Severidad: </label>
+      <p>{{allergy.reaction.severity}}</p>
+      <label>Razón de exposición:</label>
+      <p>{{allergy.reaction.exposureRoute}}</p>
+      <label>Descripción del evento:</label>
+      <p>{{allergy.reaction.description}}</p>
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AllergyIntolerance } from '../../../models/allergy-intolerance';
+import { Reaction } from 'app/models/reaction';
 
 @Component({
   selector: 'app-read-allergy-intolerance',
@@ -9,6 +10,8 @@ import { AllergyIntolerance } from '../../../models/allergy-intolerance';
 export class ReadAllergyIntoleranceComponent implements OnInit {
 
   constructor() { }
+  reaction = new Reaction(undefined, undefined, undefined, undefined, undefined);
+
   @Input()
   allergy: AllergyIntolerance = new AllergyIntolerance(
     undefined,
@@ -24,7 +27,7 @@ export class ReadAllergyIntoleranceComponent implements OnInit {
     undefined,
     undefined,
     undefined,
-    undefined
+    this.reaction
   );
 
   ngOnInit(): void { }

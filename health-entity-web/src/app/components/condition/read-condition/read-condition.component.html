@@ -1,31 +1,28 @@
 <div id="box">
-  <div id="detailsBox" class="center">
-    <h2 class="title">Ver registro de condición clínica</h2>
-    <div class="row">
-      <div class="column">
-        <label>Estado clínico:</label>
-        <p>{{condition.clinicalStatus}}</p>
-        <label>Estado de verificación: </label>
-        <p>{{condition.verificationStatus}}</p>
-        <label>Severidad:</label>
-        <p>{{condition.severity}}</p>
-        <label>Código:</label>
-        <p>{{condition.code}}</p>
-      </div>
-
-      <div class="column">
-        <label>Partes del cuerpo afectadas: </label>
-        <ul>
-          <li *ngFor="let b of condition.bodySite">{{b}}</li>
-        </ul>
-        <label>Fecha identificación:</label>
-        <p>{{condition.onsetDateTime}}</p>
-        <label>Fecha de registro:</label>
-        <p>{{condition.recordedDate}}</p>
-      </div>
+  <div class="row">
+    <div class="column">
+      <label>Estado clínico:</label>
+      <p>{{condition.clinicalStatus}}</p>
+      <label>Estado de verificación: </label>
+      <p>{{condition.verificationStatus}}</p>
+      <label>Severidad:</label>
+      <p>{{condition.severity}}</p>
+      <label>Código:</label>
+      <p>{{condition.code}}</p>
     </div>
 
-    <label>Notas:</label>
-    <p>{{condition.note}}</p>
+    <div class="column">
+      <label>Partes del cuerpo afectadas: </label>
+      <ul>
+        <li *ngFor="let b of condition.bodySite">{{b}}</li>
+      </ul>
+      <label>Fecha identificación:</label>
+      <p>{{condition.onsetDateTime}}</p>
+      <label>Fecha de registro:</label>
+      <p>{{condition.recordedDate}}</p>
+    </div>
   </div>
+
+  <label>Notas:</label>
+  <p>{{condition.note}}</p>
 </div>

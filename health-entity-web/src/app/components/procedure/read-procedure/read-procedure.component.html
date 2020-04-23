@@ -1,47 +1,44 @@
 <div id="box">
-  <div id="detailsBox" class="center">
-    <h2 class="title">Ver registro de procedimiento</h2>
-    <label>Solicitud:</label>
-    <p>{{procedure.basedOn}}</p>
-    <div class="row">
-      <div class="column">
-        <label>Código:</label>
-        <p>{{procedure.code}}</p>
-        <label>Estado:</label>
-        <p>{{procedure.status}}</p>
-        <label>Razón del estado:</label>
-        <p>{{procedure.statusReason}}</p>
-        <label>Categorias: </label>
-        <p>{{procedure.category}}</p>
-        <label>Motivo de realización:</label>
-        <ul>
-          <li *ngFor="let c of procedure.reasonCode">{{c}}</li>
-        </ul>
-        <label>Fecha de realización:</label>
-        <p>{{procedure.performedDateTime}}</p>
-      </div>
+  <label>Solicitud:</label>
+  <p>{{procedure.basedOn}}</p>
+  <div class="row">
+    <div class="column">
+      <label>Código:</label>
+      <p>{{procedure.code}}</p>
+      <label>Estado:</label>
+      <p>{{procedure.status}}</p>
+      <label>Razón del estado:</label>
+      <p>{{procedure.statusReason}}</p>
+      <label>Categorias: </label>
+      <p>{{procedure.category}}</p>
+      <label>Motivo de realización:</label>
+      <ul>
+        <li *ngFor="let c of procedure.reasonCode">{{c}}</li>
+      </ul>
+      <label>Fecha de realización:</label>
+      <p>{{procedure.performedDateTime}}</p>
+    </div>
 
-      <div class="column">
-        <label>Partes del cuerpo afectadas:</label>
-        <ul>
-          <li *ngFor="let c of procedure.bodySite">{{c}}</li>
-        </ul>
-        <label>Resultado del procedimiento:</label>
-        <p>{{procedure.outcome}}</p>
-        <label>Complicaciones:</label>
-        <ul>
-          <li *ngFor="let c of procedure.complication">{{c}}</li>
-        </ul>
-        <label>Detalles de complicación: </label>
-        <ul>
-          <li *ngFor="let c of procedure.complicationDetail">{{c}}</li>
-        </ul>
-        <label>Instrucciones de seguimiento: </label>
-        <ul>
-          <li *ngFor="let c of procedure.followUp">{{c}}</li>
-        </ul>
-      </div>
-    </div><label>Notas adicionales:</label>
-    <p>{{procedure.note}}</p>
-  </div>
+    <div class="column">
+      <label>Partes del cuerpo afectadas:</label>
+      <ul>
+        <li *ngFor="let c of procedure.bodySite">{{c}}</li>
+      </ul>
+      <label>Resultado del procedimiento:</label>
+      <p>{{procedure.outcome}}</p>
+      <label>Complicaciones:</label>
+      <ul>
+        <li *ngFor="let c of procedure.complication">{{c}}</li>
+      </ul>
+      <label>Detalles de complicación: </label>
+      <ul>
+        <li *ngFor="let c of procedure.complicationDetail">{{c}}</li>
+      </ul>
+      <label>Instrucciones de seguimiento: </label>
+      <ul>
+        <li *ngFor="let c of procedure.followUp">{{c}}</li>
+      </ul>
+    </div>
+  </div><label>Notas adicionales:</label>
+  <p>{{procedure.note}}</p>
 </div>
