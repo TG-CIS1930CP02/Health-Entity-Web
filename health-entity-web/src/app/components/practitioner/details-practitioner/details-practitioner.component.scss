@@ -10,7 +10,7 @@ input {
   font-family: "poppins", arial, sans-serif;
   width: 100%;
   overflow: hidden;
-  border-top: 2px solid rgba(147, 147, 147, 0.7);
+  border-top: 2px solid $gray-dark;
 }
 .center {
   margin: auto;
@@ -96,7 +96,7 @@ th {
   flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
+  background: $shadow-background;
   position: fixed;
   top: 0;
   left: 0;
@@ -126,7 +126,7 @@ th {
   min-height: auto;
   text-align: center;
   position: relative;
-  box-shadow: 0 0 30px rgba(74, 74, 74, 0.15);
+  box-shadow: 0 0 30px $shadow;
   background: white;
 }
 .modal_header {

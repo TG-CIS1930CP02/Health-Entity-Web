@@ -66,7 +66,7 @@ ol {
 
 footer {
   width: 100%;
-  background: $grey-light;
+  background: $gray-light;
 }
 
 .footer_container {
@@ -81,12 +81,12 @@ footer {
 }
 
 .footer_bottom {
-  background: $grey;
+  background: $gray;
 }
 
 .footer_left {
   width: 320px;
-  border-right: 1px solid rgba(147, 147, 147, 0.7);
+  border-right: 1px solid $gray-dark;
   font-family: "poppins", arial, sans-serif;
 }
 

@@ -21,7 +21,7 @@ mat-form-field {
 }
 .right {
   width: 60%;
-  border-left: 2px solid rgba(147, 147, 147, 0.7);
+  border-left: 2px solid $gray-dark;
 }
 .row:after {
   content: "";
