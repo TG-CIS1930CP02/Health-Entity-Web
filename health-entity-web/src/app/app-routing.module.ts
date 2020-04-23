@@ -19,6 +19,7 @@ import { ReadDiagnosticReportComponent } from './components/diagnostic-report/re
 import { ReadObservationComponent } from './components/observation/read-observation/read-observation.component';
 import { ReadProcedureComponent } from './components/procedure/read-procedure/read-procedure.component';
 import { ResourcesComponent } from './components/practitioner/resources/resources.component';
+import { ViewResourcesComponent } from './components/resources/view-resources/view-resources.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -33,12 +34,8 @@ const routes: Routes = [
   { path: 'practitioner/home', component: HomePractitionerComponent },
   { path: 'admin-assistant/home', component: HomeAdministrativeAssistantComponent },
   { path: 'patient/home', component: HomePatientComponent },
-  { path: 'practitioner/view-resource/allergy', component: ReadAllergyIntoleranceComponent },
-  { path: 'practitioner/view-resource/diagnostic', component: ReadDiagnosticReportComponent },
-  { path: 'practitioner/view-resource/condition', component: ReadConditionComponent },
-  { path: 'practitioner/view-resource/observation', component: ReadObservationComponent },
-  { path: 'practitioner/view-resource/procedure', component: ReadProcedureComponent },
-  { path: 'practitioner/resources', component: ResourcesComponent },
+  { path: 'practitioner/create-resources', component: ResourcesComponent },
+  { path: 'practitioner/view-resources', component: ViewResourcesComponent },
   { path: 'practitioner/search-patient', component: SearchPatientComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
