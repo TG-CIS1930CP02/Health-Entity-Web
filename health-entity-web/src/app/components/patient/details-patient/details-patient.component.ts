@@ -52,7 +52,6 @@ export class DetailsPatientComponent implements OnInit {
 
   signup() {
     // TODO validate value in telecoms
-    debugger;
     this.patient.active = true;
     this.patient.telecoms = this.telecoms;
     this.patient.addresses = this.addresses;

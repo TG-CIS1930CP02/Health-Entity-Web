@@ -13,8 +13,8 @@
           <mat-form-field>
             <mat-label>Selecciona un sistema</mat-label>
             <mat-select [(ngModel)]="telecoms[index].system" [ngModelOptions]="{standalone: true}" required>
-              <mat-option *ngFor="let s of systems" [value]="s.value">
-                {{s.name}}
+              <mat-option *ngFor="let s of systemOptions | keyvalue" [value]="s.key">
+                {{s.value}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -23,8 +23,8 @@
           <mat-form-field>
             <mat-label>Selecciona un tipo</mat-label>
             <mat-select [(ngModel)]="telecoms[index].use" [ngModelOptions]="{standalone: true}" required>
-              <mat-option *ngFor="let u of uses" [value]="u.value">
-                {{u.name}}
+              <mat-option *ngFor="let u of useOptions | keyvalue" [value]="u.key">
+                {{u.value}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -59,8 +59,8 @@
             <mat-form-field>
               <mat-label>Selecciona un tipo</mat-label>
               <mat-select [(ngModel)]="addresses[index].use" [ngModelOptions]="{standalone: true}" required>
-                <mat-option *ngFor="let u of AddressUses" [value]="u.value">
-                  {{u.name}}
+                <mat-option *ngFor="let u of AddressUseOptions | keyvalue" [value]="u.key">
+                  {{u.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>

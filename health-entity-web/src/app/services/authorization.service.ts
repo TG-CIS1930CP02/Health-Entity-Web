@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Patient } from '../models/patient';
 import { environment } from 'environments/environment';
+import { TokenAuthorization } from 'app/models/token-authorization';
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,12 @@ export class AuthorizationService {
   private get<T>(url, parameters: HttpParams = null): Observable<T> {
     console.log('get:', url);
     return this.http
-      .get<T>(url, { withCredentials: true, params: parameters })
+      .get<T>(url, { withCredentials: false, params: parameters,
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': localStorage.getItem('token')
+        })
+      })
       .pipe(catchError(this.handleError));
   }
 
@@ -63,6 +69,10 @@ export class AuthorizationService {
   }
   authorizateAdministrativeAssistant(type: string, id: number, fingerprint: string) {
     return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_administrative_assistant/${environment.healthEntityId}`, fingerprint);
+  }
+
+  getAuthorizationForPatientInformation(type: string, id: number) {
+    return this.get<TokenAuthorization>(`${environment.remoteAuthenticationServerUrl}authorization/patient/${type}/${id}`, null);
   }
 
 }

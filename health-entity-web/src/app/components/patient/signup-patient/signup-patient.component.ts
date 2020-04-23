@@ -21,6 +21,7 @@ export class SignupPatientComponent implements OnInit {
     undefined,
     undefined,
     undefined,
+    undefined
   );
 
   newPatient: Patient = new Patient(
@@ -37,7 +38,7 @@ export class SignupPatientComponent implements OnInit {
   idType = 'Selecciona un tipo';
   id: number;
 
-  options = OptionsList.IdentificationTypes;
+  idOptions = OptionsList.IdentificationTypes;
 
   constructor(private personService: PersonService) { }
 

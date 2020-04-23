@@ -51,6 +51,7 @@ import { CreateProcedureComponent } from './components/procedure/create-procedur
 import { ReadProcedureComponent } from './components/procedure/read-procedure/read-procedure.component';
 import { ViewResourcesComponent } from './components/resources/view-resources/view-resources.component';
 import { CreateResourcesComponent } from './components/resources/create-resources/create-resources.component';
+import { DetailsPersonComponent } from './components/person/details-person/details-person.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { CreateResourcesComponent } from './components/resources/create-resource
     CreateProcedureComponent,
     ReadProcedureComponent,
     ViewResourcesComponent,
-    CreateResourcesComponent
+    CreateResourcesComponent,
+    DetailsPersonComponent
   ],
   imports: [
     BrowserModule,

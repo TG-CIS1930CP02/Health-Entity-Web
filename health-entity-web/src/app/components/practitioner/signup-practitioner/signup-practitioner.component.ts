@@ -26,6 +26,7 @@ export class SignupPractitionerComponent implements OnInit {
     undefined,
     undefined,
     undefined,
+    undefined
   );
 
   newPractitioner: Practitioner = new Practitioner(
@@ -43,7 +44,7 @@ export class SignupPractitionerComponent implements OnInit {
   idType = 'Selecciona un tipo';
   id: number;
 
-  options = OptionsList.IdentificationTypes;
+  idOptions = OptionsList.IdentificationTypes;
 
   constructor(private personService: PersonService) {}
 

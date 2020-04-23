@@ -6,8 +6,8 @@
         <mat-form-field>
           <mat-label>Elige un tipo de identificación</mat-label>
           <mat-select [(ngModel)]="idType" name="idType" required>
-            <mat-option *ngFor="let i of options" [value]="i.value">
-              {{i.name}}
+            <mat-option *ngFor="let i of idOptions | keyvalue" [value]="i.key">
+              {{i.value}}
             </mat-option>
           </mat-select>
         </mat-form-field>
