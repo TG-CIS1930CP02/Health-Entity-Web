@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Resource } from '../../../models/resource';
 import { Identification } from 'app/models/identification';
+import { OptionsList } from '../../../models/options-lists';
 
 @Component({
   selector: 'app-view-resources',
@@ -27,6 +28,8 @@ export class ViewResourcesComponent implements OnInit {
   dataSource = new MatTableDataSource<Resource>(RESOURCES_DUMMY);
   columnsToDisplay = ['date', 'type', 'practitioner', 'entity'];
   expandedElement: Resource | null;
+
+  resourceOptions = OptionsList.Resources;
 
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
