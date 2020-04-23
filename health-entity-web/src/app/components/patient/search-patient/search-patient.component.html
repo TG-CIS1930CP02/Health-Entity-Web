@@ -25,13 +25,10 @@
       </div>
     </form>
   </div>
-  <app-details-patient *ngIf="found=='found'" [patient]=patientFound></app-details-patient>
+  <app-details-person *ngIf="found=='found'" [person]=personFound></app-details-person>
   <div class="btn">
-    <button mat-flat-button type="submit" class="button gradient" *ngIf="found=='found'">
-      Agregar registro
-    </button>
-    <button mat-flat-button type="submit" class="button gradient" *ngIf="found=='found'">
-      Ver historia clínica
+    <button mat-flat-button (click)="getAuthorization()" type="submit" class="button gradient" *ngIf="found=='found'">
+      Consultar historia clínica
     </button>
   </div>
 </div>
@@ -39,17 +36,30 @@
   <div class="modal_container">
     <div class="modal_header">
       <h2 class="title">Aviso</h2>
-      <span class="icon--close modal_close" (click)="close()"></span>
+      <span class="icon--close modal_close" (click)="closeNotFound()"></span>
+    </div>
+    <div class="modal_content">
+      <p class="text">
+        No existen registros para el individuo buscado.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="modal" *ngIf="authorized=='not_authorized'">
+  <div class="modal_container">
+    <div class="modal_header">
+      <h2 class="title">Aviso</h2>
+      <span class="icon--close modal_close" (click)="closeNotAuthorized()"></span>
     </div>
     <div class="modal_content" id="emergency">
       <p class="text">
-        La IPS no se encuentra autorizada para ver la historia clínica del paciente que se intenta buscar, ¿desea realizar una búsqueda de emergencia?
+        La IPS no se encuentra autorizada para ver la historia clínica del paciente, ¿desea realizar una búsqueda de emergencia?
       </p>
       <div class="btn">
-        <button mat-flat-button (click)="emergencySearch()" class="button emergency" *ngIf="found=='not_found'">
+        <button mat-flat-button (click)="emergencySearch()" class="button emergency" *ngIf="authorized=='not_authorized'">
           REALIZAR BÚSQUEDA
         </button>
-        <button mat-flat-button (click)="close()" class="button gradient" *ngIf="found=='not_found'">
+        <button mat-flat-button (click)="closeNotAuthorized()" class="button gradient" *ngIf="authorized=='not_authorized'">
           CANCELAR
         </button>
       </div>

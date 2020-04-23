@@ -8,6 +8,7 @@ export class Person {
       public identificationNumber: number,
       public birthDate: Date,
       public gender: string,
+      public bloodType: string,
       public qualifications: any[],
       public deceased: boolean
     ) {}

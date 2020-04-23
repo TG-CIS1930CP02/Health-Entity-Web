@@ -26,6 +26,7 @@ export class SignupPractitionerComponent implements OnInit {
     undefined,
     undefined,
     undefined,
+    undefined
   );
 
   newPractitioner: Practitioner = new Practitioner(

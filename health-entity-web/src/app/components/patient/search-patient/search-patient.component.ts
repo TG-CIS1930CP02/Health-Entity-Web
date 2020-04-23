@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Patient } from 'app/models/patient';
 import { OptionsList } from 'app/models/options-lists';
 import { PatientService } from 'app/services/patient.service';
+import { AuthorizationService } from 'app/services/authorization.service';
+import { PersonService } from 'app/services/person.service';
+import { Person } from 'app/models/person';
 
 @Component({
   selector: 'app-search-patient',
@@ -9,7 +12,8 @@ import { PatientService } from 'app/services/patient.service';
   styleUrls: ['./search-patient.component.scss']
 })
 export class SearchPatientComponent implements OnInit {
-  patientFound: Patient = new Patient(
+  personFound: Person = new Person(
+    undefined,
     undefined,
     undefined,
     undefined,
@@ -20,20 +24,26 @@ export class SearchPatientComponent implements OnInit {
     undefined
   );
   found = 'pending';
+  authorized = 'pending';
   idType = 'Selecciona un tipo';
   id: number;
 
   options = OptionsList.IdentificationTypes;
 
-  constructor(private patientService: PatientService) { }
+  constructor
+  (
+    private patientService: PatientService,
+    private personService: PersonService,
+    private authorizationService: AuthorizationService
+  ) { }
 
   ngOnInit(): void { }
 
   search() {
-    this.patientService.findByIdentification(this.idType, this.id).subscribe(
+    this.personService.findByIdentification(this.idType, this.id).subscribe(
       result => {
         console.log(result);
-        this.patientFound = result;
+        this.personFound = result;
         this.found = 'found';
       },
       error => {
@@ -45,7 +55,25 @@ export class SearchPatientComponent implements OnInit {
 
   emergencySearch() {}
 
-  close() {
+  getAuthorization() {
+    this.authorizationService.getAuthorizationForPatientInformation(this.idType, this.id).subscribe(
+      result => {
+        console.log(result);
+        localStorage.set('token', result.token);
+        this.authorized = 'authorized';
+      },
+      error => {
+        console.error(error);
+        this.authorized = 'not_authorized';
+      }
+    );
+  }
+
+  closeNotFound() {
     this.found = 'pending';
+  }
+
+  closeNotAuthorized(){
+    this.authorized = 'pending';
   }
 }
