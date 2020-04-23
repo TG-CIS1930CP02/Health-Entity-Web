@@ -10,10 +10,6 @@
       </mat-select>
     </mat-form-field>
     <p>{{description.get(resource)}}</p>
-    <picture class="banner_item_mask">
-      <source media="(width: 20%)" srcset="../../../../assets/images/alergias.jpg" />
-      <img src="../../../../assets/images/alergias.jpg" alt="" class="banner_item_bg" />
-    </picture>
   </div>
   <div class="column right">
     <app-create-allergy-intolerance *ngIf="resource=='allergy-intolerance'"></app-create-allergy-intolerance>

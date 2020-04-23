@@ -23,7 +23,7 @@ export class ViewResourcesComponent implements OnInit {
   constructor() { }
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
-
+  // TODO bring this from back and call url for info of resources
   dataSource = new MatTableDataSource<Resource>(RESOURCES_DUMMY);
   columnsToDisplay = ['date', 'type', 'practitioner', 'entity'];
   expandedElement: Resource | null;
@@ -33,6 +33,7 @@ export class ViewResourcesComponent implements OnInit {
   }
 }
 
+// TODO dummy data, delete this
 const RESOURCES_DUMMY: Resource[] = [
   {
     date: new Date('2020-01-16T00:00:00'),
@@ -57,9 +58,51 @@ const RESOURCES_DUMMY: Resource[] = [
   },
   {
     date: new Date('2020-01-16T00:00:00'),
-    type: 'observation',
+    type: 'allergy-intolerance',
     practitioner: new Identification('CC', 54321),
     entity: 'Compensar',
+    data: 'una url'
+  },
+  {
+    date: new Date('2020-01-16T00:00:00'),
+    type: 'diagnostic-report',
+    practitioner: new Identification('CC', 9876),
+    entity: 'NuevaEps',
+    data: 'una url'
+  },
+  {
+    date: new Date('2020-01-16T00:00:00'),
+    type: 'observation',
+    practitioner: new Identification('CC', 12345),
+    entity: 'Salud Total',
+    data: 'una url'
+  },
+  {
+    date: new Date('2020-01-16T00:00:00'),
+    type: 'condition',
+    practitioner: new Identification('CC', 67890),
+    entity: 'Saludcop',
+    data: 'una url'
+  },
+  {
+    date: new Date('2020-01-16T00:00:00'),
+    type: 'procedure',
+    practitioner: new Identification('CC', 9876),
+    entity: 'NuevaEps',
+    data: 'una url'
+  },
+  {
+    date: new Date('2020-01-16T00:00:00'),
+    type: 'allergy-intolerance',
+    practitioner: new Identification('CC', 54321),
+    entity: 'Compensar',
+    data: 'una url'
+  },
+  {
+    date: new Date('2020-01-16T00:00:00'),
+    type: 'diagnostic-report',
+    practitioner: new Identification('CC', 9876),
+    entity: 'NuevaEps',
     data: 'una url'
   },
 ];
