@@ -13,8 +13,8 @@
           <mat-form-field>
             <mat-label>Selecciona un sistema</mat-label>
             <mat-select [(ngModel)]="telecoms[index].system" [ngModelOptions]="{standalone: true}" required>
-              <mat-option *ngFor="let s of systems" [value]="s.value">
-                {{s.name}}
+              <mat-option *ngFor="let s of systemOptions | keyvalue" [value]="s.key">
+                {{s.value}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -23,8 +23,8 @@
           <mat-form-field>
             <mat-label>Selecciona un tipo</mat-label>
             <mat-select [(ngModel)]="telecoms[index].use" [ngModelOptions]="{standalone: true}" required>
-              <mat-option *ngFor="let u of uses" [value]="u.value">
-                {{u.name}}
+              <mat-option *ngFor="let u of useOptions | keyvalue" [value]="u.key">
+                {{u.value}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -59,8 +59,8 @@
             <mat-form-field>
               <mat-label>Selecciona un tipo</mat-label>
               <mat-select [(ngModel)]="addresses[index].use" [ngModelOptions]="{standalone: true}" required>
-                <mat-option *ngFor="let u of AddressUses" [value]="u.value">
-                  {{u.name}}
+                <mat-option *ngFor="let u of AddressUseOptions | keyvalue" [value]="u.key">
+                  {{u.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -83,7 +83,7 @@
     <table mat-table [dataSource]="practitioner.qualifications" *ngIf="hasQualifications">
       <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef>Título Profesional</th>
-        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.value}} </td>
       </ng-container>
       <ng-container matColumnDef="startDate">
         <th mat-header-cell *matHeaderCellDef>Fecha desde que puede ejercer</th>
@@ -100,8 +100,8 @@
       <label class="label">Tipo: </label>
       <mat-radio-group aria-label="Selecciona un tipo" class="radio-group" [(ngModel)]="type"
         name="type" required>
-        <mat-radio-button class="radio-button" *ngFor="let o of roleOptions" [value]="o.value">
-          {{o.name}}
+        <mat-radio-button class="radio-button" *ngFor="let o of roleOptions | keyvalue" [value]="o.key">
+          {{o.key}}
         </mat-radio-button>
       </mat-radio-group>
     </div>
