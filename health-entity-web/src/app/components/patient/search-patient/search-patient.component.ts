@@ -28,7 +28,7 @@ export class SearchPatientComponent implements OnInit {
   idType = 'Selecciona un tipo';
   id: number;
 
-  options = OptionsList.IdentificationTypes;
+  idOptions = OptionsList.IdentificationTypes;
 
   constructor
   (

@@ -17,8 +17,8 @@
               <mat-label>Elige una</mat-label>
               <mat-select [(ngModel)]="procedure.code" name="code">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let c of codeOptions" [value]="c.value">
-                  {{c.name}}
+                <mat-option *ngFor="let c of codeOptions | keyvalue" [value]="c.key">
+                  {{c.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -29,8 +29,8 @@
               <mat-label>Elige uno</mat-label>
               <mat-select [(ngModel)]="procedure.status" name="status" required>
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let c of statusOptions" [value]="c.value">
-                  {{c.name}}
+                <mat-option *ngFor="let c of statusOptions | keyvalue" [value]="c.key">
+                  {{c.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -41,8 +41,8 @@
               <mat-label>Elige uno</mat-label>
               <mat-select [(ngModel)]="procedure.statusReason" name="statusReason">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let s of statusReasonOptions" [value]="s.value">
-                  {{s.name}}
+                <mat-option *ngFor="let s of statusReasonOptions | keyvalue" [value]="s.key">
+                  {{s.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -53,8 +53,8 @@
               <mat-label>Elige una</mat-label>
               <mat-select [(ngModel)]="procedure.category" name="category">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let c of categoryOptions" [value]="c.value">
-                  {{c.name}}
+                <mat-option *ngFor="let c of categoryOptions | keyvalue" [value]="c.key">
+                  {{c.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -65,8 +65,8 @@
               <mat-label>Elige los que apliquen</mat-label>
               <mat-select [(ngModel)]="procedure.reasonCode" name="reasonCode" multiple>
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let m of clinicalFindingsOptions" [value]="m.value">
-                  {{m.name}}
+                <mat-option *ngFor="let m of clinicalFindingsOptions | keyvalue" [value]="m.key">
+                  {{m.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -80,8 +80,8 @@
               <mat-label>Elige las que apliquen</mat-label>
               <mat-select [(ngModel)]="procedure.bodySite" name="bodySite" multiple>
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let b of bodyOptions" [value]="b.value">
-                  {{b.name}}
+                <mat-option *ngFor="let b of bodyOptions | keyvalue" [value]="b.key">
+                  {{b.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -92,8 +92,8 @@
               <mat-label>Elige uno</mat-label>
               <mat-select [(ngModel)]="procedure.outcome" name="outcome">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let b of outcomeOptions" [value]="b.value">
-                  {{b.name}}
+                <mat-option *ngFor="let b of outcomeOptions | keyvalue" [value]="b.key">
+                  {{b.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -104,8 +104,8 @@
               <mat-label>Elige las que apliquen</mat-label>
               <mat-select [(ngModel)]="procedure.complication" name="complication" multiple>
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let i of clinicalFindingsOptions" [value]="i.value">
-                  {{i.name}}
+                <mat-option *ngFor="let i of clinicalFindingsOptions | keyvalue" [value]="i.key">
+                  {{i.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -126,8 +126,8 @@
               <mat-label>Elige las que apliquen</mat-label>
               <mat-select [(ngModel)]="procedure.followUp" name="followUp" multiple>
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let i of followUpOptions" [value]="i.value">
-                  {{i.name}}
+                <mat-option *ngFor="let i of followUpOptions | keyvalue" [value]="i.key">
+                  {{i.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>

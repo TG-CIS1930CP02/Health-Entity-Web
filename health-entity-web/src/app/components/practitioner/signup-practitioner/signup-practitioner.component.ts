@@ -44,7 +44,7 @@ export class SignupPractitionerComponent implements OnInit {
   idType = 'Selecciona un tipo';
   id: number;
 
-  options = OptionsList.IdentificationTypes;
+  idOptions = OptionsList.IdentificationTypes;
 
   constructor(private personService: PersonService) {}
 

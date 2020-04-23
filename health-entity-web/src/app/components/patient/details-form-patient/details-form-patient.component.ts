@@ -35,9 +35,9 @@ export class DetailsFormPatientComponent implements OnInit {
   enterFingerprint = false;
   checked = false;
 
-  systems = OptionsList.contactPointSystems;
-  uses = OptionsList.contactPointUses;
-  AddressUses = OptionsList.AddressUses;
+  systemOptions = OptionsList.contactPointSystems;
+  useOptions = OptionsList.contactPointUses;
+  AddressUseOptions = OptionsList.AddressUses;
 
   constructor(
     private patientService: PatientService,

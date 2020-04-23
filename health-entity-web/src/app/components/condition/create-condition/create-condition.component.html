@@ -10,8 +10,8 @@
               <mat-label>Elige uno</mat-label>
               <mat-select [(ngModel)]="condition.verificationStatus" name="verificationStatus">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let vs of verificationStatusOptions" [value]="vs.value">
-                  {{vs.name}}
+                <mat-option *ngFor="let vs of verificationStatusOptions | keyvalue" [value]="vs.key">
+                  {{vs.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -22,8 +22,8 @@
               <mat-label>Elige uno</mat-label>
               <mat-select [(ngModel)]="condition.severity" name="severity">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let s of severityOptions" [value]="s.value">
-                  {{s.name}}
+                <mat-option *ngFor="let s of severityOptions | keyvalue" [value]="s.key">
+                  {{s.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -34,8 +34,8 @@
               <mat-label>Elige las que apliquen</mat-label>
               <mat-select [(ngModel)]="condition.bodySite" name="bodySite" multiple>
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let b of bodyOptions" [value]="b.value">
-                  {{b.name}}
+                <mat-option *ngFor="let b of bodyOptions | keyvalue" [value]="b.key">
+                  {{b.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -49,8 +49,8 @@
               <mat-label>Elige uno</mat-label>
               <mat-select [(ngModel)]="condition.clinicalStatus" name="clinicalStatus">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let cs of clinicalStatusOptions" [value]="cs.value">
-                  {{cs.name}}
+                <mat-option *ngFor="let cs of clinicalStatusOptions | keyvalue" [value]="cs.key">
+                  {{cs.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -61,8 +61,8 @@
               <mat-label>Elige uno</mat-label>
               <mat-select [(ngModel)]="condition.code" name="code">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let c of codeOptions" [value]="c.value">
-                  {{c.name}}
+                <mat-option *ngFor="let c of codeOptions | keyvalue" [value]="c.key">
+                  {{c.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>

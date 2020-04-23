@@ -44,9 +44,9 @@ export class DetailsPractitionerComponent implements OnInit {
 
   type: string;
 
-  systems = OptionsList.contactPointSystems;
-  uses = OptionsList.contactPointUses;
-  AddressUses = OptionsList.AddressUses;
+  systemOptions = OptionsList.contactPointSystems;
+  useOptions = OptionsList.contactPointUses;
+  AddressUseOptions = OptionsList.AddressUses;
   roleOptions = OptionsList.Roles;
 
   constructor(
@@ -77,7 +77,7 @@ export class DetailsPractitionerComponent implements OnInit {
     this.practitioner.active = true;
     this.practitioner.telecoms = this.telecoms;
     this.practitioner.addresses = this.addresses;
-    
+
     if (this.hasQualifications){
       if (this.type == 'doctor')
         this.authorizateDoctor();
