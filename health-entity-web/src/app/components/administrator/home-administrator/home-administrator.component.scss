@@ -1,3 +1,5 @@
+@import "~_variables.scss";
+
 .banner {
   display: flex;
   justify-content: center;
@@ -84,6 +86,6 @@
   font-size: 25px;
   text-transform: uppercase;
   text-align: center;
-  color: #fff;
+  color: white;
   line-height: 1;
 }

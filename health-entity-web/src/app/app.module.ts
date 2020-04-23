@@ -16,6 +16,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator'
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
@@ -46,7 +49,8 @@ import { CreateConditionComponent } from './components/condition/create-conditio
 import { ReadConditionComponent } from './components/condition/read-condition/read-condition.component';
 import { CreateProcedureComponent } from './components/procedure/create-procedure/create-procedure.component';
 import { ReadProcedureComponent } from './components/procedure/read-procedure/read-procedure.component';
-import { ResourcesComponent } from './components/practitioner/resources/resources.component';
+import { ViewResourcesComponent } from './components/resources/view-resources/view-resources.component';
+import { CreateResourcesComponent } from './components/resources/create-resources/create-resources.component';
 import { DetailsPersonComponent } from './components/person/details-person/details-person.component';
 
 @NgModule({
@@ -80,7 +84,8 @@ import { DetailsPersonComponent } from './components/person/details-person/detai
     ReadConditionComponent,
     CreateProcedureComponent,
     ReadProcedureComponent,
-    ResourcesComponent,
+    ViewResourcesComponent,
+    CreateResourcesComponent,
     DetailsPersonComponent
   ],
   imports: [
@@ -100,7 +105,10 @@ import { DetailsPersonComponent } from './components/person/details-person/detai
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatExpansionModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

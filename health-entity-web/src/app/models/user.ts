@@ -5,5 +5,4 @@ export class User {
       public token: string,
       public person: Person
     ) {}
-  }
-  
+}

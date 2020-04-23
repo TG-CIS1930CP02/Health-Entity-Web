@@ -26,9 +26,6 @@ label {
   text-transform: uppercase;
   margin-bottom: 10px !important;
 }
-table {
-  width: 100%;
-}
 .row:after {
   content: "";
   display: table;
@@ -71,7 +68,7 @@ mat-form-field {
 .btn--gradient {
   cursor: pointer;
   border: none;
-  color: #fff;
+  color: white;
   background: linear-gradient(60deg, $primary 55%, $accent);
   transition: all 0.3s ease;
   width: 50%;
@@ -81,5 +78,5 @@ mat-form-field {
 }
 .btn--gradient:disabled {
   cursor: not-allowed;
-  background: #dddddd;
+  background: $disable;
 }

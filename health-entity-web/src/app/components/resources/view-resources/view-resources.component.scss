@@ -1,0 +1,54 @@
+@import "~_variables.scss";
+
+label {
+  font-weight: bold;
+  margin-right: 5px;
+  display: block;
+}
+p {
+  margin-bottom: 7px;
+}
+#box {
+  position: relative;
+  margin: 15px auto 80px auto;
+}
+.title {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: $accent !important;
+  text-transform: uppercase;
+  margin-bottom: 10px !important;
+}
+.center {
+  margin: auto;
+  width: 80%;
+}
+table {
+  width: 100%;
+}
+th {
+  font-family: "poppinsSemiBold", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: $primary-dark;
+}
+tr.detail-row {
+  height: 0;
+}
+tr.row:not(.expanded-row):hover {
+  background: whitesmoke;
+}
+tr.row:not(.expanded-row):active {
+  background: #efefef;
+}
+.row td {
+  border-bottom-width: 0;
+}
+.detail {
+  overflow: hidden;
+  display: flex;
+}
+.complete {
+  width: 100%;
+}
