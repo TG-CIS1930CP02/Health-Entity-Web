@@ -30,8 +30,7 @@ export class SearchPatientComponent implements OnInit {
 
   idOptions = OptionsList.IdentificationTypes;
 
-  constructor
-  (
+  constructor (
     private patientService: PatientService,
     private personService: PersonService,
     private authorizationService: AuthorizationService

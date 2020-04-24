@@ -48,4 +48,9 @@
     <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
   </table>
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  <div class="btn">
+    <button mat-flat-button [routerLink]="['/practitioner/create-resources']" class="button gradient">
+      Agregar registro
+    </button>
+  </div>
 </div>
