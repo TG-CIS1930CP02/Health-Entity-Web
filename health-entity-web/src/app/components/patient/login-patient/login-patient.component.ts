@@ -36,7 +36,7 @@ export class LoginPatientComponent implements OnInit {
   incorrectLogin = false;
   invalidAuthorities = false;
 
-  options = OptionsList.IdentificationTypes;
+  idOptions = OptionsList.IdentificationTypes;
 
   ngOnInit(): void { }
 

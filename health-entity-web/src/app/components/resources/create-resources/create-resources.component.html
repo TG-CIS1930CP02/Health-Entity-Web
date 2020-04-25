@@ -4,8 +4,8 @@
     <mat-form-field>
       <mat-label>Elige un recurso</mat-label>
       <mat-select [(ngModel)]="resource" name="resource" required>
-        <mat-option *ngFor="let i of resourceOptions" [value]="i.value">
-          {{i.name}}
+        <mat-option *ngFor="let i of resourceOptions | keyvalue" [value]="i.key">
+          {{i.value}}
         </mat-option>
       </mat-select>
     </mat-form-field>

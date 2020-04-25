@@ -75,7 +75,7 @@ mat-form-field {
   flex-wrap: wrap;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.9);
+  background: $shadow-background;
   position: fixed;
   top: 0;
   left: 0;
@@ -105,7 +105,7 @@ mat-form-field {
   min-height: auto;
   text-align: center;
   position: relative;
-  box-shadow: 0 0 30px rgba(74, 74, 74, 0.15);
+  box-shadow: 0 0 30px $shadow;
   background: white;
 }
 .modal_header {

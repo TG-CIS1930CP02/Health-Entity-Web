@@ -17,8 +17,8 @@
               <mat-label>Elige uno</mat-label>
               <mat-select [(ngModel)]="observation.code" name="code" required>
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let c of codeOptions" [value]="c.value">
-                  {{c.name}}
+                <mat-option *ngFor="let c of codeOptions | keyvalue" [value]="c.key">
+                  {{c.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -29,8 +29,8 @@
               <mat-label>Elige uno</mat-label>
               <mat-select [(ngModel)]="observation.status" name="status" required>
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let s of statusOptions" [value]="s.value">
-                  {{s.name}}
+                <mat-option *ngFor="let s of statusOptions | keyvalue" [value]="s.key">
+                  {{s.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -41,8 +41,8 @@
               <mat-label>Elige las que apliquen</mat-label>
               <mat-select [(ngModel)]="observation.category" name="category" multiple>
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let c of categoryOptions" [value]="c.value">
-                  {{c.name}}
+                <mat-option *ngFor="let c of categoryOptions | keyvalue" [value]="c.key">
+                  {{c.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -66,8 +66,8 @@
               <mat-label>Elige uno</mat-label>
               <mat-select [(ngModel)]="observation.method" name="method">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let m of methodOptions" [value]="m.value">
-                  {{m.name}}
+                <mat-option *ngFor="let m of methodOptions | keyvalue" [value]="m.key">
+                  {{m.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -78,8 +78,8 @@
               <mat-label>Elige una</mat-label>
               <mat-select [(ngModel)]="observation.bodySite" name="bodySite">
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let b of bodyOptions" [value]="b.value">
-                  {{b.name}}
+                <mat-option *ngFor="let b of bodyOptions | keyvalue" [value]="b.key">
+                  {{b.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -104,8 +104,8 @@
               <mat-label>Elige los que apliquen</mat-label>
               <mat-select [(ngModel)]="observation.interpretation" name="interpretation" multiple>
                 <mat-option>Ninguno</mat-option>
-                <mat-option *ngFor="let i of interpretationOptions" [value]="i.value">
-                  {{i.name}}
+                <mat-option *ngFor="let i of interpretationOptions | keyvalue" [value]="i.key">
+                  {{i.value}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
