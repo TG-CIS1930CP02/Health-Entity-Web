@@ -11,6 +11,8 @@ export class AuthService {
     constructor(private router: Router) {}
     public isAuthenticated(): boolean {
         const token = localStorage.getItem('token');
+        if (token == null)
+          return false;
         return !this.jwtHelper.isTokenExpired(token);
     }
 
