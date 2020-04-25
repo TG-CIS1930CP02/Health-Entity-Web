@@ -5,6 +5,7 @@ import { PatientService } from 'app/services/patient.service';
 import { AuthorizationService } from 'app/services/authorization.service';
 import { PersonService } from 'app/services/person.service';
 import { Person } from 'app/models/person';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-patient',
@@ -34,7 +35,8 @@ export class SearchPatientComponent implements OnInit {
   (
     private patientService: PatientService,
     private personService: PersonService,
-    private authorizationService: AuthorizationService
+    private authorizationService: AuthorizationService,
+    private router: Router
   ) { }
 
   ngOnInit(): void { }
@@ -59,8 +61,9 @@ export class SearchPatientComponent implements OnInit {
     this.authorizationService.getAuthorizationForPatientInformation(this.idType, this.id).subscribe(
       result => {
         console.log(result);
-        localStorage.set('token', result.token);
+        localStorage.setItem('token', result.token);
         this.authorized = 'authorized';
+        this.router.navigate(['practitioner/view-resources']);
       },
       error => {
         console.error(error);

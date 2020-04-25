@@ -52,6 +52,7 @@ import { ReadProcedureComponent } from './components/procedure/read-procedure/re
 import { ViewResourcesComponent } from './components/resources/view-resources/view-resources.component';
 import { CreateResourcesComponent } from './components/resources/create-resources/create-resources.component';
 import { DetailsPersonComponent } from './components/person/details-person/details-person.component';
+import { NotAuthorizedComponent } from './components/shared/not-authorized/not-authorized.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { DetailsPersonComponent } from './components/person/details-person/detai
     ReadProcedureComponent,
     ViewResourcesComponent,
     CreateResourcesComponent,
-    DetailsPersonComponent
+    DetailsPersonComponent,
+    NotAuthorizedComponent
   ],
   imports: [
     BrowserModule,

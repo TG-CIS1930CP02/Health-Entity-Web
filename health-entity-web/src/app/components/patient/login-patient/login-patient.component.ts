@@ -46,6 +46,7 @@ export class LoginPatientComponent implements OnInit {
         if(this.validateAuthorities(result.token, RoleEnum.PATIENT, AuthenticationModeEnum.PASSWORD_AUTHENTICATED_USER)){
           this.incorrectLogin = false;
           localStorage.setItem('token', result.token);
+          this.router.navigate(['patient/home']);
         }
         else
           this.invalidAuthorities = true;
