@@ -33,8 +33,8 @@ const routes: Routes = [
   { path: 'practitioner/home', component: HomePractitionerComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
   { path: 'admin-assistant/home', component: HomeAdministrativeAssistantComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.ADMINISTRATIVE_ASSISTANT, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
   { path: 'patient/home', component: HomePatientComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.PATIENT, AuthenticationModeEnum.PASSWORD_AUTHENTICATED_USER]} },
-  { path: 'practitioner/create-resources', component: CreateResourcesComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
-  { path: 'practitioner/view-resources', component: ViewResourcesComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
+  { path: 'practitioner/create-resources/:idType/:id', component: CreateResourcesComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
+  { path: 'practitioner/view-resources/:idType/:id', component: ViewResourcesComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
   { path: 'practitioner/search-patient', component: SearchPatientComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
   { path: 'not-authorized', component: NotAuthorizedComponent },
   { path: '**', component: PathNotFoundComponent }

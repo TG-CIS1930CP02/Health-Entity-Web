@@ -5,7 +5,7 @@ import { PatientService } from 'app/services/patient.service';
 import { AuthorizationService } from 'app/services/authorization.service';
 import { PersonService } from 'app/services/person.service';
 import { Person } from 'app/models/person';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-search-patient',
@@ -35,26 +35,52 @@ export class SearchPatientComponent implements OnInit {
     private patientService: PatientService,
     private personService: PersonService,
     private authorizationService: AuthorizationService,
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.idType = params['idType'];
+      this.id = params['id'];
+      const search = params['search'];
+      if (search == 'true')
+        this.search();
+    });
+  }
 
   search() {
     this.personService.findByIdentification(this.idType, this.id).subscribe(
       result => {
+        this.updateRoute();
         console.log(result);
         this.personFound = result;
         this.found = 'found';
       },
       error => {
+        this.updateRoute();
         console.error(error);
         this.found = 'not_found';
       }
     );
   }
 
-  emergencySearch() {}
+  updateRoute() {
+    this.router.navigate(
+      [], 
+      {
+        relativeTo: this.activatedRoute,
+        queryParams: {idType: this.idType, id: this.id, search: true}
+    });
+  }
+
+  emergencySearch() {
+    this.router.navigate(
+      ['practitioner/view-resources', this.idType, this.id], 
+      {
+        queryParams: {emergencySearch: true}
+    });
+  }
 
   getAuthorization() {
     this.authorizationService.getAuthorizationForPatientInformation(this.idType, this.id).subscribe(
@@ -62,7 +88,11 @@ export class SearchPatientComponent implements OnInit {
         console.log(result);
         localStorage.setItem('token', result.token);
         this.authorized = 'authorized';
-        this.router.navigate(['practitioner/view-resources']);
+        this.router.navigate(
+          ['practitioner/view-resources', this.idType, this.id], 
+          {
+            queryParams: {emergencySearch: false}
+        });
       },
       error => {
         console.error(error);
