@@ -13,4 +13,3 @@ export class Person {
       public deceased: boolean
     ) {}
   }
-  
