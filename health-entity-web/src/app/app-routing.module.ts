@@ -19,6 +19,7 @@ import { RoleGuardService } from './services/security/auth-guard-service';
 import { RoleEnum } from './models/role-enum';
 import { NotAuthorizedComponent } from './components/shared/not-authorized/not-authorized.component';
 import { AuthenticationModeEnum } from './models/authentication-mode-enum';
+import { ListAuthorizationComponent } from './components/authorization/list-authorization/list-authorization.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -26,16 +27,18 @@ const routes: Routes = [
   { path: 'login-patient', component:  LoginPatientComponent},
   { path: 'login-practitioner', component: LoginPractitionerComponent },
   { path: 'login-administrator', component: LoginAdministratorComponent },
-  { path: 'admin/signup-practitioner', component: SignupPractitionerComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.ADMINISTRATOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]}},
-  { path: 'admin/signup-administrative-assistant', component: SignupAdministrativeAssistantComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.ADMINISTRATOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]}},
-  { path: 'admin-assistant/signup-patient', component: SignupPatientComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.ADMINISTRATIVE_ASSISTANT, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
-  { path: 'admin/home', component: HomeAdministratorComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.ADMINISTRATOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
-  { path: 'practitioner/home', component: HomePractitionerComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
-  { path: 'admin-assistant/home', component: HomeAdministrativeAssistantComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.ADMINISTRATIVE_ASSISTANT, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
-  { path: 'patient/home', component: HomePatientComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.PATIENT, AuthenticationModeEnum.PASSWORD_AUTHENTICATED_USER]} },
-  { path: 'practitioner/create-resources', component: CreateResourcesComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
-  { path: 'practitioner/view-resources', component: ViewResourcesComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
-  { path: 'practitioner/search-patient', component: SearchPatientComponent, canActivate:[RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
+  { path: 'admin/signup-practitioner', component: SignupPractitionerComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.ADMINISTRATOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]}},
+  { path: 'admin/signup-administrative-assistant', component: SignupAdministrativeAssistantComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.ADMINISTRATOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]}},
+  { path: 'admin/home', component: HomeAdministratorComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.ADMINISTRATOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
+  { path: 'admin-assistant/signup-patient', component: SignupPatientComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.ADMINISTRATIVE_ASSISTANT, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
+  { path: 'admin-assistant/home', component: HomeAdministrativeAssistantComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.ADMINISTRATIVE_ASSISTANT, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
+  { path: 'practitioner/home', component: HomePractitionerComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
+  { path: 'practitioner/create-resources', component: CreateResourcesComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
+  { path: 'practitioner/view-resources', component: ViewResourcesComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
+  { path: 'practitioner/search-patient', component: SearchPatientComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
+  { path: 'practitioner/authorization', component: ListAuthorizationComponent},
+  { path: 'patient/home', component: HomePatientComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.PATIENT, AuthenticationModeEnum.PASSWORD_AUTHENTICATED_USER]} },
+  { path: 'patient/authorization', component: ListAuthorizationComponent},
   { path: 'not-authorized', component: NotAuthorizedComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
