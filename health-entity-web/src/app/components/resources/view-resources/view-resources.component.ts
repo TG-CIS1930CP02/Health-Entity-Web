@@ -5,6 +5,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
 import { Resource } from '../../../models/resource';
 import { Identification } from 'app/models/identification';
 import { OptionsList } from '../../../models/options-lists';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view-resources',
@@ -21,7 +22,7 @@ import { OptionsList } from '../../../models/options-lists';
 
 export class ViewResourcesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   // TODO bring this from back and call url for info of resources
@@ -31,8 +32,17 @@ export class ViewResourcesComponent implements OnInit {
 
   resourceOptions = OptionsList.Resources;
 
+  idType: any;
+  id: any;
+
   ngOnInit(): void {
     this.dataSource.paginator = this.paginator;
+
+    this.activatedRoute.params.subscribe(params => {
+      this.idType = params['idType'];
+      this.id = params['id'];
+      //TODO: GET MEDICAL RECORDS FROM BACKEND      
+    });
   }
 }
 
