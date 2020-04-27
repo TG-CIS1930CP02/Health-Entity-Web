@@ -12,6 +12,10 @@ p {
   position: relative;
   margin: 15px auto 80px auto;
 }
+.center {
+  margin: auto;
+  width: 80%;
+}
 .title {
   width: 100%;
   font-size: 30px;
@@ -19,10 +23,6 @@ p {
   color: $accent !important;
   text-transform: uppercase;
   margin-bottom: 10px !important;
-}
-.center {
-  margin: auto;
-  width: 80%;
 }
 table {
   width: 100%;
