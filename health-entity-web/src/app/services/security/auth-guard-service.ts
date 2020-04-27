@@ -18,12 +18,12 @@ export class RoleGuardService implements CanActivate {
       return true;
     }
 
-    hasRole(token: string, expectedAuthorities: string[]): boolean{
+    hasRole(token: string, expectedAuthorities: string[]): boolean {
       const parts = token.split('.');
       const payload = parts[1];
       const decodedPayload = atob(payload);
       const payloadObject = JSON.parse(decodedPayload);
-      if (payloadObject.authorities.includes(expectedAuthorities)){
+      if (payloadObject.authorities.includes(expectedAuthorities)) {
         return true;
       }
       return false;

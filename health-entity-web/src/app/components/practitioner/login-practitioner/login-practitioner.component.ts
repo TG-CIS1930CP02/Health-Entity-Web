@@ -11,11 +11,14 @@ import { environment } from 'environments/environment';
 @Component({
   selector: 'app-login-practitioner',
   templateUrl: './login-practitioner.component.html',
-  styleUrls: ['./login-practitioner.component.scss']
+  styleUrls: ['./login-practitioner.component.scss'],
 })
 export class LoginPractitionerComponent implements OnInit {
-
-  constructor(private loginService: LoginService, private router: Router, private practitionerService: PractitionerService) { }
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    private practitionerService: PractitionerService
+  ) {}
 
   practitioner: Practitioner = new Practitioner(
     undefined,
@@ -40,27 +43,34 @@ export class LoginPractitionerComponent implements OnInit {
 
   idOptions = OptionsList.IdentificationTypes;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   login() {
-    this.loginService.loginFingerprint(this.idType, this.id, this.password, 'fingerprint_test')
-      .subscribe(result => {
-        const role = this.getRole(result.token, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION);
-        if (role == null)
-          this.invalidAuthorities = true;
-        else{
-          this.incorrectLogin = false;
-          localStorage.setItem('token', result.token);
-          if (role === RoleEnum.DOCTOR)
-            this.router.navigate(['practitioner/home']);
-          else if (role === RoleEnum.NURSE)
-            this.router.navigate(['practitioner/home']);
+    this.loginService
+      .loginFingerprint(this.idType, this.id, this.password, 'fingerprint_test')
+      .subscribe(
+        (result) => {
+          const role = this.getRole(
+            result.token,
+            AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION
+          );
+          if (role == null) {
+            this.invalidAuthorities = true;
+          } else {
+            this.incorrectLogin = false;
+            localStorage.setItem('token', result.token);
+            if (role === RoleEnum.DOCTOR) {
+              this.router.navigate(['practitioner/home']);
+            } else if (role === RoleEnum.NURSE) {
+              this.router.navigate(['practitioner/home']);
+            }
+          }
+        },
+        (error) => {
+          this.incorrectLogin = true;
+          console.error(error);
         }
-      },
-      error => {
-        this.incorrectLogin = true;
-        console.error(error);
-      });
+      );
   }
 
   close() {
@@ -68,16 +78,21 @@ export class LoginPractitionerComponent implements OnInit {
     this.invalidAuthorities = false;
   }
 
-  getRole(token: string, authenticationMode: AuthenticationModeEnum): RoleEnum{
+  getRole(token: string, authenticationMode: AuthenticationModeEnum): RoleEnum {
     const parts = token.split('.');
     const payload = parts[1];
     const decodedPayload = atob(payload);
     const payloadObject = JSON.parse(decodedPayload);
-    if (payloadObject.authorities.includes(authenticationMode) && payloadObject.authorities.includes(environment.healthEntityAuthority)){
-      if (payloadObject.authorities.includes(RoleEnum.DOCTOR))
+    if (
+      payloadObject.authorities.includes(authenticationMode) &&
+      payloadObject.authorities.includes(environment.healthEntityAuthority)
+    ) {
+      if (payloadObject.authorities.includes(RoleEnum.DOCTOR)) {
         return RoleEnum.DOCTOR;
-      if (payloadObject.authorities.includes(RoleEnum.NURSE))
+      }
+      if (payloadObject.authorities.includes(RoleEnum.NURSE)) {
         return RoleEnum.NURSE;
+      }
     }
     return null;
   }
