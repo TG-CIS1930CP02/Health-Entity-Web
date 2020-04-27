@@ -1,14 +1,59 @@
 @import "~_variables.scss";
 
+#box {
+  position: relative;
+  margin: 15px auto 80px auto;
+}
+.center {
+  margin: auto;
+  width: 80%;
+}
+.title {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: $accent !important;
+  text-transform: uppercase;
+  margin-bottom: 10px !important;
+}
 table {
   width: 100%;
 }
-
 .mat-form-field {
   font-size: 14px;
   width: 100%;
 }
-
+th {
+  font-family: "poppinsSemiBold", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: $primary-dark;
+}
 td, th {
   width: 25%;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  vertical-align: middle;
+  padding: 5px 40px;
+  outline: none;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+  margin: 5px;
+}
+.gradient {
+  background: linear-gradient(60deg, $primary 55%, $accent);
+}
+.gradient:hover {
+  background: linear-gradient(168.27deg, $primary 35.62%, $accent 100%);
 }

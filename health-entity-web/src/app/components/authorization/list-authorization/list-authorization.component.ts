@@ -3,6 +3,7 @@ import { Authorization } from '../../../models/authorization';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { Person } from 'app/models/person';
 
 @Component({
   selector: 'app-list-authorization',
@@ -10,14 +11,33 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./list-authorization.component.scss']
 })
 export class ListAuthorizationComponent implements OnInit {
-  displayedColumns: string[] = ['identificationType', 'identificationNumber', 'name', 'rol'];
+  auth: Authorization[];
+  displayedColumns: string[] = ['identification', 'name', 'rol', 'action'];
   dataSource: MatTableDataSource<Authorization>;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor() { }
+  constructor() {
+    // TODO fill auth with data
+  }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.dataSource = new MatTableDataSource(this.auth);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+
+  unauthorize(type: string, id: number) {
+    // TODO unauthorize the person
+  }
 }
