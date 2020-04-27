@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AdministratorService } from '../../../services/administrator.service';
 import { LoginService } from 'app/services/login.service';
 import { Router } from '@angular/router';
 import { Administrator } from 'app/models/administrator';
@@ -7,6 +6,8 @@ import { OptionsList } from '../../../models/options-lists';
 import { RoleEnum } from 'app/models/role-enum';
 import { AuthenticationModeEnum } from 'app/models/authentication-mode-enum';
 import { environment } from 'environments/environment';
+import { DataSharingService } from '../../../services/data-sharing.services';
+import { UserData } from 'app/models/user-data';
 
 @Component({
   selector: 'app-login-administrator',
@@ -15,7 +16,7 @@ import { environment } from 'environments/environment';
 })
 export class LoginAdministratorComponent implements OnInit {
 
-  constructor(private loginService: LoginService, private router: Router, private administratorService: AdministratorService) { }
+  constructor(private loginService: LoginService, private router: Router, private dataSharingService: DataSharingService) { }
 
   administrator: Administrator = new Administrator();
 
@@ -41,6 +42,7 @@ export class LoginAdministratorComponent implements OnInit {
         } else {
           this.incorrectLogin = false;
           localStorage.setItem('token', result.token);
+          this.dataSharingService.userData = new UserData(role, true);
           if (role === RoleEnum.ADMINISTRATOR) {
             this.router.navigate(['admin/home']);
           } else if (role === RoleEnum.ADMINISTRATIVE_ASSISTANT) {

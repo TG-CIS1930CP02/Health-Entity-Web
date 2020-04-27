@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../../services/login.service';
 import { Router } from '@angular/router';
 import { Practitioner } from '../../../models/practitioner';
-import { PractitionerService } from '../../../services/practitioner.service';
 import { OptionsList } from '../../../models/options-lists';
 import { AuthenticationModeEnum } from 'app/models/authentication-mode-enum';
 import { RoleEnum } from 'app/models/role-enum';
 import { environment } from 'environments/environment';
+import { DataSharingService } from '../../../services/data-sharing.services';
+import { UserData } from 'app/models/user-data';
 
 @Component({
   selector: 'app-login-practitioner',
@@ -17,7 +18,7 @@ export class LoginPractitionerComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private router: Router,
-    private practitionerService: PractitionerService
+    private dataSharingService: DataSharingService
   ) {}
 
   practitioner: Practitioner = new Practitioner(
@@ -59,6 +60,7 @@ export class LoginPractitionerComponent implements OnInit {
           } else {
             this.incorrectLogin = false;
             localStorage.setItem('token', result.token);
+            this.dataSharingService.userData = new UserData(role, true);
             if (role === RoleEnum.DOCTOR) {
               this.router.navigate(['practitioner/home']);
             } else if (role === RoleEnum.NURSE) {

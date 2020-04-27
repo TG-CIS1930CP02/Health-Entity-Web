@@ -55,6 +55,8 @@ import { DetailsPersonComponent } from './components/person/details-person/detai
 import { NotAuthorizedComponent } from './components/shared/not-authorized/not-authorized.component';
 import { ListAuthorizationComponent } from './components/authorization/list-authorization/list-authorization.component';
 
+import { DataSharingService } from './services/data-sharing.services';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,7 +116,7 @@ import { ListAuthorizationComponent } from './components/authorization/list-auth
     MatSortModule,
     MatPaginatorModule
   ],
-  providers: [],
+  providers: [DataSharingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
