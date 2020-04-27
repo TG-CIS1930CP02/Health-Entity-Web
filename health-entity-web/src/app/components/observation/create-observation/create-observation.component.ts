@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observation } from '../../../models/observation';
 import { OptionsList } from '../../../models/options-lists';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Identification } from 'app/models/identification';
+import { TokenReaderService } from 'app/services/security/token-reader-service';
+import { ObservationService } from 'app/services/resources/observation-service';
 
 @Component({
   selector: 'app-create-observation',
@@ -9,7 +13,9 @@ import { OptionsList } from '../../../models/options-lists';
 })
 export class CreateObservationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, 
+    private tokenReaderService: TokenReaderService,
+    private observationService: ObservationService) { }
   observation: Observation = new Observation(
     undefined,
     undefined,
@@ -34,15 +40,45 @@ export class CreateObservationComponent implements OnInit {
   bodyOptions = OptionsList.BodyStructure;
   methodOptions = OptionsList.ObservationMethod;
 
+  idTypePatient: any;
+  idPatient: any;
+  created: boolean = false;
+  error: boolean = false;
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      this.idTypePatient = params['idType'];
+      this.idPatient = params['id'];
+    });
+  }
 
   record() {
     // TODO validate all fields
-    this.observation.issued = new Date();
 
-     /* TODO sacar info de estos
-      subject, performer
-    */
+    this.observation.issued = new Date();
+    this.observation.subject = new Identification(this.idTypePatient, this.idPatient);
+    this.observation.performer = this.tokenReaderService.getIdentificationPerformer();
+
+    this.observationService.createObservation(this.idTypePatient, this.idPatient, this.observation).
+    subscribe(
+      result => {
+        this.created = true;
+      },
+      error => {
+        this.error = true;
+    });
+  }
+
+  closeCreated(){
+    this.created = false;
+    this.router.navigate(
+      ['practitioner/view-resources', this.idTypePatient, this.idPatient], 
+      {
+        queryParams: {emergencySearch: false}
+    });
+  }
+
+  closeError(){
+    this.error = false;
   }
 }

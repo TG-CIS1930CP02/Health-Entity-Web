@@ -3,6 +3,9 @@ import { OptionsList } from '../../../models/options-lists';
 import { AllergyIntolerance } from '../../../models/allergy-intolerance';
 import { Identification } from '../../../models/identification';
 import { Reaction } from '../../../models/reaction';
+import { TokenReaderService } from 'app/services/security/token-reader-service';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AllergyIntoleranceService } from 'app/services/resources/allergy-intolerance-service';
 
 @Component({
   selector: 'app-create-allergy-intolerance',
@@ -11,7 +14,10 @@ import { Reaction } from '../../../models/reaction';
 })
 export class CreateAllergyIntoleranceComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, 
+    private tokenReaderService: TokenReaderService,
+    private allergyIntoleranceService: AllergyIntoleranceService) { }
+
   patient: Identification = new Identification(undefined, undefined);
   recorder: Identification = new Identification(undefined, undefined);
   reaction: Reaction = new Reaction(undefined, undefined, undefined, undefined, undefined);
@@ -46,21 +52,51 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
   severityOptions = OptionsList.AllergyIntoleranceSeverity;
   exposureOptions = OptionsList.ExposureRouteCodes;
 
-  ngOnInit(): void { }
+  idTypePatient: any;
+  idPatient: any;
+  created: boolean = false;
+  error: boolean = false;
+
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      this.idTypePatient = params['idType'];
+      this.idPatient = params['id'];
+    });
+  }
 
   record() {
     // TODO validate all fields
     if (this.firstTime) {
       this.allergy.recordedDate = new Date();
     }
-    /* TODO sacar info de estos
-      recorder y patient
-    */
+    
+    this.allergy.patient = new Identification(this.idTypePatient, this.idPatient);
+    this.allergy.recorder = this.tokenReaderService.getIdentificationPerformer();
 
-    // TODO create service to record
+    this.allergyIntoleranceService.createAllergyIntolerance(this.idTypePatient, this.idPatient, this.allergy).
+    subscribe(
+      result => {
+        this.created = true;
+      },
+      error => {
+        this.error = true;
+    });
   }
 
   trackByIndex(index: number, obj: any): any {
     return index;
+  }
+
+  closeCreated(){
+    this.created = false;
+    this.router.navigate(
+      ['practitioner/view-resources', this.idTypePatient, this.idPatient], 
+      {
+        queryParams: {emergencySearch: false}
+    });
+  }
+
+  closeError(){
+    this.error = false;
   }
 }

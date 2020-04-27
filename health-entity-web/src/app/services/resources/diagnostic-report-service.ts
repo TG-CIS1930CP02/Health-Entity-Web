@@ -30,7 +30,7 @@ export class DiagnosticReportService {
       .pipe(catchError(this.handleError));
   }
 
-  createCondition(type: string, id: number, diagnosticReport: DiagnosticReport) {
-    return this.post<DiagnosticReport>(`${environment.healthEntityServerUrl}${type}/${id}/condition`, diagnosticReport);
+  createDiagnosticReport(type: string, id: number, diagnosticReport: DiagnosticReport) {
+    return this.post<DiagnosticReport>(`${environment.healthEntityServerUrl}${type}/${id}/diagnostic-report`, diagnosticReport);
   }
 }

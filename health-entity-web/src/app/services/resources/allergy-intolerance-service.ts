@@ -9,7 +9,7 @@ import { AllergyIntolerance } from 'app/models/allergy-intolerance';
   providedIn: 'root'
 })
 
-export class AllergyIntolleranceService {
+export class AllergyIntoleranceService {
   constructor(private http: HttpClient) { }
 
   private handleError(error: HttpErrorResponse): Observable<any> {
