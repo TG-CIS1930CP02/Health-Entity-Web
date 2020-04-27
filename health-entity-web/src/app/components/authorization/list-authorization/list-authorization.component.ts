@@ -3,7 +3,6 @@ import { Authorization } from '../../../models/authorization';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { Person } from 'app/models/person';
 
 @Component({
   selector: 'app-list-authorization',
@@ -11,6 +10,10 @@ import { Person } from 'app/models/person';
   styleUrls: ['./list-authorization.component.scss']
 })
 export class ListAuthorizationComponent implements OnInit {
+  unauthorized = false;
+  idNumber: number;
+  idType: string;
+
   auth: Authorization[];
   displayedColumns: string[] = ['identification', 'name', 'rol', 'action'];
   dataSource: MatTableDataSource<Authorization>;
@@ -37,7 +40,18 @@ export class ListAuthorizationComponent implements OnInit {
     }
   }
 
-  unauthorize(type: string, id: number) {
-    // TODO unauthorize the person
+  saveId(type: string, id: number) {
+    this.idType = type;
+    this.idNumber = id;
+    this.unauthorized = true;
+  }
+
+  unauthorize() {
+    this.unauthorized = false;
+    // TODO unauthorize with this.idType and this.idNumber
+  }
+
+  close() {
+    this.unauthorized = false;
   }
 }
