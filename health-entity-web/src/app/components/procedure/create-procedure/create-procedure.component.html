@@ -148,5 +148,33 @@
           [disabled]="!recordForm.form.valid">Registrar</button>
       </div>
     </form>
+
+    <section class="modal" *ngIf="created">
+      <div class="modal_container">
+        <div class="modal_header">
+          <h2 class="title">Registro recibido</h2>
+          <span class="icon--close modal_close" (click)="closeCreated()"></span>
+        </div>
+        <div class="modal_content">
+          <p class="text">
+            Registro recibido, contacte con el administrador si en los siguientes minutos el registro no aparece en la historia clínica del paciente.
+          </p>
+        </div>
+      </div>
+    </section>
+  
+    <section class="modal" *ngIf="error">
+      <div class="modal_container">
+        <div class="modal_header">
+          <h2 class="title">Error</h2>
+          <span class="icon--close modal_close" (click)="closeError()"></span>
+        </div>
+        <div class="modal_content">
+          <p class="text">
+            Ha ocurrido un error al procesar su solicitud.
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
