@@ -5,13 +5,14 @@ input {
 }
 #box {
   position: relative;
-  margin: 155px auto 80px auto;
+  margin: 155px auto 70px auto;
   max-width: 1200px;
 }
 #formbox {
   font-family: "poppins", arial, sans-serif;
   width: 100%;
   overflow: hidden;
+  padding-bottom: 10px;
 }
 .center {
   margin: auto;
@@ -23,7 +24,7 @@ input {
   text-align: center;
   color: $primary !important;
   text-transform: uppercase;
-  margin-bottom: 20px !important;
+  margin-bottom: 10px !important;
 }
 .title {
   width: 100%;
