@@ -1,21 +1,12 @@
 @import "~_variables.scss";
 
-input {
-  width: 100%;
-}
 #box {
   position: relative;
-  margin: 160px auto 70px auto;
-  max-width: 1200px;
-}
-#formbox {
-  font-family: "poppins", arial, sans-serif;
-  width: 100%;
-  overflow: hidden;
-  padding-bottom: 10px;
+  margin: 15px auto 80px auto;
 }
 .center {
-  width: 50%;
+  margin: auto;
+  width: 80%;
 }
 .title {
   width: 100%;
@@ -25,24 +16,26 @@ input {
   text-transform: uppercase;
   margin-bottom: 10px !important;
 }
-.form_box {
-  width: 50%;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-mat-form-field {
-  width: 98%;
-}
-.inline {
-  float:left;
-}
-.btn {
+table {
   width: 100%;
+}
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+th {
+  font-family: "poppinsSemiBold", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: $primary-dark;
+}
+td, th {
+  width: 25%;
+}
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.btn--gradient {
   display: inline-flex;
   justify-content: center;
   flex-wrap: nowrap;
@@ -50,17 +43,25 @@ mat-form-field {
   padding: 5px 40px;
   outline: none;
   font-family: "poppins", Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 1px;
   cursor: pointer;
   border: none;
   color: white;
-  background: linear-gradient(60deg, $primary 55%, $accent);
   transition: all 0.3s ease;
-  width: 50%;
+  margin: 5px;
 }
-.btn--gradient:hover {
+.gradient {
+  background: linear-gradient(60deg, $primary 55%, $accent);
+}
+.gradient:hover {
   background: linear-gradient(168.27deg, $primary 35.62%, $accent 100%);
+}
+.emergency {
+  background: $warn;
+}
+.emergency:hover {
+  background: $warn;
 }
 .modal {
   display: flex;

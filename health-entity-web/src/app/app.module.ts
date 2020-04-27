@@ -53,6 +53,7 @@ import { ViewResourcesComponent } from './components/resources/view-resources/vi
 import { CreateResourcesComponent } from './components/resources/create-resources/create-resources.component';
 import { DetailsPersonComponent } from './components/person/details-person/details-person.component';
 import { NotAuthorizedComponent } from './components/shared/not-authorized/not-authorized.component';
+import { ListAuthorizationComponent } from './components/authorization/list-authorization/list-authorization.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +89,8 @@ import { NotAuthorizedComponent } from './components/shared/not-authorized/not-a
     ViewResourcesComponent,
     CreateResourcesComponent,
     DetailsPersonComponent,
-    NotAuthorizedComponent
+    NotAuthorizedComponent,
+    ListAuthorizationComponent
   ],
   imports: [
     BrowserModule,

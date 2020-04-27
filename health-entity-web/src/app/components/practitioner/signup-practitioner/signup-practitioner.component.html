@@ -5,7 +5,7 @@
       <div class="form_box inline">
         <mat-form-field>
           <mat-label>Elige un tipo de identificación</mat-label>
-          <mat-select [(ngModel)]="idType" name="idType" [disabled]="found=='found'" required>
+          <mat-select [(ngModel)]="idType" name="idType" required>
             <mat-option *ngFor="let i of idOptions | keyvalue" [value]="i.key">
               {{i.value}}
             </mat-option>
@@ -15,11 +15,11 @@
       <div class="form_box inline">
         <mat-form-field>
           <mat-label>Número de identificación</mat-label>
-          <input matInput [(ngModel)]="id" name="idNumber" type="number" [disabled]="found=='found'" required>
+          <input matInput [(ngModel)]="id" name="idNumber" type="number" required>
         </mat-form-field>
       </div>
       <div class="btn">
-        <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!searchForm.form.valid" *ngIf="found=='pending'">
+        <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!searchForm.form.valid">
           Buscar
         </button>
       </div>
