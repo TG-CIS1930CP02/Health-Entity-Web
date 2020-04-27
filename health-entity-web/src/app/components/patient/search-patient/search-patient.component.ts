@@ -31,7 +31,7 @@ export class SearchPatientComponent implements OnInit {
 
   idOptions = OptionsList.IdentificationTypes;
 
-  constructor (
+  constructor(
     private patientService: PatientService,
     private personService: PersonService,
     private authorizationService: AuthorizationService,
@@ -44,8 +44,9 @@ export class SearchPatientComponent implements OnInit {
       this.idType = params['idType'];
       this.id = params['id'];
       const search = params['search'];
-      if (search == 'true')
+      if (search === 'true') {
         this.search();
+      }
     });
   }
 
@@ -67,7 +68,7 @@ export class SearchPatientComponent implements OnInit {
 
   updateRoute() {
     this.router.navigate(
-      [], 
+      [],
       {
         relativeTo: this.activatedRoute,
         queryParams: {idType: this.idType, id: this.id, search: true}
@@ -76,7 +77,7 @@ export class SearchPatientComponent implements OnInit {
 
   emergencySearch() {
     this.router.navigate(
-      ['practitioner/view-resources', this.idType, this.id], 
+      ['practitioner/view-resources', this.idType, this.id],
       {
         queryParams: {emergencySearch: true}
     });
@@ -89,7 +90,7 @@ export class SearchPatientComponent implements OnInit {
         localStorage.setItem('token', result.token);
         this.authorized = 'authorized';
         this.router.navigate(
-          ['practitioner/view-resources', this.idType, this.id], 
+          ['practitioner/view-resources', this.idType, this.id],
           {
             queryParams: {emergencySearch: false}
         });
@@ -105,7 +106,7 @@ export class SearchPatientComponent implements OnInit {
     this.found = 'pending';
   }
 
-  closeNotAuthorized(){
+  closeNotAuthorized() {
     this.authorized = 'pending';
   }
 }

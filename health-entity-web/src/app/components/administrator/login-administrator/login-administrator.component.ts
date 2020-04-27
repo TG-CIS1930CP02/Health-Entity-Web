@@ -36,15 +36,16 @@ export class LoginAdministratorComponent implements OnInit {
     this.loginService.loginFingerprint(this.idType, this.id, this.password, 'fingerprint_test')
       .subscribe(result => {
         const role = this.getRole(result.token, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION);
-        if (role == null)
+        if (role == null) {
           this.invalidAuthorities = true;
-        else{
+        } else {
           this.incorrectLogin = false;
           localStorage.setItem('token', result.token);
-          if (role === RoleEnum.ADMINISTRATOR)
+          if (role === RoleEnum.ADMINISTRATOR) {
             this.router.navigate(['admin/home']);
-          else if (role === RoleEnum.ADMINISTRATIVE_ASSISTANT)
+          } else if (role === RoleEnum.ADMINISTRATIVE_ASSISTANT) {
             this.router.navigate(['admin-assistant/home']);
+          }
         }
       },
       error => {
@@ -58,16 +59,18 @@ export class LoginAdministratorComponent implements OnInit {
     this.invalidAuthorities = false;
   }
 
-  getRole(token: string, authenticationMode: AuthenticationModeEnum): RoleEnum{
+  getRole(token: string, authenticationMode: AuthenticationModeEnum): RoleEnum {
     const parts = token.split('.');
     const payload = parts[1];
     const decodedPayload = atob(payload);
     const payloadObject = JSON.parse(decodedPayload);
-    if (payloadObject.authorities.includes(authenticationMode) && payloadObject.authorities.includes(environment.healthEntityAuthority)){
-      if (payloadObject.authorities.includes(RoleEnum.ADMINISTRATOR))
+    if (payloadObject.authorities.includes(authenticationMode) && payloadObject.authorities.includes(environment.healthEntityAuthority)) {
+      if (payloadObject.authorities.includes(RoleEnum.ADMINISTRATOR)) {
         return RoleEnum.ADMINISTRATOR;
-      if (payloadObject.authorities.includes(RoleEnum.ADMINISTRATIVE_ASSISTANT))
+      }
+      if (payloadObject.authorities.includes(RoleEnum.ADMINISTRATIVE_ASSISTANT)) {
         return RoleEnum.ADMINISTRATIVE_ASSISTANT;
+      }
     }
     return null;
   }
