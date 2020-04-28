@@ -70,10 +70,10 @@ export class DetailsFormPatientComponent implements OnInit {
     this.patient.telecoms = this.telecoms;
     this.patient.addresses = this.addresses;
     this.authorizationService.authorizatePatient(this.patient.identifier.type, this.patient.identifier.id, 'fingerprint_test').subscribe(
-      result =>{
+      result => {
             this.patientService.createPatient(this.patient).subscribe(
-            result => {
-                console.log(result);
+            data => {
+                console.log(data);
                 this.successSignup = true;
               },
               error => {
@@ -84,8 +84,9 @@ export class DetailsFormPatientComponent implements OnInit {
       },
       error => {
           console.error(error);
-          if (error.status == 409)
+          if (error.status === 409) {
             this.alreadyAuthorizedUser = true;
+          }
       }
     );
   }
@@ -97,7 +98,7 @@ export class DetailsFormPatientComponent implements OnInit {
 
   closeSuccess() {
     this.successSignup = false;
-    this.router.navigate(['/patient/home']);
+    location.reload();
   }
 
   closeFingerPrint() {
