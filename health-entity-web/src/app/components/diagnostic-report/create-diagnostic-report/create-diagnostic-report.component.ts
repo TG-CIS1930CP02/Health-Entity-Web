@@ -46,7 +46,7 @@ export class CreateDiagnosticReportComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       this.idTypePatient = params['idType'];
-      this.idPatient = params['id'];
+      this.idPatient = Number(params['id']);
     });
   }
 
