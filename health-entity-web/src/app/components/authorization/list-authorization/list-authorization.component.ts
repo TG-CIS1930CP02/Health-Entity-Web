@@ -25,7 +25,7 @@ export class ListAuthorizationComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(private authorizationService: AuthorizationService, private location:Location) {
+  constructor(private authorizationService: AuthorizationService) {
     // TODO fill auth with data
     authorizationService.getAuthorizations().
     subscribe(

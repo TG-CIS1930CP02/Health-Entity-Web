@@ -10,9 +10,8 @@ import { AuthorizationService } from 'app/services/authorization.service';
 @Component({
   selector: 'app-details-practitioner',
   templateUrl: './details-practitioner.component.html',
-  styleUrls: ['./details-practitioner.component.scss']
+  styleUrls: ['./details-practitioner.component.scss'],
 })
-
 export class DetailsPractitionerComponent implements OnInit {
   @Input()
   hasQualifications: boolean;
@@ -47,12 +46,13 @@ export class DetailsPractitionerComponent implements OnInit {
   systemOptions = OptionsList.contactPointSystems;
   useOptions = OptionsList.contactPointUses;
   AddressUseOptions = OptionsList.AddressUses;
-  roleOptions = OptionsList.Roles;
+  roleOptions = OptionsList.PractitionerRoles;
 
   constructor(
     private practitionerService: PractitionerService,
     private authorizationService: AuthorizationService,
-    private router: Router) { }
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.telecoms = this.practitioner.telecoms;
@@ -78,80 +78,107 @@ export class DetailsPractitionerComponent implements OnInit {
     this.practitioner.telecoms = this.telecoms;
     this.practitioner.addresses = this.addresses;
 
-    if (this.hasQualifications){
-      if (this.type == 'doctor')
+    if (this.hasQualifications) {
+      if (this.type === 'doctor') {
         this.authorizateDoctor();
-      else if (this.type == 'nurse')
+      } else if (this.type === 'nurse') {
         this.authorizateNurse();
-    }
-    else{
+      }
+    } else {
       this.authorizateAdministrativeAssistant();
     }
   }
 
-  authorizateDoctor(){
-    this.authorizationService.authorizateDoctor(this.practitioner.identifier.type, this.practitioner.identifier.id, 'fingerprint_test').subscribe(
-      result =>{
-            this.practitionerService.createPractitioner(this.practitioner).subscribe(
-            result => {
-                console.log(result);
+  authorizateDoctor() {
+    this.authorizationService
+      .authorizateDoctor(
+        this.practitioner.identifier.type,
+        this.practitioner.identifier.id,
+        'fingerprint_test'
+      )
+      .subscribe(
+        (result) => {
+          this.practitionerService
+            .createPractitioner(this.practitioner)
+            .subscribe(
+              (data) => {
+                console.log(data);
                 this.successSignup = true;
               },
-              error => {
+              (error) => {
                 console.error(error);
                 this.incorrectSignup = true;
               }
             );
-      },
-      error => {
+        },
+        (error) => {
           console.error(error);
-          if (error.status == 409)
+          if (error.status === 409) {
             this.alreadyAuthorizedUser = true;
-      }
-    );
+          }
+        }
+      );
   }
-  authorizateNurse(){
-    this.authorizationService.authorizateNurse(this.practitioner.identifier.type, this.practitioner.identifier.id, 'fingerprint_test').subscribe(
-      result =>{
-            this.practitionerService.createPractitioner(this.practitioner).subscribe(
-            result => {
-                console.log(result);
+  authorizateNurse() {
+    this.authorizationService
+      .authorizateNurse(
+        this.practitioner.identifier.type,
+        this.practitioner.identifier.id,
+        'fingerprint_test'
+      )
+      .subscribe(
+        (result) => {
+          this.practitionerService
+            .createPractitioner(this.practitioner)
+            .subscribe(
+              (data) => {
+                console.log(data);
                 this.successSignup = true;
               },
-              error => {
+              (error) => {
                 console.error(error);
                 this.incorrectSignup = true;
               }
             );
-      },
-      error => {
+        },
+        (error) => {
           console.error(error);
-          if (error.status == 409)
+          if (error.status === 409) {
             this.alreadyAuthorizedUser = true;
-      }
-    );
+          }
+        }
+      );
   }
 
-  authorizateAdministrativeAssistant(){
-    this.authorizationService.authorizateAdministrativeAssistant(this.practitioner.identifier.type, this.practitioner.identifier.id, 'fingerprint_test').subscribe(
-      result =>{
-            this.practitionerService.createPractitioner(this.practitioner).subscribe(
-            result => {
-                console.log(result);
+  authorizateAdministrativeAssistant() {
+    this.authorizationService
+      .authorizateAdministrativeAssistant(
+        this.practitioner.identifier.type,
+        this.practitioner.identifier.id,
+        'fingerprint_test'
+      )
+      .subscribe(
+        (result) => {
+          this.practitionerService
+            .createPractitioner(this.practitioner)
+            .subscribe(
+              (data) => {
+                console.log(data);
                 this.successSignup = true;
               },
-              error => {
+              (error) => {
                 console.error(error);
                 this.incorrectSignup = true;
               }
             );
-      },
-      error => {
+        },
+        (error) => {
           console.error(error);
-          if (error.status == 409)
+          if (error.status === 409) {
             this.alreadyAuthorizedUser = true;
-      }
-    );
+          }
+        }
+      );
   }
 
   closeError() {
@@ -165,7 +192,9 @@ export class DetailsPractitionerComponent implements OnInit {
   }
 
   addContactPoint() {
-    this.telecoms.push(new ContactPoint('Selecciona un sistema', 'Selecciona un tipo', null));
+    this.telecoms.push(
+      new ContactPoint('Selecciona un sistema', 'Selecciona un tipo', null)
+    );
   }
 
   closeFingerPrint() {
@@ -173,15 +202,23 @@ export class DetailsPractitionerComponent implements OnInit {
   }
 
   deleteContactPoint() {
-    this.telecoms.splice(- 1, 1);
+    this.telecoms.splice(-1, 1);
   }
 
   addAddress() {
-    this.addresses.push(new Address('Selecciona una ciudad', 'Selecciona un tipo', '', '', 'Colombia'));
+    this.addresses.push(
+      new Address(
+        'Selecciona una ciudad',
+        'Selecciona un tipo',
+        '',
+        '',
+        'Colombia'
+      )
+    );
   }
 
   deleteAddress() {
-    this.addresses.splice(- 1, 1);
+    this.addresses.splice(-1, 1);
   }
 
   trackByIndex(index: number, obj: any): any {
