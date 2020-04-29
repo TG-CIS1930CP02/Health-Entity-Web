@@ -5,6 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { Patient } from '../models/patient';
 import { environment } from 'environments/environment';
 import { TokenAuthorization } from 'app/models/token-authorization';
+import { Authorization } from 'app/models/authorization';
 
 @Injectable({
   providedIn: 'root'
@@ -73,6 +74,10 @@ export class AuthorizationService {
 
   getAuthorizationForPatientInformation(type: string, id: number) {
     return this.get<TokenAuthorization>(`${environment.remoteAuthenticationServerUrl}authorization/patient/${type}/${id}`, null);
+  }
+
+  getAuthorizations() {
+    return this.get<Authorization[]>(`${environment.remoteAuthenticationServerUrl}authorization/health-entity/${environment.healthEntityId}`, null);
   }
 
 }

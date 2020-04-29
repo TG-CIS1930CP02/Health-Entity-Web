@@ -1,8 +1,8 @@
-import { Person } from './person';
+import { User } from './user';
 
 export class Authorization {
     constructor(
-      public person: Person,
+      public user: User,
       public rol: string
     ) {}
   }

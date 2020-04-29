@@ -3,6 +3,7 @@ import { Authorization } from '../../../models/authorization';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import { AuthorizationService } from 'app/services/authorization.service';
 
 @Component({
   selector: 'app-list-authorization',
@@ -21,8 +22,17 @@ export class ListAuthorizationComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor() {
+  constructor(authorizationService: AuthorizationService) {
     // TODO fill auth with data
+    authorizationService.getAuthorizations().
+    subscribe(
+      result => {
+        debugger;
+        this.auth = result;
+      },
+      error => {
+        console.log(error);
+    });
   }
 
   ngOnInit(): void {
