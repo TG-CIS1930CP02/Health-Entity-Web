@@ -6,6 +6,7 @@ import { Patient } from '../models/patient';
 import { environment } from 'environments/environment';
 import { TokenAuthorization } from 'app/models/token-authorization';
 import { Authorization } from 'app/models/authorization';
+import { RoleEnum } from 'app/models/role-enum';
 
 @Injectable({
   providedIn: 'root'
@@ -78,6 +79,10 @@ export class AuthorizationService {
 
   getAuthorizations() {
     return this.get<Authorization[]>(`${environment.remoteAuthenticationServerUrl}authorization/health-entity/${environment.healthEntityId}`, null);
+  }
+
+  deleteAuthorization(type: string, id: number, role: string){
+    return this.delete(`${environment.remoteAuthenticationServerUrl}authorization/health-entity/${environment.healthEntityId}/${type}/${id}/${role}`);
   }
 
 }

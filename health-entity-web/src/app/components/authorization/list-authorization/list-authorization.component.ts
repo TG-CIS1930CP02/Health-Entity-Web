@@ -25,7 +25,7 @@ export class ListAuthorizationComponent implements OnInit {
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(authorizationService: AuthorizationService) {
+  constructor(private authorizationService: AuthorizationService, private location:Location) {
     // TODO fill auth with data
     authorizationService.getAuthorizations().
     subscribe(
@@ -59,6 +59,14 @@ export class ListAuthorizationComponent implements OnInit {
 
   unauthorize() {
     this.unauthorized = false;
+    this.authorizationService.deleteAuthorization(this.idType, this.idNumber, this.role).
+    subscribe(
+      result => {
+        location.reload();
+      },
+      error => {
+        console.log(error);
+    });
     // TODO unauthorize with this.idType and this.idNumber
   }
 
