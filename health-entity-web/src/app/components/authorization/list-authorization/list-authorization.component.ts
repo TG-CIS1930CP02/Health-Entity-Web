@@ -30,9 +30,7 @@ export class ListAuthorizationComponent implements OnInit {
     authorizationService.getAuthorizations().
     subscribe(
       result => {
-        this.dataSource = new MatTableDataSource(result);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
+        this.init(result);
       },
       error => {
         console.log(error);
@@ -40,6 +38,34 @@ export class ListAuthorizationComponent implements OnInit {
   }
 
   ngOnInit(): void {  }
+
+  init(result: Authorization[]) {
+    this.dataSource = new MatTableDataSource(result);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+
+    this.dataSource.filterPredicate = (data, filter: string) => {
+      const accumulator = (currentTerm, key) => {
+        return this.nestedFilterCheck(currentTerm, data, key);
+      };
+      const dataStr = Object.keys(data).reduce(accumulator, '').toLowerCase();
+      const transformedFilter = filter.trim().toLowerCase();
+      return dataStr.indexOf(transformedFilter) !== -1;
+    };
+  }
+
+  nestedFilterCheck(search: any, data: Authorization, key: string) {
+    if (typeof data[key] === 'object') {
+      for (const k in data[key]) {
+        if (data[key][k] !== null) {
+          search = this.nestedFilterCheck(search, data[key], k);
+        }
+      }
+    } else {
+      search += data[key];
+    }
+    return search;
+  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
