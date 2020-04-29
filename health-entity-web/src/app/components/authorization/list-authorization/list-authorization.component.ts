@@ -15,6 +15,7 @@ export class ListAuthorizationComponent implements OnInit {
   unauthorized = false;
   idNumber: number;
   idType: string;
+  role: string;
 
   auth: Authorization[];
   displayedColumns: string[] = ['identification', 'name', 'rol', 'action'];
@@ -29,20 +30,16 @@ export class ListAuthorizationComponent implements OnInit {
     authorizationService.getAuthorizations().
     subscribe(
       result => {
-        debugger;
-        this.auth = result;
-        console.log(this.auth);
+        this.dataSource = new MatTableDataSource(result);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
       },
       error => {
         console.log(error);
     });
   }
 
-  ngOnInit(): void {
-    this.dataSource = new MatTableDataSource(this.auth);
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
+  ngOnInit(): void {  }
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -53,9 +50,10 @@ export class ListAuthorizationComponent implements OnInit {
     }
   }
 
-  saveId(type: string, id: number) {
+  saveId(type: string, id: number, role: string) {
     this.idType = type;
     this.idNumber = id;
+    this.role = role;
     this.unauthorized = true;
   }
 

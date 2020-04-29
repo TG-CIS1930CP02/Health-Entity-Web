@@ -29,7 +29,7 @@
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef> Acción </th>
       <td mat-cell *matCellDef="let row" class="action-link">
-        <button mat-flat-button (click)="saveId(row.person.identificationType, row.person.identificationNumber)" class="button gradient">
+        <button mat-flat-button (click)="saveId(row.user.person.identificationType, row.user.person.identificationNumber, row.role)" class="button gradient">
           Desautorizar
         </button>
       </td>
