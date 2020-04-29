@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { AuthorizationService } from 'app/services/authorization.service';
+import { OptionsList } from '../../../models/options-lists';
 
 @Component({
   selector: 'app-list-authorization',
@@ -18,6 +19,7 @@ export class ListAuthorizationComponent implements OnInit {
   auth: Authorization[];
   displayedColumns: string[] = ['identification', 'name', 'rol', 'action'];
   dataSource: MatTableDataSource<Authorization>;
+  roleOptions = OptionsList.Roles;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
@@ -29,6 +31,7 @@ export class ListAuthorizationComponent implements OnInit {
       result => {
         debugger;
         this.auth = result;
+        console.log(this.auth);
       },
       error => {
         console.log(error);
