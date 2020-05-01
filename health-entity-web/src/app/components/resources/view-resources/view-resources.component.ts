@@ -48,23 +48,6 @@ export class ViewResourcesComponent implements OnInit {
           '../../../../assets/icons/lock_open.svg'
         )
       );
-
-    this.activatedRoute.params.subscribe((params) => {
-        this.idType = params['idType'];
-        this.id = params['id'];
-        // TODO: GET MEDICAL RECORDS FROM BACKEND
-
-        this.transactionService.getTransactions(this.idType, this.id).
-        subscribe(
-          result => {
-            this.dataSource = new MatTableDataSource<Transaction>(result);
-            this.dataSource.paginator = this.paginator;
-          },
-          error => {
-            console.log(error);
-          }
-        );
-      });
   }
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -79,6 +62,22 @@ export class ViewResourcesComponent implements OnInit {
   id: any;
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe((params) => {
+      this.idType = params['idType'];
+      this.id = params['id'];
+      // TODO: GET MEDICAL RECORDS FROM BACKEND
+
+      this.transactionService.getTransactions(this.idType, this.id).
+      subscribe(
+        result => {
+          this.dataSource = new MatTableDataSource<Transaction>(result);
+          this.dataSource.paginator = this.paginator;
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    });
   }
 }
 

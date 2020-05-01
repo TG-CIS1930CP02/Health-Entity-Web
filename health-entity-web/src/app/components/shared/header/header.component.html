@@ -24,9 +24,9 @@
           <li class="nav_item">
             <a *ngIf="!role" class="nav_item_link">Pacientes</a>
             <a [routerLink]="['/patient/home']" *ngIf="role==roles.PATIENT" class="nav_item">Inicio</a>
-            <a [routerLink]="['/admin/home']" *ngIf="role=='roles.ADMINISTRATOR'" class="nav_item">Inicio</a>
-            <a [routerLink]="['/admin-assistant/home']" *ngIf="role=='roles.ADMINISTRATIVE_ASSISTANT'" class="nav_item">Inicio</a>
-            <a [routerLink]="['/practitioner/home']" *ngIf="role=='DOCTOR'" class="nav_item">Inicio</a>
+            <a [routerLink]="['/admin/home']" *ngIf="role==roles.ADMINISTRATOR" class="nav_item">Inicio</a>
+            <a [routerLink]="['/admin-assistant/home']" *ngIf="role==roles.ADMINISTRATIVE_ASSISTANT" class="nav_item">Inicio</a>
+            <a [routerLink]="['/practitioner/home']" *ngIf="role==roles.DOCTOR" class="nav_item">Inicio</a>
           </li>
           <li class="nav_item">
             <a *ngIf="!role" class="nav_item_link">Centros y servicios</a>
