@@ -46,7 +46,7 @@ export class DetailsPractitionerComponent implements OnInit {
   systemOptions = OptionsList.contactPointSystems;
   useOptions = OptionsList.contactPointUses;
   AddressUseOptions = OptionsList.AddressUses;
-  roleOptions = OptionsList.Roles;
+  roleOptions = OptionsList.PractitionerRoles;
 
   constructor(
     private practitionerService: PractitionerService,

@@ -1,7 +1,17 @@
+import { RoleEnum } from './role-enum';
+
 export class OptionsList {
+  public static PractitionerRoles: Map<string, string> = new Map([
+    [RoleEnum.DOCTOR, 'Médico/a'],
+    [RoleEnum.NURSE, 'Enfermero/a']
+  ]);
+
   public static Roles: Map<string, string> = new Map([
-    ['doctor', 'Médico/a'],
-    ['nurse', 'Enfermero/a']
+    [RoleEnum.DOCTOR, 'Médico/a'],
+    [RoleEnum.NURSE, 'Enfermero/a'],
+    [RoleEnum.ADMINISTRATIVE_ASSISTANT, 'Auxiliar administrativo'],
+    [RoleEnum.ADMINISTRATOR, 'Administrador'],
+    [RoleEnum.PATIENT, 'Paciente']
   ]);
 
   public static Resources: Map<string, string> = new Map([

@@ -5,6 +5,8 @@ import { catchError } from 'rxjs/operators';
 import { Patient } from '../models/patient';
 import { environment } from 'environments/environment';
 import { TokenAuthorization } from 'app/models/token-authorization';
+import { Authorization } from 'app/models/authorization';
+import { RoleEnum } from 'app/models/role-enum';
 
 @Injectable({
   providedIn: 'root'
@@ -54,7 +56,11 @@ export class AuthorizationService {
   private delete<T>(url): Observable<T> {
     console.log('delete:', url);
     return this.http
-      .delete<T>(url, { withCredentials: true })
+      .delete<T>(url, { withCredentials: false,
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          'Authorization': localStorage.getItem('token')
+        })  })
       .pipe(catchError(this.handleError));
   }
 
@@ -73,6 +79,14 @@ export class AuthorizationService {
 
   getAuthorizationForPatientInformation(type: string, id: number) {
     return this.get<TokenAuthorization>(`${environment.remoteAuthenticationServerUrl}authorization/patient/${type}/${id}`, null);
+  }
+
+  getAuthorizations() {
+    return this.get<Authorization[]>(`${environment.remoteAuthenticationServerUrl}authorization/health-entity/${environment.healthEntityId}`, null);
+  }
+
+  deleteAuthorization(type: string, id: number, role: string){
+    return this.delete(`${environment.remoteAuthenticationServerUrl}authorization/health-entity/${environment.healthEntityId}/${type}/${id}/${role}`);
   }
 
 }
