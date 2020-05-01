@@ -24,7 +24,7 @@ export class PersonService {
       .pipe(catchError(this.handleError));
   }
 
-  findByIdentification(type: string, id: number){
+  findByIdentification(type: string, id: number) {
     return this.get<Person>(`${environment.remoteAuthenticationServerUrl}person/${type}/${id}`);
   }
 }

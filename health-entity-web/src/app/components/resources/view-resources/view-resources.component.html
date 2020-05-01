@@ -16,7 +16,7 @@
     <!-- Practitioner Column -->
     <ng-container matColumnDef="practitioner">
       <th mat-header-cell *matHeaderCellDef> Personal de la Salud </th>
-      <td mat-cell *matCellDef="let element"> {{element.sender}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.sender.split('_')[0]+' '+element.sender.split('_')[1]}} </td>
     </ng-container>
 
     <!-- Entity Column -->

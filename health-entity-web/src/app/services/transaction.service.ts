@@ -2,15 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { Transaction } from '../models/transaction';
 import { environment } from 'environments/environment';
-import { TokenAuthorization } from 'app/models/token-authorization';
-import { Authorization } from 'app/models/authorization';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class AuthorizationService {
+export class TransactionService {
   constructor(private http: HttpClient) { }
 
   private handleError(error: HttpErrorResponse): Observable<any> {
@@ -61,32 +60,7 @@ export class AuthorizationService {
       .pipe(catchError(this.handleError));
   }
 
-  authorizatePatient(type: string, id: number, fingerprint: string) {
-    return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_patient/${environment.healthEntityId}`, fingerprint);
+  getTansactions(idType: string, idNumber: number) {
+    return this.get<Transaction[]>(`${environment.remoteAuthenticationServerUrl}/transactions/medical-history/patient/${idType}/${idType}`);
   }
-
-  authorizateDoctor(type: string, id: number, fingerprint: string) {
-    return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_doctor/${environment.healthEntityId}`, fingerprint);
-  }
-
-  authorizateNurse(type: string, id: number, fingerprint: string) {
-    return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_nurse/${environment.healthEntityId}`, fingerprint);
-  }
-
-  authorizateAdministrativeAssistant(type: string, id: number, fingerprint: string) {
-    return this.post<any>(`${environment.remoteAuthenticationServerUrl}user/${type}/${id}/authorization/role_administrative_assistant/${environment.healthEntityId}`, fingerprint);
-  }
-
-  getAuthorizationForPatientInformation(type: string, id: number) {
-    return this.get<TokenAuthorization>(`${environment.remoteAuthenticationServerUrl}authorization/patient/${type}/${id}`, null);
-  }
-
-  getAuthorizations() {
-    return this.get<Authorization[]>(`${environment.remoteAuthenticationServerUrl}authorization/health-entity/${environment.healthEntityId}`, null);
-  }
-
-  deleteAuthorization(type: string, id: number, role: string){
-    return this.delete(`${environment.remoteAuthenticationServerUrl}authorization/health-entity/${environment.healthEntityId}/${type}/${id}/${role}`);
-  }
-
 }

@@ -9,11 +9,11 @@ import {
   animate,
 } from '@angular/animations';
 import { Transaction } from '../../../models/transaction';
-import { Identification } from 'app/models/identification';
 import { OptionsList } from '../../../models/options-lists';
 import { ActivatedRoute } from '@angular/router';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { TransactionService } from '../../../services/transaction.service';
 
 @Component({
   selector: 'app-view-resources',
@@ -33,18 +33,17 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class ViewResourcesComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
+    private transactionService: TransactionService,
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer
   ) {
     iconRegistry
-      .addSvgIcon(
-        'lock',
+      .addSvgIcon('lock',
         sanitizer.bypassSecurityTrustResourceUrl(
           '../../../../assets/icons/lock.svg'
         )
       )
-      .addSvgIcon(
-        'lock_open',
+      .addSvgIcon('lock_open',
         sanitizer.bypassSecurityTrustResourceUrl(
           '../../../../assets/icons/lock_open.svg'
         )
@@ -53,7 +52,7 @@ export class ViewResourcesComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   // TODO bring this from back and call url for info of resources
-  dataSource = new MatTableDataSource<Transaction>(TRANSACTION_DUMMY);
+  dataSource: MatTableDataSource<Transaction>; // = new MatTableDataSource<Transaction>(TRANSACTION_DUMMY);
   columnsToDisplay = ['date', 'type', 'practitioner', 'entity', 'integrity'];
   expandedElement: Transaction | null;
 
@@ -66,9 +65,19 @@ export class ViewResourcesComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
 
     this.activatedRoute.params.subscribe((params) => {
-      this.idType = params['idType'];
-      this.id = params['id'];
+      this.idType = params.idType;
+      this.id = params.id;
       // TODO: GET MEDICAL RECORDS FROM BACKEND
+
+      this.transactionService.getTansactions(this.idType, this.id).
+      subscribe(
+        result => {
+          this.dataSource = new MatTableDataSource<Transaction>(result);
+        },
+        error => {
+          console.log(error);
+        }
+      );
     });
   }
 }
