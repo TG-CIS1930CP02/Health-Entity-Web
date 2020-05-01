@@ -60,7 +60,7 @@ export class TransactionService {
       .pipe(catchError(this.handleError));
   }
 
-  getTansactions(idType: string, idNumber: number) {
-    return this.get<Transaction[]>(`${environment.remoteAuthenticationServerUrl}/transactions/medical-history/patient/${idType}/${idType}`);
+  getTransactions(idType: string, idNumber: number) {
+    return this.get<Transaction[]>(`${environment.healthEntityServerUrl}transactions/medical-history/patient/${idType}/${idNumber}`);
   }
 }
