@@ -11,8 +11,7 @@ export class CreateResourcesComponent implements OnInit {
 
   constructor() { }
 
-  resource = 'procedure';
-
+  resource = ResourceEnum.ALLERGYINTOLERANCE;
   resources = ResourceEnum;
   resourceOptions = OptionsList.Resources;
   description = OptionsList.ResourceDescription;
