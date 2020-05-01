@@ -65,8 +65,8 @@ export class ViewResourcesComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
 
     this.activatedRoute.params.subscribe((params) => {
-      this.idType = params.idType;
-      this.id = params.id;
+      this.idType = params['idType'];
+      this.id = params['id'];
       // TODO: GET MEDICAL RECORDS FROM BACKEND
 
       this.transactionService.getTansactions(this.idType, this.id).
@@ -77,7 +77,7 @@ export class ViewResourcesComponent implements OnInit {
         error => {
           console.log(error);
         }
-      );
+      )
     });
   }
 }
