@@ -37,13 +37,13 @@
     <ng-container matColumnDef="expandedDetail">
       <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
         <div class="detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-          <app-read-allergy-intolerance class="complete" *ngIf="element.type=='allergy-intolerance'">
+          <app-read-allergy-intolerance class="complete" *ngIf="element.type==resources.ALLERGYINTOLERANCE">
           </app-read-allergy-intolerance>
-          <app-read-condition class="complete" *ngIf="element.type=='condition'"></app-read-condition>
-          <app-read-diagnostic-report class="complete" *ngIf="element.type=='diagnostic-report'">
+          <app-read-condition class="complete" *ngIf="element.type==resources.CONDITION"></app-read-condition>
+          <app-read-diagnostic-report class="complete" *ngIf="element.type==resources.DIAGNOSTICREPORT">
           </app-read-diagnostic-report>
-          <app-read-observation class="complete" *ngIf="element.type=='observation'"></app-read-observation>
-          <app-read-procedure class="complete" *ngIf="element.type=='procedure'"></app-read-procedure>
+          <app-read-observation class="complete" *ngIf="element.type==resources.OBSERVATION"></app-read-observation>
+          <app-read-procedure class="complete" *ngIf="element.type==resources.PROCEDURE"></app-read-procedure>
         </div>
       </td>
     </ng-container>

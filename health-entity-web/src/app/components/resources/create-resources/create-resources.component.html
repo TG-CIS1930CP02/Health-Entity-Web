@@ -12,10 +12,10 @@
     <p>{{description.get(resource)}}</p>
   </div>
   <div class="column right">
-    <app-create-allergy-intolerance *ngIf="resource=='allergy-intolerance'"></app-create-allergy-intolerance>
-    <app-create-condition *ngIf="resource=='condition'"></app-create-condition>
-    <app-create-diagnostic-report *ngIf="resource=='diagnostic-report'"></app-create-diagnostic-report>
-    <app-create-observation *ngIf="resource=='observation'"></app-create-observation>
-    <app-create-procedure *ngIf="resource=='procedure'"></app-create-procedure>
+    <app-create-allergy-intolerance *ngIf="resource==resources.ALLERGYINTOLERANCE"></app-create-allergy-intolerance>
+    <app-create-condition *ngIf="resource==resources.CONDITION"></app-create-condition>
+    <app-create-diagnostic-report *ngIf="resource==resources.DIAGNOSTICREPORT"></app-create-diagnostic-report>
+    <app-create-observation *ngIf="resource==resources.OBSERVATION"></app-create-observation>
+    <app-create-procedure *ngIf="resource==resources.PROCEDURE"></app-create-procedure>
   </div>
 </div>

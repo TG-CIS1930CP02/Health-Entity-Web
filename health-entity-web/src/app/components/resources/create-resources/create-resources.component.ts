@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OptionsList } from 'app/models/options-lists';
+import { ResourceEnum } from '../../../models/resource-enum';
 
 @Component({
   selector: 'app-create-resources',
@@ -12,6 +13,7 @@ export class CreateResourcesComponent implements OnInit {
 
   resource = 'procedure';
 
+  resources = ResourceEnum;
   resourceOptions = OptionsList.Resources;
   description = OptionsList.ResourceDescription;
 
