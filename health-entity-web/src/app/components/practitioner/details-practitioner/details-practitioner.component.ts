@@ -6,6 +6,7 @@ import { ContactPoint } from '../../../models/contactPoint';
 import { Address } from 'app/models/address';
 import { OptionsList } from '../../../models/options-lists';
 import { AuthorizationService } from 'app/services/authorization.service';
+import { RoleEnum } from 'app/models/role-enum';
 
 @Component({
   selector: 'app-details-practitioner',
@@ -79,9 +80,9 @@ export class DetailsPractitionerComponent implements OnInit {
     this.practitioner.addresses = this.addresses;
 
     if (this.hasQualifications) {
-      if (this.type === 'doctor') {
+      if (this.type === RoleEnum.DOCTOR) {
         this.authorizateDoctor();
-      } else if (this.type === 'nurse') {
+      } else if (this.type === RoleEnum.NURSE) {
         this.authorizateNurse();
       }
     } else {
