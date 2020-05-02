@@ -13,9 +13,9 @@ import { Identification } from 'app/models/identification';
 })
 export class CreateConditionComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, 
-    private tokenReaderService: TokenReaderService,
-    private conditionService: ConditionService) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router,
+              private tokenReaderService: TokenReaderService,
+              private conditionService: ConditionService) { }
 
   condition: Condition = new Condition(
     undefined,
@@ -41,8 +41,8 @@ export class CreateConditionComponent implements OnInit {
 
   idTypePatient: any;
   idPatient: any;
-  created: boolean = false;
-  error: boolean = false;
+  created = false;
+  error = false;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -69,16 +69,16 @@ export class CreateConditionComponent implements OnInit {
     });
   }
 
-  closeCreated(){
+  closeCreated() {
     this.created = false;
     this.router.navigate(
-      ['practitioner/view-resources', this.idTypePatient, this.idPatient], 
+      ['practitioner/view-resources', this.idTypePatient, this.idPatient],
       {
         queryParams: {emergencySearch: false}
     });
   }
 
-  closeError(){
+  closeError() {
     this.error = false;
   }
 }

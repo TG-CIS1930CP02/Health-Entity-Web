@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import {
@@ -35,17 +35,18 @@ export class ViewResourcesComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private transactionService: TransactionService,
-    iconRegistry: MatIconRegistry,
-    sanitizer: DomSanitizer
+    private iconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer,
+    private changeDetectorRefs: ChangeDetectorRef
   ) {
-    iconRegistry
+    this.iconRegistry
       .addSvgIcon('lock',
-        sanitizer.bypassSecurityTrustResourceUrl(
+        this.sanitizer.bypassSecurityTrustResourceUrl(
           '../../../../assets/icons/lock.svg'
         )
       )
       .addSvgIcon('lock_open',
-        sanitizer.bypassSecurityTrustResourceUrl(
+        this.sanitizer.bypassSecurityTrustResourceUrl(
           '../../../../assets/icons/lock_open.svg'
         )
       );
@@ -64,6 +65,10 @@ export class ViewResourcesComponent implements OnInit {
   id: any;
 
   ngOnInit(): void {
+    this.refresh();
+  }
+
+  refresh() {
     this.activatedRoute.params.subscribe((params) => {
       this.idType = params['idType'];
       this.id = params['id'];
@@ -74,6 +79,7 @@ export class ViewResourcesComponent implements OnInit {
         result => {
           this.dataSource = new MatTableDataSource<Transaction>(result);
           this.dataSource.paginator = this.paginator;
+          this.changeDetectorRefs.detectChanges();
         },
         error => {
           console.log(error);
