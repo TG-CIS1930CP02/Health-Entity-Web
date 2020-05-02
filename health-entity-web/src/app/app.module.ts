@@ -18,7 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSortModule } from '@angular/material/sort';
-import { MatPaginatorModule } from '@angular/material/paginator'
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/shared/header/header.component';
@@ -38,17 +38,17 @@ import { SignupAdministrativeAssistantComponent } from './components/administrat
 import { HomeAdministratorComponent } from './components/administrator/home-administrator/home-administrator.component';
 import { DetailsFormPatientComponent } from './components/patient/details-form-patient/details-form-patient.component';
 import { HomeAdministrativeAssistantComponent } from './components/administrative-assistant/home-administrative-assistant/home-administrative-assistant.component';
-import { CreateAllergyIntoleranceComponent } from './components/allergy-intolerance/create-allergy-intolerance/create-allergy-intolerance.component';
-import { ReadAllergyIntoleranceComponent } from './components/allergy-intolerance/read-allergy-intolerance/read-allergy-intolerance.component';
+import { CreateAllergyIntoleranceComponent } from './components/resources/allergy-intolerance/create-allergy-intolerance/create-allergy-intolerance.component';
+import { ReadAllergyIntoleranceComponent } from './components/resources/allergy-intolerance/read-allergy-intolerance/read-allergy-intolerance.component';
 import { SearchPatientComponent } from './components/patient/search-patient/search-patient.component';
-import { CreateDiagnosticReportComponent } from './components/diagnostic-report/create-diagnostic-report/create-diagnostic-report.component';
-import { CreateObservationComponent } from './components/observation/create-observation/create-observation.component';
-import { ReadDiagnosticReportComponent } from './components/diagnostic-report/read-diagnostic-report/read-diagnostic-report.component';
-import { ReadObservationComponent } from './components/observation/read-observation/read-observation.component';
-import { CreateConditionComponent } from './components/condition/create-condition/create-condition.component';
-import { ReadConditionComponent } from './components/condition/read-condition/read-condition.component';
-import { CreateProcedureComponent } from './components/procedure/create-procedure/create-procedure.component';
-import { ReadProcedureComponent } from './components/procedure/read-procedure/read-procedure.component';
+import { CreateDiagnosticReportComponent } from './components/resources/diagnostic-report/create-diagnostic-report/create-diagnostic-report.component';
+import { CreateObservationComponent } from './components/resources/observation/create-observation/create-observation.component';
+import { ReadDiagnosticReportComponent } from './components/resources/diagnostic-report/read-diagnostic-report/read-diagnostic-report.component';
+import { ReadObservationComponent } from './components/resources/observation/read-observation/read-observation.component';
+import { CreateConditionComponent } from './components/resources/condition/create-condition/create-condition.component';
+import { ReadConditionComponent } from './components/resources/condition/read-condition/read-condition.component';
+import { CreateProcedureComponent } from './components/resources/procedure/create-procedure/create-procedure.component';
+import { ReadProcedureComponent } from './components/resources/procedure/read-procedure/read-procedure.component';
 import { ViewResourcesComponent } from './components/resources/view-resources/view-resources.component';
 import { CreateResourcesComponent } from './components/resources/create-resources/create-resources.component';
 import { DetailsPersonComponent } from './components/person/details-person/details-person.component';
