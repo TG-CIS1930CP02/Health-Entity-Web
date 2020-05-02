@@ -6,7 +6,7 @@ export class Transaction {
     public recipientRole: string,
     public resourceIntegrity: string,
     public resourcePath: string,
-    public sourceType: string,
+    public resourceType: string,
     public sender: string,
     public senderRole: string,
     public timestamp: Date

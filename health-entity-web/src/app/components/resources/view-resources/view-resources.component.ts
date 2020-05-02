@@ -92,7 +92,7 @@ const TRANSACTION_DUMMY: Transaction[] = [
     recipientRole: 'ROLE_PATIENT',
     resourceIntegrity: 'hash',
     resourcePath: 'CC_123/observation/hash',
-    sourceType: 'observation',
+    resourceType: 'observation',
     sender: 'CC_321',
     senderRole: 'ROLE_DOCTOR',
     timestamp: new Date()
