@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenReaderService } from 'app/services/security/token-reader.service';
 
 @Component({
   selector: 'app-home-patient',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePatientComponent implements OnInit {
 
-  constructor() { }
+  constructor(private tokenReaderService: TokenReaderService) { }
+
+  idType: string;
+  id: number;
 
   ngOnInit(): void {
+    const identification = this.tokenReaderService.getIdentificationPerformer();
+    this.idType = identification.type;
+    this.id = identification.id;
   }
 
 }
