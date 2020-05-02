@@ -1,13 +1,7 @@
 import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-} from '@angular/animations';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 import { Transaction } from '../../../models/transaction';
 import { OptionsList } from '../../../models/options-lists';
 import { ActivatedRoute } from '@angular/router';
@@ -15,6 +9,7 @@ import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { TransactionService } from '../../../services/transaction.service';
 import { ResourceEnum } from '../../../models/resource-enum';
+import { ResourceService } from '../../../services/resources/resource.services';
 
 @Component({
   selector: 'app-view-resources',
@@ -35,6 +30,7 @@ export class ViewResourcesComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private transactionService: TransactionService,
+    private resourceService: ResourceService,
     private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
     private changeDetectorRefs: ChangeDetectorRef
@@ -57,6 +53,7 @@ export class ViewResourcesComponent implements OnInit {
   dataSource: MatTableDataSource<Transaction>; // = new MatTableDataSource<Transaction>(TRANSACTION_DUMMY);
   columnsToDisplay = ['date', 'type', 'practitioner', 'entity', 'integrity'];
   expandedElement: Transaction | null;
+  resource: any;
 
   resourceOptions = OptionsList.Resources;
   resources = ResourceEnum;
@@ -86,5 +83,21 @@ export class ViewResourcesComponent implements OnInit {
         }
       );
     });
+  }
+
+  search(row) {
+    if (row === this.expandedElement) {
+      // TODO make call
+      this.resourceService.getResource(row.resourcePath)
+      .subscribe(
+        result => {
+          this.resource = result;
+          console.log(this.resource);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
   }
 }
