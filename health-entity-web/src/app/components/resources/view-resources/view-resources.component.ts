@@ -82,19 +82,3 @@ export class ViewResourcesComponent implements OnInit {
     });
   }
 }
-
-// TODO dummy data, delete this
-const TRANSACTION_DUMMY: Transaction[] = [
-  {
-    institution: 'Colsanitas',
-    operation: 'ADD',
-    recipient: 'CC_123',
-    recipientRole: 'ROLE_PATIENT',
-    resourceIntegrity: 'hash',
-    resourcePath: 'CC_123/observation/hash',
-    resourceType: 'observation',
-    sender: 'CC_321',
-    senderRole: 'ROLE_DOCTOR',
-    timestamp: new Date()
-  },
-];
