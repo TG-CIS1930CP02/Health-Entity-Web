@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Observation } from '../../../models/observation';
-import { OptionsList } from '../../../models/options-lists';
+import { Observation } from '../../../../models/observation';
+import { OptionsList } from '../../../../models/options-lists';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Identification } from 'app/models/identification';
-import { TokenReaderService } from 'app/services/security/token-reader-service';
-import { ObservationService } from 'app/services/resources/observation-service';
+import { TokenReaderService } from 'app/services/security/token-reader.service';
+import { ObservationService } from 'app/services/resources/observation.service';
 
 @Component({
   selector: 'app-create-observation',

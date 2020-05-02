@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DiagnosticReport } from '../../../models/diagnostic-report';
-import { OptionsList } from '../../../models/options-lists';
+import { DiagnosticReport } from '../../../../models/diagnostic-report';
+import { OptionsList } from '../../../../models/options-lists';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TokenReaderService } from 'app/services/security/token-reader-service';
-import { DiagnosticReportService } from 'app/services/resources/diagnostic-report-service';
+import { TokenReaderService } from 'app/services/security/token-reader.service';
+import { DiagnosticReportService } from 'app/services/resources/diagnostic-report.service';
 import { Identification } from 'app/models/identification';
 
 @Component({

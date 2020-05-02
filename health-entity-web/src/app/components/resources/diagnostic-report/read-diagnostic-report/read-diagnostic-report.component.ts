@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DiagnosticReport } from '../../../models/diagnostic-report';
+import { DiagnosticReport } from '../../../../models/diagnostic-report';
 import { OptionsList } from 'app/models/options-lists';
 
 @Component({

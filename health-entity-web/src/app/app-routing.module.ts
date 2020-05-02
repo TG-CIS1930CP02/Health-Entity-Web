@@ -15,7 +15,7 @@ import { SignupPatientComponent } from './components/patient/signup-patient/sign
 import { SearchPatientComponent } from './components/patient/search-patient/search-patient.component';
 import { ViewResourcesComponent } from './components/resources/view-resources/view-resources.component';
 import { CreateResourcesComponent } from './components/resources/create-resources/create-resources.component';
-import { RoleGuardService } from './services/security/auth-guard-service';
+import { RoleGuardService } from './services/security/auth-guard.service';
 import { RoleEnum } from './models/role-enum';
 import { NotAuthorizedComponent } from './components/shared/not-authorized/not-authorized.component';
 import { AuthenticationModeEnum } from './models/authentication-mode-enum';

@@ -1,5 +1,6 @@
 import { Identification } from './identification';
 import { Observation } from './observation';
+
 export class DiagnosticReport {
   constructor(
     public identifier: number,

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Procedure } from '../../../models/procedure';
-import { OptionsList } from '../../../models/options-lists';
-import { TokenReaderService } from 'app/services/security/token-reader-service';
+import { Procedure } from '../../../../models/procedure';
+import { OptionsList } from '../../../../models/options-lists';
+import { TokenReaderService } from 'app/services/security/token-reader.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProcedureService } from 'app/services/resources/procedure-service';
+import { ProcedureService } from 'app/services/resources/procedure.service';
 import { Identification } from 'app/models/identification';
 
 @Component({

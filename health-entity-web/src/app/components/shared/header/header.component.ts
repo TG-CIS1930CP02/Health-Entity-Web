@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../services/security/auth-service';
+import { AuthService } from '../../../services/security/auth.service';
 import { DataSharingService } from 'app/services/data-sharing.services';
 import { UserData } from 'app/models/user-data';
 import { RoleEnum } from 'app/models/role-enum';

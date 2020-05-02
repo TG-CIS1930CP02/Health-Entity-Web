@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { OptionsList } from '../../../models/options-lists';
-import { AllergyIntolerance } from '../../../models/allergy-intolerance';
-import { Identification } from '../../../models/identification';
-import { Reaction } from '../../../models/reaction';
-import { TokenReaderService } from 'app/services/security/token-reader-service';
+import { OptionsList } from '../../../../models/options-lists';
+import { AllergyIntolerance } from '../../../../models/allergy-intolerance';
+import { Identification } from '../../../../models/identification';
+import { Reaction } from '../../../../models/reaction';
+import { TokenReaderService } from 'app/services/security/token-reader.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AllergyIntoleranceService } from 'app/services/resources/allergy-intolerance-service';
+import { AllergyIntoleranceService } from 'app/services/resources/allergy-intolerance.service';
 
 @Component({
   selector: 'app-create-allergy-intolerance',

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Observation } from '../../../models/observation';
+import { Observation } from '../../../../models/observation';
 import { OptionsList } from 'app/models/options-lists';
 
 @Component({

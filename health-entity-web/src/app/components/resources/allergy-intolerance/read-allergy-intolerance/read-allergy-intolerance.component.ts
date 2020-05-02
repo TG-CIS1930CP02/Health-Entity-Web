@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { AllergyIntolerance } from '../../../models/allergy-intolerance';
+import { AllergyIntolerance } from '../../../../models/allergy-intolerance';
 import { Reaction } from 'app/models/reaction';
 import { OptionsList } from 'app/models/options-lists';
 

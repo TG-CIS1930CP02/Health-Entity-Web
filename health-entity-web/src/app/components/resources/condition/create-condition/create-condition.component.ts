@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Condition } from '../../../models/condition';
-import { OptionsList } from '../../../models/options-lists';
-import { ConditionService } from 'app/services/resources/condition-service';
-import { TokenReaderService } from 'app/services/security/token-reader-service';
+import { Condition } from '../../../../models/condition';
+import { OptionsList } from '../../../../models/options-lists';
+import { ConditionService } from 'app/services/resources/condition.service';
+import { TokenReaderService } from 'app/services/security/token-reader.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Identification } from 'app/models/identification';
 
