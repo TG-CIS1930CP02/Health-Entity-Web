@@ -26,7 +26,6 @@ export class ListAuthorizationComponent implements OnInit {
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
   constructor(private authorizationService: AuthorizationService) {
-    // TODO fill auth with data
     authorizationService.getAuthorizations().
     subscribe(
       result => {
@@ -93,7 +92,6 @@ export class ListAuthorizationComponent implements OnInit {
       error => {
         console.log(error);
     });
-    // TODO unauthorize with this.idType and this.idNumber
   }
 
   close() {

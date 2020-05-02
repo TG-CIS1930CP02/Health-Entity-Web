@@ -51,7 +51,6 @@ export class DetailsPatientComponent implements OnInit {
   }
 
   signup() {
-    // TODO validate value in telecoms
     this.patient.active = true;
     this.patient.telecoms = this.telecoms;
     this.patient.addresses = this.addresses;
@@ -73,7 +72,7 @@ export class DetailsPatientComponent implements OnInit {
           console.error(error);
           this.incorrectSignup = true;
       }
-      
+
     );
   }
 

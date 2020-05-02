@@ -52,8 +52,6 @@ export class DetailsFormPatientComponent implements OnInit {
 
   validate() {
     this.enterFingerprint = true;
-    // TODO validate values in telecoms and addresses
-    console.log(this.telecoms);
   }
 
   signup() {

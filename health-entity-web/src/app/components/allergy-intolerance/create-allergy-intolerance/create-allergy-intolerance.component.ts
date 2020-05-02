@@ -65,7 +65,6 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
   }
 
   record() {
-    // TODO validate all fields
     if (this.firstTime) {
       this.allergy.recordedDate = new Date();
     }

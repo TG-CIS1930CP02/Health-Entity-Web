@@ -14,8 +14,8 @@ import { Identification } from 'app/models/identification';
 export class CreateDiagnosticReportComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router,
-    private tokenReaderService: TokenReaderService,
-    private diagnosticReportService: DiagnosticReportService) { }
+              private tokenReaderService: TokenReaderService,
+              private diagnosticReportService: DiagnosticReportService) { }
 
   diagnostic: DiagnosticReport = new DiagnosticReport(
     undefined,
@@ -51,27 +51,26 @@ export class CreateDiagnosticReportComponent implements OnInit {
   }
 
   record() {
-    // TODO validate all fields
     this.diagnostic.issued = new Date();
 
-     /* TODO sacar info de estos
-      this.diagnostic.performer
-      this.diagnostic.subject
-      this.diagnostic.resultsInterpreter
-    */
+    this.diagnostic.subject = new Identification(this.idTypePatient, this.idPatient);
+    this.diagnostic.performer = this.tokenReaderService.getIdentificationPerformer();
+    this.diagnostic.resultsInterpreter = this.tokenReaderService.getIdentificationPerformer();
 
-   this.diagnostic.subject = new Identification(this.idTypePatient, this.idPatient);
-   this.diagnostic.performer = this.tokenReaderService.getIdentificationPerformer();
-   this.diagnostic.resultsInterpreter = this.tokenReaderService.getIdentificationPerformer();
-
-   this.diagnosticReportService.createDiagnosticReport(this.idTypePatient, this.idPatient, this.diagnostic).
-   subscribe(
-     result => {
-       this.created = true;
-     },
-     error => {
-       this.error = true;
-   });
+    this.diagnosticReportService
+      .createDiagnosticReport(
+        this.idTypePatient,
+        this.idPatient,
+        this.diagnostic
+      )
+      .subscribe(
+        (result) => {
+          this.created = true;
+        },
+        (error) => {
+          this.error = true;
+        }
+      );
   }
 
   closeCreated(){

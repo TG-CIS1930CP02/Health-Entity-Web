@@ -49,8 +49,8 @@ export class ViewResourcesComponent implements OnInit {
   }
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
-  // TODO bring this from back and call url for info of resources
-  dataSource: MatTableDataSource<Transaction>; // = new MatTableDataSource<Transaction>(TRANSACTION_DUMMY);
+
+  dataSource: MatTableDataSource<Transaction>;
   columnsToDisplay = ['date', 'type', 'practitioner', 'entity', 'integrity'];
   expandedElement: Transaction | null;
   resource: any;
@@ -69,7 +69,6 @@ export class ViewResourcesComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.idType = params['idType'];
       this.id = params['id'];
-      // TODO: GET MEDICAL RECORDS FROM BACKEND
 
       this.transactionService.getTransactions(this.idType, this.id).
       subscribe(
@@ -87,12 +86,10 @@ export class ViewResourcesComponent implements OnInit {
 
   search(row) {
     if (row === this.expandedElement) {
-      // TODO make call
       this.resourceService.getResource(row.resourcePath)
       .subscribe(
         result => {
           this.resource = result;
-          console.log(this.resource);
         },
         error => {
           console.log(error);

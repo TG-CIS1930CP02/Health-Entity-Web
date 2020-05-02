@@ -59,8 +59,6 @@ export class CreateProcedureComponent implements OnInit {
   }
 
   record() {
-    // TODO validate all fields
-
     this.procedure.performedDateTime = new Date();
     this.procedure.subject = new Identification(this.idTypePatient, this.idPatient);
     this.procedure.performer = this.tokenReaderService.getIdentificationPerformer();
@@ -73,10 +71,6 @@ export class CreateProcedureComponent implements OnInit {
       error => {
         this.error = true;
     });
-
-     /* TODO sacar info de estos
-      subject, performer
-    */
   }
 
   closeCreated(){

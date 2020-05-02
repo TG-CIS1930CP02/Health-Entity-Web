@@ -62,7 +62,6 @@ export class DetailsPractitionerComponent implements OnInit {
 
   validate() {
     this.enterFingerprint = true;
-    // TODO validate values in telecoms and addresses
   }
 
   signup() {

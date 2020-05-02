@@ -54,8 +54,6 @@ export class CreateObservationComponent implements OnInit {
   }
 
   record() {
-    // TODO validate all fields
-
     this.observation.issued = new Date();
     this.observation.subject = new Identification(this.idTypePatient, this.idPatient);
     this.observation.performer = this.tokenReaderService.getIdentificationPerformer();

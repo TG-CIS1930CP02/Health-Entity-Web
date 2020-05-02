@@ -52,7 +52,6 @@ export class CreateConditionComponent implements OnInit {
   }
 
   record() {
-    // TODO validate all fields
     if (this.firstTime) {
       this.condition.recordedDate = new Date();
     }
