@@ -14,9 +14,9 @@ import { AllergyIntoleranceService } from 'app/services/resources/allergy-intole
 })
 export class CreateAllergyIntoleranceComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, 
-    private tokenReaderService: TokenReaderService,
-    private allergyIntoleranceService: AllergyIntoleranceService) { }
+  constructor(private activatedRoute: ActivatedRoute, private router: Router,
+              private tokenReaderService: TokenReaderService,
+              private allergyIntoleranceService: AllergyIntoleranceService) { }
 
   patient: Identification = new Identification(undefined, undefined);
   recorder: Identification = new Identification(undefined, undefined);
@@ -54,8 +54,8 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
 
   idTypePatient: any;
   idPatient: any;
-  created: boolean = false;
-  error: boolean = false;
+  created = false;
+  error = false;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -69,7 +69,7 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
     if (this.firstTime) {
       this.allergy.recordedDate = new Date();
     }
-    
+
     this.allergy.patient = new Identification(this.idTypePatient, this.idPatient);
     this.allergy.recorder = this.tokenReaderService.getIdentificationPerformer();
 
@@ -87,16 +87,16 @@ export class CreateAllergyIntoleranceComponent implements OnInit {
     return index;
   }
 
-  closeCreated(){
+  closeCreated() {
     this.created = false;
     this.router.navigate(
-      ['practitioner/view-resources', this.idTypePatient, this.idPatient], 
+      ['practitioner/view-resources', this.idTypePatient, this.idPatient],
       {
         queryParams: {emergencySearch: false}
     });
   }
 
-  closeError(){
+  closeError() {
     this.error = false;
   }
 }

@@ -2,19 +2,19 @@
   <div class="row">
     <div class="column">
       <label>Estado clínico:</label>
-      <p>{{condition.clinicalStatus}}</p>
+      <p>{{clinicalStatusOptions.get(condition.clinicalStatus)}}</p>
       <label>Estado de verificación: </label>
-      <p>{{condition.verificationStatus}}</p>
+      <p>{{verificationStatusOptions.get(condition.verificationStatus)}}</p>
       <label>Severidad:</label>
-      <p>{{condition.severity}}</p>
+      <p>{{severityOptions.get(condition.severity)}}</p>
       <label>Código:</label>
-      <p>{{condition.code}}</p>
+      <p>{{codeOptions.get(condition.code)}}</p>
     </div>
 
     <div class="column">
       <label>Partes del cuerpo afectadas: </label>
       <ul>
-        <li *ngFor="let b of condition.bodySite">{{b}}</li>
+        <li *ngFor="let b of condition.bodySite">{{bodyOptions.get(b)}}</li>
       </ul>
       <label>Fecha identificación:</label>
       <p>{{condition.onsetDateTime}}</p>
@@ -23,6 +23,6 @@
     </div>
   </div>
 
-  <label>Notas:</label>
+  <label >Notas:</label>
   <p>{{condition.note}}</p>
 </div>

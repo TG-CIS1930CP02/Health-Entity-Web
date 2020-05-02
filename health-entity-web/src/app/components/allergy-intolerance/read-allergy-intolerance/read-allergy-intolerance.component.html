@@ -2,21 +2,21 @@
   <div class="row">
     <div class="column">
       <label>Tipo:</label>
-      <p>{{allergy.type}}</p>
+      <p>{{allergyTypeOptions.get(allergy.type)}}</p>
       <label>Estado clínico:</label>
-      <p>{{allergy.clinicalStatus}}</p>
+      <p>{{clinicalStatusOptions.get(allergy.clinicalStatus)}}</p>
       <label>Estado de verificación: </label>
-      <p>{{allergy.verificationStatus}}</p>
+      <p>{{verificationStatusOptions.get(allergy.verificationStatus)}}</p>
       <label>Nivel de riesgo:</label>
-      <p>{{allergy.criticality}}</p>
+      <p>{{criticalityOptions.get(allergy.criticality)}}</p>
     </div>
 
     <div class="column">
       <label>Código:</label>
-      <p>{{allergy.code}}</p>
+      <p>{{codeOptions.get(allergy.code)}}</p>
       <label>Categorias: </label>
       <ul>
-        <li *ngFor="let c of allergy.category">{{c}}</li>
+        <li *ngFor="let c of allergy.category">{{categoryOptions.get(c)}}</li>
       </ul>
       <label>Fecha identificación:</label>
       <p>{{allergy.recordedDate}}</p>
@@ -32,17 +32,17 @@
     <label>Reacción:</label>
     <div class="column">
       <label>Sustancia:</label>
-      <p>{{allergy.reaction.substance}}</p>
+      <p>{{codeOptions.get(allergy.reaction.substance)}}</p>
       <label>Manifestaciones:</label>
       <ul>
-        <li *ngFor="let m of allergy.reaction.manifestation">{{m}}</li>
+        <li *ngFor="let m of allergy.reaction.manifestation">{{manifestationOptions.get(m)}}</li>
       </ul>
     </div>
     <div class="column">
       <label>Severidad: </label>
-      <p>{{allergy.reaction.severity}}</p>
+      <p>{{severityOptions.get(allergy.reaction.severity)}}</p>
       <label>Razón de exposición:</label>
-      <p>{{allergy.reaction.exposureRoute}}</p>
+      <p>{{exposureOptions.get(allergy.reaction.exposureRoute)}}</p>
       <label>Descripción del evento:</label>
       <p>{{allergy.reaction.description}}</p>
     </div>

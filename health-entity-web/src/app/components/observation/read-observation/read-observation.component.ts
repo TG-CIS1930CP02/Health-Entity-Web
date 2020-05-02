@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observation } from '../../../models/observation';
+import { OptionsList } from 'app/models/options-lists';
 
 @Component({
   selector: 'app-read-observation',
@@ -27,6 +28,13 @@ export class ReadObservationComponent implements OnInit {
     undefined,
     undefined
   );
+
+  statusOptions = OptionsList.ObservationStatus;
+  categoryOptions = OptionsList.ObservationCategory;
+  codeOptions = OptionsList.LOINCCodes;
+  interpretationOptions = OptionsList.ObservationInterpretationCodes;
+  bodyOptions = OptionsList.BodyStructure;
+  methodOptions = OptionsList.ObservationMethod;
 
   ngOnInit(): void { }
 

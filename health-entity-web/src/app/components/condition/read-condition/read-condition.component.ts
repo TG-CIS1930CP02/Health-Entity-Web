@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Condition } from 'app/models/condition';
+import { OptionsList } from 'app/models/options-lists';
 
 @Component({
   selector: 'app-read-condition',
@@ -24,6 +25,12 @@ export class ReadConditionComponent implements OnInit {
     undefined,
     undefined,
   );
+
+  clinicalStatusOptions = OptionsList.ConditionClinicalStatus;
+  verificationStatusOptions = OptionsList.ConditionVerificationStatus;
+  severityOptions = OptionsList.AllergyIntoleranceSeverity;
+  codeOptions = OptionsList.ClinicalFindingsCodes;
+  bodyOptions = OptionsList.BodyStructure;
 
   ngOnInit(): void { }
 

@@ -4,12 +4,12 @@
   <div class="row">
     <div class="column">
       <label>Código:</label>
-      <p>{{observation.code}}</p>
+      <p>{{codeOptions.get(observation.code)}}</p>
       <label>Estado:</label>
-      <p>{{observation.status}}</p>
+      <p>{{statusOptions.get(observation.status)}}</p>
       <label>Categorias: </label>
       <ul>
-        <li *ngFor="let c of observation.category">{{c}}</li>
+        <li *ngFor="let c of observation.category">{{categoryOptions.get(c)}}</li>
       </ul>
       <label>Fecha clínicamente relevante:</label>
       <p>{{observation.effectiveDateTime}}</p>
@@ -19,16 +19,16 @@
 
     <div class="column">
       <label>Método utilizado:</label>
-      <p>{{observation.method}}</p>
+      <p>{{methodOptions.get(observation.method)}}</p>
       <label>Parte del cuerpo afectada:</label>
-      <p>{{observation.bodySite}}</p>
+      <p>{{bodyOptions.get(observation.bodySite)}}</p>
       <label>Valor:</label>
       <p>{{observation.value}}</p>
       <label>Rango de referencia:</label>
       <p>{{observation.referenceRange}}</p>
       <label>Interpretación: </label>
       <ul>
-        <li *ngFor="let c of observation.interpretation">{{c}}</li>
+        <li *ngFor="let c of observation.interpretation">{{interpretationOptions.get(c)}}</li>
       </ul>
     </div>
   </div><label>Notas adicionales:</label>

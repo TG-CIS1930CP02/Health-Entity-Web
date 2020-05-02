@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DiagnosticReport } from '../../../models/diagnostic-report';
+import { OptionsList } from 'app/models/options-lists';
 
 @Component({
   selector: 'app-read-diagnostic-report',
@@ -25,6 +26,11 @@ export class ReadDiagnosticReportComponent implements OnInit {
     undefined,
     undefined
   );
+
+  statusOptions = OptionsList.diagnosticStatusCodes;
+  categoryOptions = OptionsList.diagnosticCategoryCodes;
+  codeOptions = OptionsList.LOINCCodes;
+  conclusionOptions = OptionsList.ClinicalFindingsCodes;
 
   ngOnInit(): void { }
 

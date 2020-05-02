@@ -13,7 +13,7 @@ import { ObservationService } from 'app/services/resources/observation-service';
 })
 export class CreateObservationComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, 
+  constructor(private activatedRoute: ActivatedRoute, private router: Router,
     private tokenReaderService: TokenReaderService,
     private observationService: ObservationService) { }
   observation: Observation = new Observation(
@@ -33,6 +33,7 @@ export class CreateObservationComponent implements OnInit {
     undefined,
     undefined
   );
+
   statusOptions = OptionsList.ObservationStatus;
   categoryOptions = OptionsList.ObservationCategory;
   codeOptions = OptionsList.LOINCCodes;
@@ -42,8 +43,8 @@ export class CreateObservationComponent implements OnInit {
 
   idTypePatient: any;
   idPatient: any;
-  created: boolean = false;
-  error: boolean = false;
+  created = false;
+  error = false;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -69,16 +70,16 @@ export class CreateObservationComponent implements OnInit {
     });
   }
 
-  closeCreated(){
+  closeCreated() {
     this.created = false;
     this.router.navigate(
-      ['practitioner/view-resources', this.idTypePatient, this.idPatient], 
+      ['practitioner/view-resources', this.idTypePatient, this.idPatient],
       {
         queryParams: {emergencySearch: false}
     });
   }
 
-  closeError(){
+  closeError() {
     this.error = false;
   }
 }

@@ -5,14 +5,14 @@
   <div class="row">
     <div class="column">
       <label>Código:</label>
-      <p>{{diagnostic.code}}</p>
+      <p>{{codeOptions.get(diagnostic.code)}}</p>
       <label>Estado:</label>
-      <p>{{diagnostic.status}}</p>
+      <p>{{statusOptions.get(diagnostic.status)}}</p>
     </div>
     <div class="column">
       <label>Categorias: </label>
       <ul>
-        <li *ngFor="let c of diagnostic.category">{{c}}</li>
+        <li *ngFor="let c of diagnostic.category">{{categoryOptions.get(c)}}</li>
       </ul>
       <label>Fecha clínicamente relevante:</label>
       <p>{{diagnostic.effectiveDateTime}}</p>
@@ -25,6 +25,6 @@
   <p>{{diagnostic.conclusion}}</p>
   <label>Códigos de conclusión: </label>
   <ul>
-    <li *ngFor="let c of diagnostic.conclusionCode">{{c}}</li>
+    <li *ngFor="let c of diagnostic.conclusionCode">{{conclusionOptions.get(c)}}</li>
   </ul>
 </div>

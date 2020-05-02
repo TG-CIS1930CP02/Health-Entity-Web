@@ -13,10 +13,10 @@ import { Identification } from 'app/models/identification';
 })
 export class CreateProcedureComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router, 
-    private tokenReaderService: TokenReaderService,
-    private procedureService: ProcedureService) { }
-  
+  constructor(private activatedRoute: ActivatedRoute, private router: Router,
+              private tokenReaderService: TokenReaderService,
+              private procedureService: ProcedureService) { }
+
   procedure: Procedure = new Procedure(
     undefined,
     undefined,
@@ -48,8 +48,8 @@ export class CreateProcedureComponent implements OnInit {
 
   idTypePatient: any;
   idPatient: any;
-  created: boolean = false;
-  error: boolean = false;
+  created = false;
+  error = false;
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -73,7 +73,7 @@ export class CreateProcedureComponent implements OnInit {
       error => {
         this.error = true;
     });
-    
+
      /* TODO sacar info de estos
       subject, performer
     */
@@ -82,7 +82,7 @@ export class CreateProcedureComponent implements OnInit {
   closeCreated(){
     this.created = false;
     this.router.navigate(
-      ['practitioner/view-resources', this.idTypePatient, this.idPatient], 
+      ['practitioner/view-resources', this.idTypePatient, this.idPatient],
       {
         queryParams: {emergencySearch: false}
     });
