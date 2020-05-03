@@ -133,7 +133,7 @@ export class ViewResourcesComponent implements OnInit {
 
     // If it's an object - let's order the keys
     if (typeof unordered === 'object') {
-      var ordered = {};
+      let ordered = {};
       Object.keys(unordered).sort().forEach( (key) => {
         ordered[key] = this.recursivelyOrderKeys(unordered[key]);
       });
@@ -144,7 +144,7 @@ export class ViewResourcesComponent implements OnInit {
   }
 
   stringifyKeysInOrder(data) {
-    var sortedData = this.recursivelyOrderKeys(data);
+    let sortedData = this.recursivelyOrderKeys(data);
     return JSON.stringify(sortedData);
   }
 
