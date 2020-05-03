@@ -4,7 +4,7 @@ import { ResourceEnum } from './resource-enum';
 export class OptionsList {
   public static Operations: Map<string, string> = new Map([
     ['ADD', 'Creación del recurso'],
-    ['READ', 'Se leyó el recurso']
+    ['READ', 'Lectura del recurso']
   ]);
 
   public static PractitionerRoles: Map<string, string> = new Map([
