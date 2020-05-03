@@ -11,6 +11,7 @@ import { TransactionService } from '../../../services/transaction.service';
 import { ResourceEnum } from '../../../models/resource-enum';
 import { ResourceService } from '../../../services/resources/resource.services';
 import { RoleEnum } from '../../../models/role-enum';
+import { TokenReaderService } from 'app/services/security/token-reader.service';
 
 @Component({
   selector: 'app-view-resources',
@@ -35,6 +36,7 @@ export class ViewResourcesComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private transactionService: TransactionService,
     private resourceService: ResourceService,
+    private tokenReaderService: TokenReaderService,
     private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
     private changeDetectorRefs: ChangeDetectorRef
@@ -80,11 +82,26 @@ export class ViewResourcesComponent implements OnInit {
   }
 
   refresh() {
+    if (this.role === RoleEnum.PATIENT) {
+      const identification = this.tokenReaderService.getIdentificationPerformer();
+      this.idType = identification.type;
+      this.id = identification.id;
+      this.getPatientTransactions();
+    } else {
+      this.getTransactions();
+    }
+  }
+
+  getTransactions() {
     this.activatedRoute.params.subscribe((params) => {
       this.idType = params['idType'];
       this.id = params['id'];
+      this.getPatientTransactions();
+    });
+  }
 
-      this.transactionService.getMedicalRecords(this.idType, this.id).
+  getPatientTransactions() {
+    this.transactionService.getMedicalRecords(this.idType, this.id).
       subscribe(
         result => {
           this.dataSource = new MatTableDataSource<Transaction>(result);
@@ -95,10 +112,10 @@ export class ViewResourcesComponent implements OnInit {
           console.log(error);
         }
       );
-    });
   }
 
   search(row) {
+    this.resource = null;
     if (row === this.expandedElement) {
       this.resourceService.getResource(row.resourcePath)
       .subscribe(

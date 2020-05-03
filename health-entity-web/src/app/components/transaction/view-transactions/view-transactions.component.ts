@@ -1,12 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { TransactionService } from 'app/services/transaction.service';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Transaction } from 'app/models/transaction';
 import { OptionsList } from 'app/models/options-lists';
+import { TokenReaderService } from 'app/services/security/token-reader.service';
 
 @Component({
   selector: 'app-view-transactions',
@@ -14,28 +12,16 @@ import { OptionsList } from 'app/models/options-lists';
   styleUrls: ['./view-transactions.component.scss'],
 })
 export class ViewTransactionsComponent implements OnInit {
+  idType: any;
+  id: any;
+
   constructor(
-    private activatedRoute: ActivatedRoute,
     private transactionService: TransactionService,
-    private iconRegistry: MatIconRegistry,
-    private sanitizer: DomSanitizer
+    private tokenReaderService: TokenReaderService,
   ) {
-    this.iconRegistry
-      .addSvgIcon('lock',
-        this.sanitizer.bypassSecurityTrustResourceUrl(
-          '../../../../assets/icons/lock.svg'
-        )
-      )
-      .addSvgIcon('lock_open',
-        this.sanitizer.bypassSecurityTrustResourceUrl(
-          '../../../../assets/icons/lock_open.svg'
-        )
-      )
-      .addSvgIcon('question',
-        this.sanitizer.bypassSecurityTrustResourceUrl(
-          '../../../../assets/icons/question.svg'
-        )
-      );
+    const identification = this.tokenReaderService.getIdentificationPerformer();
+    this.idType = identification.type;
+    this.id = identification.id;
   }
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -47,28 +33,20 @@ export class ViewTransactionsComponent implements OnInit {
   resourceOptions = OptionsList.Resources;
   operationOptions = OptionsList.Operations;
 
-  idType: any;
-  id: any;
-
   ngOnInit(): void {
     this.refresh();
   }
 
   refresh() {
-    this.activatedRoute.params.subscribe((params) => {
-      this.idType = params['idType'];
-      this.id = params['id'];
-
-      this.transactionService.getTransactions(this.idType, this.id).
-      subscribe(
-        result => {
-          this.dataSource = new MatTableDataSource<Transaction>(result);
-          this.dataSource.paginator = this.paginator;
-        },
-        error => {
-          console.log(error);
-        }
-      );
-    });
+    this.transactionService.getTransactions(this.idType, this.id).
+    subscribe(
+      result => {
+        this.dataSource = new MatTableDataSource<Transaction>(result);
+        this.dataSource.paginator = this.paginator;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 }

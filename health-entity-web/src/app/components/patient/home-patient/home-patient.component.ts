@@ -8,15 +8,8 @@ import { TokenReaderService } from 'app/services/security/token-reader.service';
 })
 export class HomePatientComponent implements OnInit {
 
-  constructor(private tokenReaderService: TokenReaderService) { }
+  constructor() { }
 
-  idType: string;
-  id: number;
-
-  ngOnInit(): void {
-    const identification = this.tokenReaderService.getIdentificationPerformer();
-    this.idType = identification.type;
-    this.id = identification.id;
-  }
+  ngOnInit(): void {  }
 
 }
