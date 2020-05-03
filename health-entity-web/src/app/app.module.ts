@@ -56,6 +56,7 @@ import { NotAuthorizedComponent } from './components/shared/not-authorized/not-a
 import { ListAuthorizationComponent } from './components/authorization/list-authorization/list-authorization.component';
 
 import { DataSharingService } from './services/data-sharing.services';
+import { MedicalRecordsComponent } from './components/patient/medical-records/medical-records.component';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { DataSharingService } from './services/data-sharing.services';
     CreateResourcesComponent,
     DetailsPersonComponent,
     NotAuthorizedComponent,
-    ListAuthorizationComponent
+    ListAuthorizationComponent,
+    MedicalRecordsComponent
   ],
   imports: [
     BrowserModule,

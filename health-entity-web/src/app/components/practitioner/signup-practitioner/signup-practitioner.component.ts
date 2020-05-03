@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Practitioner } from 'app/models/practitioner';
-import { PractitionerService } from 'app/services/practitioner.service';
 import { OptionsList } from '../../../models/options-lists';
 import { Person } from 'app/models/person';
 import { PersonService } from 'app/services/person.service';
@@ -14,6 +13,7 @@ import { PersonService } from 'app/services/person.service';
 export class SignupPractitionerComponent implements OnInit {
   @Input()
   isPractitioner = true;
+
   @Input()
   title = 'Registro profesional de la salud';
 

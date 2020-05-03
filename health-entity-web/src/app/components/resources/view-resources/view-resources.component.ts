@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef, Input } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { trigger, state, style, transition, animate } from '@angular/animations';
@@ -27,6 +27,9 @@ import { ResourceService } from '../../../services/resources/resource.services';
   ],
 })
 export class ViewResourcesComponent implements OnInit {
+  @Input()
+  isDoctor = true;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private transactionService: TransactionService,
