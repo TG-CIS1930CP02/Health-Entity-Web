@@ -2,6 +2,11 @@ import { RoleEnum } from './role-enum';
 import { ResourceEnum } from './resource-enum';
 
 export class OptionsList {
+  public static Operations: Map<string, string> = new Map([
+    ['ADD', 'Creación del recurso'],
+    ['READ', 'Se leyó el recurso']
+  ]);
+
   public static PractitionerRoles: Map<string, string> = new Map([
     [RoleEnum.DOCTOR, 'Médico/a'],
     [RoleEnum.NURSE, 'Enfermero/a']

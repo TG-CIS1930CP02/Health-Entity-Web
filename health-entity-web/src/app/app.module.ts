@@ -54,9 +54,10 @@ import { CreateResourcesComponent } from './components/resources/create-resource
 import { DetailsPersonComponent } from './components/person/details-person/details-person.component';
 import { NotAuthorizedComponent } from './components/shared/not-authorized/not-authorized.component';
 import { ListAuthorizationComponent } from './components/authorization/list-authorization/list-authorization.component';
+import { MedicalRecordsComponent } from './components/patient/medical-records/medical-records.component';
+import { ViewTransactionsComponent } from './components/patient/view-transactions/view-transactions.component';
 
 import { DataSharingService } from './services/data-sharing.services';
-import { MedicalRecordsComponent } from './components/patient/medical-records/medical-records.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,8 @@ import { MedicalRecordsComponent } from './components/patient/medical-records/me
     DetailsPersonComponent,
     NotAuthorizedComponent,
     ListAuthorizationComponent,
-    MedicalRecordsComponent
+    MedicalRecordsComponent,
+    ViewTransactionsComponent
   ],
   imports: [
     BrowserModule,

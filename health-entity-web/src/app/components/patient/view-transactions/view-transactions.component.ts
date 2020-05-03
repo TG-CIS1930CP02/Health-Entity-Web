@@ -1,20 +1,20 @@
-import { Component, OnInit, ViewChild, ChangeDetectorRef, Input } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
-import { MatPaginator } from '@angular/material/paginator';
+import { Component, OnInit, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { trigger, state, style, transition, animate } from '@angular/animations';
-import { Transaction } from '../../../models/transaction';
-import { OptionsList } from '../../../models/options-lists';
 import { ActivatedRoute } from '@angular/router';
+import { TransactionService } from 'app/services/transaction.service';
+import { ResourceService } from 'app/services/resources/resource.services';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { TransactionService } from '../../../services/transaction.service';
-import { ResourceEnum } from '../../../models/resource-enum';
-import { ResourceService } from '../../../services/resources/resource.services';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { Transaction } from 'app/models/transaction';
+import { OptionsList } from 'app/models/options-lists';
+import { ResourceEnum } from 'app/models/resource-enum';
 
 @Component({
-  selector: 'app-view-resources',
-  templateUrl: './view-resources.component.html',
-  styleUrls: ['./view-resources.component.scss'],
+  selector: 'app-view-transactions',
+  templateUrl: './view-transactions.component.html',
+  styleUrls: ['./view-transactions.component.scss'],
   animations: [
     trigger('detailExpand', [
       state('collapsed', style({ height: '0px', minHeight: '0' })),
@@ -26,10 +26,7 @@ import { ResourceService } from '../../../services/resources/resource.services';
     ]),
   ],
 })
-export class ViewResourcesComponent implements OnInit {
-  @Input()
-  isDoctor = true;
-
+export class ViewTransactionsComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private transactionService: TransactionService,
@@ -55,17 +52,17 @@ export class ViewResourcesComponent implements OnInit {
         )
       );
   }
-
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   dataSource: MatTableDataSource<Transaction>;
   integrity: Map<Transaction, string>;
 
-  columnsToDisplay = ['date', 'type', 'practitioner', 'entity', 'integrity'];
+  columnsToDisplay = ['date', 'operation', 'type', 'practitioner', 'entity', 'integrity'];
   expandedElement: Transaction | null;
   resource: any;
 
   resourceOptions = OptionsList.Resources;
+  operationOptions = OptionsList.Operations;
   resources = ResourceEnum;
 
   idType: any;
@@ -81,7 +78,7 @@ export class ViewResourcesComponent implements OnInit {
       this.idType = params['idType'];
       this.id = params['id'];
 
-      this.transactionService.getMedicalRecords(this.idType, this.id).
+      this.transactionService.getTransactions(this.idType, this.id).
       subscribe(
         result => {
           this.dataSource = new MatTableDataSource<Transaction>(result);

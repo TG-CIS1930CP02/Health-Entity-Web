@@ -60,7 +60,11 @@ export class TransactionService {
       .pipe(catchError(this.handleError));
   }
 
-  getTransactions(idType: string, idNumber: number) {
+  getMedicalRecords(idType: string, idNumber: number) {
     return this.get<Transaction[]>(`${environment.healthEntityServerUrl}transactions/medical-history/patient/${idType}/${idNumber}`);
+  }
+
+  getTransactions(idType: string, idNumber: number) {
+    return this.get<Transaction[]>(`${environment.healthEntityServerUrl}transactions/patient/${idType}/${idNumber}`);
   }
 }

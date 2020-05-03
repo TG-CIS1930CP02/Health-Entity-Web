@@ -21,6 +21,7 @@ import { NotAuthorizedComponent } from './components/shared/not-authorized/not-a
 import { AuthenticationModeEnum } from './models/authentication-mode-enum';
 import { ListAuthorizationComponent } from './components/authorization/list-authorization/list-authorization.component';
 import { MedicalRecordsComponent } from './components/patient/medical-records/medical-records.component';
+import { ViewTransactionsComponent } from './components/patient/view-transactions/view-transactions.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -40,6 +41,7 @@ const routes: Routes = [
   { path: 'practitioner/search-patient', component: SearchPatientComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.DOCTOR, AuthenticationModeEnum.PASSWORD_AND_FINGERPRINT_AUTHENTICATION]} },
   { path: 'patient/home', component: HomePatientComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.PATIENT, AuthenticationModeEnum.PASSWORD_AUTHENTICATED_USER]} },
   { path: 'patient/medical-record/:idType/:id', component: MedicalRecordsComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.PATIENT, AuthenticationModeEnum.PASSWORD_AUTHENTICATED_USER]} },
+  { path: 'patient/view-transactions/:idType/:id', component: ViewTransactionsComponent, canActivate: [RoleGuardService], data: {expectedAuthorities: [RoleEnum.PATIENT, AuthenticationModeEnum.PASSWORD_AUTHENTICATED_USER]} },
   { path: 'not-authorized', component: NotAuthorizedComponent },
   { path: '**', component: PathNotFoundComponent }
 ];
