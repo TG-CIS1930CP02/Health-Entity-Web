@@ -13,6 +13,12 @@
       <td mat-cell *matCellDef="let element"> {{resourceOptions.get(element.resourceType)}} </td>
     </ng-container>
 
+    <!-- UID Column -->
+    <ng-container matColumnDef="uid">
+      <th mat-header-cell *matHeaderCellDef> Identificador </th>
+      <td mat-cell *matCellDef="let element"> {{element.uid}} </td>
+    </ng-container>
+
     <!-- Practitioner Column -->
     <ng-container matColumnDef="practitioner">
       <th mat-header-cell *matHeaderCellDef> Personal de la Salud </th>

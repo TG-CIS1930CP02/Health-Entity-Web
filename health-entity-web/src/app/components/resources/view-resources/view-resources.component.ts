@@ -61,7 +61,7 @@ export class ViewResourcesComponent implements OnInit {
   dataSource: MatTableDataSource<Transaction>;
   integrity: Map<Transaction, string>;
 
-  columnsToDisplay = ['date', 'type', 'practitioner', 'entity', 'integrity'];
+  columnsToDisplay = ['date', 'type', 'uid', 'practitioner', 'entity', 'integrity'];
   expandedElement: Transaction | null;
   resource: any;
 
