@@ -16,7 +16,7 @@
         <li *ngFor="let c of procedure.reasonCode">{{clinicalFindingsOptions.get(c)}}</li>
       </ul>
       <label>Fecha de realización:</label>
-      <p>{{procedure.performedDateTime}}</p>
+      <p>{{procedure.performedDateTime | date:'MM/dd/yyyy'}}</p>
     </div>
 
     <div class="column">

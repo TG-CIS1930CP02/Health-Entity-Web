@@ -12,9 +12,9 @@
         <li *ngFor="let c of observation.category">{{categoryOptions.get(c)}}</li>
       </ul>
       <label>Fecha clínicamente relevante:</label>
-      <p>{{observation.effectiveDateTime}}</p>
+      <p>{{observation.effectiveDateTime | date:'MM/dd/yyyy'}}</p>
       <label>Fecha de la versión:</label>
-      <p>{{observation.issued}}</p>
+      <p>{{observation.issued | date:'MM/dd/yyyy'}}</p>
     </div>
 
     <div class="column">

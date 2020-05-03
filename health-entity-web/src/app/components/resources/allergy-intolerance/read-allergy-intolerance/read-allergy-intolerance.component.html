@@ -19,9 +19,9 @@
         <li *ngFor="let c of allergy.category">{{categoryOptions.get(c)}}</li>
       </ul>
       <label>Fecha identificación:</label>
-      <p>{{allergy.recordedDate}}</p>
+      <p>{{allergy.recordedDate | date:'MM/dd/yyyy'}}</p>
       <label>Fecha última reacción:</label>
-      <p>{{allergy.onsetDateTime}}</p>
+      <p>{{allergy.onsetDateTime | date:'MM/dd/yyyy'}}</p>
     </div>
   </div>
 

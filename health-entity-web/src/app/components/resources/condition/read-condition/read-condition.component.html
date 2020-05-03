@@ -17,9 +17,9 @@
         <li *ngFor="let b of condition.bodySite">{{bodyOptions.get(b)}}</li>
       </ul>
       <label>Fecha identificación:</label>
-      <p>{{condition.onsetDateTime}}</p>
+      <p>{{condition.onsetDateTime | date:'MM/dd/yyyy'}}</p>
       <label>Fecha de registro:</label>
-      <p>{{condition.recordedDate}}</p>
+      <p>{{condition.recordedDate | date:'MM/dd/yyyy'}}</p>
     </div>
   </div>
 
