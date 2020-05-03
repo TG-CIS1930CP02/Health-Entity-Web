@@ -135,12 +135,12 @@ export class ViewTransactionsComponent implements OnInit {
     }
 
     return unordered;
-  };
+  }
 
   stringifyKeysInOrder(data) {
     var sortedData = this.recursivelyOrderKeys(data);
     return JSON.stringify(sortedData);
-  };
+  }
 
   async digestMessage(message) {
     const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
