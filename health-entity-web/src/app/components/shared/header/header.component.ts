@@ -9,6 +9,7 @@ import { RoleEnum } from 'app/models/role-enum';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
+
 export class HeaderComponent implements OnInit {
   isLogin: boolean;
   role: string;
