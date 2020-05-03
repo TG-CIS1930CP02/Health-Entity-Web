@@ -45,12 +45,19 @@ export class ViewResourcesComponent implements OnInit {
         this.sanitizer.bypassSecurityTrustResourceUrl(
           '../../../../assets/icons/lock_open.svg'
         )
+      )
+      .addSvgIcon('question',
+        this.sanitizer.bypassSecurityTrustResourceUrl(
+          '../../../../assets/icons/question.svg'
+        )
       );
   }
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   dataSource: MatTableDataSource<Transaction>;
+  integrity: Map<Transaction, string>;
+
   columnsToDisplay = ['date', 'type', 'practitioner', 'entity', 'integrity'];
   expandedElement: Transaction | null;
   resource: any;
@@ -62,6 +69,7 @@ export class ViewResourcesComponent implements OnInit {
   id: any;
 
   ngOnInit(): void {
+    this.integrity = new Map();
     this.refresh();
   }
 
@@ -95,13 +103,18 @@ export class ViewResourcesComponent implements OnInit {
           console.log(error);
         },
         async () => {
-          let jsonString = this.stringifyKeysInOrder(this.resource)
+          let jsonString = this.stringifyKeysInOrder(this.resource);
           const hexHash = await this.digestMessage(jsonString);
           console.log(hexHash);
+
+          if (hexHash === row.resourseIntegrity) {
+            this.integrity.set(row, 'lock');
+          } else {
+            this.integrity.set(row, 'lock_open');
+          }
         }
       );
     }
-    this.resource
   }
 
   recursivelyOrderKeys(unordered) {
@@ -113,7 +126,7 @@ export class ViewResourcesComponent implements OnInit {
       });
       return unordered;
     }
-  
+
     // If it's an object - let's order the keys
     if (typeof unordered === 'object') {
       var ordered = {};
@@ -122,15 +135,15 @@ export class ViewResourcesComponent implements OnInit {
       });
       return ordered;
     }
-  
+
     return unordered;
   };
-  
+
   stringifyKeysInOrder(data) {
     var sortedData = this.recursivelyOrderKeys(data);
     return JSON.stringify(sortedData);
   };
-  
+
   async digestMessage(message) {
     const msgUint8 = new TextEncoder().encode(message);                           // encode as (utf-8) Uint8Array
     const hashBuffer = await crypto.subtle.digest('SHA-256', msgUint8);           // hash the message
