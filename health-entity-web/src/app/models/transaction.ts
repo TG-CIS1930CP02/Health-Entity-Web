@@ -10,6 +10,6 @@ export class Transaction {
     public sender: string,
     public senderRole: string,
     public timestamp: Date,
-    public uid: string
+    public resourceId: string
   ) {}
 }

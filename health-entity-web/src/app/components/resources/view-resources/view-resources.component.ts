@@ -10,6 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { TransactionService } from '../../../services/transaction.service';
 import { ResourceEnum } from '../../../models/resource-enum';
 import { ResourceService } from '../../../services/resources/resource.services';
+import { RoleEnum } from '../../../models/role-enum';
 
 @Component({
   selector: 'app-view-resources',
@@ -27,8 +28,8 @@ import { ResourceService } from '../../../services/resources/resource.services';
   ],
 })
 export class ViewResourcesComponent implements OnInit {
-  @Input()
-  isDoctor = true;
+  role: string;
+  roles = RoleEnum;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -54,6 +55,8 @@ export class ViewResourcesComponent implements OnInit {
           '../../../../assets/icons/question.svg'
         )
       );
+
+    this.role = localStorage.getItem('role');
   }
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -61,7 +64,7 @@ export class ViewResourcesComponent implements OnInit {
   dataSource: MatTableDataSource<Transaction>;
   integrity: Map<Transaction, string>;
 
-  columnsToDisplay = ['date', 'type', 'uid', 'practitioner', 'entity', 'integrity'];
+  columnsToDisplay = ['date', 'type', 'resourceId', 'practitioner', 'entity', 'integrity'];
   expandedElement: Transaction | null;
   resource: any;
 

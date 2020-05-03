@@ -42,7 +42,7 @@ export class ViewTransactionsComponent implements OnInit {
 
   dataSource: MatTableDataSource<Transaction>;
 
-  columnsToDisplay = ['date', 'operation', 'type', 'uid', 'practitioner', 'entity'];
+  columnsToDisplay = ['date', 'operation', 'type', 'resourceId', 'practitioner', 'entity'];
 
   resourceOptions = OptionsList.Resources;
   operationOptions = OptionsList.Operations;

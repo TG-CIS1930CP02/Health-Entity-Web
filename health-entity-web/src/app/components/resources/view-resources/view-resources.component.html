@@ -13,10 +13,10 @@
       <td mat-cell *matCellDef="let element"> {{resourceOptions.get(element.resourceType)}} </td>
     </ng-container>
 
-    <!-- UID Column -->
-    <ng-container matColumnDef="uid">
+    <!-- resourceId Column -->
+    <ng-container matColumnDef="resourceId">
       <th mat-header-cell *matHeaderCellDef> Identificador </th>
-      <td mat-cell *matCellDef="let element"> {{element.uid}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.resourceId}} </td>
     </ng-container>
 
     <!-- Practitioner Column -->
@@ -62,7 +62,7 @@
     <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
   </table>
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-  <div class="btn" *ngIf="isDoctor">
+  <div class="btn" *ngIf="role == roles.DOCTOR">
     <button mat-flat-button [routerLink]="['/practitioner/create-resources', idType, id]" class="button gradient">
       Agregar registro
     </button>
