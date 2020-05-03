@@ -21,7 +21,7 @@ import { NotAuthorizedComponent } from './components/shared/not-authorized/not-a
 import { AuthenticationModeEnum } from './models/authentication-mode-enum';
 import { ListAuthorizationComponent } from './components/authorization/list-authorization/list-authorization.component';
 import { MedicalRecordsComponent } from './components/patient/medical-records/medical-records.component';
-import { ViewTransactionsComponent } from './components/patient/view-transactions/view-transactions.component';
+import { ViewTransactionsComponent } from './components/transaction/view-transactions/view-transactions.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },

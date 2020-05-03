@@ -55,7 +55,7 @@ import { DetailsPersonComponent } from './components/person/details-person/detai
 import { NotAuthorizedComponent } from './components/shared/not-authorized/not-authorized.component';
 import { ListAuthorizationComponent } from './components/authorization/list-authorization/list-authorization.component';
 import { MedicalRecordsComponent } from './components/patient/medical-records/medical-records.component';
-import { ViewTransactionsComponent } from './components/patient/view-transactions/view-transactions.component';
+import { ViewTransactionsComponent } from './components/transaction/view-transactions/view-transactions.component';
 
 import { DataSharingService } from './services/data-sharing.services';
 
