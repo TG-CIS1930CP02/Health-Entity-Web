@@ -105,9 +105,7 @@ export class ViewResourcesComponent implements OnInit {
         async () => {
           let jsonString = this.stringifyKeysInOrder(this.resource);
           const hexHash = await this.digestMessage(jsonString);
-          console.log(hexHash);
-
-          if (hexHash === row.resourseIntegrity) {
+          if (hexHash === row.resourceIntegrity) {
             this.integrity.set(row, 'lock');
           } else {
             this.integrity.set(row, 'lock_open');
