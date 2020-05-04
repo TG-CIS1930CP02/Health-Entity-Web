@@ -1,13 +1,5 @@
 @import "~_variables.scss";
 
-label {
-  font-weight: bold;
-  margin-right: 5px;
-  display: block;
-}
-p {
-  margin-bottom: 7px;
-}
 #box {
   position: relative;
   margin: 15px auto 80px auto;
@@ -33,28 +25,8 @@ th {
   font-size: 14px;
   color: $primary-dark;
 }
-tr.detail-row {
-  height: 0;
-}
-tr.row:not(.expanded-row):hover {
-  background: whitesmoke;
-}
-tr.row:not(.expanded-row):active {
-  background: #efefef;
-}
 .row td {
   border-bottom-width: 0;
-}
-.detail {
-  overflow: hidden;
-  display: flex;
-}
-.complete {
-  width: 100%;
-}
-mat-icon {
-  color: $accent;
-  align-items: center;
 }
 .btn {
   width: 100%;
