@@ -45,6 +45,9 @@ mat-form-field {
 .inline {
   float:left;
 }
+.line {
+  border-bottom: 2px solid $gray-dark;
+}
 .btn {
   width: 100%;
   display: flex;

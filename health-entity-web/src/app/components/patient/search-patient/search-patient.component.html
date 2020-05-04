@@ -23,6 +23,7 @@
           Buscar
         </button>
       </div>
+      <div *ngIf="found=='found'" class="line"></div>
     </form>
   </div>
   <app-details-person *ngIf="found=='found'" [person]=personFound></app-details-person>
