@@ -1,10 +1,15 @@
-<div id="detailsbox" class="center">
+<div id="detailsbox" class="center row">
+  <div class="column">
     <p class="label">Nombres:</p> <p>{{person.name}}</p>
     <p class="label">Apellidos:</p> <p>{{person.lastname}}</p>
+    <p class="label">Fecha de nacimiento: </p> <p>{{person.birthDate}}</p>
+  </div>
+  <div class="column">
     <p class="label">Tipo de identificación:</p> <p>{{person.identificationType}}</p>
     <p class="label">Número de identificación:</p> <p>{{person.identificationNumber}}</p>
-    <p class="label">Fecha de nacimiento: </p> <p>{{person.birthDate}}</p>
+  </div>
+  <div class="column">
     <p class="label">Genero: </p> <p>{{person.gender}}</p>
     <p class="label">Tipo de sangre: </p> <p>{{person.bloodType}}</p>
+  </div>
 </div>
-  
