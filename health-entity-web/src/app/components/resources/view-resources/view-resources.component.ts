@@ -33,7 +33,7 @@ import { PersonService } from '../../../services/person.service';
 export class ViewResourcesComponent implements OnInit {
   role: string;
   roles = RoleEnum;
-  emergency: boolean;
+  emergency: string;
   person: Person;
 
   title = 'Historia clínica';
@@ -65,31 +65,7 @@ export class ViewResourcesComponent implements OnInit {
         )
       );
 
-    this.role = localStorage.getItem('role');
-
-    this.activatedRoute.queryParams.subscribe(params => {
-      this.emergency = params['emergencySearch'];
-      if (this.emergency === true) {
-        this.title = 'Historia Clínica de Emergencia';
-      }
-    });
-
-    if (this.role != RoleEnum.PATIENT) {
-      this.activatedRoute.params.subscribe((params) => {
-        this.idType = params['idType'];
-        this.id = params['id'];
-
-        this.personService.findByIdentification(this.idType, this.id).subscribe(
-          result => {
-            console.log(result);
-            this.person = result;
-          },
-          error => {
-            console.error(error);
-          }
-        );
-      });
-    }
+    this.init();
   }
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -112,6 +88,35 @@ export class ViewResourcesComponent implements OnInit {
     this.refresh();
   }
 
+  init() {
+    this.role = localStorage.getItem('role');
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.emergency = params['emergencySearch'];
+      if (this.emergency === 'true') {
+        console.log(this.emergency);
+        this.title = 'Historia Clínica de Emergencia';
+      }
+    });
+
+    if (this.role != RoleEnum.PATIENT) {
+      this.activatedRoute.params.subscribe((params) => {
+        this.idType = params['idType'];
+        this.id = params['id'];
+
+        this.personService.findByIdentification(this.idType, this.id).subscribe(
+          result => {
+            console.log(result);
+            this.person = result;
+          },
+          error => {
+            console.error(error);
+          }
+        );
+      });
+    }
+  }
+
   refresh() {
     if (this.role === RoleEnum.PATIENT) {
       const identification = this.tokenReaderService.getIdentificationPerformer();
@@ -124,7 +129,7 @@ export class ViewResourcesComponent implements OnInit {
   }
 
   getTransactions() {
-      if (this.emergency) {
+      if (this.emergency === 'true') {
         this.getTransactionsEmergency();
       } else {
         this.getPatientTransactions();
