@@ -2,6 +2,12 @@ import { RoleEnum } from './role-enum';
 import { ResourceEnum } from './resource-enum';
 
 export class OptionsList {
+  public static Entities: Map<number, string> = new Map([
+    [1, 'Clínica A'],
+    [2, 'Clínica B'],
+    [3, 'Clínica C']
+  ]);
+
   public static Operations: Map<string, string> = new Map([
     ['ADD', 'Creación del recurso'],
     ['READ', 'Lectura del recurso']

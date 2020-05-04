@@ -22,7 +22,7 @@
     <!-- resourceId Column -->
     <ng-container matColumnDef="resourceId">
       <th mat-header-cell *matHeaderCellDef> Identificador </th>
-      <td mat-cell *matCellDef="let element"> {{element.resourceId}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.resourceId.toUpperCase()}} </td>
     </ng-container>
 
     <!-- Practitioner Column -->
@@ -34,7 +34,7 @@
     <!-- Entity Column -->
     <ng-container matColumnDef="entity">
       <th mat-header-cell *matHeaderCellDef> Entidad </th>
-      <td mat-cell *matCellDef="let element"> {{element.institution}} </td>
+      <td mat-cell *matCellDef="let element"> {{entities.get(element.institution)}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>

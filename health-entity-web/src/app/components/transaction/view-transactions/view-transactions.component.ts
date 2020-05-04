@@ -14,6 +14,7 @@ import { TokenReaderService } from 'app/services/security/token-reader.service';
 export class ViewTransactionsComponent implements OnInit {
   idType: any;
   id: any;
+  entities = OptionsList.Entities;
 
   constructor(
     private transactionService: TransactionService,

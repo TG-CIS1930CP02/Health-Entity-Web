@@ -33,6 +33,7 @@ import { PersonService } from '../../../services/person.service';
 export class ViewResourcesComponent implements OnInit {
   role: string;
   roles = RoleEnum;
+  entities = OptionsList.Entities;
   emergency: string;
   person: Person;
 
