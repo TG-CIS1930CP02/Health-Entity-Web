@@ -202,21 +202,6 @@ header {
   width: 100%;
 }
 
-.nav_list .nav_item_link::after {
-  content: "";
-  display: block;
-  width: 7px;
-  height: 4px;
-  margin-left: 14px;
-  background: url("../../../../assets/icons/down-arrow.svg") no-repeat center;
-  background-size: contain;
-  transition: all 0.3s ease;
-}
-
-.nav_list .nav_item_link.active::after {
-  transform: rotate(180deg);
-}
-
 .userBox {
   padding-left: 10px;
   padding-right: 10px;
