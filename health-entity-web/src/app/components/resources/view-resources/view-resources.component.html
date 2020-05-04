@@ -1,5 +1,6 @@
 <div id="box" class="center">
-  <h2 class="title">Historia clínica</h2>
+  <h2 class="title">{{title}}</h2>
+  <app-details-person *ngIf="person" [person]=person></app-details-person>
   <table mat-table [dataSource]="dataSource" multiTemplateDataRows>
     <!-- Date Column -->
     <ng-container matColumnDef="date">
@@ -62,7 +63,7 @@
     <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
   </table>
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
-  <div class="btn" *ngIf="role == roles.DOCTOR">
+  <div class="btn" *ngIf="role == roles.DOCTOR && !emergency">
     <button mat-flat-button [routerLink]="['/practitioner/create-resources', idType, id]" class="button gradient">
       Agregar registro
     </button>

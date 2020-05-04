@@ -67,4 +67,8 @@ export class TransactionService {
   getTransactions(idType: string, idNumber: number) {
     return this.get<Transaction[]>(`${environment.healthEntityServerUrl}transactions/patient/${idType}/${idNumber}`);
   }
+
+  getMedicalRecordsEmergency(idType: string, idNumber: number) {
+    return this.get<Transaction[]>(`${environment.healthEntityServerUrl}transactions/emergency-medical-history/patient/${idType}/${idNumber}`);
+  }
 }

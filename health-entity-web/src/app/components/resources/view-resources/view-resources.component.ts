@@ -12,6 +12,8 @@ import { ResourceEnum } from '../../../models/resource-enum';
 import { ResourceService } from '../../../services/resources/resource.services';
 import { RoleEnum } from '../../../models/role-enum';
 import { TokenReaderService } from 'app/services/security/token-reader.service';
+import { Person } from '../../../models/person';
+import { PersonService } from '../../../services/person.service';
 
 @Component({
   selector: 'app-view-resources',
@@ -31,11 +33,16 @@ import { TokenReaderService } from 'app/services/security/token-reader.service';
 export class ViewResourcesComponent implements OnInit {
   role: string;
   roles = RoleEnum;
+  emergency: boolean;
+  person: Person;
+
+  title = 'Historia clínica';
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private transactionService: TransactionService,
     private resourceService: ResourceService,
+    private personService: PersonService,
     private tokenReaderService: TokenReaderService,
     private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
@@ -59,6 +66,30 @@ export class ViewResourcesComponent implements OnInit {
       );
 
     this.role = localStorage.getItem('role');
+
+    this.activatedRoute.queryParams.subscribe(params => {
+      this.emergency = params['emergencySearch'];
+      if (this.emergency === true) {
+        this.title = 'Historia Clínica de Emergencia';
+      }
+    });
+
+    if (this.role != RoleEnum.PATIENT) {
+      this.activatedRoute.params.subscribe((params) => {
+        this.idType = params['idType'];
+        this.id = params['id'];
+
+        this.personService.findByIdentification(this.idType, this.id).subscribe(
+          result => {
+            console.log(result);
+            this.person = result;
+          },
+          error => {
+            console.error(error);
+          }
+        );
+      });
+    }
   }
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -93,11 +124,25 @@ export class ViewResourcesComponent implements OnInit {
   }
 
   getTransactions() {
-    this.activatedRoute.params.subscribe((params) => {
-      this.idType = params['idType'];
-      this.id = params['id'];
-      this.getPatientTransactions();
-    });
+      if (this.emergency) {
+        this.getTransactionsEmergency();
+      } else {
+        this.getPatientTransactions();
+      }
+  }
+
+  getTransactionsEmergency() {
+    this.transactionService.getMedicalRecordsEmergency(this.idType, this.id).
+      subscribe(
+        result => {
+          this.dataSource = new MatTableDataSource<Transaction>(result);
+          this.dataSource.paginator = this.paginator;
+          this.changeDetectorRefs.detectChanges();
+        },
+        error => {
+          console.log(error);
+        }
+      );
   }
 
   getPatientTransactions() {
