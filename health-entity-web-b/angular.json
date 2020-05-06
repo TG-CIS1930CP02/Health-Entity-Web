@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/health-entity-web",
+            "outputPath": "dist/health-entity-web-b",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "health-entity-web:build"
+            "browserTarget": "health-entity-web-b:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "health-entity-web:build:production"
+              "browserTarget": "health-entity-web-b:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "health-entity-web:build"
+            "browserTarget": "health-entity-web-b:build"
           }
         },
         "test": {
@@ -111,11 +111,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "health-entity-web:serve"
+            "devServerTarget": "health-entity-web-b:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "health-entity-web:serve:production"
+              "devServerTarget": "health-entity-web-b:serve:production"
             }
           }
         }
