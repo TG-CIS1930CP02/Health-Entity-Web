@@ -1,0 +1,31 @@
+@import "~_variables.scss";
+
+.title {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: $accent !important;
+  text-transform: uppercase;
+  margin-bottom: 10px !important;
+}
+mat-form-field {
+  width: 100%;
+  padding-bottom: 10px;
+}
+.column {
+  float: left;
+}
+.left {
+  width: 30%;
+  position: relative;
+  margin: 10% 5%;
+}
+.right {
+  width: 60%;
+  border-left: 2px solid $gray-dark;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

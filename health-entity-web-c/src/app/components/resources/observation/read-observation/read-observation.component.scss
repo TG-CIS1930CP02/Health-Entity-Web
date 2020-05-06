@@ -1,0 +1,28 @@
+@import "~_variables.scss";
+
+label {
+  font-weight: bold;
+  margin-right: 5px;
+  display: block;
+}
+p {
+  margin-bottom: 7px;
+}
+#box {
+  position: relative;
+  margin: 15px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.column {
+  width: 50%;
+}
+.column:nth-child(even) {
+  float: right;
+}
+.column:nth-child(odd) {
+  float: left;
+}

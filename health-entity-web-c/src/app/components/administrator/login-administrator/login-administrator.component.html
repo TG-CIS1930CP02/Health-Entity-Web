@@ -1,0 +1,69 @@
+<div id="loginbox" class="center">
+  <h2 class="title">Ingreso Personal administrativo</h2>
+  <div id="formbox" class="center">
+    <form (ngSubmit)="login()" #loginForm="ngForm">
+      <div class="form_box">
+        <mat-form-field>
+          <mat-label>Elige un tipo de identificación</mat-label>
+          <mat-select [(ngModel)]="idType" name="idType" required>
+            <mat-option *ngFor="let i of options | keyvalue" [value]="i.key">
+              {{i.value}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form_box">
+        <mat-form-field>
+          <mat-label>Número de identificación</mat-label>
+          <input matInput [(ngModel)]="id" name="idNumber" type="number" required>
+        </mat-form-field>
+      </div>
+
+      <div class="form_box">
+        <mat-form-field>
+          <mat-label>Contraseña</mat-label>
+          <input matInput [(ngModel)]="password" name="password" [type]="hide ? 'password' : 'text'" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+      </div>
+      <div class="form_box">
+        <mat-checkbox class="form_checkbox" [(ngModel)]="checked" name="fingerprint" id="fingerprint">
+          Huella válida
+        </mat-checkbox>
+      </div>
+      <a [routerLink]="['./']" class="help">¿Necesitas ayuda para ingresar?</a>
+      <!-- TODO fix button, if fields are not properly filled, the modal doesn't popup -->
+      <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!loginForm.form.valid">
+        Iniciar sesión
+      </button>
+    </form>
+  </div>
+  <section class="modal" *ngIf="incorrectLogin">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="close()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Usuario y/o contraseña incorrectos.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="modal" *ngIf="invalidAuthorities">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="close()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Estimado usuario, usted no cuenta con los permisos necesarios para acceder como personal administrativo en esta IPS.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>

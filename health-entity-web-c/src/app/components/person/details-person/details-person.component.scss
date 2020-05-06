@@ -1,0 +1,41 @@
+@import "~_variables.scss";
+
+p {
+  margin-bottom: 7px;
+}
+.label {
+  font-weight: bold;
+}
+#detailsbox {
+  font-family: "poppins", arial, sans-serif;
+  width: 100%;
+  overflow: hidden;
+}
+.center {
+  margin: auto;
+  width: 100%;
+}
+table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+th {
+  font-family: "poppinsSemiBold", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: $primary;
+}
+.box {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.column {
+  float: left;
+  width: 33.33%;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

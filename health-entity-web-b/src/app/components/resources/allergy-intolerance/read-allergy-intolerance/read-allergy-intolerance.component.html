@@ -1,0 +1,50 @@
+<div id="box">
+  <div class="row">
+    <div class="column">
+      <label>Tipo:</label>
+      <p>{{allergyTypeOptions.get(allergy.type)}}</p>
+      <label>Estado clínico:</label>
+      <p>{{clinicalStatusOptions.get(allergy.clinicalStatus)}}</p>
+      <label>Estado de verificación: </label>
+      <p>{{verificationStatusOptions.get(allergy.verificationStatus)}}</p>
+      <label>Nivel de riesgo:</label>
+      <p>{{criticalityOptions.get(allergy.criticality)}}</p>
+    </div>
+
+    <div class="column">
+      <label>Código:</label>
+      <p>{{codeOptions.get(allergy.code)}}</p>
+      <label>Categorias: </label>
+      <ul>
+        <li *ngFor="let c of allergy.category">{{categoryOptions.get(c)}}</li>
+      </ul>
+      <label>Fecha identificación:</label>
+      <p>{{allergy.recordedDate | date:'MM/dd/yyyy'}}</p>
+      <label>Fecha última reacción:</label>
+      <p>{{allergy.onsetDateTime | date:'MM/dd/yyyy'}}</p>
+    </div>
+  </div>
+
+  <label>Notas:</label>
+  <p>{{allergy.note}}</p>
+
+  <div class="row">
+    <label>Reacción:</label>
+    <div class="column">
+      <label>Sustancia:</label>
+      <p>{{codeOptions.get(allergy.reaction.substance)}}</p>
+      <label>Manifestaciones:</label>
+      <ul>
+        <li *ngFor="let m of allergy.reaction.manifestation">{{manifestationOptions.get(m)}}</li>
+      </ul>
+    </div>
+    <div class="column">
+      <label>Severidad: </label>
+      <p>{{severityOptions.get(allergy.reaction.severity)}}</p>
+      <label>Razón de exposición:</label>
+      <p>{{exposureOptions.get(allergy.reaction.exposureRoute)}}</p>
+      <label>Descripción del evento:</label>
+      <p>{{allergy.reaction.description}}</p>
+    </div>
+  </div>
+</div>

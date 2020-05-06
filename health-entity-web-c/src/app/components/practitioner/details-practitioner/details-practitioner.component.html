@@ -1,0 +1,176 @@
+<div id="formbox" class="center">
+  <p class="label">Nombre:</p>
+  <p>{{practitioner.name}}</p>
+  <p class="label">Fecha de nacimiento: </p>
+  <p>{{practitioner.birthDate}}</p>
+  <p class="label">Genero: </p>
+  <p>{{practitioner.gender}}</p>
+  <form (ngSubmit)="validate()" #validateForm="ngForm">
+    <div class="form_box">
+      <label class="label" for="telecom">Datos de contacto: </label>
+      <div *ngFor="let t of telecoms;let index = index;trackBy:trackByIndex;">
+        <div class="inline33">
+          <mat-form-field>
+            <mat-label>Selecciona un sistema</mat-label>
+            <mat-select [(ngModel)]="telecoms[index].system" [ngModelOptions]="{standalone: true}" required>
+              <mat-option *ngFor="let s of systemOptions | keyvalue" [value]="s.key">
+                {{s.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="inline33">
+          <mat-form-field>
+            <mat-label>Selecciona un tipo</mat-label>
+            <mat-select [(ngModel)]="telecoms[index].use" [ngModelOptions]="{standalone: true}" required>
+              <mat-option *ngFor="let u of useOptions | keyvalue" [value]="u.key">
+                {{u.value}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="inline33">
+          <mat-form-field>
+            <mat-label>Ingrese contacto</mat-label>
+            <input matInput [(ngModel)]="telecoms[index].value" [ngModelOptions]="{standalone: true}" type="text" required>
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+        <i (click)='addContactPoint()' class="fa fa-plus-square fa-2x"></i>
+        <i (click)='deleteContactPoint()' class="fa fa-minus-square fa-2x"></i>
+      </div>
+    </div>
+    <div class="form_box">
+      <div>
+        <label class="label" for="address">Direcciones: </label>
+        <div class="addressBox" *ngFor="let a of addresses;let index = index;trackBy:trackByIndex;">
+          <div class="inline50">
+            <mat-form-field>
+              <mat-label>Selecciona una ciudad</mat-label>
+              <mat-select [(ngModel)]="addresses[index].city" [ngModelOptions]="{standalone: true}" required>
+                <mat-option *ngFor="let c of cities" [value]="c">
+                  {{c}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="inline50">
+            <mat-form-field>
+              <mat-label>Selecciona un tipo</mat-label>
+              <mat-select [(ngModel)]="addresses[index].use" [ngModelOptions]="{standalone: true}" required>
+                <mat-option *ngFor="let u of AddressUseOptions | keyvalue" [value]="u.key">
+                  {{u.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <mat-form-field>
+            <mat-label>Ingrese la descripción de la dirección</mat-label>
+            <input matInput [(ngModel)]="addresses[index].text" [ngModelOptions]="{standalone: true}" type="text" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Ingrese su dirección</mat-label>
+            <input matInput [(ngModel)]="addresses[index].line" [ngModelOptions]="{standalone: true}" type="text" required>
+          </mat-form-field>
+        </div>
+        <div>
+          <i (click)='addAddress()' class="fa fa-plus-square fa-2x"></i>
+          <i (click)='deleteAddress()' class="fa fa-minus-square fa-2x"></i>
+        </div>
+      </div>
+    </div>
+    <table mat-table [dataSource]="practitioner.qualifications" *ngIf="hasQualifications">
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef>Título Profesional</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+      <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef>Fecha desde que puede ejercer</th>
+        <td mat-cell *matCellDef="let element"> {{element.startDate}} </td>
+      </ng-container>
+      <ng-container matColumnDef="reportingEntity">
+        <th mat-header-cell *matHeaderCellDef>Entidad Reportadora</th>
+        <td mat-cell *matCellDef="let element"> {{element.reportingEntity}} </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumnsQualification"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumnsQualification;"></tr>
+    </table>
+    <div class="form_box" *ngIf="hasQualifications">
+      <label class="label">Tipo: </label>
+      <mat-radio-group aria-label="Selecciona un tipo" class="radio-group" [(ngModel)]="type"
+        name="type" required>
+        <mat-radio-button class="radio-button" *ngFor="let o of roleOptions | keyvalue" [value]="o.key">
+          {{o.value}}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="btn">
+      <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!validateForm.form.valid">
+        Registrar
+      </button>
+    </div>
+  </form>
+  <section class="modal" *ngIf="incorrectSignup">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="closeError()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Ha ocurrido un error, intente nuevamente.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="modal" *ngIf="successSignup">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Aviso</h2>
+        <span class="icon--close modal_close" (click)="closeSuccess()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          Registro exitoso.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="modal" *ngIf="alreadyAuthorizedUser">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Error</h2>
+        <span class="icon--close modal_close" (click)="closeError()"></span>
+      </div>
+      <div class="modal_content">
+        <p class="text">
+          La persona ya se encuentra autorizada en el sistema.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="modal" *ngIf="enterFingerprint">
+    <div class="modal_container">
+      <div class="modal_header">
+        <h2 class="title">Ingresar huella</h2>
+        <span class="icon--close modal_close" (click)="closeFingerPrint()"></span>
+      </div>
+      <form (ngSubmit)="signup()" #signupForm="ngForm">
+        <div class="modal_content" id="fingerprint">
+          <img src="../../../../assets/images/fingerprint.png" alt="" class="banner_item_bg" />
+          <div class="form_box">
+            <mat-checkbox class="form_checkbox" [(ngModel)]="checked" name="fingerprint" id="fingerprint">
+              Huella válida
+            </mat-checkbox>
+          </div>
+          <div class="btn">
+            <button mat-flat-button type="submit" class="btn--gradient" [disabled]="!signupForm.form.valid">
+              Registrar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,52 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import "~@angular/material/theming";
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define custom color palletes
+$plum: (
+  Main: #8b388a,
+  Light: #bd67ba,
+  Dark: #5b005c,
+  contrast: (
+    Main: #f5f5f5,
+    Light: #000,
+    Dark: #fff,
+  ),
+);
+$scampi: (
+  Main: #5e62aa,
+  Light: #8e8fdc,
+  Dark: #2e387a,
+  contrast: (
+    Main: #fff,
+    Light: #fff,
+    Dark: #fff,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$health-entity-web-primary: mat-palette($plum, Main, Light, Dark);
+$health-entity-web-accent: mat-palette($scampi, Main, Light, Dark);
+
+// The warn palette is optional (defaults to red).
+$health-entity-web-warn: mat-palette($mat-red, A200, A400, A700);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$health-entity-web-theme: mat-light-theme(
+  $health-entity-web-primary,
+  $health-entity-web-accent,
+  $health-entity-web-warn
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($health-entity-web-theme);

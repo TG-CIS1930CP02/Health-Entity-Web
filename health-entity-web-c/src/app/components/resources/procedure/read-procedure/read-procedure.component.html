@@ -1,0 +1,40 @@
+<div id="box">
+  <label>Solicitud:</label>
+  <p>{{procedure.basedOn}}</p>
+  <div class="row">
+    <div class="column">
+      <label>Código:</label>
+      <p>{{codeOptions.get(procedure.code)}}</p>
+      <label>Estado:</label>
+      <p>{{statusOptions.get(procedure.status)}}</p>
+      <label>Razón del estado:</label>
+      <p>{{statusReasonOptions.get(procedure.statusReason)}}</p>
+      <label>Categoria: </label>
+      <p>{{categoryOptions.get(procedure.category)}}</p>
+      <label>Motivo de realización:</label>
+      <ul>
+        <li *ngFor="let c of procedure.reasonCode">{{clinicalFindingsOptions.get(c)}}</li>
+      </ul>
+      <label>Fecha de realización:</label>
+      <p>{{procedure.performedDateTime | date:'MM/dd/yyyy'}}</p>
+    </div>
+
+    <div class="column">
+      <label>Partes del cuerpo afectadas:</label>
+      <ul>
+        <li *ngFor="let c of procedure.bodySite">{{bodyOptions.get(c)}}</li>
+      </ul>
+      <label>Resultado del procedimiento:</label>
+      <p>{{outcomeOptions.get(procedure.outcome)}}</p>
+      <label>Complicaciones:</label>
+      <ul>
+        <li *ngFor="let c of procedure.complication">{{clinicalFindingsOptions.get(c)}}</li>
+      </ul>
+      <label>Instrucciones de seguimiento: </label>
+      <ul>
+        <li *ngFor="let c of procedure.followUp">{{followUpOptions.get(c)}}</li>
+      </ul>
+    </div>
+  </div><label>Notas adicionales:</label>
+  <p>{{procedure.note}}</p>
+</div>
