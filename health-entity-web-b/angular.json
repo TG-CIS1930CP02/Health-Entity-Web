@@ -63,7 +63,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "health-entity-web-b:build"
+            "browserTarget": "health-entity-web-b:build",
+            "port": 4201
           },
           "configurations": {
             "production": {
