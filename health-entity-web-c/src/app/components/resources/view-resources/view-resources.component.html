@@ -62,7 +62,9 @@
     </tr>
     <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="detail-row"></tr>
   </table>
+
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
   <div class="btn" *ngIf="role == roles.DOCTOR && emergency == 'false'">
     <button mat-flat-button [routerLink]="['/practitioner/create-resources', idType, id]" class="button gradient">
       Agregar registro
