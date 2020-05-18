@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  healthEntityId: 1,
-  healthEntityAuthority: 'HEALTH_ENTITY_1',
-  healthEntityServerUrl: 'http://localhost:8080/',
-  remoteAuthenticationServerUrl: 'https://localhost:8091/'
+  healthEntityId: 3,
+  healthEntityAuthority: 'HEALTH_ENTITY_3',
+  healthEntityServerUrl: 'https://25.149.199.186:8083/',
+  remoteAuthenticationServerUrl: 'https://25.149.199.186:8091/'
 };
 
 /*
