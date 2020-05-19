@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="column left">
+    <h1 class="title">Recursos:</h1>
+    <mat-form-field>
+      <mat-label>Elige un recurso</mat-label>
+      <mat-select [(ngModel)]="resource" name="resource" required>
+        <mat-option *ngFor="let i of resourceOptions | keyvalue" [value]="i.key">
+          {{i.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p>{{description.get(resource)}}</p>
+  </div>
+  <div class="column right">
+    <app-create-allergy-intolerance *ngIf="resource==resources.ALLERGYINTOLERANCE"></app-create-allergy-intolerance>
+    <app-create-condition *ngIf="resource==resources.CONDITION"></app-create-condition>
+    <app-create-diagnostic-report *ngIf="resource==resources.DIAGNOSTICREPORT"></app-create-diagnostic-report>
+    <app-create-observation *ngIf="resource==resources.OBSERVATION"></app-create-observation>
+    <app-create-procedure *ngIf="resource==resources.PROCEDURE"></app-create-procedure>
+  </div>
+</div>

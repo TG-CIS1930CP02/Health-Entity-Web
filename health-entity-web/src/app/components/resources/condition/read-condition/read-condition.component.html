@@ -1,0 +1,28 @@
+<div id="box">
+  <div class="row">
+    <div class="column">
+      <label>Estado clínico:</label>
+      <p>{{clinicalStatusOptions.get(condition.clinicalStatus)}}</p>
+      <label>Estado de verificación: </label>
+      <p>{{verificationStatusOptions.get(condition.verificationStatus)}}</p>
+      <label>Severidad:</label>
+      <p>{{severityOptions.get(condition.severity)}}</p>
+      <label>Código:</label>
+      <p>{{codeOptions.get(condition.code)}}</p>
+    </div>
+
+    <div class="column">
+      <label>Partes del cuerpo afectadas: </label>
+      <ul>
+        <li *ngFor="let b of condition.bodySite">{{bodyOptions.get(b)}}</li>
+      </ul>
+      <label>Fecha identificación:</label>
+      <p>{{condition.onsetDateTime | date:'MM/dd/yyyy'}}</p>
+      <label>Fecha de registro:</label>
+      <p>{{condition.recordedDate | date:'MM/dd/yyyy'}}</p>
+    </div>
+  </div>
+
+  <label >Notas:</label>
+  <p>{{condition.note}}</p>
+</div>

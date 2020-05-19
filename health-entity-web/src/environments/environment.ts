@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  healthEntityId: 1,
+  healthEntityAuthority: 'HEALTH_ENTITY_1',
+  healthEntityServerUrl: 'https://25.149.199.186:8081/',
+  remoteAuthenticationServerUrl: 'https://25.149.199.186:8091/'
 };
 
 /*

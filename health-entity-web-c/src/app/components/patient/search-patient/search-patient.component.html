@@ -1,0 +1,69 @@
+<div id="box" class="center">
+  <h2 class="title">Búsqueda Paciente</h2>
+  <div id="formbox" class="center">
+    <form (ngSubmit)="search()" #searchForm="ngForm">
+      <div class="form_box inline">
+        <mat-form-field>
+          <mat-label>Elige un tipo de identificación</mat-label>
+          <mat-select [(ngModel)]="idType" name="idType" required>
+            <mat-option *ngFor="let i of idOptions | keyvalue" [value]="i.key">
+              {{i.value}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form_box inline">
+        <mat-form-field>
+          <mat-label>Número de identificación</mat-label>
+          <input matInput [(ngModel)]="id" name="idNumber" type="number" required>
+        </mat-form-field>
+      </div>
+      <div class="btn">
+        <button mat-flat-button type="submit" class="button gradient" [disabled]="!searchForm.form.valid">
+          Buscar
+        </button>
+      </div>
+      <div *ngIf="found=='found'" class="line"></div>
+    </form>
+  </div>
+  <app-details-person *ngIf="found=='found'" [person]=personFound></app-details-person>
+  <div class="btn">
+    <button mat-flat-button (click)="getAuthorization()" type="submit" class="button gradient" *ngIf="found=='found'">
+      Consultar historia clínica
+    </button>
+  </div>
+</div>
+<section class="modal" *ngIf="found=='not_found'">
+  <div class="modal_container">
+    <div class="modal_header">
+      <h2 class="title">Aviso</h2>
+      <span class="icon--close modal_close" (click)="closeNotFound()"></span>
+    </div>
+    <div class="modal_content">
+      <p class="text">
+        No existen registros para el individuo buscado.
+      </p>
+    </div>
+  </div>
+</section>
+<section class="modal" *ngIf="authorized=='not_authorized'">
+  <div class="modal_container">
+    <div class="modal_header">
+      <h2 class="title">Aviso</h2>
+      <span class="icon--close modal_close" (click)="closeNotAuthorized()"></span>
+    </div>
+    <div class="modal_content" id="emergency">
+      <p class="text">
+        La IPS no se encuentra autorizada para ver la historia clínica del paciente, ¿desea realizar una búsqueda de emergencia?
+      </p>
+      <div class="btn">
+        <button mat-flat-button (click)="emergencySearch()" class="button emergency" *ngIf="authorized=='not_authorized'">
+          REALIZAR BÚSQUEDA
+        </button>
+        <button mat-flat-button (click)="closeNotAuthorized()" class="button gradient" *ngIf="authorized=='not_authorized'">
+          CANCELAR
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

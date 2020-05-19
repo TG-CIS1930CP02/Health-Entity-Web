@@ -7,22 +7,27 @@
         </p>
       </div>
       <div class="header_links">
-        <a href="/login-practitioner" class="header_links_item d-flex">Profesional de la salud</a>
-        <a href="/login-administrator" class="header_links_item">Personal administrativo</a>
+        <a *ngIf="!isLogin" [routerLink]="['/login-practitioner']" class="header_links_item">Profesional de la salud</a>
+        <a *ngIf="!isLogin" [routerLink]="['/login-administrator']" class="header_links_item">Personal administrativo</a>
       </div>
     </div>
   </div>
   <div class="header_bottom">
     <div class="header_container">
       <section class="logo">
-        <a href="/home" class="logo_link">
+        <a [routerLink]="['/home']" class="logo_link">
           <img src="../../../../assets/images/logo.jpg" alt="" />
         </a>
       </section>
       <nav class="nav">
         <ul class="nav_list">
           <li class="nav_item">
-            <a class="nav_item_link">Pacientes</a>
+            <a *ngIf="!role" class="nav_item_link">Pacientes</a>
+            <a [routerLink]="['/patient/home']" *ngIf="role==roles.PATIENT" class="nav_item_link">Inicio</a>
+            <a [routerLink]="['/admin/home']" *ngIf="role==roles.ADMINISTRATOR" class="nav_item_link">Inicio</a>
+            <a [routerLink]="['/admin-assistant/home']" *ngIf="role==roles.ADMINISTRATIVE_ASSISTANT" class="nav_item">Inicio</a>
+            <a [routerLink]="['/practitioner/home']" *ngIf="role==roles.DOCTOR" class="nav_item_link">Inicio</a>
+            <a [routerLink]="['/practitioner/home']" *ngIf="role==roles.NURSE" class="nav_item_link">Inicio</a>
           </li>
           <li class="nav_item">
             <a class="nav_item_link">Centros y servicios</a>
@@ -33,8 +38,8 @@
         </ul>
       </nav>
       <div class="userBox">
-        <a href="/login-patient" class="btn btn--border btn--arrowR lPurple"
-          [style.visibility]="isLogin ? 'hidden' : 'visible'">Login paciente</a>
+        <a [routerLink]="['/login-patient']" class="btn btn--border btn--arrowR lPurple" *ngIf="!isLogin">Login paciente</a>
+        <a (click)="logout()" class="btn btn--border btn--arrowR lPurple" *ngIf="isLogin">Logout</a>
       </div>
     </div>
   </div>

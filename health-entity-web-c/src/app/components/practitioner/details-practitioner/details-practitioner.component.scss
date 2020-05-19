@@ -1,0 +1,196 @@
+@import "~_variables.scss";
+
+p {
+  margin-bottom: 7px;
+}
+input {
+  width: 100%;
+}
+#formbox {
+  font-family: "poppins", arial, sans-serif;
+  width: 100%;
+  overflow: hidden;
+  border-top: 2px solid $gray-dark;
+}
+.center {
+  margin: auto;
+  width: 100%;
+}
+.form_box {
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+mat-form-field {
+  width: 98%;
+}
+.inline50 {
+  float:left;
+  width: 50%;
+}
+.inline33 {
+  float:left;
+  width: 33%;
+}
+.addressBox {
+  margin-bottom: 10px;
+}
+.label {
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+th {
+  font-family: "poppinsSemiBold", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: $primary;
+}
+.radio-group {
+  display: flex;
+  margin: 16px 0 28px 0;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 30px;
+}
+.btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn--gradient {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  vertical-align: middle;
+  padding: 5px 40px;
+  outline: none;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background: linear-gradient(60deg, $primary 55%, $accent);
+  transition: all 0.3s ease;
+  width: 50%;
+}
+.btn--gradient:hover {
+  background: linear-gradient(168.27deg, $primary 35.62%, $accent 100%);
+}
+.fa {
+  color: $primary !important;
+  margin-right: 5px;
+}
+.form_checkbox {
+  margin: 0 10px;
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
+  background: $shadow-background;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.3s ease;
+  z-index: 3000;
+}
+.modal .title {
+  width: 100%;
+  font-size: 25px;
+  font-family: "poppinsSemibold", Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: white !important;
+  text-transform: uppercase;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+  letter-spacing: 1px;
+}
+.modal_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  min-height: auto;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 30px $shadow;
+  background: white;
+}
+.modal_header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: linear-gradient(60deg, $primary 55%, $accent);
+  position: relative;
+}
+.modal_close {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 15px;
+}
+.icon--close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  object-position: center;
+  background-size: contain !important;
+  transition: all 0.3s ease;
+  background: url("../../../../assets/icons/close.png") no-repeat center;
+  background-size: contain;
+}
+.modal .icon--close {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  cursor: pointer;
+}
+.modal_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+.modal_content .text {
+  width: 100%;
+  font-size: 14px;
+  color: $text-color !important;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+}
+#fingerprint img{
+  height: 100px;
+}

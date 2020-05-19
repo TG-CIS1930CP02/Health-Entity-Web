@@ -1,0 +1,90 @@
+@import "~_variables.scss";
+
+label {
+  font-weight: bold;
+  margin-right: 5px;
+  display: block;
+}
+p {
+  margin-bottom: 7px;
+}
+#box {
+  position: relative;
+  margin: 15px auto 80px auto;
+}
+.center {
+  margin: auto;
+  width: 75%;
+}
+.title {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  color: $accent !important;
+  text-transform: uppercase;
+  margin-bottom: 10px !important;
+}
+table {
+  width: 100%;
+}
+th {
+  font-family: "poppinsSemiBold", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: $primary-dark;
+}
+tr.detail-row {
+  height: 0;
+}
+tr.row:not(.expanded-row):hover {
+  background: whitesmoke;
+}
+tr.row:not(.expanded-row):active {
+  background: #efefef;
+}
+.row td {
+  border-bottom-width: 0;
+}
+.detail {
+  overflow: hidden;
+  display: flex;
+}
+.complete {
+  width: 100%;
+}
+mat-icon {
+  color: $accent;
+  align-items: center;
+}
+.btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  vertical-align: middle;
+  padding: 5px 40px;
+  outline: none;
+  font-family: "poppins", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  transition: all 0.3s ease;
+  width: 50%;
+  margin: 5px;
+}
+.gradient {
+  background: linear-gradient(60deg, $primary 55%, $accent);
+}
+.gradient:hover {
+  background: linear-gradient(168.27deg, $primary 35.62%, $accent 100%);
+}
