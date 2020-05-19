@@ -14,6 +14,11 @@ import { RoleEnum } from '../../../models/role-enum';
 import { TokenReaderService } from 'app/services/security/token-reader.service';
 import { Person } from '../../../models/person';
 import { PersonService } from '../../../services/person.service';
+import { AllergyIntolerance } from '../../../../../../health-entity-web/src/app/models/allergy-intolerance';
+import { Condition } from '../../../../../../health-entity-web/src/app/models/condition';
+import { DiagnosticReport } from '../../../../../../health-entity-web/src/app/models/diagnostic-report';
+import { Observation } from '../../../../../../health-entity-web/src/app/models/observation';
+import { Procedure } from '../../../../../../health-entity-web/src/app/models/procedure';
 
 @Component({
   selector: 'app-view-resources',
@@ -85,7 +90,10 @@ export class ViewResourcesComponent implements OnInit {
   id: any;
 
   ngOnInit(): void {
-    this.integrity = new Map();
+    /*this.integrity = new Map();
+    this.dataSource = new MatTableDataSource<Transaction>(ELEMENT_DATA);
+    this.dataSource.paginator = this.paginator;
+    this.changeDetectorRefs.detectChanges();*/
     this.refresh();
   }
 
@@ -166,6 +174,22 @@ export class ViewResourcesComponent implements OnInit {
   }
 
   search(row) {
+    /*this.resource = null;
+    if (element.resourceType === ResourceEnum.CONDITION) {
+      this.resource = new Condition(1, 'status', 'ver', 'mild', '2', [], undefined, new Date(), undefined, new Date(), 'aaaaa');
+    }
+    if (element.resourceType === ResourceEnum.DIAGNOSTICREPORT) {
+      this.resource = new DiagnosticReport(1, 'clinical', 'ver', [], 'aaaa', undefined, new Date(), new Date(), undefined, undefined, [], 'aaaa', []);
+    }
+    if (element.resourceType === ResourceEnum.OBSERVATION) {
+      this.resource = new Observation(1, 'aaaa', 'status', [], '3', undefined, new Date(), new Date(), undefined, '31', [], '106004', '33', '34', 'aaaa');
+    }
+    if (element.resourceType === ResourceEnum.PROCEDURE) {
+      this.resource = new Procedure(1, 'aaaa', 'status', 'aaaa', '24642003', 'aaaaa', undefined, new Date(), undefined, undefined, [], [], '41', [], [], [], 'aaaa');
+    }
+    if (element.resourceType === ResourceEnum.ALLERGYINTOLERANCE) {
+      this.resource = new AllergyIntolerance(1, 'clinical', 'ver', 'type', [], 'mild', '1', undefined, new Date(), new Date(), undefined, new Date(), 'aaaaaaaaa', undefined);
+    }*/
     this.resource = null;
     if (row === this.expandedElement) {
       this.resourceService.getResource(row.resourcePath)
@@ -187,6 +211,8 @@ export class ViewResourcesComponent implements OnInit {
         }
       );
     }
+    console.log(this.resource);
+    console.log(row.resourceType);
   }
 
   recursivelyOrderKeys(unordered) {
@@ -224,3 +250,67 @@ export class ViewResourcesComponent implements OnInit {
     return hashHex;
   }
 }
+
+const ELEMENT_DATA: Transaction[] = [
+  {
+    institution: '1',
+    operation: 'ADD',
+    recipient: 'string',
+    recipientRole: 'string',
+    resourceIntegrity: 'string',
+    resourcePath: 'string',
+    resourceType: ResourceEnum.CONDITION,
+    sender: 'CC_123',
+    senderRole: 'string',
+    timestamp: new Date(),
+    resourceId: '1'
+  }, {
+    institution: '2',
+    operation: 'ADD',
+    recipient: 'string',
+    recipientRole: 'string',
+    resourceIntegrity: 'string',
+    resourcePath: 'string',
+    resourceType: ResourceEnum.DIAGNOSTICREPORT,
+    sender: 'CC_123',
+    senderRole: 'string',
+    timestamp: new Date(),
+    resourceId: '2'
+  }, {
+    institution: '3',
+    operation: 'ADD',
+    recipient: 'string',
+    recipientRole: 'string',
+    resourceIntegrity: 'string',
+    resourcePath: 'string',
+    resourceType: ResourceEnum.OBSERVATION,
+    sender: 'CC_123',
+    senderRole: 'string',
+    timestamp: new Date(),
+    resourceId: '3'
+  }, {
+    institution: '3',
+    operation: 'ADD',
+    recipient: 'string',
+    recipientRole: 'string',
+    resourceIntegrity: 'string',
+    resourcePath: 'string',
+    resourceType: ResourceEnum.ALLERGYINTOLERANCE,
+    sender: 'CC_123',
+    senderRole: 'string',
+    timestamp: new Date(),
+    resourceId: '4'
+  }, {
+    institution: '2',
+    operation: 'ADD',
+    recipient: 'string',
+    recipientRole: 'string',
+    resourceIntegrity: 'string',
+    resourcePath: 'string',
+    resourceType: ResourceEnum.PROCEDURE,
+    sender: 'CC_123',
+    senderRole: 'string',
+    timestamp: new Date(),
+    resourceId: '5'
+  }
+];

@@ -57,6 +57,7 @@ import { ListAuthorizationComponent } from './components/authorization/list-auth
 import { ViewTransactionsComponent } from './components/transaction/view-transactions/view-transactions.component';
 
 import { DataSharingService } from './services/data-sharing.services';
+import { ReadResourcesComponent } from './components/resources/read-resources/read-resources.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,8 @@ import { DataSharingService } from './services/data-sharing.services';
     DetailsPersonComponent,
     NotAuthorizedComponent,
     ListAuthorizationComponent,
-    ViewTransactionsComponent
+    ViewTransactionsComponent,
+    ReadResourcesComponent
   ],
   imports: [
     BrowserModule,

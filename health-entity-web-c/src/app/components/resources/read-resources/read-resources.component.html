@@ -1,0 +1,196 @@
+<div id="box" *ngIf="resourceType==='AllergyIntolerance'">
+  <div class="row">
+    <div class="column">
+      <label>Tipo:</label>
+      <p>{{allergyTypeOptions.get(resource.type)}}</p>
+      <label>Estado clínico:</label>
+      <p>{{allergyClinicalStatusOptions.get(resource.clinicalStatus)}}</p>
+      <label>Estado de verificación: </label>
+      <p>{{allergyVerificationStatusOptions.get(resource.verificationStatus)}}</p>
+      <label>Nivel de riesgo:</label>
+      <p>{{criticalityOptions.get(resource.criticality)}}</p>
+    </div>
+
+    <div class="column">
+      <label>Código:</label>
+      <p>{{procedureCodeOptions.get(resource.code)}}</p>
+      <label>Categorias: </label>
+      <ul>
+        <li *ngFor="let c of resource.category">{{diagnostigCategoryOptions.get(c)}}</li>
+      </ul>
+      <label>Fecha identificación:</label>
+      <p>{{resource.recordedDate | date:'MM/dd/yyyy'}}</p>
+      <label>Fecha última reacción:</label>
+      <p>{{resource.onsetDateTime | date:'MM/dd/yyyy'}}</p>
+    </div>
+  </div>
+
+  <label>Notas:</label>
+  <p>{{resource.note}}</p>
+
+  <div class="row">
+    <label>Reacción:</label>
+    <div class="column">
+      <label>Sustancia:</label>
+      <p>{{codeOptions.get(resource.reaction.substance)}}</p>
+      <label>Manifestaciones:</label>
+      <ul>
+        <li *ngFor="let m of resource.reaction.manifestation">{{clinicalFindingsOptions.get(m)}}</li>
+      </ul>
+    </div>
+    <div class="column">
+      <label>Severidad: </label>
+      <p>{{severityOptions.get(resource.reaction.severity)}}</p>
+      <label>Razón de exposición:</label>
+      <p>{{exposureOptions.get(resource.reaction.exposureRoute)}}</p>
+      <label>Descripción del evento:</label>
+      <p>{{resource.reaction.description}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="box" *ngIf="resourceType==='Condition'">
+  <div class="row">
+    <div class="column">
+      <label>Estado clínico:</label>
+      <p>{{conditionClinicalStatusOptions.get(resource.clinicalStatus)}}</p>
+      <label>Estado de verificación: </label>
+      <p>{{conditionVerificationStatusOptions.get(resource.verificationStatus)}}</p>
+      <label>Severidad:</label>
+      <p>{{severityOptions.get(resource.severity)}}</p>
+      <label>Código:</label>
+      <p>{{clinicalFindingsOptions.get(resource.code)}}</p>
+    </div>
+
+    <div class="column">
+      <label>Partes del cuerpo afectadas: </label>
+      <ul>
+        <li *ngFor="let b of resource.bodySite">{{bodyOptions.get(b)}}</li>
+      </ul>
+      <label>Fecha identificación:</label>
+      <p>{{resource.onsetDateTime | date:'MM/dd/yyyy'}}</p>
+      <label>Fecha de registro:</label>
+      <p>{{resource.recordedDate | date:'MM/dd/yyyy'}}</p>
+    </div>
+  </div>
+
+  <label>Notas:</label>
+  <p>{{resource.note}}</p>
+</div>
+
+
+
+<div id="box" *ngIf="resourceType==='DiagnosticReport'">
+  <label>Solicitud:</label>
+  <p>{{resource.basedOn}}</p>
+
+  <div class="row">
+    <div class="column">
+      <label>Código:</label>
+      <p>{{LOINCOptions.get(resource.code)}}</p>
+      <label>Estado:</label>
+      <p>{{diagnosticStatusOptions.get(resource.status)}}</p>
+    </div>
+    <div class="column">
+      <label>Categorias: </label>
+      <ul>
+        <li *ngFor="let c of resource.category">{{categoryOptions.get(c)}}</li>
+      </ul>
+      <label>Fecha clínicamente relevante:</label>
+      <p>{{resource.effectiveDateTime | date:'MM/dd/yyyy'}}</p>
+      <label>Fecha de la versión:</label>
+      <p>{{resource.issued | date:'MM/dd/yyyy'}}</p>
+    </div>
+  </div>
+
+  <label>Conclusión:</label>
+  <p>{{resource.conclusion}}</p>
+  <label>Códigos de conclusión: </label>
+  <ul>
+    <li *ngFor="let c of resource.conclusionCode">{{clinicalFindingsOptions.get(c)}}</li>
+  </ul>
+</div>
+
+
+
+<div id="box" *ngIf="resourceType==='Observation'">
+  <label>Solicitud:</label>
+  <p>{{resource.basedOn}}</p>
+  <div class="row">
+    <div class="column">
+      <label>Código:</label>
+      <p>{{LOINCOptions.get(resource.code)}}</p>
+      <label>Estado:</label>
+      <p>{{observationStatusOptions.get(resource.status)}}</p>
+      <label>Categorias: </label>
+      <ul>
+        <li *ngFor="let c of resource.category">{{observationCategoryOptions.get(c)}}</li>
+      </ul>
+      <label>Fecha clínicamente relevante:</label>
+      <p>{{resource.effectiveDateTime | date:'MM/dd/yyyy'}}</p>
+      <label>Fecha de la versión:</label>
+      <p>{{resource.issued | date:'MM/dd/yyyy'}}</p>
+    </div>
+
+    <div class="column">
+      <label>Método utilizado:</label>
+      <p>{{methodOptions.get(resource.method)}}</p>
+      <label>Parte del cuerpo afectada:</label>
+      <p>{{bodyOptions.get(resource.bodySite)}}</p>
+      <label>Valor:</label>
+      <p>{{resource.value}}</p>
+      <label>Rango de referencia:</label>
+      <p>{{resource.referenceRange}}</p>
+      <label>Interpretación: </label>
+      <ul>
+        <li *ngFor="let c of resource.interpretation">{{interpretationOptions.get(c)}}</li>
+      </ul>
+    </div>
+  </div><label>Notas adicionales:</label>
+  <p>{{resource.note}}</p>
+</div>
+
+
+
+<div id="box" *ngIf="resourceType==='Procedure'">
+  <label>Solicitud:</label>
+  <p>{{resource.basedOn}}</p>
+  <div class="row">
+    <div class="column">
+      <label>Código:</label>
+      <p>{{codeOptions.get(resource.code)}}</p>
+      <label>Estado:</label>
+      <p>{{procedureStatusOptions.get(resource.status)}}</p>
+      <label>Razón del estado:</label>
+      <p>{{statusReasonOptions.get(resource.statusReason)}}</p>
+      <label>Categoria: </label>
+      <p>{{procedureCategoryOptions.get(resource.category)}}</p>
+      <label>Motivo de realización:</label>
+      <ul>
+        <li *ngFor="let c of resource.reasonCode">{{clinicalFindingsOptions.get(c)}}</li>
+      </ul>
+      <label>Fecha de realización:</label>
+      <p>{{resource.performedDateTime | date:'MM/dd/yyyy'}}</p>
+    </div>
+
+    <div class="column">
+      <label>Partes del cuerpo afectadas:</label>
+      <ul>
+        <li *ngFor="let c of resource.bodySite">{{bodyOptions.get(c)}}</li>
+      </ul>
+      <label>Resultado del procedimiento:</label>
+      <p>{{outcomeOptions.get(resource.outcome)}}</p>
+      <label>Complicaciones:</label>
+      <ul>
+        <li *ngFor="let c of resource.complication">{{clinicalFindingsOptions.get(c)}}</li>
+      </ul>
+      <label>Instrucciones de seguimiento: </label>
+      <ul>
+        <li *ngFor="let c of resource.followUp">{{followUpOptions.get(c)}}</li>
+      </ul>
+    </div>
+  </div><label>Notas adicionales:</label>
+  <p>{{resource.note}}</p>
+</div>
